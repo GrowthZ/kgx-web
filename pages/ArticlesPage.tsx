@@ -43,8 +43,8 @@ const ArticlesPage: React.FC = () => {
                 </h2>
                 <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
                     {/* Large Featured Card */}
-                    <div className="lg:col-span-2 group">
-                        <div className="bg-white dark:bg-charcoal rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all h-full flex flex-col">
+                    <Link to="/tin-tuc/xu-huong-thiet-ke-canh-quan-2024" className="lg:col-span-2 group">
+                        <div className="bg-white dark:bg-charcoal rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all h-full flex flex-col cursor-pointer">
                             <div className="aspect-video bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDP19osqeyigtVUV6OT8LZYku7lQYGwJkHcGW7J6lNANQxehV4wM7EU-byUHMRsMGrOtlyozUD4ZHd4ILx0vSA7I20ufGbFXHNG78yZ2CEW-Tb2lEiMzeoUGQmF-xpYmbKxgleTn5anTYvkTQbzDzownqeF_gRQzz7a_XaErZWSu-nwcuSkld4TcY8e38h0WofF8Qy6Nv-VFy1bWaTO2kVAegPh7KxGJyG6QYCDmklvBSU4aeo7gHGYAz0vrdoBTjP_FvBmWcTBMV8')" }}>
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
@@ -54,30 +54,30 @@ const ArticlesPage: React.FC = () => {
                                         <span className="material-symbols-outlined text-xs">calendar_today</span> 24 Tháng 5, 2024
                                     </span>
                                 </div>
-                                <h3 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Xu hướng thiết kế cảnh quan bền vững năm 2024</h3>
+                                <h3 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors uppercase">Xu hướng thiết kế cảnh quan bền vững năm 2024</h3>
                                 <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed flex-1">
                                     Tìm hiểu cách kết hợp các loại cây bản địa và giải pháp tưới tiêu thông minh để tạo nên không gian xanh tiết kiệm chi phí vận hành. Trong năm 2024, tính bền vững không chỉ là xu hướng mà còn là yếu tố bắt buộc trong các công trình hiện đại...
                                 </p>
-                                <Link className="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all" to="/chi-tiet-bai-viet">
+                                <div className="text-primary font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
                                     Xem chi tiết <span className="material-symbols-outlined">chevron_right</span>
-                                </Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                     {/* Sidebar Small Cards */}
                     <div className="flex flex-col gap-6">
                         {[
-                            { title: '5 loại cây phong thủy mang lại tài lộc cho biệt thự', cat: 'Kiến thức cây xanh', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5GJ2SX-QSXlDHDuOUM-X-pcf7QWSBdJ3tMZTmfr8fNC5iptTM_3EO5hTsEVN0JqyoDcDk3QceJLhqeaxMAm25LtBTZ6son62bmZoy25UH6yxvDuwsQm-hEfl-b1R_Hp91_wTZVbD-z_Fd4wy8fZlTkIU8q9m-WgXzO1z3YZ5YjtxhTrP2jITEjLb-vOL2AE9VMgZYcn5B6NW9gAsJ90OTXk60i0PwESJfT4W9DOoa63BAFeoHtQIrsi7m0tELhk5ol12i6Xf0HZs' },
-                            { title: 'Quy trình thi công sân vườn chuyên nghiệp từ A-Z', cat: 'Thi công & Bảo dưỡng', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBGQDTf274JYc66e94emqKD-MhfEUXd93o7W4jEmhwlxN7nbbhWOrD4Xxiq3pzYxtONFudP8UeNxtbxbIpKBTWo1-WNjkqeqK7QUNXn3PwJeTlf-JxOU0EpdSRudeqW3VVWaaM6dhXcRJfQAdiROuR_vTy8G9q7c76d84LAa75Oax37lLOFrWRVrwe1W59ourN7K1bCNUiYzpen5Bfx6Qjlser-2jHDV6wNjOH4uueRaAY_zPmsrtzTOgk71ggPZ3QpdjhxdeIFgnA' },
-                            { title: 'Giải pháp xử lý nước hồ cá koi trong vắt quanh năm', cat: 'Dự án thực tế', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBY7uKXp7N3MPGVElR3hwVoRVEACTTq7MQvMeUg7_3aVD7ntMVIAwg3A4Wytt3hznNigK6jgAd-nAHRkgIs_ueaCi_6vNGTyEPmJ1NLYhk-kC0J8Nx7xJBooP90k_0zRn3VjBx7PEbWFGlFwnjdbMdkemQBk-aTBw5pfrLgKLqX4zJAjcixqU3dMBUQecieD7wFEI-YAicplUfog5CWHvgB-OaTE6A5qRzGaL6e2DE9ZNwxp5k0GN3xzamoQ7se6-8ycd0dZFjCzQM' }
+                            { slug: '5-loai-cay-phong-thuy', title: '5 loại cây phong thủy mang lại tài lộc cho biệt thự', cat: 'Kiến thức cây xanh', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5GJ2SX-QSXlDHDuOUM-X-pcf7QWSBdJ3tMZTmfr8fNC5iptTM_3EO5hTsEVN0JqyoDcDk3QceJLhqeaxMAm25LtBTZ6son62bmZoy25UH6yxvDuwsQm-hEfl-b1R_Hp91_wTZVbD-z_Fd4wy8fZlTkIU8q9m-WgXzO1z3YZ5YjtxhTrP2jITEjLb-vOL2AE9VMgZYcn5B6NW9gAsJ90OTXk60i0PwESJfT4W9DOoa63BAFeoHtQIrsi7m0tELhk5ol12i6Xf0HZs' },
+                            { slug: 'quy-trinh-thi-cong-san-vuon', title: 'Quy trình thi công sân vườn chuyên nghiệp từ A-Z', cat: 'Thi công & Bảo dưỡng', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBGQDTf274JYc66e94emqKD-MhfEUXd93o7W4jEmhwlxN7nbbhWOrD4Xxiq3pzYxtONFudP8UeNxtbxbIpKBTWo1-WNjkqeqK7QUNXn3PwJeTlf-JxOU0EpdSRudeqW3VVWaaM6dhXcRJfQAdiROuR_vTy8G9q7c76d84LAa75Oax37lLOFrWRVrwe1W59ourN7K1bCNUiYzpen5Bfx6Qjlser-2jHDV6wNjOH4uueRaAY_zPmsrtzTOgk71ggPZ3QpdjhxdeIFgnA' },
+                            { slug: 'giai-phap-xu-ly-nuoc-ho-koi', title: 'Giải pháp xử lý nước hồ cá koi trong vắt quanh năm', cat: 'Dự án thực tế', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBY7uKXp7N3MPGVElR3hwVoRVEACTTq7MQvMeUg7_3aVD7ntMVIAwg3A4Wytt3hznNigK6jgAd-nAHRkgIs_ueaCi_6vNGTyEPmJ1NLYhk-kC0J8Nx7xJBooP90k_0zRn3VjBx7PEbWFGlFwnjdbMdkemQBk-aTBw5pfrLgKLqX4zJAjcixqU3dMBUQecieD7wFEI-YAicplUfog5CWHvgB-OaTE6A5qRzGaL6e2DE9ZNwxp5k0GN3xzamoQ7se6-8ycd0dZFjCzQM' }
                         ].map((item, idx) => (
-                            <div key={idx} className="group flex gap-4 items-start bg-white dark:bg-charcoal p-4 rounded-xl shadow-sm hover:shadow-md transition-all">
+                            <Link key={idx} to={`/tin-tuc/${item.slug}`} className="group flex gap-4 items-start bg-white dark:bg-charcoal p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer">
                                 <div className="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style={{ backgroundImage: `url('${item.img}')` }}></div>
                                 <div>
-                                    <h4 className="font-bold text-sm leading-snug group-hover:text-primary transition-colors mb-2 line-clamp-2">{item.title}</h4>
+                                    <h4 className="font-bold text-sm leading-snug group-hover:text-primary transition-colors mb-2 line-clamp-2 uppercase">{item.title}</h4>
                                     <span className="text-[10px] text-gray-400 font-bold uppercase">{item.cat}</span>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </section>
@@ -87,18 +87,18 @@ const ArticlesPage: React.FC = () => {
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                     {/* Post Card 1, 2, 3 wrapped in Link */}
                     {[
-                        { title: 'Nghệ thuật chiếu sáng cảnh quan: Biến khu vườn thành kiệt tác', cat: 'Thiết kế', date: '10/05/2024', desc: 'Ánh sáng không chỉ để thấy đường đi mà còn là ngôn ngữ của cảm xúc. Khám phá cách bố trí đèn hiệu ứng cho sân vườn sang trọng.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAbLkxb_StVEo67PPyNFxQj0Df9zKSTSt-NY689MdEr2aHhArzQBgY7gM1XwAyY7wSsUuZjt59jc5ZIJAFMjpxjOXMeXTGOWuTQpSRctwFLW9gQO8369km9_DoRGb-Ld3LtclncC0BZ1pZiJRChJXSORHpd0OJTw_Q63CFhdFdFGw1FrIPtzfmIFfmlElB_1XcjM_IyFXIVjzYN9feR1bmDNyrcTsfJE_IWZwKB7nd3cbQYyC8VJNKYy5Lv4HCS-tW60vljmwg1npU' },
-                        { title: 'Lựa chọn vật liệu đá tự nhiên cho lối đi sân vườn bền đẹp', cat: 'Kỹ thuật', date: '08/05/2024', desc: 'Đá bazan, đá cubic hay đá tổ ong? Phân tích ưu nhược điểm của các loại đá tự nhiên phổ biến nhất hiện nay.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC9AB-ZabFtfO_vWNrHWVzVqLZT9hHKoUsHqDRKqhFZciLn8Yl-4Qk5_Gv1kpXw6b-Scb_QihL3p_vaX1UVs0fsf_uNR8uzv_oy7mZJMj77wwgp-W0sqJaGl-5s3hbhbhJ_jJW-B1MzWVXBR1k-bDlE4diB6nULa8rXvQAEsJ5g72aBhJSt_ROp3R2iivgurGf4odNaJnUW1Xygq2tEwb0DI3SH5yelm0bI36oQl-U21JEM5noOCSP9g6txEpd4CWTm8pf00up8sMo' },
-                        { title: 'Lịch trình chăm sóc cây xanh mùa nắng nóng cho gia chủ bận rộn', cat: 'Bảo dưỡng', date: '05/05/2024', desc: 'Tần suất tưới nước, bón phân và cắt tỉa định kỳ để duy trì vẻ đẹp nguyên bản cho công trình cảnh quan của bạn.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHyFn5nz5mGMBjdUTVdJFDe1ikANAzD3JdrU4j_W89hdASsXYdHEPmcQ1HPoiBbLHdghT7JIJzFPMAfAsu7iANnFTP2uO2K-hZynfZtAWoAqAf8qivKT_OYMcj3A-yt8WtQmTZbbgujTElXtMYHl3HjDC3a2tWjnCbbdRWS-20Ky2VuJ4E2yPi14Q4Z44H0rnskOEw1dpE3t0UNGtnb9dNyS0y8BAW8vv0sCi2yDnNDGV4t6DIxQg7vllChE7oTHJ-wQ-UD-keq1I' }
+                        { slug: 'nghe-thuat-chieu-sang', title: 'Nghệ thuật chiếu sáng cảnh quan: Biến khu vườn thành kiệt tác', cat: 'Thiết kế', date: '10/05/2024', desc: 'Ánh sáng không chỉ để thấy đường đi mà còn là ngôn ngữ của cảm xúc. Khám phá cách bố trí đèn hiệu ứng cho sân vườn sang trọng.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAbLkxb_StVEo67PPyNFxQj0Df9zKSTSt-NY689MdEr2aHhArzQBgY7gM1XwAyY7wSsUuZjt59jc5ZIJAFMjpxjOXMeXTGOWuTQpSRctwFLW9gQO8369km9_DoRGb-Ld3LtclncC0BZ1pZiJRChJXSORHpd0OJTw_Q63CFhdFdFGw1FrIPtzfmIFfmlElB_1XcjM_IyFXIVjzYN9feR1bmDNyrcTsfJE_IWZwKB7nd3cbQYyC8VJNKYy5Lv4HCS-tW60vljmwg1npU' },
+                        { slug: 'vat-lieu-da-tu-nhien', title: 'Lựa chọn vật liệu đá tự nhiên cho lối đi sân vườn bền đẹp', cat: 'Kỹ thuật', date: '08/05/2024', desc: 'Đá bazan, đá cubic hay đá tổ ong? Phân tích ưu nhược điểm của các loại đá tự nhiên phổ biến nhất hiện nay.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC9AB-ZabFtfO_vWNrHWVzVqLZT9hHKoUsHqDRKqhFZciLn8Yl-4Qk5_Gv1kpXw6b-Scb_QihL3p_vaX1UVs0fsf_uNR8uzv_oy7mZJMj77wwgp-W0sqJaGl-5s3hbhbhJ_jJW-B1MzWVXBR1k-bDlE4diB6nULa8rXvQAEsJ5g72aBhJSt_ROp3R2iivgurGf4odNaJnUW1Xygq2tEwb0DI3SH5yelm0bI36oQl-U21JEM5noOCSP9g6txEpd4CWTm8pf00up8sMo' },
+                        { slug: 'lich-trinh-cham-soc', title: 'Lịch trình chăm sóc cây xanh mùa nắng nóng cho gia chủ bận rộn', cat: 'Bảo dưỡng', date: '05/05/2024', desc: 'Tần suất tưới nước, bón phân và cắt tỉa định kỳ để duy trì vẻ đẹp nguyên bản cho công trình cảnh quan của bạn.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHyFn5nz5mGMBjdUTVdJFDe1ikANAzD3JdrU4j_W89hdASsXYdHEPmcQ1HPoiBbLHdghT7JIJzFPMAfAsu7iANnFTP2uO2K-hZynfZtAWoAqAf8qivKT_OYMcj3A-yt8WtQmTZbbgujTElXtMYHl3HjDC3a2tWjnCbbdRWS-20Ky2VuJ4E2yPi14Q4Z44H0rnskOEw1dpE3t0UNGtnb9dNyS0y8BAW8vv0sCi2yDnNDGV4t6DIxQg7vllChE7oTHJ-wQ-UD-keq1I' }
                     ].map((post, idx) => (
-                        <Link key={idx} to="/chi-tiet-bai-viet" className="bg-white dark:bg-charcoal rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-800">
+                        <Link key={idx} to={`/tin-tuc/${post.slug}`} className="group bg-white dark:bg-charcoal rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-800 cursor-pointer">
                             <div className="aspect-[16/10] bg-cover bg-center" style={{ backgroundImage: `url('${post.img}')` }}></div>
                             <div className="p-6">
                                 <div className="flex justify-between items-center mb-3">
                                     <span className="text-[10px] font-bold text-primary uppercase bg-primary/5 px-2 py-1 rounded">{post.cat}</span>
                                     <span className="text-[11px] text-gray-400">{post.date}</span>
                                 </div>
-                                <h3 className="font-bold text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors">{post.title}</h3>
+                                <h3 className="font-bold text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors uppercase">{post.title}</h3>
                                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-3">{post.desc}</p>
                                 <span className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:underline">Xem chi tiết <span className="material-symbols-outlined text-xs">open_in_new</span></span>
                             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ContactPage: React.FC = () => {
     return (
@@ -8,7 +9,7 @@ const ContactPage: React.FC = () => {
                 <section className="relative bg-[#1d2210] overflow-hidden py-16 lg:py-24">
                     {/* Abstract Background Pattern */}
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(#a4d411 1px, transparent 1px)", backgroundSize: "32px 32px" }}></div>
-                    <div className="max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
+                    <div className="container relative z-10">
                         <div className="grid lg:grid-cols-2 gap-12 items-center">
                             {/* Hero Content */}
                             <div className="space-y-8">
@@ -77,9 +78,9 @@ const ContactPage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Main Contact Section */}
-                <section className="py-16 md:py-24 bg-[#f8f8f6]">
-                    <div className="max-w-[1200px] mx-auto px-4 md:px-8">
+                {/* Contact Options & Form */}
+                <section className="py-24 border-b border-[#eef4e7]">
+                    <div className="container px-4 md:px-8">
                         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
                             {/* Left Column: Form (7 cols) */}
                             <div className="lg:col-span-7">
@@ -261,8 +262,8 @@ const ContactPage: React.FC = () => {
                 </section>
 
                 {/* FAQ Section */}
-                <section className="py-16 bg-white">
-                    <div className="max-w-[800px] mx-auto px-4">
+                <section className="py-24 bg-white">
+                    <div className="container px-4">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl font-bold text-[#1d2210] mb-4">Câu hỏi thường gặp</h2>
                             <p className="text-gray-600">Giải đáp nhanh những thắc mắc của bạn về quy trình làm việc của KGX</p>
@@ -324,9 +325,9 @@ const ContactPage: React.FC = () => {
                             <button className="w-full sm:w-auto px-8 h-14 bg-[#a4d411] hover:bg-[#8cb60e] text-[#1d2210] font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(164,212,17,0.3)] hover:shadow-[0_0_30px_rgba(164,212,17,0.5)]">
                                 Đăng ký tư vấn ngay
                             </button>
-                            <button className="w-full sm:w-auto px-8 h-14 bg-transparent border-2 border-white/20 hover:border-white text-white font-bold rounded-xl transition-all hover:bg-white/5">
+                            <Link to="/du-an" className="w-full sm:w-auto px-8 h-14 bg-transparent border-2 border-white/20 hover:border-white text-white font-bold rounded-xl transition-all hover:bg-white/5 flex items-center justify-center">
                                 Xem hồ sơ năng lực
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </section>

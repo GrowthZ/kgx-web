@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TREES, TREE_CATEGORIES } from '../constants';
 
 const ProductListPage: React.FC = () => {
     return (
@@ -82,25 +83,65 @@ const ProductListPage: React.FC = () => {
                             <p className="text-gray-600">Đa dạng chủng loại từ cây công trình bóng mát đến cây trang trí nội thất cao cấp.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {[
-                                { title: 'Cây nội thất', desc: 'Các loại cây chịu bóng, thanh lọc không khí, phù hợp văn phòng và nhà ở cao cấp. Đảm bảo sức sống bền bỉ trong môi trường thiếu sáng.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDzW6WeYooxME2ceNVxxw2HEu5pMYCPGyLEj_8mzf43UtdLFXXZyJArGKi17-co4mAZFQhoasnjSbsR3OSABTDILO1sI_CT9s6vdN3k3L8-UyLLPDGUVClFQ6k6UnSKmabYMqf2LVgPVCwgCWgqzD_5b7flm7BqJmbGcMS-xCUSBKKp3rdP_KolVK9_Gd60jL-Kz2BFQZWNDHrYF6pMj_3ZZyQ7hdVcbKcfAG9NuIsnpsqM6pWgwGvedxmbENK_DT58xlz5bybUCuI' },
-                                { title: 'Cây công trình', desc: 'Cây bóng mát kích thước lớn, cây đường phố, công viên. Cung cấp số lượng lớn cho các dự án đô thị và khu dân cư.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDjSbbMaAeT1KSkSnVQMc0B4s-vq38gfN8KW5qazy63c4GflL1ooLfjnzelfIuC-tHfUCsuhVQCHi9QN9TyhfVc4UHB8FGE0dGdY9FvaEYaD2DUq4rVeZlhpua-7_HW9ayhO1qXQ_l92DjUZgNzEmTBUTd9uyyxcFmRL7GKD2vsLc581X8yNFjpfJooXD3f_lWM1ulu-7X9uhGZM2H4KtV4Tic-_SwvZwHwXSWH68LgpwkR-YUr_Gs-dhM5NH72MWr09CYNS-nzLRE' },
-                                { title: 'Cây tiểu cảnh & sân vườn', desc: 'Cây bụi, cây hoa, thảm cỏ cho biệt thự, resort. Thiết kế đa tầng tán tạo điểm nhấn thẩm mỹ cho không gian xanh.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDNhqyFs7rbNbWKPGkJfYHD_imz6l0lxXmUtlzDDcfs-WJWT_mhBdAn96Rw0w1H74i2xuZxWpEaMLreUWyNQfXnVGjytnNMnkPUxZW1I255mjiU4dc3mvF0EJLw3Kc7qTL0t-kEdybqJ_-zfwtwoO-lUvNnE5BlJOfVO5_JGPz0Yqq2U0tOtTevLeoYuCMBzfcXyE2g9p0o6d7RIYPjE3zyMNISaBYWyp23rbt4w2Qc0nAR320p1VvqaiBfxCPd6qLmIab-eXfnhJk' },
-                                { title: 'Cây Bonsai', desc: 'Nghệ thuật cây cảnh dáng thế, cây cổ thụ. Sản phẩm dành cho không gian sang trọng, sảnh chờ và bộ sưu tập riêng.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAVy6D2z_5pfeG0Ac-4KjN-oJn8P_1SXm5j431z7YOhkIHLkXL6rhoTkt4t1WRqoSILMBpc9DL5At9udP_E4uq1n4Bxt7Ye6ZJFj6_fKfspPuw0CuxXVkLr_Dx10ziaAKgkE7t3j65AGzc4GPyWHVPs2rt0_Dwi07J2lCcAd3UMTEkFcQoIeeyy1uWDA4TkOYZzcgYVuQidcKhu0oP3kcIjfRtoukLJOBAnAS3VLli6pj-uWwsQeXokD7l9dybShCWbiN3PQdJVINE' },
-                                { title: 'Cây nuôi cấy mô', desc: 'Giống cây chất lượng cao, sạch bệnh, đồng đều về di truyền. Giải pháp cho các dự án nông nghiệp công nghệ cao.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUKzwMQmmSBAhOvvEn_kCim3E5AatbOOxeEZfJdnFbLMPGzCB0UhdmcjKcmHeoTVQ3W0c3_hU2U1QwoSu7DF3J9r2LLFImiJJmM0e7_17GEN8qv3Ieg2R7nZENnn0gbQHNCUwetnVwVnXUVQ_Yo6EJTLqeMMr17q0GUvQllkfq0iddmAiE2Y5ZcTJcOvWbxGZ3l0Ouv45ppu4VaeBefWfogS3wKz_8PvEV_31QMe-Nbjjt6GYn5bfSTzdS8p9g2-00M704wqqAbKk' },
-                                { title: 'Chậu & Vật tư', desc: 'Cung cấp chậu composite, đất trồng, phân bón và hệ thống tưới tự động đồng bộ cho cảnh quan.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB5EaQnOXHXtWYBbBw-BAIDSvp31AVWAsU3NKAG8Y3ttysFNYJc458RV9FLU1HJzkZIFIJ-TnKkHzWjf0HhNZdbkRAwSugbYzXCI6sWVt3zLLE2aeKnxvN2gLurS5RKf92Te4yINLXla53yJr2N2jAUNkLjDJJUjWfTd8JJwBI0JiqTPf0WITrPnYCHW4CgEzBAobcklkV1oI4AerNhDnhJLYSoOvln1UC7MBz6PLUltZNFK36B-p-mLRYCpOXA_hDelzdjQoS_Q3w' }
-                            ].map((item, idx) => (
-                                <Link to="/chi-tiet-san-pham" className="group bg-white rounded-2xl overflow-hidden border border-[#eef4e7] hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+                            {TREE_CATEGORIES.map((category) => (
+                                <Link
+                                    key={category.slug}
+                                    to={`/san-pham/nhom/${category.slug}`}
+                                    className="group bg-white rounded-2xl overflow-hidden border border-[#eef4e7] hover:shadow-xl hover:shadow-primary/10 transition-all duration-300"
+                                >
                                     <div className="relative h-64 overflow-hidden">
                                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
-                                        <div className="w-full h-full bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: `url('${item.img}')` }}></div>
+                                        <div
+                                            className="w-full h-full bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                                            style={{ backgroundImage: `url('${category.image}')` }}
+                                        ></div>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="text-xl font-bold text-text-main mb-2">{item.title}</h3>
-                                        <p className="text-sm text-gray-500 mb-4 line-clamp-3">{item.desc}</p>
+                                        <h3 className="text-xl font-bold text-text-main mb-2">{category.name}</h3>
+                                        <p className="text-sm text-gray-500 mb-4 line-clamp-3">{category.desc}</p>
                                         <span className="inline-flex items-center text-primary font-bold text-sm hover:underline">
                                             Xem nhóm cây <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
                                         </span>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Featured Trees Section */}
+                <section className="py-16 md:py-24 bg-white border-b border-[#eef4e7]">
+                    <div className="max-w-[1440px] mx-auto">
+                        <div className="flex justify-between items-end mb-12 px-4">
+                            <div>
+                                <h2 className="text-3xl font-bold text-text-main">Danh mục cây tiêu biểu</h2>
+                                <p className="text-gray-600 mt-2">Các loại cây bàng, cây bóng mát và cây công trình chất lượng cao.</p>
+                            </div>
+                            <Link to="/san-pham" className="text-primary font-bold hover:underline flex items-center">
+                                Xem tất cả <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                            </Link>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+                            {TREES.map((tree) => (
+                                <Link
+                                    key={tree.slug}
+                                    to={`/san-pham/${tree.slug}`}
+                                    className="group flex flex-col gap-4"
+                                >
+                                    <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm">
+                                        <div
+                                            className="w-full h-full bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                                            style={{ backgroundImage: `url('${tree.image}')` }}
+                                        ></div>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-text-main group-hover:text-primary transition-colors uppercase">
+                                            {tree.name}
+                                        </h3>
+                                        <p className="text-sm text-text-muted italic">{tree.scientificName}</p>
+                                        <div className="mt-3 flex items-center text-primary text-xs font-bold uppercase tracking-wider">
+                                            Xem chi tiết <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                                        </div>
                                     </div>
                                 </Link>
                             ))}

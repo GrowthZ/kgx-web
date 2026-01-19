@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutPage: React.FC = () => {
     return (
         <div className="bg-[#f3f3f2] text-[#151711] font-sans antialiased overflow-x-hidden selection:bg-[#546a2f]/20 selection:text-[#546a2f]">
             <main>
                 {/* Signature Hero Section */}
-                <section className="w-full px-4 py-6 md:px-6 md:py-8 lg:px-10 max-w-[1440px] mx-auto">
+                <section className="container py-6 md:py-8">
                     <div className="relative w-full min-h-[640px] flex items-center justify-center rounded-2xl overflow-hidden group shadow-2xl shadow-[#546a2f]/10">
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-[2s] group-hover:scale-105"
@@ -24,10 +25,10 @@ const AboutPage: React.FC = () => {
                                 Thiết kế - Thi công - Tư vấn cảnh quan. <br className="hidden md:block" />Kiến tạo không gian sống hài hòa với khí hậu và văn hóa bản địa.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <button className="bg-[#546a2f] hover:bg-[#435525] text-white px-10 py-4 rounded-xl text-base font-bold transition-all shadow-[0_4px_20px_-4px_rgba(84,106,47,0.5)] flex items-center justify-center gap-2 group/btn">
-                                    Khám phá ngay
+                                <Link to="/du-an" className="bg-[#546a2f] hover:bg-[#435525] text-white px-10 py-4 rounded-xl text-base font-bold transition-all shadow-[0_4px_20px_-4px_rgba(84,106,47,0.5)] flex items-center justify-center gap-2 group/btn">
+                                    Khám phá dự án
                                     <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                                </button>
+                                </Link>
                                 <button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-10 py-4 rounded-xl text-base font-bold transition-all flex items-center justify-center gap-2">
                                     Xem hồ sơ năng lực
                                 </button>
@@ -37,7 +38,7 @@ const AboutPage: React.FC = () => {
                 </section>
 
                 {/* Origin Story Section */}
-                <section className="max-w-[1440px] mx-auto px-6 py-24 lg:py-32">
+                <section className="container py-24 lg:py-32">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                         {/* Text Column */}
                         <div className="flex flex-col gap-8">
@@ -89,7 +90,7 @@ const AboutPage: React.FC = () => {
 
                 {/* Who We Are Section */}
                 <section className="w-full bg-white py-24 border-y border-[#eef0ea]">
-                    <div className="max-w-[1440px] mx-auto px-6">
+                    <div className="container">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 bg-[#F8F9FA] rounded-[2rem] overflow-hidden shadow-sm border border-gray-100">
                             <div className="lg:col-span-7 relative min-h-[500px]">
                                 <img alt="Team discussion on site" className="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACpVDv_Xsu8-Ov-yQ81Db9dtcwQN1ozDe4nk6xC4-hXJ49Io_qdJUrIAJGMc-GFrw8tHyqPX61PzH6X5cKmAoClAxxui4hQVSV4L7f1QLUiqzjDtE7UmJBEoaYPhNGncww2JWIIjtDTqU77PxfTfDfQe-h_9yK-cH0UIU3sbBAyIeUowzn_td8OCPkhkpvs2DtWeqsjV4duRJ63div6PS4kZYBoQBUEN9mh5BGxlyHp-OkML1X2ExblCFXROom3DHE3_xxAVZKjJs" />
@@ -125,7 +126,7 @@ const AboutPage: React.FC = () => {
                 </section>
 
                 {/* Philosophy Section */}
-                <section className="max-w-[1440px] mx-auto px-6 py-24">
+                <section className="container py-24">
                     <div className="flex flex-col items-center text-center mb-20">
                         <span className="text-[#546a2f] font-bold uppercase tracking-wider text-sm mb-4 block">Triết lý thiết kế</span>
                         <h2 className="text-4xl lg:text-6xl font-bold text-[#151711] max-w-4xl leading-tight">
@@ -167,7 +168,7 @@ const AboutPage: React.FC = () => {
                 {/* Activities (5 Columns) */}
                 <section className="bg-[#546a2f] py-28 text-white relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]"></div>
-                    <div className="max-w-[1440px] mx-auto px-6 relative z-10">
+                    <div className="container relative z-10">
                         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                             <div>
                                 <h2 className="text-4xl md:text-5xl font-bold mb-3">Lĩnh vực hoạt động</h2>
@@ -197,7 +198,7 @@ const AboutPage: React.FC = () => {
                 </section>
 
                 {/* Workflow (6 steps) */}
-                <section className="max-w-[1440px] mx-auto px-6 py-28 overflow-hidden">
+                <section className="container py-28 overflow-hidden">
                     <div className="text-center mb-20">
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#151711]">Quy trình làm việc chuyên nghiệp</h2>
                     </div>
@@ -226,7 +227,7 @@ const AboutPage: React.FC = () => {
                 </section>
 
                 {/* Core Values */}
-                <section className="max-w-[1440px] mx-auto px-6 py-20 bg-white rounded-[2.5rem] mb-12 shadow-sm border border-gray-100">
+                <section className="container py-20 bg-white rounded-[2.5rem] mb-12 shadow-sm border border-gray-100">
                     <div className="text-center mb-16">
                         <span className="text-[#546a2f] font-bold uppercase tracking-wider text-sm mb-3 block">Giá trị cốt lõi</span>
                         <h2 className="text-3xl font-bold text-[#151711]">Kim chỉ nam hành động</h2>
@@ -250,7 +251,7 @@ const AboutPage: React.FC = () => {
                 </section>
 
                 {/* Commitments & Collage */}
-                <section className="max-w-[1440px] mx-auto px-6 py-24">
+                <section className="container py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
                         <div className="grid grid-cols-2 gap-4 h-[560px]">
                             <div className="bg-gray-200 rounded-2xl overflow-hidden col-span-2 row-span-2 relative group">
@@ -303,7 +304,7 @@ const AboutPage: React.FC = () => {
                 <section className="w-full bg-[#151711] text-white py-32 relative overflow-hidden">
                     <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                     <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-[#546a2f]/30 to-transparent"></div>
-                    <div className="max-w-[1440px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+                    <div className="container relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
                         <div className="max-w-2xl">
                             <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">Sẵn sàng kiến tạo <br /><span className="text-[#546a2f]">không gian mơ ước?</span></h2>
                             <p className="text-gray-400 text-xl mb-10 font-light">Hãy để KGX đồng hành cùng bạn tạo nên những mảng xanh giá trị và bền vững.</p>

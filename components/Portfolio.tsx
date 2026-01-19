@@ -53,7 +53,7 @@ const Portfolio: React.FC = () => {
           {filteredProjects.map((project) => (
             <Link
               key={project.id}
-              to="/du-an-2"
+              to={`/du-an/${project.slug}`}
               className="block break-inside-avoid bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow group border border-[#eef4e7]"
             >
               <div className={`relative ${project.aspect} overflow-hidden`}>

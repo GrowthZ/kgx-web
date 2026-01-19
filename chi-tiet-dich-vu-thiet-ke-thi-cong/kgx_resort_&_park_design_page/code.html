@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KGX Resort &amp; Park Design</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#506039",
+                        "primary-dark": "#3e4a2c",
+                        "accent": "#FF8C00",
+                        "background-light": "#f8f8f7",
+                        "background-dark": "#191c16",
+                        "card-bg": "#F0F0EE",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .text-stroke-accent {
+            -webkit-text-stroke: 1px #FF8C00;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#151612] dark:text-gray-100 flex flex-col min-h-screen transition-colors duration-300">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-[#edefeb] dark:border-stone-800">
+<div class="mx-auto max-w-[1200px] px-4 md:px-8 h-20 flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-2xl font-black tracking-tight text-[#151612] dark:text-white">KGX</h1>
+</div>
+<!-- Nav -->
+<nav class="hidden lg:flex items-center gap-10">
+<a class="text-sm font-medium text-[#151612] dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">Trang chủ</a>
+<a class="text-sm font-medium text-primary font-bold dark:text-primary-400" href="#">Dịch vụ</a>
+<a class="text-sm font-medium text-[#151612] dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">Dự án</a>
+<a class="text-sm font-medium text-[#151612] dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors" href="#">Tin tức</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2 px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px]">call</span>
+<span class="text-sm font-bold text-[#151612] dark:text-gray-200">0868 462 462</span>
+</div>
+<button class="bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-sm">
+                    Nhận tư vấn
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Intro (Simple & Elegant) -->
+<section class="w-full pt-16 pb-12">
+<div class="mx-auto max-w-[1200px] px-4 md:px-8">
+<div class="max-w-3xl">
+<span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">Dịch vụ Cảnh Quan</span>
+<h2 class="text-4xl md:text-5xl font-black tracking-tight text-[#151612] dark:text-white mb-6 leading-tight">
+                        Thiết kế khu nghỉ dưỡng &amp; <br/><span class="text-primary">Công viên bền vững</span>
+</h2>
+<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+                        Tối ưu vận hành - Trải nghiệm bền vững - Cảnh quan xanh mát. Chúng tôi kiến tạo không gian nơi thiên nhiên và tiện ích hòa quyện hoàn hảo.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Section 1: Characteristics -->
+<section class="w-full py-16 bg-white dark:bg-stone-900 border-y border-stone-100 dark:border-stone-800">
+<div class="mx-auto max-w-[1200px] px-4 md:px-8">
+<div class="mb-12">
+<h3 class="text-2xl font-bold text-[#151612] dark:text-white uppercase tracking-tight flex items-center gap-3">
+<span class="w-8 h-[2px] bg-accent"></span>
+                        Đặc thù thiết kế cảnh quan Resort
+                    </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group flex flex-col p-8 bg-card-bg dark:bg-stone-800 rounded-xl hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">sentiment_satisfied</span>
+</div>
+<div class="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-stone-700 text-primary shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[28px]">sentiment_satisfied</span>
+</div>
+<h4 class="text-xl font-bold text-[#151612] dark:text-white mb-3">Trải nghiệm người dùng</h4>
+<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            Thiết kế không chỉ là hình ảnh mà là hành trình cảm xúc của du khách xuyên suốt không gian, từ điểm chạm đầu tiên đến khi rời đi.
+                        </p>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col p-8 bg-card-bg dark:bg-stone-800 rounded-xl hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">alt_route</span>
+</div>
+<div class="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-stone-700 text-primary shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[28px]">alt_route</span>
+</div>
+<h4 class="text-xl font-bold text-[#151612] dark:text-white mb-3">Dòng di chuyển</h4>
+<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            Phân luồng logic đảm bảo sự riêng tư tuyệt đối cho khách hàng và sự thuận tiện tối đa cho bộ phận vận hành (Back of House).
+                        </p>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col p-8 bg-card-bg dark:bg-stone-800 rounded-xl hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">construction</span>
+</div>
+<div class="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-stone-700 text-primary shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[28px]">construction</span>
+</div>
+<h4 class="text-xl font-bold text-[#151612] dark:text-white mb-3">Khả năng bảo trì</h4>
+<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            Lựa chọn giải pháp vật liệu địa phương và hệ thống cây xanh bền vững, giảm thiểu chi phí chăm sóc và thay thế trong dài hạn.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Principles -->
+<section class="w-full py-20">
+<div class="mx-auto max-w-[1200px] px-4 md:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<!-- Text Content -->
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div>
+<h3 class="text-sm font-bold text-accent uppercase tracking-widest mb-2">Giá trị cốt lõi</h3>
+<h2 class="text-3xl md:text-4xl font-black text-[#151612] dark:text-white leading-tight mb-6">
+                                Nguyên tắc KGX áp dụng
+                            </h2>
+<p class="text-gray-600 dark:text-gray-400 mb-8">
+                                Chúng tôi không chạy theo xu hướng nhất thời. Thiết kế của KGX tập trung vào tính hiệu quả và vẻ đẹp trường tồn với thời gian.
+                            </p>
+</div>
+<div class="space-y-6">
+<!-- Point 1 -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 mt-1">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold text-[#151612] dark:text-white mb-1">Ít nhưng chất</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Tinh gọn chi tiết thừa, tập trung ngân sách vào chất lượng vật liệu và những điểm nhấn đắt giá tạo nên sự sang trọng.</p>
+</div>
+</div>
+<!-- Point 2 -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 mt-1">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold text-[#151612] dark:text-white mb-1">Dễ vận hành</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Tối ưu hóa quy trình quản lý, bố trí kho bãi, đường nước và điện thông minh để việc chăm sóc cảnh quan trở nên nhẹ nhàng.</p>
+</div>
+</div>
+<!-- Point 3 -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 mt-1">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold text-[#151612] dark:text-white mb-1">Giảm phụ thuộc nhân công</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Thiết kế thông minh với các mảng xanh tự nhiên hóa, sử dụng công nghệ tưới tự động giúp tiết kiệm chi phí nhân sự lên đến 30%.</p>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<button class="flex items-center gap-2 text-primary hover:text-primary-dark font-bold transition-colors group">
+                                Xem hồ sơ năng lực
+                                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Image Content -->
+<div class="order-1 lg:order-2 h-full">
+<div class="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Modern luxury resort pathway with manicured green lawns and palm trees under sunlight" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7S8MdDwlzJKJxN4RJ99Qix7CLMIZL8PBsA1g2i9-mxK-GreW9IGmSUJT-LvA5yILs-PYcyTPJE9GmkthkDEpr5GHBA-h9eZ_LWVsBros7HhgH9hct8q6rbPp6syZ8YtIc27VUxcuxxoqq6OHaRyLM-Yq5sVoyteBjTU9Sv4Ge6meDDWyvqMTTgBg44eBFYw8_UuQ-D256mhRO5vnaVPv8hneymVILm6ljgoeyfdhEe-ch-kg1_3Jzy95mEdidrtDN3yMo3yBccIE");'>
+</div>
+<!-- Floating Badge -->
+<div class="absolute bottom-8 left-8 right-8 z-20">
+<div class="bg-white/95 backdrop-blur dark:bg-stone-900/95 p-4 rounded-lg shadow-lg border-l-4 border-accent max-w-xs">
+<p class="text-xs font-bold text-gray-500 uppercase mb-1">Dự án tiêu biểu</p>
+<p class="text-sm font-bold text-[#151612] dark:text-white">Flamingo Đại Lải Resort - Khu biệt thự hồ</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Scope of Work -->
+<section class="w-full py-16 bg-white dark:bg-stone-900 border-t border-stone-100 dark:border-stone-800">
+<div class="mx-auto max-w-[1200px] px-4 md:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="text-3xl font-black text-[#151612] dark:text-white tracking-tight mb-3">Phạm vi thiết kế chi tiết</h2>
+<p class="text-gray-600 dark:text-gray-400 max-w-xl">Chúng tôi đảm nhận toàn bộ quy trình từ ý tưởng sơ phác đến bản vẽ thi công chi tiết cho từng hạng mục.</p>
+</div>
+<div class="hidden md:block w-32 h-[2px] bg-stone-200 dark:bg-stone-700 mb-2"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Scope Item 1 -->
+<div class="group relative rounded-xl overflow-hidden aspect-[4/5] md:aspect-[3/4]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Stone paved walkway winding through a green park with trees" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj_KzRXEDLN1IwZvAtI5mqmk-wg2zsAHvh7m4hpfkjTPdgXGT26StzqcMfM3ESS-7FuNeBiiK7p1beFHnXLdkrCfKWT7SCT_dpBIbp5uE4KDPuSAiTMPt8vojPQMBpf0sS_6JSnOAiUbrqSs1BqGkafk26fvYhQu0ql-3Nk9ZeP1EQBWVt_mVi4V6NpBSxgYyZkv-nM_RW7SuEuKSScAa6fViUwV3QR-jBr2xq51SAUNPee2n3fHOOC9lxScE9aydKS5YJQxiyh2I");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<div class="w-10 h-1 bg-accent mb-4"></div>
+<h3 class="text-xl font-bold text-white mb-2">Hệ thống lối đi</h3>
+<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                Thiết kế cốt nền, vật liệu lát sàn chống trơn trượt và hệ thống chiếu sáng dẫn hướng.
+                            </p>
+</div>
+</div>
+<!-- Scope Item 2 -->
+<div class="group relative rounded-xl overflow-hidden aspect-[4/5] md:aspect-[3/4]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Wooden gazebo and resting area near a resort pool" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_gD_eozkXx0EQrPsEcNGOwr9MTZ6Cl3Cipn6yzyXFI3R-DhndjwpuQ4Unc_GPv9KtH3yVz5fmke53XrjI67-7woeBCJRA_oBRcp9iXQKlXW9_Hpr5ErW6wACyas74QbaFFDmarjjs5YhPgm0yy4YW1P7e0HfFsF_BsIsxCcTuZTsROaw1x5gc7nAYwuEDnJmd1nHhKXkyNuZX6hLoj4LsanugHdEwr3r2dbicWxLQ1PGFcO-FHFUOvGXylYvVt5FN0T95lyxmJEM");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<div class="w-10 h-1 bg-accent mb-4"></div>
+<h3 class="text-xl font-bold text-white mb-2">Không gian nghỉ &amp; điểm dừng</h3>
+<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                Bố trí chòi nghỉ (Gazebo), ghế đá nghệ thuật và các điểm check-in hài hòa với thiên nhiên.
+                            </p>
+</div>
+</div>
+<!-- Scope Item 3 -->
+<div class="group relative rounded-xl overflow-hidden aspect-[4/5] md:aspect-[3/4]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Reflecting pool with water lilies and lush tropical plants" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtIjtT5f5GRpsoFh5PgV0Na4meYJJKW-MRtz-BxconVKgEr58ICPl6hu_aALnwLx1-3pVf15L0RKRToIb5Fcs3SxP2FuYgL9htnccoi65nt74KULu38LmDeuNO3e9Y0W7xHO6GyOFhPKN-NSYPvTgW9ZXz8wdJ99fwIwRlNJ0sqr6PtteUDPdzy2el3sto7PZG6lLxySLWMleRG0Krj1NVFfeWmm0xbbg4oBRjPj7lM8YaQQklcOVCRqjSlavM-sD4Pz2f6H04wJ4");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<div class="w-10 h-1 bg-accent mb-4"></div>
+<h3 class="text-xl font-bold text-white mb-2">Bố trí cây xanh &amp; mặt nước</h3>
+<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                Quy hoạch tầng tán cây bóng mát, thảm cỏ và hồ điều hòa vi khí hậu cho toàn khu.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Lead Capture CTA -->
+<section class="w-full py-20 bg-primary relative overflow-hidden">
+<!-- Decorative Pattern -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<path d="M0 100 C 20 0 50 0 100 100 Z" fill="white"></path>
+</svg>
+</div>
+<div class="mx-auto max-w-[1200px] px-4 md:px-8 relative z-10 text-center">
+<h2 class="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
+                    Bạn cần giải pháp cảnh quan tối ưu <br class="hidden md:block"/> cho khu nghỉ dưỡng?
+                </h2>
+<p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+                    Hãy để KGX đồng hành cùng bạn kiến tạo những không gian đẳng cấp, nơi giá trị đầu tư sinh lời bền vững theo thời gian.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-accent hover:bg-orange-600 transition-colors text-white text-base font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-orange-500/20 transform hover:-translate-y-1 duration-200">
+                        Nhận tư vấn thiết kế
+                    </button>
+<button class="bg-transparent border-2 border-white/30 hover:bg-white/10 text-white text-base font-bold px-8 py-4 rounded-xl transition-all">
+                        Gọi 0868 462 462
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#151612] text-stone-400 py-16 border-t border-stone-800">
+<div class="mx-auto max-w-[1200px] px-4 md:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<!-- Brand -->
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6 text-white">
+<svg class="size-6 text-primary" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<span class="text-xl font-bold">KGX</span>
+</div>
+<p class="text-sm leading-relaxed mb-6">
+                        Đơn vị tư vấn thiết kế cảnh quan hàng đầu, mang đến giải pháp xanh bền vững cho mọi công trình.
+                    </p>
+</div>
+<!-- Links -->
+<div>
+<h5 class="text-white font-bold mb-4">Dịch vụ</h5>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Thiết kế Resort</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cảnh quan đô thị</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sân vườn biệt thự</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Thi công trọn gói</a></li>
+</ul>
+</div>
+<!-- Links -->
+<div>
+<h5 class="text-white font-bold mb-4">Về KGX</h5>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Giới thiệu</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Đội ngũ nhân sự</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tuyển dụng</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Liên hệ</a></li>
+</ul>
+</div>
+<!-- Contact -->
+<div>
+<h5 class="text-white font-bold mb-4">Trụ sở chính</h5>
+<ul class="space-y-3 text-sm">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
+<span>TP. Thái Nguyên, Tỉnh Thái Nguyên, Việt Nam</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">call</span>
+<span>0868 462 462</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">mail</span>
+<span>contact@kgx.vn</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+<p>© 2024 KGX Landscape Design. All rights reserved.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

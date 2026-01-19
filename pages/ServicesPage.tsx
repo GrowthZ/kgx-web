@@ -1,21 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServicesPage: React.FC = () => {
     return (
-        <div className="bg-background-light dark:bg-background-dark text-text-dark">
-            <main className="flex flex-col w-full max-w-[1440px] mx-auto overflow-hidden">
+        <div className="bg-background-light dark:bg-background-dark text-text-dark antialiased">
+            <main className="flex flex-col w-full container overflow-hidden">
                 {/* Hero Section */}
-                <section className="relative px-4 md:px-10 py-12 md:py-20 lg:py-24">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div className="flex flex-col gap-6 max-w-2xl">
-                            <div className="flex flex-col gap-3">
-                                <span className="text-primary font-bold tracking-wider uppercase text-sm">Chuyên nghiệp &amp; Tận tâm</span>
-                                <h1 className="text-[#161c0d] text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
-                                    Dịch vụ thi công cảnh quan trọn gói
+                <section className="relative py-12 md:py-24">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        <div className="flex flex-col gap-6 lg:gap-8 max-w-2xl">
+                            <div className="flex flex-col gap-4">
+                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest w-fit">
+                                    <span className="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                                    Chuyên nghiệp &amp; Tận tâm
+                                </span>
+                                <h1 className="text-olive text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight">
+                                    Dịch vụ cảnh quan <br className="hidden md:block" />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-olive-light">trọn gói</span>
                                 </h1>
-                                <h2 className="text-gray-600 text-base md:text-lg font-normal leading-relaxed mt-2">
+                                <p className="text-olive-light text-base md:text-lg font-normal leading-relaxed max-w-xl">
                                     Thi công đúng thiết kế - Chuẩn kỹ thuật - Bảo dưỡng chuyên nghiệp. Đội ngũ kỹ sư giàu kinh nghiệm, trang thiết bị hiện đại đảm bảo tiến độ và chất lượng cho mọi công trình.
-                                </h2>
+                                </p>
                             </div>
                             <div className="flex flex-wrap gap-4 mt-2">
                                 <button className="flex items-center justify-center rounded-xl h-12 px-6 bg-primary text-[#161c0d] text-base font-bold hover:bg-primary-dark transition-colors">
@@ -48,7 +53,7 @@ const ServicesPage: React.FC = () => {
                 </section>
 
                 {/* Target Audience Section */}
-                <section className="px-4 md:px-10 py-16 bg-white">
+                <section className="container py-16 bg-white">
                     <div className="text-center mb-12">
                         <h2 className="text-[#161c0d] text-3xl font-bold mb-4">Đối tượng khách hàng</h2>
                         <p className="text-gray-500 max-w-2xl mx-auto">Chúng tôi cung cấp giải pháp cảnh quan toàn diện cho đa dạng các loại hình dự án, từ tư nhân đến công cộng.</p>
@@ -102,7 +107,7 @@ const ServicesPage: React.FC = () => {
                 </section>
 
                 {/* Construction Categories Section */}
-                <section className="px-4 md:px-10 py-16 bg-[#f7f8f5]">
+                <section className="container py-16 bg-[#f7f8f5]">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                         <div>
                             <h2 className="text-[#161c0d] text-3xl font-bold mb-2">Hạng mục thi công chính</h2>
@@ -113,40 +118,56 @@ const ServicesPage: React.FC = () => {
                         </button>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {/* S1 */}
-                        <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
-                            <div className="h-48 rounded-xl bg-cover bg-center mb-4" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_JAcY-w0BCJWklSOxQte-ZzWzg_8r2V7_Zz5R_3c1U7FixKdlGMKOvRp5-AAdvVt_dIC2ZMG0RjrDFh0I5M9LTmM-5IaG-tQwjzg6Y5kttZoHiydJlvq9Tdn4_YMrxsYhT7a28ZLTEySYMYHll_29gMfGOGnZ7k7esdwp5j8aYinDupfk3Va9AP0paR2UzDxc4tlyCAvy71bO06uSOpMFRG_wc01P5wuyH9imttHl8jQC052CHeyDDG_wTrSthTKdKGbJN9KCoqw')" }}></div>
-                            <h3 className="text-lg font-bold text-[#161c0d] mb-2">Thi công sân vườn</h3>
-                            <p className="text-sm text-gray-500 mb-3 line-clamp-3">Thiết kế và thi công sân vườn trọn gói, tiểu cảnh, hồ cá koi, đài phun nước nghệ thuật.</p>
-                            <a className="text-sm font-semibold text-primary inline-flex items-center" href="#">Chi tiết <span className="material-symbols-outlined text-sm ml-1">chevron_right</span></a>
+                        {/* S1: Thiết kế */}
+                        <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all group border border-olive/5">
+                            <div className="h-48 rounded-xl bg-cover bg-center mb-4 overflow-hidden" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_JAcY-w0BCJWklSOxQte-ZzWzg_8r2V7_Zz5R_3c1U7FixKdlGMKOvRp5-AAdvVt_dIC2ZMG0RjrDFh0I5M9LTmM-5IaG-tQwjzg6Y5kttZoHiydJlvq9Tdn4_YMrxsYhT7a28ZLTEySYMYHll_29gMfGOGnZ7k7esdwp5j8aYinDupfk3Va9AP0paR2UzDxc4tlyCAvy71bO06uSOpMFRG_wc01P5wuyH9imttHl8jQC052CHVpspkkIGDIU1PsKL-17T2WQxFBIYsxvkyVDzcgBw9XLW_87kXP42ez3FGCXmzQ0dLtwMY7dmVHzV56o')" }}>
+                                <div className="w-full h-full bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+                            </div>
+                            <h3 className="text-lg font-bold text-olive mb-2 group-hover:text-primary transition-colors">Dịch vụ Thiết kế</h3>
+                            <p className="text-sm text-olive-light mb-4 line-clamp-3 leading-relaxed">Quy hoạch tổng thể, thiết kế CONCEPT 3D chuyên sâu cho các dự án quy mô lớn và biệt thự cao cấp.</p>
+                            <Link className="text-sm font-bold text-primary inline-flex items-center group/link" to="/dich-vu/thiet-ke">
+                                Tìm hiểu quy trình
+                                <span className="material-symbols-outlined text-sm ml-1 transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                            </Link>
                         </div>
-                        {/* S2 */}
-                        <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
-                            <div className="h-48 rounded-xl bg-cover bg-center mb-4" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxP40ijO69wPd4UAY-_ZEG4o_Rwvf1EiDKJxZvHVtnuEROuJDVY0P0oxDOAe-bHGnAVVw7wkhP_EQdvsYLnN3_FEaxkUtGqwOvap3Jeo-6jS9pagWZnSElGI8Sc8LX4g-XMylPymmIvdcFz1sb7uBj4BGHy2u3ja7Q2wIDhKjuppB44fnorD9La7QfZwCHVpspkkIGDIU1PsKL-17T2WQxFBIYsxvkyVDzcgBw9XLW_87kXP42ez3FGCXmzQ0dLtwMY7dmVHzV56o')" }}></div>
-                            <h3 className="text-lg font-bold text-[#161c0d] mb-2">Chăm sóc &amp; Bảo dưỡng</h3>
-                            <p className="text-sm text-gray-500 mb-3 line-clamp-3">Dịch vụ cắt tỉa, bón phân, phòng trừ sâu bệnh định kỳ giúp cảnh quan luôn xanh tốt.</p>
-                            <a className="text-sm font-semibold text-primary inline-flex items-center" href="#">Chi tiết <span className="material-symbols-outlined text-sm ml-1">chevron_right</span></a>
+                        {/* S2: Thi công */}
+                        <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all group border border-olive/5">
+                            <div className="h-48 rounded-xl bg-cover bg-center mb-4 overflow-hidden" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxP40ijO69wPd4UAY-_ZEG4o_Rwvf1EiDKJxZvHVtnuEROuJDVY0P0oxDOAe-bHGnAVVw7wkhP_EQdvsYLnN3_FEaxkUtGqwOvap3Jeo-6jS9pagWZnSElGI8Sc8LX4g-XMylPymmIvdcFz1sb7uBj4BGHy2u3ja7Q2wIDhKjuppB44fnorD9La7QfZwCHVpspkkIGDIU1PsKL-17T2WQxFBIYsxvkyVDzcgBw9XLW_87kXP42ez3FGCXmzQ0dLtwMY7dmVHzV56o')" }}>
+                                <div className="w-full h-full bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+                            </div>
+                            <h3 className="text-lg font-bold text-olive mb-2 group-hover:text-primary transition-colors">Dịch vụ Thi công</h3>
+                            <p className="text-sm text-olive-light mb-4 line-clamp-3 leading-relaxed">Thi công cảnh quan, sân vườn, hồ cá Koi trọn gói với cam kết giống 3D đến 99%.</p>
+                            <Link className="text-sm font-bold text-primary inline-flex items-center group/link" to="/dich-vu/thi-cong">
+                                Tìm hiểu báo giá
+                                <span className="material-symbols-outlined text-sm ml-1 transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                            </Link>
                         </div>
-                        {/* S3 */}
-                        <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
-                            <div className="h-48 rounded-xl bg-cover bg-center mb-4" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpKl5pR-n2ocKMs2G70vTo5sZM5T3dpfqG8jOPPt4iJZ9tyV-BuY_YIFxLFWVriopto6GHAIH_kwaotyIeY009ihzlWzfzRfi8zUna6QAueWvRGD8zUTxQdekdj_82nI5SQa3gwdUQWEOjsA5RSX5tsBQxwVYOXvV50hfvA87LYahHcEbDKVfnMCegQbIXR2lsnSOZk2tDqPyEWtHtPr3IwykxOYFY_N7etmaGXlBkySxWeFfZuO7CDWQ7OFtT0aZNoSDi5DS_JYA')" }}></div>
-                            <h3 className="text-lg font-bold text-[#161c0d] mb-2">Cung cấp cây bóng mát</h3>
-                            <p className="text-sm text-gray-500 mb-3 line-clamp-3">Hệ thống vườn ươm quy mô lớn, cung cấp cây công trình, cây bóng mát đa dạng kích thước.</p>
-                            <a className="text-sm font-semibold text-primary inline-flex items-center" href="#">Chi tiết <span className="material-symbols-outlined text-sm ml-1">chevron_right</span></a>
+                        {/* S3: Bảo dưỡng */}
+                        <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all group border border-olive/5">
+                            <div className="h-48 rounded-xl bg-cover bg-center mb-4 overflow-hidden" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpKl5pR-n2ocKMs2G70vTo5sZM5T3dpfqG8jOPPt4iJZ9tyV-BuY_YIFxLFWVriopto6GHAIH_kwaotyIeY009ihzlWzfzRfi8zUna6QAueWvRGD8zUTxQdekdj_82nI5SQa3gwdUQWEOjsA5RSX5tsBQxwVYOXvV50hfvA87LYahHcEbDKVfnMCegQbIXR2lsnSOZk2tDqPyEWtHtPr3IwykxOYFY_N7etmaGXlBkySxWeFfZuO7CDWQ7OFtT0aZNoSDi5DS_JYA')" }}>
+                                <div className="w-full h-full bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+                            </div>
+                            <h3 className="text-lg font-bold text-olive mb-2 group-hover:text-primary transition-colors">Chăm sóc &amp; Bảo dưỡng</h3>
+                            <p className="text-sm text-olive-light mb-4 line-clamp-3 leading-relaxed">Duy trì vẻ đẹp bền vững cho cảnh quan với dịch vụ chăm sóc định kỳ chuyên nghiệp.</p>
+                            <span className="text-sm font-bold text-primary inline-flex items-center opacity-50">Sắp ra mắt</span>
                         </div>
-                        {/* S4 */}
-                        <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
-                            <div className="h-48 rounded-xl bg-cover bg-center mb-4" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvx7qglDBZax8oKR36jSnYKAS6QjJAadzTemOK0ld9RQFhLNm_arbP9XA2AHLqWsfS-Bowg6EgRTdyZXz0hZJTWgPRnG1dF_16rVf0Itxq52x8MSe6AF4H4THQYR_rTL824sZt_JPoAb8pqK4nDtzv35LlVQpnALFnZsGtKbwZx0H-8zsjTzowLZuJdmaaUH6m0KGStaAm8JTl1gBzMmv-p5aHaHw9M3jQpWXpnDfQVthrRRnIvTYNXYLW-ZJ5LyCe7XraK5Dezog')" }}></div>
-                            <h3 className="text-lg font-bold text-[#161c0d] mb-2">Giải pháp xanh thông minh</h3>
-                            <p className="text-sm text-gray-500 mb-3 line-clamp-3">Thi công vườn tường đứng, vườn trên mái, hệ thống tưới tự động tiết kiệm nước.</p>
-                            <a className="text-sm font-semibold text-primary inline-flex items-center" href="#">Chi tiết <span className="material-symbols-outlined text-sm ml-1">chevron_right</span></a>
+                        {/* S4: Cung cấp cây */}
+                        <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all group border border-olive/5">
+                            <div className="h-48 rounded-xl bg-cover bg-center mb-4 overflow-hidden" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvx7qglDBZax8oKR36jSnYKAS6QjJAadzTemOK0ld9RQFhLNm_arbP9XA2AHLqWsfS-Bowg6EgRTdyZXz0hZJTWgPRnG1dF_16rVf0Itxq52x8MSe6AF4H4THQYR_rTL824sZt_JPoAb8pqK4nDtzv35LlVQpnALFnZsGtKbwZx0H-8zsjTzowLZuJdmaaUH6m0KGStaAm8JTl1gBzMmv-p5aHaHw9M3jQpWXpnDfQVthrRRnIvTYNXYLW-ZJ5LyCe7XraK5Dezog')" }}>
+                                <div className="w-full h-full bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+                            </div>
+                            <h3 className="text-lg font-bold text-olive mb-2 group-hover:text-primary transition-colors">Cung cấp Cây xanh</h3>
+                            <p className="text-sm text-olive-light mb-4 line-clamp-3 leading-relaxed">Hệ thống vườn ươm đa dạng, cung cấp cây bóng mát, cây công trình chất lượng cao.</p>
+                            <Link className="text-sm font-bold text-primary inline-flex items-center group/link" to="/san-pham">
+                                Xem danh mục
+                                <span className="material-symbols-outlined text-sm ml-1 transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                            </Link>
                         </div>
-                        {/* More services... */}
                     </div>
                 </section>
 
                 {/* Process Steps */}
-                <section className="px-4 md:px-10 py-16 bg-[#161c0d] text-white">
+                <section className="container py-16 bg-[#161c0d] text-white">
                     <div className="text-center mb-16">
                         <span className="text-primary font-bold tracking-widest uppercase text-xs mb-2 block">Quy trình làm việc</span>
                         <h2 className="text-3xl font-bold">6 Bước triển khai dự án</h2>
@@ -175,7 +196,7 @@ const ServicesPage: React.FC = () => {
                 </section>
 
                 {/* Lead Form Section */}
-                <section className="px-4 md:px-10 py-16 bg-[#eef4e7]">
+                <section className="container py-16 bg-[#eef4e7]">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
                         <div className="lg:col-span-7">
                             <h2 className="text-[#161c0d] text-3xl font-bold mb-2">Đăng ký tư vấn miễn phí</h2>

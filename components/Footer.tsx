@@ -42,11 +42,11 @@ const Footer: React.FC = () => {
             <h4 className="text-white font-bold mb-6">Liên kết nhanh</h4>
             <ul className="space-y-3 text-sm">
               {[
-                { label: "Giới thiệu", to: "/dich-vu" },
-                { label: "Dịch vụ Thiết kế", to: "/dich-vu" },
-                { label: "Dịch vụ Thi công", to: "/dich-vu" },
+                { label: "Giới thiệu", to: "/gioi-thieu" },
+                { label: "Dịch vụ Thiết kế", to: "/dich-vu/thiet-ke-canh-quan-san-vuon" },
+                { label: "Dịch vụ Thi công", to: "/dich-vu/thi-cong-canh-quan-san-vuon" },
                 { label: "Dự án tiêu biểu", to: "/du-an" },
-                { label: "Tin tức & Sự kiện", to: "/danh-sach-bai-viet" },
+                { label: "Tin tức & Sự kiện", to: "/tin-tuc" },
                 { label: "Tuyển dụng", to: "#" },
               ].map((link) => (
                 <li key={link.label}>
@@ -62,11 +62,11 @@ const Footer: React.FC = () => {
             <h4 className="text-white font-bold mb-6">Dịch vụ</h4>
             <ul className="space-y-3 text-sm">
               {[
-                { label: "Thiết kế Sân vườn", to: "/dich-vu" },
-                { label: "Thi công Hồ cá Koi", to: "/dich-vu" },
-                { label: "Tường cây xanh", to: "/dich-vu" },
-                { label: "Chăm sóc bảo dưỡng", to: "/dich-vu" },
-                { label: "Cung cấp cây xanh", to: "/danh-sach-san-pham" },
+                { label: "Thiết kế Sân vườn", to: "/dich-vu/thiet-ke-canh-quan-san-vuon" },
+                { label: "Thi công Sân vườn", to: "/dich-vu/thi-cong-canh-quan-san-vuon" },
+                { label: "Thiết kế Quy hoạch", to: "/dich-vu/thiet-ke-quy-hoach" },
+                { label: "Chăm sóc bảo dưỡng", to: "/dich-vu/cham-soc-canh-quan" },
+                { label: "Cung cấp cây xanh", to: "/san-pham" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link className="hover:text-primary transition-colors" to={link.to}>

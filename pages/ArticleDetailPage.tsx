@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ArticleDetailPage: React.FC = () => {
     return (
@@ -7,11 +8,11 @@ const ArticleDetailPage: React.FC = () => {
             <header className="max-w-[1200px] mx-auto pt-12 px-6">
                 {/* Breadcrumbs */}
                 <nav className="flex flex-wrap gap-2 text-sm font-medium mb-6">
-                    <a className="text-gray-500 hover:text-primary" href="/">Trang chủ</a>
+                    <Link className="text-gray-500 hover:text-primary" to="/">Trang chủ</Link>
                     <span className="text-gray-400">/</span>
-                    <a className="text-gray-500 hover:text-primary" href="/danh-sach-bai-viet">Tin tức</a>
+                    <Link className="text-gray-500 hover:text-primary" to="/tin-tuc">Tin tức</Link>
                     <span className="text-gray-400">/</span>
-                    <span className="text-primary">Kiến thức cây xanh</span>
+                    <span className="text-primary uppercase">Kiến thức cây xanh</span>
                 </nav>
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-8 max-w-4xl text-gray-900 dark:text-white">
                     5 TIÊU CHÍ CHỌN CÂY CÔNG TRÌNH PHÙ HỢP KHÍ HẬU MIỀN BẮC
@@ -115,24 +116,24 @@ const ArticleDetailPage: React.FC = () => {
             {/* Related Articles */}
             <section className="max-w-[1200px] mx-auto px-6 py-20 border-t border-gray-100">
                 <div className="flex items-center justify-between mb-10">
-                    <h2 className="text-3xl font-bold">Bài viết liên quan</h2>
-                    <a className="text-primary font-bold flex items-center gap-2 hover:underline" href="/danh-sach-bai-viet">
+                    <h2 className="text-3xl font-bold uppercase tracking-tight text-primary">Bài viết liên quan</h2>
+                    <Link className="text-primary font-bold flex items-center gap-2 hover:underline" to="/tin-tuc">
                         Xem tất cả <span className="material-symbols-outlined">arrow_forward</span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
                     {[
-                        { title: 'Ý nghĩa phong thủy của Tùng La Hán trong cảnh quan', desc: 'Tùng La Hán không chỉ là cây cảnh quý mà còn mang lại sinh khí và sự thịnh vượng...', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDYx_vS31glR2uC6Qxau3ZTShIBGRQK2EcUL9tk9-v9ed6WmHnPpxuNlXsGzHKBgpkefdVVuzOCeRntRCxu2HvYKdG3ewuT0ugRZh7KiNC9l71goK0r8XdxUPa_upc2qutRVMSz0md_r0FKObg3l1pAmhRuhUOmHYoLUEwQQu7OPMYAqexxKyUW4ZkCxrE88uZAiCUkZh6oLv1TT1ZikXXUVkQ4WHlJ6d5jCF4gpOxlIkXiv6vlXQ4fh-mwivztXNA7UmkiHvptgnc' },
-                        { title: '7 Lỗi thường gặp khi tự thiết kế sân vườn mini', desc: 'Việc ham quá nhiều chi tiết hoặc chọn sai loại đất thường dẫn đến sự thất bại...', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhz01OTtfLPJiDGZDw00OtXRCqh6jeBFeh-LRdsV2IT_d3MauBvbvPRNRpDHALxXXqDeytbaVAg8pUC1wQvqgBnd4ToX-TCwyaEAzgQwhnJRbHHnhrZVr6tygV6N2Ld-Wf1XKd7HCPdenDOCld-gglOey93sUqWczxN5S316nhaFwSf-tMmjpzVQhpSq_sWp5hP4oJQpOdBABGNkGeMo3HVlytpoLXeJKLUl8Hn4vL_ADWEqZyN3hW9nQ2PMi259IP3cBwEqhU3Yc' },
-                        { title: 'Lịch trình bón phân định kỳ cho cây thân gỗ lớn', desc: 'Cây công trình cần chế độ dinh dưỡng khác biệt so với cây cảnh trong chậu...', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDDjzPLpvZOxB8ETpNrVJWMgxdMHP0GC3zS7uI3IEvqNYY56qHOvjwJas_OPTfnlMJb1B8daZ5XrRfyGKMBi5NzSnYzo4w9jlOifA2nmMhB9FU4ox3rOtI7oQF3oykZyP4EWTAf93fY5TItTVK_OEREk4adLIiUMHwRJFD0qwA6HwsXwnXOfSWZcSzYh3GtjEkNQHaSaVC-nvBnBQ9Z4VIGsbp_LjebxW34fhZG-qt1IrJATuqx3MsOue65LXW2QJ_JI1J9oyPjdpQ' }
+                        { slug: 'phong-thuy-tung-la-han', title: 'Ý nghĩa phong thủy của Tùng La Hán trong cảnh quan', desc: 'Tùng La Hán không chỉ là cây cảnh quý mà còn mang lại sinh khí và sự thịnh vượng...', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDYx_vS31glR2uC6Qxau3ZTShIBGRQK2EcUL9tk9-v9ed6WmHnPpxuNlXsGzHKBgpkefdVVuzOCeRntRCxu2HvYKdG3ewuT0ugRZh7KiNC9l71goK0r8XdxUPa_upc2qutRVMSz0md_r0FKObg3l1pAmhRuhUOmHYoLUEwQQu7OPMYAqexxKyUW4ZkCxrE88uZAiCUkZh6oLv1TT1ZikXXUVkQ4WHlJ6d5jCF4gpOxlIkXiv6vlXQ4fh-mwivztXNA7UmkiHvptgnc' },
+                        { slug: '7-loi-thiet-ke-san-vuon', title: '7 Lỗi thường gặp khi tự thiết kế sân vườn mini', desc: 'Việc ham quá nhiều chi tiết hoặc chọn sai loại đất thường dẫn đến sự thất bại...', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhz01OTtfLPJiDGZDw00OtXRCqh6jeBFeh-LRdsV2IT_d3MauBvbvPRNRpDHALxXXqDeytbaVAg8pUC1wQvqgBnd4ToX-TCwyaEAzgQwhnJRbHHnhrZVr6tygV6N2Ld-Wf1XKd7HCPdenDOCld-gglOey93sUqWczxN5S316nhaFwSf-tMmjpzVQhpSq_sWp5hP4oJQpOdBABGNkGeMo3HVlytpoLXeJKLUl8Hn4vL_ADWEqZyN3hW9nQ2PMi259IP3cBwEqhU3Yc' },
+                        { slug: 'lich-trinh-bon-phan', title: 'Lịch trình bón phân định kỳ cho cây thân gỗ lớn', desc: 'Cây công trình cần chế độ dinh dưỡng khác biệt so với cây cảnh trong chậu...', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDDjzPLpvZOxB8ETpNrVJWMgxdMHP0GC3zS7uI3IEvqNYY56qHOvjwJas_OPTfnlMJb1B8daZ5XrRfyGKMBi5NzSnYzo4w9jlOifA2nmMhB9FU4ox3rOtI7oQF3oykZyP4EWTAf93fY5TItTVK_OEREk4adLIiUMHwRJFD0qwA6HwsXwnXOfSWZcSzYh3GtjEkNQHaSaVC-nvBnBQ9Z4VIGsbp_LjebxW34fhZG-qt1IrJATuqx3MsOue65LXW2QJ_JI1J9oyPjdpQ' }
                     ].map((post, idx) => (
-                        <div key={idx} className="group cursor-pointer">
-                            <div className="aspect-video rounded-xl overflow-hidden mb-4 shadow-sm">
+                        <Link key={idx} to={`/tin-tuc/${post.slug}`} className="group cursor-pointer">
+                            <div className="aspect-video rounded-xl overflow-hidden mb-4 shadow-sm border border-gray-100 dark:border-gray-800">
                                 <img alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={post.img} />
                             </div>
-                            <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">{post.title}</h3>
+                            <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors uppercase">{post.title}</h3>
                             <p className="text-sm text-gray-500 line-clamp-2">{post.desc}</p>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </section>

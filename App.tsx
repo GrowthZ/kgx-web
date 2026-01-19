@@ -4,23 +4,30 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
-import ProjectsPage2 from './pages/ProjectsPage2';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 import ServicesPage from './pages/ServicesPage';
 import ProductListPage from './pages/ProductListPage';
 import ArticlesPage from './pages/ArticlesPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
-import ThiCongSanVuonPage from './pages/ThiCongSanVuonPage';
-import DanhSachCayPage from './pages/DanhSachCayPage';
+import ServiceDetailPage from './pages/ServiceDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import TreeCategoryPage from './pages/TreeCategoryPage';
 
-// Placeholder components - will be replaced with real page components
-const Placeholder = ({ title }: { title: string }) => (
-  <div className="flex items-center justify-center min-h-[50vh]">
-    <h1 className="text-3xl font-bold">{title} Page</h1>
-  </div>
-);
+import MasterPlanningPage from './pages/MasterPlanningPage';
+import GardenConstructionPage from './pages/GardenConstructionPage';
+import GardenDesignPage from './pages/GardenDesignPage';
+import ResortParkDesignPage from './pages/ResortParkDesignPage';
+import RooftopGardenPage from './pages/RooftopGardenPage';
+import VerticalGardenPage from './pages/VerticalGardenPage';
+import LandscapeMaintenancePage from './pages/LandscapeMaintenancePage';
+import LargeTreeInstallationPage from './pages/LargeTreeInstallationPage';
+import GreenConsultingPage from './pages/GreenConsultingPage';
+import CraneLogisticsPage from './pages/CraneLogisticsPage';
+import CleanAgriculturePage from './pages/CleanAgriculturePage';
+import ArchitectureDesignPage from './pages/ArchitectureDesignPage';
+import TissueCultureBiotechPage from './pages/TissueCultureBiotechPage';
 
 const App: React.FC = () => {
   return (
@@ -29,16 +36,38 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/du-an" element={<ProjectsPage />} />
-          <Route path="/du-an-2" element={<ProjectsPage2 />} />
-          <Route path="/dich-vu" element={<ServicesPage />} />
-          <Route path="/danh-sach-san-pham" element={<ProductListPage />} />
-          <Route path="/danh-sach-bai-viet" element={<ArticlesPage />} />
-          <Route path="/chi-tiet-san-pham" element={<ProductDetailPage />} />
-          <Route path="/chi-tiet-bai-viet" element={<ArticleDetailPage />} />
-          <Route path="/thi-cong-san-vuon" element={<ThiCongSanVuonPage />} />
-          <Route path="/danh-sach-cay" element={<DanhSachCayPage />} />
           <Route path="/gioi-thieu" element={<AboutPage />} />
+
+          <Route path="/dich-vu" element={<ServicesPage />} />
+
+          {/* Individual Service Pages */}
+          <Route path="/dich-vu/thiet-ke-canh-quan-san-vuon" element={<GardenDesignPage />} />
+          <Route path="/dich-vu/thiet-ke-quy-hoach" element={<MasterPlanningPage />} />
+          <Route path="/dich-vu/thiet-ke-kien-truc" element={<ArchitectureDesignPage />} />
+          <Route path="/dich-vu/thiet-ke-khu-nghi-duong-cong-vien" element={<ResortParkDesignPage />} />
+          <Route path="/dich-vu/thiet-ke-vuon-tren-mai" element={<RooftopGardenPage />} />
+          <Route path="/dich-vu/thiet-ke-vuon-thang-dung" element={<VerticalGardenPage />} />
+
+          <Route path="/dich-vu/thi-cong-canh-quan-san-vuon" element={<GardenConstructionPage />} />
+          <Route path="/dich-vu/cham-soc-canh-quan" element={<LandscapeMaintenancePage />} />
+          <Route path="/dich-vu/thi-cong-cay-cong-trinh" element={<LargeTreeInstallationPage />} />
+          <Route path="/dich-vu/tu-van-giai-phap-xanh" element={<GreenConsultingPage />} />
+          <Route path="/dich-vu/van-tai-cau-tu-hanh" element={<CraneLogisticsPage />} />
+          <Route path="/dich-vu/nuoi-cay-mo-cong-nghe-cao" element={<TissueCultureBiotechPage />} />
+          <Route path="/dich-vu/thi-cong-nong-nghiep-sach" element={<CleanAgriculturePage />} />
+
+          <Route path="/dich-vu/:slug" element={<ServiceDetailPage />} />
+
+          <Route path="/san-pham" element={<ProductListPage />} />
+          <Route path="/san-pham/nhom/:categorySlug" element={<TreeCategoryPage />} />
+          <Route path="/san-pham/:slug" element={<ProductDetailPage />} />
+
+          <Route path="/du-an" element={<ProjectsPage />} />
+          <Route path="/du-an/:slug" element={<ProjectDetailPage />} />
+
+          <Route path="/tin-tuc" element={<ArticlesPage />} />
+          <Route path="/tin-tuc/:slug" element={<ArticleDetailPage />} />
+
           <Route path="/lien-he" element={<ContactPage />} />
         </Routes>
       </main>

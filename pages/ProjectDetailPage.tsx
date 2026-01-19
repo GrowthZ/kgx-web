@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProjectsPage2: React.FC = () => {
+const ProjectDetailPage: React.FC = () => {
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-200">
             <main className="w-full flex flex-col items-center">
@@ -260,4 +260,4 @@ const ProjectsPage2: React.FC = () => {
     );
 };
 
-export default ProjectsPage2;
+export default ProjectDetailPage;

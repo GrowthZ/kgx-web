@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KGX Landscape - Dịch vụ Bảo dưỡng Cảnh quan</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#4d5421",
+                    "primary-dark": "#3a4019",
+                    "accent": "#f97316", // Warm orange
+                    "background-light": "#fafaf9",
+                    "background-dark": "#161612",
+                    "surface-light": "#ffffff",
+                    "surface-dark": "#23231f",
+                    "text-main": "#171811",
+                    "text-muted": "#57594d",
+                },
+                fontFamily: {
+                    "display": ["Inter", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem", 
+                    "lg": "0.5rem", 
+                    "xl": "0.75rem", 
+                    "2xl": "1rem",
+                    "full": "9999px"
+                },
+                boxShadow: {
+                    'soft': '0 10px 40px -10px rgba(77, 84, 33, 0.08)',
+                    'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                }
+            },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-filled {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main antialiased selection:bg-primary/20">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-[#e0e1d5] bg-background-light/95 backdrop-blur-md">
+<div class="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 lg:px-0">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">yard</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold leading-none tracking-tight text-primary">KGX Landscape</span>
+<span class="text-xs font-medium text-text-muted">Kiến tạo không gian xanh</span>
+</div>
+</div>
+<!-- Navigation (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Trang chủ</a>
+<a class="text-sm font-bold text-primary" href="#">Dịch vụ</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Dự án</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Tin tức</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Liên hệ</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-accent">call</span>
+<span>0868 462 462</span>
+</div>
+<button class="hidden sm:flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-primary-dark hover:shadow-lg active:scale-95">
+                    Nhận báo giá
+                </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full flex flex-col">
+<!-- Page Hero (Simple) -->
+<div class="w-full bg-background-light pt-16 pb-12">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-0">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-sm font-medium text-accent uppercase tracking-wider">
+<span class="h-px w-8 bg-accent"></span>
+<span>Dịch vụ chuyên nghiệp</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight leading-[1.15]">
+                        Chăm sóc &amp; Bảo dưỡng <br class="hidden md:block"/>Cảnh quan Toàn diện
+                    </h1>
+<p class="mt-2 max-w-2xl text-lg text-text-muted leading-relaxed">
+                        Giữ gìn vẻ đẹp bền vững cho không gian xanh của bạn với quy trình chăm sóc chuẩn kỹ thuật từ đội ngũ chuyên gia KGX.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Section 1: The Need -->
+<section class="py-16 md:py-24 bg-white relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#f0f2eb] to-transparent opacity-50 pointer-events-none"></div>
+<div class="mx-auto max-w-[1200px] px-6 lg:px-0 relative z-10">
+<div class="mb-12 max-w-3xl">
+<h2 class="text-3xl font-bold text-text-main mb-4">Vì sao cảnh quan cần được <span class="text-primary underline decoration-accent/50 decoration-4 underline-offset-4">bảo dưỡng chuyên nghiệp</span>?</h2>
+<p class="text-text-muted text-lg">Cảnh quan đẹp không chỉ ở thiết kế ban đầu mà phụ thuộc 80% vào quá trình chăm sóc sau thi công.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<div class="group flex flex-col md:flex-row gap-6 p-8 rounded-2xl bg-background-light border border-[#e0e1d5] hover:border-primary/30 hover:shadow-soft transition-all duration-300">
+<div class="shrink-0">
+<div class="size-16 rounded-full bg-red-50 flex items-center justify-center text-red-500 group-hover:bg-red-100 transition-colors">
+<span class="material-symbols-outlined text-3xl">potted_plant</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-text-main group-hover:text-primary transition-colors">Cây chết sau thi công</h3>
+<p class="text-text-muted leading-relaxed">
+                                Cây xanh dễ bị suy yếu, vàng lá và chết hàng loạt nếu không được theo dõi độ ẩm, dinh dưỡng và bén rễ đúng kỹ thuật ngay sau giai đoạn trồng mới.
+                            </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col md:flex-row gap-6 p-8 rounded-2xl bg-background-light border border-[#e0e1d5] hover:border-primary/30 hover:shadow-soft transition-all duration-300">
+<div class="shrink-0">
+<div class="size-16 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 group-hover:bg-orange-100 transition-colors">
+<span class="material-symbols-outlined text-3xl">person_alert</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-text-main group-hover:text-primary transition-colors">Thiếu người chăm sóc chuyên môn</h3>
+<p class="text-text-muted leading-relaxed">
+                                Bảo vệ, tạp vụ thường thiếu kiến thức nông nghiệp, dẫn đến việc tưới sai cách, bón phân quá liều hoặc cắt tỉa làm hỏng dáng cây, gây lãng phí chi phí đầu tư.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Services Provided -->
+<section class="py-16 md:py-24 bg-background-light">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-0">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<!-- Left Content -->
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div>
+<span class="text-accent font-bold tracking-widest text-sm uppercase mb-2 block">Giải pháp toàn diện</span>
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Dịch vụ KGX cung cấp</h2>
+<p class="text-text-muted text-lg mb-8">
+                                Chúng tôi mang đến quy trình chăm sóc khép kín, đảm bảo cây xanh luôn phát triển khỏe mạnh và duy trì thẩm mỹ như thiết kế ban đầu.
+                            </p>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="mt-1 flex items-center justify-center size-6 rounded-full bg-primary/10 text-primary shrink-0">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-text-main">Cắt tỉa và tạo dáng cây xanh</h4>
+<p class="text-text-muted text-sm mt-1">Duy trì form dáng chuẩn, loại bỏ cành khô, lá già để cây thông thoáng.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 flex items-center justify-center size-6 rounded-full bg-primary/10 text-primary shrink-0">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-text-main">Bón phân và cải tạo đất định kỳ</h4>
+<p class="text-text-muted text-sm mt-1">Cung cấp dinh dưỡng phù hợp từng loại cây, xới đất giúp rễ hô hấp tốt.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 flex items-center justify-center size-6 rounded-full bg-primary/10 text-primary shrink-0">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-text-main">Kiểm soát và xử lý sâu bệnh hại</h4>
+<p class="text-text-muted text-sm mt-1">Phun thuốc phòng ngừa sinh học, xử lý kịp thời các mầm bệnh.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 flex items-center justify-center size-6 rounded-full bg-primary/10 text-primary shrink-0">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-text-main">Thay thế cây yếu và cây chết</h4>
+<p class="text-text-muted text-sm mt-1">Bảo hành cây trồng, thay thế ngay lập tức để không làm trống cảnh quan.</p>
+</div>
+</li>
+</ul>
+<div class="mt-4">
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors border-b-2 border-primary/20 pb-1 hover:border-accent" href="#">
+                                Xem quy trình chi tiết
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right Image -->
+<div class="order-1 lg:order-2 relative group">
+<div class="absolute -inset-4 bg-primary/5 rounded-2xl -z-10 rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+<div class="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/5] lg:aspect-auto lg:h-[600px]">
+<img alt="Professional landscaping team in uniform trimming a large green hedge perfectly flat in a sunny garden" class="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfeZ51n4XNikFCyNs-WxoVFZ7D5GaEyc6HLze0IOvTvRcC_Xj_uidtyAF5snzDT3lAZdTvs2GKr455PU9U-eFTI7zPtL2stXiLGj5-4RspYa0UKWvF82L1DeapjTNbeFVQb1PYK-9XQYtQKN2RnPgNxgIOWs-ECEBVbzo9v0Pv3qYiuckerJbRiuHBq-mWPnqy83ynW-rn06oNVZzQg75KIhpAG0hqUSz9-zycYlVSjKDASNd9d21oBiQ1I9csyP8xbWhbG0Vz6ZI"/>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-8">
+<div class="flex items-center gap-3 text-white/90">
+<span class="material-symbols-filled text-accent">verified</span>
+<span class="font-medium">Đội ngũ kỹ thuật viên &gt; 5 năm kinh nghiệm</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Target Audience -->
+<section class="py-16 md:py-24 bg-white">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-0">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-text-main">Đối tượng phù hợp</h2>
+<p class="mt-4 text-text-muted">Chúng tôi cung cấp gói dịch vụ linh hoạt cho mọi quy mô cảnh quan</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group flex flex-col rounded-xl overflow-hidden bg-background-light border border-[#e0e1d5] shadow-sm hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+<div class="h-56 overflow-hidden relative">
+<img alt="Modern luxury villa with manicured lawn and tropical plants" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXQrRM0XOxfcMWBa2OaDJZdv4GI2zCHb5_TL4ZSZ4j_zpSO1jyJ-byErsStWrS8lThcMmp1hjBFoQoDU5QHQbLGrPILc4wISdrDGyGkRVRyk5LRKOGCcHM18rQal0HT-0Lyb9mp_c6OdnZgrHm5GgXWtbt0U1mDEXNm8Sp1UCQ3KZBK6mn1MHFqqZVsBG49KnKEE_-PT2y8HNvCQ9xWkisgZLUlMhoJbxwHNeJ9Kfx6hAqX3-e0z6Efkmcr-IFvCL1npx6YQsjrQs"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary">Biệt thự</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold text-text-main mb-2">Khu dân cư &amp; Biệt thự</h3>
+<p class="text-text-muted text-sm line-clamp-3">
+                                Chăm sóc sân vườn tư gia, đảm bảo không gian xanh thư giãn, sạch sẽ và an toàn cho gia đình.
+                            </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col rounded-xl overflow-hidden bg-background-light border border-[#e0e1d5] shadow-sm hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+<div class="h-56 overflow-hidden relative">
+<img alt="Luxury resort swimming pool surrounded by palm trees and vibrant landscaping" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByrqbc23G0BAlAP39UcPX-L46tAK498DPrezDgqRdA5rYhwRf3SKELzlDBU-M0UwdxosQr61O9tRwhu0ss7NIKsz7JE6zWNTE3ia8OHtMZFFehEX4P_XlX45Bd-oyIIl_cBF0SgNXna_V3NaZajbiTsth9fC1TXiasrInVZc7m3YY73k1sTAsY7IyqhSjvGMLZoIHA2ZztOT0YdUv_edUPxnZj1zRT5WtA1CEJa8XgC37nTa8FT94N6_MSDDPXT0Ii7IKDqzaKB44"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary">Resort</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold text-text-main mb-2">Resort &amp; Khu nghỉ dưỡng</h3>
+<p class="text-text-muted text-sm line-clamp-3">
+                                Duy trì cảnh quan đẳng cấp 5 sao, tạo ấn tượng mạnh mẽ cho du khách ngay từ cái nhìn đầu tiên.
+                            </p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col rounded-xl overflow-hidden bg-background-light border border-[#e0e1d5] shadow-sm hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+<div class="h-56 overflow-hidden relative">
+<img alt="Modern corporate office building exterior with green plant beds and trees" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8PNTa9k3nxlNRaHFnXF4HZy0RifqZwrtnXHBfXy5oneroF9mFA2QYsQpkVsucIKRRhJ1dwi6eMi_2bgS7emO1PeZbmkm-C3UQwtJ1nHjpIWhxhfLkijBk9qXK7NkNIaj_VbmMzEGiy5nqsS6bNLjL1VKp7iH0L9HzKzObDoWiLO0sgaXFHzTfvhC99ZgDQ08hDdHpk-PYUqGRqdNCgW0w3cKWoOaW0m1Bjr-e0tJrUm5TpQv42jfigsRNK5n2RdYTCylS9mdDrGM"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary">Doanh nghiệp</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold text-text-main mb-2">Doanh nghiệp &amp; Nhà xưởng</h3>
+<p class="text-text-muted text-sm line-clamp-3">
+                                Tạo môi trường làm việc xanh, chuyên nghiệp, nâng cao hình ảnh thương hiệu trong mắt đối tác.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Benefits -->
+<section class="py-16 md:py-24 bg-background-light">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-0">
+<h2 class="text-3xl font-bold text-text-main mb-12 text-center">Lợi ích của bảo dưỡng định kỳ</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Benefit Block 1 -->
+<div class="bg-primary text-white p-10 rounded-2xl flex flex-col justify-between min-h-[280px] relative overflow-hidden group">
+<!-- Abstract Pattern -->
+<div class="absolute top-0 right-0 p-8 opacity-10 transform translate-x-1/4 -translate-y-1/4">
+<span class="material-symbols-outlined text-[200px]">park</span>
+</div>
+<div class="relative z-10">
+<div class="size-14 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">spa</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Duy trì cảnh quan ổn định</h3>
+<p class="text-white/80 text-lg leading-relaxed">
+                                Cây xanh luôn giữ được độ tươi tốt, mật độ lá đồng đều và dáng thế đẹp mắt quanh năm, bất kể điều kiện thời tiết.
+                            </p>
+</div>
+</div>
+<!-- Benefit Block 2 -->
+<div class="bg-white border border-[#e0e1d5] p-10 rounded-2xl flex flex-col justify-between min-h-[280px] relative overflow-hidden group hover:border-accent/50 transition-colors">
+<div class="relative z-10">
+<div class="size-14 bg-green-50 rounded-lg flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">savings</span>
+</div>
+<h3 class="text-2xl font-bold text-text-main mb-4">Giảm chi phí thay thế dài hạn</h3>
+<p class="text-text-muted text-lg leading-relaxed">
+                                Phát hiện sớm sâu bệnh và xử lý dinh dưỡng kịp thời giúp kéo dài tuổi thọ cây, hạn chế tối đa việc phải mua cây mới thay thế tốn kém.
+                            </p>
+</div>
+<!-- Abstract Pattern -->
+<div class="absolute bottom-0 right-0 p-8 opacity-5 transform translate-x-1/4 translate-y-1/4">
+<span class="material-symbols-outlined text-[200px] text-primary">attach_money</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: CTA -->
+<section class="py-16 bg-primary relative overflow-hidden">
+<!-- Background Image Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Close up of green fern leaves texture background" class="w-full h-full object-cover opacity-10 mix-blend-overlay" data-alt="Close up of green fern leaves texture background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOySifLaU1R_871r-aSW8Bm4IDhG9N5gyC5tyzcLbhkB2A3f-zleFL4kEH6Z-GSWRW4mfBOHhElYByjJWC0rHzSO5VmvJp9f6thvhdV-jPxIqEJtCMJYJSbOPAQ6UOCFSpWBzBKJdAWm1WtCR9NKbJWo2KIFabbvhWNHcKYiSyE3y9c4LJOb0ZFXE5CK7y3sEMT7poTtzZiRVOXVGE-iUSmPyMFMDWi7WDNQ_63E9E19jWmmGcUkE6oX4s6ZwV4Y_Tnapx5fwyz3g"/>
+</div>
+<div class="mx-auto max-w-[1200px] px-6 lg:px-0 relative z-10 text-center">
+<span class="inline-block py-1 px-3 rounded-full bg-white/10 text-white text-xs font-bold tracking-wider mb-6 backdrop-blur-sm border border-white/10">KGX LANDSCAPE</span>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Duy trì mảng xanh <br/> luôn bền đẹp cùng KGX
+                </h2>
+<p class="text-white/80 max-w-2xl mx-auto mb-10 text-lg">
+                    Liên hệ ngay để được khảo sát hiện trạng miễn phí và nhận phương án bảo dưỡng tối ưu nhất cho công trình của bạn.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="px-8 py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-lg text-lg transition-all shadow-lg hover:shadow-orange-500/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">calendar_month</span>
+                        Nhận tư vấn bảo dưỡng
+                    </button>
+<button class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg text-lg hover:bg-white hover:text-primary transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">call</span>
+                        0868 462 462
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-dark text-white pt-20 pb-10 border-t border-white/10">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-0">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<!-- Company Info -->
+<div class="col-span-1 md:col-span-2 lg:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">yard</span>
+<span class="text-2xl font-bold">KGX</span>
+</div>
+<p class="text-gray-400 mb-6 leading-relaxed">
+                        Đơn vị hàng đầu về thiết kế, thi công và bảo dưỡng cảnh quan tại Thái Nguyên và các tỉnh phía Bắc.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="text-xs">FB</span>
+</a>
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="text-xs">IG</span>
+</a>
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="text-xs">YT</span>
+</a>
+</div>
+</div>
+<!-- Contact -->
+<div>
+<h4 class="text-lg font-bold mb-6 text-white">Liên hệ</h4>
+<ul class="space-y-4 text-gray-400">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">location_on</span>
+<span>TP. Thái Nguyên, Tỉnh Thái Nguyên</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+<span>0868 462 462</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span>info@kgx.vn</span>
+</li>
+</ul>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-lg font-bold mb-6 text-white">Dịch vụ</h4>
+<ul class="space-y-3 text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Thiết kế cảnh quan</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Thi công sân vườn</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bảo dưỡng định kỳ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cung cấp cây xanh</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Hồ cá Koi</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h4 class="text-lg font-bold mb-6 text-white">Đăng ký tin tức</h4>
+<p class="text-gray-400 mb-4 text-sm">Nhận mẹo chăm sóc cây xanh hàng tuần.</p>
+<div class="flex flex-col gap-3">
+<input class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Email của bạn" type="email"/>
+<button class="bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-lg transition-colors">Đăng ký</button>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+<p>© 2024 KGX Landscape. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Điều khoản</a>
+<a class="hover:text-white transition-colors" href="#">Chính sách bảo mật</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

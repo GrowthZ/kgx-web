@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KGX - Thi công nông nghiệp sạch</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4a5a30",
+                        "primary-hover": "#3a4625",
+                        "accent": "#E9724C",
+                        "background-light": "#f6faf4",
+                        "background-dark": "#1a1c16",
+                        "surface": "#ffffff",
+                        "surface-dark": "#2a2c25",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "md": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(74, 90, 48, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#151712] dark:text-[#f6faf4] antialiased min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-[#e0e5da] bg-white/95 backdrop-blur-sm dark:bg-[#1a1c16]/95">
+<div class="mx-auto max-w-[1200px] px-6 h-20 flex items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded bg-primary text-white">
+<span class="material-symbols-outlined" style="font-size: 24px;">agriculture</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-primary dark:text-white">KGX</h1>
+</div>
+<!-- Navigation -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Trang chủ</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Giới thiệu</a>
+<a class="text-sm font-bold text-primary" href="#">Dịch vụ</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dự án</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Tin tức</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-3">
+<button class="hidden md:flex h-10 items-center justify-center rounded-md bg-[#eeefeb] px-4 text-sm font-bold text-[#151712] hover:bg-[#e0e2dd] transition-colors dark:bg-surface-dark dark:text-white">
+<span class="material-symbols-outlined mr-2 text-primary" style="font-size: 18px;">call</span>
+                    0868 462 462
+                </button>
+<button class="flex h-10 items-center justify-center rounded-md bg-primary px-5 text-sm font-bold text-white shadow-sm hover:bg-primary-hover transition-colors">
+                    Nhận tư vấn
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full flex flex-col items-center">
+<!-- Intro Header -->
+<section class="w-full pt-16 pb-8 px-6 max-w-[1200px]">
+<div class="flex flex-col gap-2">
+<span class="text-primary font-bold text-sm tracking-widest uppercase">Dịch vụ chuyên sâu</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-[#151712] dark:text-white leading-tight">
+                    Thi Công Nông Nghiệp Sạch
+                </h2>
+<p class="text-[#5c6655] dark:text-[#a0a89a] mt-2 max-w-2xl text-lg">
+                    Kiến tạo môi trường canh tác bền vững với công nghệ nhà màng và hệ thống kiểm soát vi khí hậu tiên tiến.
+                </p>
+</div>
+</section>
+<!-- Section 1: Specialized Characteristics -->
+<section class="w-full py-10 px-6 max-w-[1200px]">
+<div class="flex flex-col gap-6 mb-8 border-l-4 border-primary pl-4">
+<h3 class="text-xl font-bold uppercase tracking-wide text-[#151712] dark:text-white">
+                    ĐẶC THÙ TRONG THI CÔNG
+                </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+<!-- Card 1 -->
+<div class="group relative flex flex-col gap-5 p-8 rounded-xl bg-white dark:bg-surface-dark shadow-soft border border-transparent hover:border-[#dce0d7] transition-all duration-300">
+<div class="size-14 rounded-lg bg-[#f0f4ec] dark:bg-[#34382e] flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-size: 32px;">engineering</span>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-xl font-bold text-[#151712] dark:text-white">Yêu cầu kỹ thuật cao</h4>
+<p class="text-[#5c6655] dark:text-[#a0a89a] leading-relaxed">
+                            Ứng dụng công nghệ nhà màng đa khẩu độ, hệ khung thép chịu lực cường độ cao và vật liệu che phủ tiên tiến (Israel/Japan). Đảm bảo kết cấu vững chắc trước gió bão, tối ưu hóa độ bền lên đến 10-15 năm.
+                        </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col gap-5 p-8 rounded-xl bg-white dark:bg-surface-dark shadow-soft border border-transparent hover:border-[#dce0d7] transition-all duration-300">
+<div class="size-14 rounded-lg bg-[#f0f4ec] dark:bg-[#34382e] flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-size: 32px;">thermostat</span>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-xl font-bold text-[#151712] dark:text-white">Kiểm soát môi trường</h4>
+<p class="text-[#5c6655] dark:text-[#a0a89a] leading-relaxed">
+                            Thiết lập hệ thống vi khí hậu khép kín: tự động điều chỉnh nhiệt độ, độ ẩm và cường độ ánh sáng. Ngăn chặn côn trùng gây hại tuyệt đối, giảm thiểu 90% việc sử dụng thuốc bảo vệ thực vật.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: KGX Solutions -->
+<section class="w-full py-16 px-6 bg-white dark:bg-surface-dark border-y border-[#eeefeb] dark:border-[#2a2c25]">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-6 mb-10 border-l-4 border-accent pl-4">
+<h3 class="text-xl font-bold uppercase tracking-wide text-[#151712] dark:text-white">
+                        GIẢI PHÁP TRIỂN KHAI TỪ KGX
+                    </h3>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Text Content -->
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div class="space-y-4">
+<h4 class="text-2xl font-bold text-[#151712] dark:text-white">Hệ thống canh tác &amp; Tự động hóa toàn diện</h4>
+<p class="text-[#5c6655] dark:text-[#a0a89a]">
+                                KGX cung cấp giải pháp trọn gói từ khâu thiết kế đến vận hành, giúp tối ưu năng suất cây trồng trên từng mét vuông đất.
+                            </p>
+</div>
+<ul class="flex flex-col gap-4">
+<li class="flex gap-4 items-start">
+<span class="flex-shrink-0 flex items-center justify-center size-6 rounded-full bg-primary/10 text-primary mt-0.5">
+<span class="material-symbols-outlined" style="font-size: 16px;">check</span>
+</span>
+<div>
+<strong class="block text-[#151712] dark:text-white font-semibold">Hệ thống thủy canh &amp; tưới nhỏ giọt</strong>
+<span class="text-sm text-[#5c6655] dark:text-[#a0a89a]">Công nghệ tưới chính xác từ Israel, tiết kiệm 40-60% nước và phân bón.</span>
+</div>
+</li>
+<li class="flex gap-4 items-start">
+<span class="flex-shrink-0 flex items-center justify-center size-6 rounded-full bg-primary/10 text-primary mt-0.5">
+<span class="material-symbols-outlined" style="font-size: 16px;">check</span>
+</span>
+<div>
+<strong class="block text-[#151712] dark:text-white font-semibold">Nhà màng nông nghiệp công nghệ cao</strong>
+<span class="text-sm text-[#5c6655] dark:text-[#a0a89a]">Kết cấu vòm hở hoặc kín, lưới cắt nắng tự động, quạt đối lưu không khí.</span>
+</div>
+</li>
+<li class="flex gap-4 items-start">
+<span class="flex-shrink-0 flex items-center justify-center size-6 rounded-full bg-primary/10 text-primary mt-0.5">
+<span class="material-symbols-outlined" style="font-size: 16px;">check</span>
+</span>
+<div>
+<strong class="block text-[#151712] dark:text-white font-semibold">Cảm biến &amp; IoT</strong>
+<span class="text-sm text-[#5c6655] dark:text-[#a0a89a]">Hệ thống châm phân tự động (Fertigation), giám sát EC/pH qua ứng dụng di động 24/7.</span>
+</div>
+</li>
+</ul>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:text-primary-hover hover:underline transition-all" href="#">
+                                Xem chi tiết thông số kỹ thuật
+                                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Image Content -->
+<div class="relative order-1 lg:order-2 h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden shadow-xl group">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Interior of a modern high-tech greenhouse with lush green plants in rows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsRGcrwpnYNiisnis_GuI83PLmY80vfNjRKgPDz5TMbOT6kr2pEKkWbaiJpfZVwn5_hhFlEFXsCkicRr8krR6My7pUqhD3Lspdjou0oc8fJkXZ_5t4_g3LIFePyevW5U2bn07g-bOVW4W2jsMXIWAPst7jJ3CQVnn6TpNx9Yl09Tulf1BqbrqrfS4AAqTL2zLTAG0Ys2EfpvV7o31yDthtrSeh9Bavwb9MdLkkKYrtIU5a_i9YwhX_nRooU-rQj_VC1JsBejQjz8I");'>
+</div>
+<div class="absolute bottom-6 left-6 right-6 z-20">
+<div class="bg-white/90 dark:bg-black/80 backdrop-blur-md p-4 rounded-lg border-l-4 border-primary max-w-sm ml-auto lg:ml-0">
+<span class="text-xs font-bold text-primary uppercase block mb-1">Dự án tiêu biểu</span>
+<p class="text-sm font-medium text-slate-800 dark:text-slate-200">Hệ thống nhà màng Farmstay Hòa Bình - Quy mô 2.5ha</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Target Audience -->
+<section class="w-full py-16 px-6 max-w-[1200px]">
+<div class="text-center mb-12">
+<span class="text-primary font-bold text-sm tracking-widest uppercase block mb-2">Khách hàng của chúng tôi</span>
+<h3 class="text-3xl font-extrabold text-[#151712] dark:text-white">ĐỐI TƯỢNG PHÙ HỢP</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Audience 1 -->
+<div class="flex flex-col group cursor-pointer">
+<div class="relative h-64 md:h-80 w-full rounded-t-xl overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Large commercial hydroponic lettuce farm indoor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBX8odHsr6TYSjsdP3ICYo5sNkohxEiEjkmcUvABiRtD9U6uQzVtcFEq3Eso8uktYu5BwklFD_tkjYU2K3hNAp-Br3_LrbmtRRC3mGz_EsH639Xx4mPZcn8Mw8thxfMSvJCdHtNsxouL8uYcbgNzXZsQsXUIXUCzLu2mMlv1OuTOtZaHeg4AzhiDrGA1si2tYdnggbUPrSZ-8M12B0UU196Lcc2g9_hFsvDhEmHhbNXYZrO70iaBEdpairqRuMN3fsImiUecefmI1g");'>
+</div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-6 rounded-b-xl shadow-sm border-x border-b border-[#dce0d7] dark:border-[#2a2c25]">
+<h4 class="text-xl font-bold text-[#151712] dark:text-white mb-2">Trang trại &amp; Khu sản xuất tập trung</h4>
+<p class="text-[#5c6655] dark:text-[#a0a89a] text-sm leading-relaxed mb-4">
+                            Giải pháp quy mô lớn cho các hợp tác xã, doanh nghiệp xuất khẩu nông sản. Tối ưu hóa chi phí vận hành và đồng bộ hóa chất lượng sản phẩm đầu ra.
+                        </p>
+<span class="text-primary text-sm font-bold flex items-center group-hover:translate-x-1 transition-transform">
+                            Khám phá mô hình <span class="material-symbols-outlined ml-1" style="font-size: 16px;">arrow_right_alt</span>
+</span>
+</div>
+</div>
+<!-- Audience 2 -->
+<div class="flex flex-col group cursor-pointer">
+<div class="relative h-64 md:h-80 w-full rounded-t-xl overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Small greenhouse garden with various plants and flowers" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnL3ocUHxbZjBF60r6S1appT1Z3t77B7OvvXdd8spZ3jy6EFVQpvPlfSYTjKO4cIXDWAi9SNmoM2XsuU2z0G1g2gtcJS3gEsLTYFeywpqCUTYRArTiN5z_NIgPGiGLrfb64mRgxGlcCauBmPspmmgbZeFIIkvnTd41WsL4Hv2b_swmwhzb0YdWpttWXTO9hM9JZPuB4k7dSlU4egcSfwXqy2baMfA5S-CkOCVYs2H6CuVl3HWRPIgdYr3Tb7XRoVpLC01GDolTGMA");'>
+</div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-6 rounded-b-xl shadow-sm border-x border-b border-[#dce0d7] dark:border-[#2a2c25]">
+<h4 class="text-xl font-bold text-[#151712] dark:text-white mb-2">Mô hình nông nghiệp nhỏ &amp; Gia đình</h4>
+<p class="text-[#5c6655] dark:text-[#a0a89a] text-sm leading-relaxed mb-4">
+                            Thiết kế linh hoạt cho farmstay, nhà vườn nghỉ dưỡng hoặc sân thượng đô thị. Mang lại nguồn thực phẩm sạch và không gian xanh thư giãn.
+                        </p>
+<span class="text-primary text-sm font-bold flex items-center group-hover:translate-x-1 transition-transform">
+                            Khám phá mô hình <span class="material-symbols-outlined ml-1" style="font-size: 16px;">arrow_right_alt</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Final CTA -->
+<section class="w-full mt-10">
+<div class="w-full bg-primary py-16 px-6 relative overflow-hidden">
+<!-- Abstract pattern background -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="max-w-[1200px] mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+<div class="flex flex-col gap-3 max-w-2xl">
+<h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                            Cần giải pháp thi công nông nghiệp sạch chuyên nghiệp?
+                        </h2>
+<p class="text-white/80 text-lg font-medium">
+                            Liên hệ ngay với đội ngũ kỹ sư KGX để được khảo sát và tư vấn phương án tối ưu nhất cho khu vườn của bạn.
+                        </p>
+</div>
+<button class="flex-shrink-0 bg-accent hover:bg-[#d6633e] text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-all transform hover:-translate-y-1 active:translate-y-0">
+                        Yêu cầu tư vấn ngay
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#242621] text-white pt-16 pb-8 border-t border-white/10">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Brand -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 mb-2">
+<div class="flex items-center justify-center size-8 rounded bg-primary text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">agriculture</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">KGX</h2>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed">
+                        Đơn vị tiên phong trong lĩnh vực tư vấn, thiết kế và thi công nông nghiệp công nghệ cao tại Việt Nam.
+                    </p>
+</div>
+<!-- Contact Info -->
+<div class="lg:col-span-2 flex flex-col gap-4">
+<h3 class="text-sm font-bold uppercase tracking-wider text-primary">Liên hệ</h3>
+<ul class="flex flex-col gap-3">
+<li class="flex gap-3 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">location_on</span>
+<span>Số 18, Đường Z115, TP. Thái Nguyên, Tỉnh Thái Nguyên</span>
+</li>
+<li class="flex gap-3 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">mail</span>
+<span>contact@kgx-agri.vn</span>
+</li>
+<li class="flex gap-3 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">phone_in_talk</span>
+<span>0868 462 462</span>
+</li>
+</ul>
+</div>
+<!-- Links -->
+<div class="flex flex-col gap-4">
+<h3 class="text-sm font-bold uppercase tracking-wider text-primary">Liên kết</h3>
+<div class="flex flex-col gap-2 text-sm text-gray-400">
+<a class="hover:text-white transition-colors" href="#">Về chúng tôi</a>
+<a class="hover:text-white transition-colors" href="#">Dự án tiêu biểu</a>
+<a class="hover:text-white transition-colors" href="#">Tin tức nông nghiệp</a>
+<a class="hover:text-white transition-colors" href="#">Tuyển dụng</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-gray-500">© 2024 KGX Agriculture Construction. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-gray-500 hover:text-white transition-colors" href="#"><span class="sr-only">Facebook</span>FB</a>
+<a class="text-gray-500 hover:text-white transition-colors" href="#"><span class="sr-only">Youtube</span>YT</a>
+<a class="text-gray-500 hover:text-white transition-colors" href="#"><span class="sr-only">LinkedIn</span>IN</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

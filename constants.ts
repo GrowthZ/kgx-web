@@ -1,25 +1,198 @@
 export const NAV_LINKS = [
-  { label: "Trang chủ", href: "/" },
   { label: "Giới thiệu", href: "/gioi-thieu" },
   {
     label: "Dịch vụ",
     href: "/dich-vu",
     subLinks: [
-      { label: "Thiết kế cảnh quan", href: "/dich-vu" },
-      { label: "Thi công sân vườn", href: "/thi-cong-san-vuon" }
+      {
+        label: "Thiết kế cảnh quan",
+        href: "/dich-vu/thiet-ke-canh-quan-san-vuon",
+        items: [
+          { label: "Thiết kế sân vườn", href: "/dich-vu/thiet-ke-canh-quan-san-vuon" },
+          { label: "Thiết kế quy hoạch", href: "/dich-vu/thiet-ke-quy-hoach" },
+          { label: "Thiết kế kiến trúc", href: "/dich-vu/thiet-ke-kien-truc" },
+          { label: "Khu nghỉ dưỡng & Công viên", href: "/dich-vu/thiet-ke-khu-nghi-duong-cong-vien" },
+          { label: "Vườn trên mái", href: "/dich-vu/thiet-ke-vuon-tren-mai" },
+          { label: "Vườn thẳng đứng", href: "/dich-vu/thiet-ke-vuon-thang-dung" },
+        ]
+      },
+      {
+        label: "Thi công cảnh quan",
+        href: "/dich-vu/thi-cong-canh-quan-san-vuon",
+        items: [
+          { label: "Thi công sân vườn", href: "/dich-vu/thi-cong-canh-quan-san-vuon" },
+          { label: "Chăm sóc cảnh quan", href: "/dich-vu/cham-soc-canh-quan" },
+          { label: "Thi công cây công trình", href: "/dich-vu/thi-cong-cay-cong-trinh" },
+          { label: "Giải pháp xanh", href: "/dich-vu/tu-van-giai-phap-xanh" },
+          { label: "Vận tải cẩu tự hành", href: "/dich-vu/van-tai-cau-tu-hanh" },
+          { label: "Nuôi cấy mô công nghệ cao", href: "/dich-vu/nuoi-cay-mo-cong-nghe-cao" },
+          { label: "Nông nghiệp sạch", href: "/dich-vu/thi-cong-nong-nghiep-sach" },
+        ]
+      }
     ]
   },
   { label: "Dự án", href: "/du-an" },
   {
     label: "Sản phẩm",
-    href: "/danh-sach-san-pham",
+    href: "/san-pham",
     subLinks: [
-      { label: "Danh sách sản phẩm", href: "/danh-sach-san-pham" },
-      { label: "Danh sách cây", href: "/danh-sach-cay" }
+      { label: "Tất cả sản phẩm", href: "/san-pham" },
+      { label: "Cây nội thất", href: "/san-pham/nhom/cay-noi-that" },
+      { label: "Cây công trình", href: "/san-pham/nhom/cay-cong-trinh" },
+      { label: "Cây tiểu cảnh & sân vườn", href: "/san-pham/nhom/cay-tieu-canh-san-vuon" },
+      { label: "Cây bonsai & nghệ thuật", href: "/san-pham/nhom/cay-bonsai-nghe-thuat" },
+      { label: "Cây nuôi cấy mô", href: "/san-pham/nhom/cay-nuoi-cay-mo" },
+      { label: "Chậu & Vật tư trồng", href: "/san-pham/nhom/chau-cay-vat-tu-trong" }
     ]
   },
-  { label: "Tin tức", href: "/danh-sach-bai-viet" },
+  { label: "Tin tức", href: "/tin-tuc" },
   { label: "Liên hệ", href: "/lien-he" },
+];
+
+export const TREE_CATEGORIES = [
+  { slug: "cay-noi-that", name: "Cây nội thất", desc: "Các loại cây chịu bóng, thanh lọc không khí, phù hợp văn phòng và nhà ở cao cấp. Đảm bảo sức sống bền bỉ trong môi trường thiếu sáng.", image: "https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=2070&auto=format&fit=crop" },
+  { slug: "cay-cong-trinh", name: "Cây công trình", desc: "Cây bóng mát kích thước lớn, cây đường phố, công viên. Cung cấp số lượng lớn cho các dự án đô thị và khu dân cư.", image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=2070&auto=format&fit=crop" },
+  { slug: "cay-tieu-canh-san-vuon", name: "Cây tiểu cảnh & sân vườn", desc: "Cây bụi, cây hoa, thảm cỏ cho biệt thự, resort. Thiết kế đa tầng tán tạo điểm nhấn thẩm mỹ cho không gian xanh.", image: "https://images.unsplash.com/photo-1558905619-1af480c2941c?q=80&w=2070&auto=format&fit=crop" },
+  { slug: "cay-bonsai-nghe-thuat", name: "Cây bonsai & nghệ thuật", desc: "Nghệ thuật cây cảnh dáng thế, cây cổ thụ. Sản phẩm dành cho không gian sang trọng, sảnh chờ và bộ sưu tập riêng.", image: "https://images.unsplash.com/photo-1512428813834-c702c7702b78?q=80&w=2070&auto=format&fit=crop" },
+  { slug: "cay-nuoi-cay-mo", name: "Cây nuôi cấy mô", desc: "Giống cây chất lượng cao, sạch bệnh, đồng đều về di truyền. Giải pháp cho các dự án nông nghiệp công nghệ cao.", image: "https://images.unsplash.com/photo-1581093191605-a1d30f5ec66c?q=80&w=2070&auto=format&fit=crop" },
+  { slug: "chau-cay-vat-tu-trong", name: "Chậu & Vật tư trồng", desc: "Cung cấp chậu composite, đất trồng, phân bón và hệ thống tưới tự động đồng bộ cho cảnh quan.", image: "https://images.unsplash.com/photo-1485053077717-380ff9602e1c?q=80&w=2070&auto=format&fit=crop" },
+];
+
+export const TREES = [
+  {
+    slug: "cay-bang-dai-loan",
+    name: "Cây Bàng Đài Loan",
+    scientificName: "Terminalia mantaly",
+    categorySlug: "cay-cong-trinh",
+    category: "Cây công trình",
+    height: "10m - 20m",
+    growth: "Nhanh",
+    light: "Ưa sáng toàn phần",
+    water: "Trung bình",
+    leaves: "Lá nhỏ, tán xếp tầng đẹp mắt",
+    description: "Loại cây phù hợp cho sân vườn và công trình đô thị. Đặc biệt thích hợp với khí hậu Việt Nam, tạo bóng mát và cảnh quan hiện đại với tán lá xếp tầng độc đáo.",
+    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=2070&auto=format&fit=crop",
+    macroImage: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=2070&auto=format&fit=crop",
+    pros: [
+      { title: 'Dáng cây đẹp tự nhiên', desc: 'Tán xếp tầng như chiếc ô, không cần cắt tỉa cầu kỳ vẫn đẹp.' },
+      { title: 'Thích nghi tốt', desc: 'Phù hợp hoàn hảo với khí hậu nhiệt đới gió mùa tại Việt Nam.' }
+    ],
+    cons: [
+      { title: 'Khoảng cách trồng', desc: 'Rễ cây phát triển mạnh, nên trồng cách công trình xây dựng tối thiểu 3-4m.' }
+    ],
+    care: [
+      { icon: 'water_drop', title: 'Tưới nước', desc: 'Tưới 2-3 lần/tuần vào sáng sớm hoặc chiều mát.' }
+    ]
+  },
+  {
+    slug: "cay-cha-la-phoenix",
+    name: "Cây Chà Là Phoenix",
+    scientificName: "Phoenix roebelenii",
+    categorySlug: "cay-tieu-canh-san-vuon",
+    category: "Cây tiểu cảnh & sân vườn",
+    height: "2m - 5m",
+    growth: "Chậm",
+    light: "Ưa sáng / Bán râm",
+    water: "Trung bình",
+    leaves: "Lá kép lông chim, rũ cong mềm mại",
+    description: "Loại cây mang vẻ đẹp nhiệt đới sang trọng, thường được dùng tạo điểm nhấn cho sảnh resort, biệt thự hoặc các khu vực tiểu cảnh hồ bơi.",
+    image: "https://images.unsplash.com/photo-1558905619-1af480c2941c?q=80&w=2070&auto=format&fit=crop",
+    macroImage: "https://images.unsplash.com/photo-1558905619-1af480c2941c?q=80&w=2070&auto=format&fit=crop",
+    pros: [
+      { title: 'Vẻ đẹp nhiệt đới', desc: 'Dáng cây sang trọng, tạo cảm giác thư giãn như ở resort.' }
+    ],
+    cons: [
+      { title: 'Gai nhọn', desc: 'Cuống lá có gai cứng, cần lưu ý khi trồng ở khu vực có trẻ em.' }
+    ],
+    care: [
+      { icon: 'water_drop', title: 'Tưới nước', desc: 'Tưới 1-2 lần/tuần. Chú ý không để úng nước ở cổ rễ.' }
+    ]
+  },
+  {
+    slug: "cay-luoi-ho",
+    name: "Cây Lưỡi Hổ",
+    scientificName: "Sansevieria trifasciata",
+    categorySlug: "cay-noi-that",
+    category: "Cây nội thất",
+    height: "30cm - 1m",
+    growth: "Trung bình",
+    light: "Chịu bóng / Ánh sáng gián tiếp",
+    water: "Ít",
+    leaves: "Lá mọc thẳng, cứng cáp, vằn xanh vàng",
+    description: "Lưỡi hổ là loại cây nội thất quốc dân, có khả năng lọc không khí cực tốt, đặc biệt là vào ban đêm.",
+    image: "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=2028&auto=format&fit=crop",
+    pros: [{ title: "Lọc không khí", desc: "Hấp thụ các khí độc hại như formaldehyde và benzene." }],
+    cons: [{ title: "Úng nước", desc: "Rất dễ chết nếu tưới quá nhiều nước gây thối rễ." }],
+    care: [{ icon: "water_drop", title: "Tưới nước", desc: "Chỉ tưới khi đất đã khô hẳn, khoảng 10-14 ngày/lần." }]
+  },
+  {
+    slug: "cay-hanh-phuc",
+    name: "Cây Hạnh Phúc",
+    scientificName: "Radermachera sinica",
+    categorySlug: "cay-noi-that",
+    category: "Cây nội thất",
+    height: "1.5m - 2.5m",
+    growth: "Nhanh",
+    light: "Ánh sáng tán xạ",
+    water: "Trung bình",
+    leaves: "Lá nhỏ, xanh bóng, mọc sum suê",
+    description: "Cây mang ý nghĩa phong thủy tốt lành, tạo không gian xanh mát và bình yên cho phòng khách hoặc văn phòng.",
+    image: "https://images.unsplash.com/photo-1510212330240-6644a343e6a0?q=80&w=1974&auto=format&fit=crop",
+    pros: [{ title: "Thẩm mỹ cao", desc: "Tán lá xanh mướt, tạo cảm giác tràn đầy sức sống." }],
+    cons: [{ title: "Rụng lá", desc: "Cây có thể rụng lá nếu thay đổi môi trường đột ngột hoặc thiếu sáng." }],
+    care: [{ icon: "water_drop", title: "Tưới nước", desc: "Tưới đều đặn 2-3 lần/tuần, giữ ẩm nhưng không sũng nước." }]
+  },
+  {
+    slug: "cay-tung-la-han",
+    name: "Cây Tùng La Hán",
+    scientificName: "Podocarpus costalis",
+    categorySlug: "cay-bonsai-nghe-thuat",
+    category: "Cây bonsai & nghệ thuật",
+    height: "2m - 10m",
+    growth: "Chậm",
+    light: "Ưa sáng",
+    water: "Trung bình",
+    leaves: "Lá nhỏ, hẹp, xanh quanh năm",
+    description: "Loại cây quý hiếm trong nghệ thuật cây cảnh, tượng trưng cho sự trường thọ và khí phách của quân tử.",
+    image: "https://images.unsplash.com/photo-1512428813834-c702c7702b78?q=80&w=2070&auto=format&fit=crop",
+    pros: [{ title: "Giá trị cao", desc: "Càng lâu năm cây càng có giá trị về mặt nghệ thuật và kinh tế." }],
+    cons: [{ title: "Kỹ thuật cao", desc: "Cần thợ lành nghề để tạo dáng và duy trì form bonsai." }],
+    care: [{ icon: "content_cut", title: "Cắt tỉa", desc: "Cắt tỉa định kỳ để giữ dáng và loại bỏ cành thừa." }]
+  },
+  {
+    slug: "cay-lan-y",
+    name: "Cây Lan Ý",
+    scientificName: "Spathiphyllum wallisii",
+    categorySlug: "cay-nuoi-cay-mo",
+    category: "Cây nuôi cấy mô",
+    height: "30cm - 60cm",
+    growth: "Nhanh",
+    light: "Bán râm",
+    water: "Nhiều",
+    leaves: "Lá to, xanh thẫm, hoa trắng muốt",
+    description: "Sản phẩm từ phòng Lab công nghệ cao, đảm bảo cây khỏe mạnh, đồng đều và có khả năng chống chịu sâu bệnh tốt.",
+    image: "https://images.unsplash.com/photo-1593542461154-20b171638202?q=80&w=1935&auto=format&fit=crop",
+    pros: [{ title: "Đồng nhất", desc: "Cây có chất lượng đồng đều nhờ công nghệ nhân giống Invitro." }],
+    cons: [{ title: "Héo nhanh", desc: "Cần duy trì độ ẩm thường xuyên, lá sẽ héo rũ nếu thiếu nước." }],
+    care: [{ icon: "water_drop", title: "Tưới nước", desc: "Tưới 1-2 ngày/lần, có thể trồng thủy sinh." }]
+  },
+  {
+    slug: "chau-composite-cao-cap",
+    name: "Chậu Composite Cao Cấp",
+    scientificName: "N/A",
+    categorySlug: "chau-cay-vat-tu-trong",
+    category: "Chậu & Vật tư trồng",
+    height: "40cm - 1m",
+    growth: "N/A",
+    light: "N/A",
+    water: "N/A",
+    leaves: "Bề mặt bóng bẩy, đa dạng màu sắc",
+    description: "Chậu composite siêu nhẹ, bền bỉ, chịu được tác động thời tiết khắc nghiệt, phù hợp cho cả không gian nội và ngoại thất.",
+    image: "https://images.unsplash.com/photo-1485053077717-380ff9602e1c?q=80&w=2070&auto=format&fit=crop",
+    pros: [{ title: "Siêu nhẹ", desc: "Dễ dàng di chuyển so với các loại chậu xi măng hay gốm sứ truyền thống." }],
+    cons: [{ title: "Giá thành", desc: "Giá cao hơn so với các loại chậu nhựa thông thường." }],
+    care: [{ icon: "cleaning_services", title: "Vệ sinh", desc: "Chỉ cần lau bằng khăn ẩm để giữ bề mặt luôn sáng bóng." }]
+  }
 ];
 
 export const TRUST_ITEMS = [
@@ -71,6 +244,7 @@ export const DESIGN_SERVICES = [
 export const PROJECTS = [
   {
     id: 1,
+    slug: "vuon-nhat-zen-garden",
     category: "Biệt thự vườn",
     title: "Vườn Nhật Zen Garden",
     location: "Ecopark, Hưng Yên",
@@ -79,6 +253,7 @@ export const PROJECTS = [
   },
   {
     id: 2,
+    slug: "flamingo-dai-lai-villa",
     category: "Resort & KS",
     title: "Flamingo Đại Lải Villa",
     location: "Vĩnh Phúc",
@@ -87,7 +262,8 @@ export const PROJECTS = [
   },
   {
     id: 3,
-    category: "Cảnh quan Resort", // Mapped to Resort & KS for filtering usually, but keeping exact for display
+    slug: "six-senses-con-dao",
+    category: "Cảnh quan Resort",
     filterCategory: "Resort & KS",
     title: "Six Senses Côn Đảo",
     location: "Bà Rịa - Vũng Tàu",
@@ -96,6 +272,7 @@ export const PROJECTS = [
   },
   {
     id: 4,
+    slug: "biet-thu-vinhomes-riverside",
     category: "Hồ cá Koi",
     title: "Biệt thự Vinhomes Riverside",
     location: "Long Biên, Hà Nội",
@@ -104,7 +281,8 @@ export const PROJECTS = [
   },
   {
     id: 5,
-    category: "Công trình công cộng", // Mapped from Cảnh quan đứng
+    slug: "sky-garden-office",
+    category: "Công trình công cộng",
     filterCategory: "Công trình công cộng",
     displayCategory: "Cảnh quan đứng",
     title: "Sky Garden Office",

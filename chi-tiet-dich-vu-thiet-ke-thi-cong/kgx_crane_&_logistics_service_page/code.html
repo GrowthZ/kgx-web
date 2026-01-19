@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KGX Crane &amp; Logistics Service</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3d471f",
+                        "primary-dark": "#2c3316",
+                        "accent": "#F29043",
+                        "accent-light": "#fbdcb8",
+                        "background-light": "#fafbf9",
+                        "background-alt": "#f2f2ef",
+                        "background-dark": "#1b1d15",
+                        "text-main": "#161811",
+                        "text-sub": "#5c664a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "md": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(61, 71, 31, 0.1)",
+                        "card": "0 2px 10px rgba(0, 0, 0, 0.03)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-text-main dark:bg-background-dark dark:text-white flex flex-col min-h-screen">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full bg-[#fafbf9]/95 backdrop-blur-sm border-b border-[#eff0ea]">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">forest</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-primary uppercase leading-none">KGX Landscape</h1>
+<span class="text-[10px] font-medium tracking-wider text-text-sub uppercase">Construction &amp; Logistics</span>
+</div>
+</div>
+<!-- Navigation Desktop -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Trang chủ</a>
+<a class="text-sm font-bold text-primary border-b-2 border-accent pb-0.5" href="#">Dịch vụ</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Dự án</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Liên hệ</a>
+</nav>
+<!-- Actions -->
+<div class="hidden md:flex items-center gap-3">
+<div class="hidden xl:flex flex-col items-end mr-2">
+<span class="text-[10px] uppercase tracking-wide text-text-sub font-semibold">Hotline 24/7</span>
+<a class="text-sm font-bold text-primary hover:text-accent transition-colors" href="tel:0868462462">0868 462 462</a>
+</div>
+<button class="flex items-center justify-center h-11 px-6 bg-primary hover:bg-primary-dark text-white text-sm font-bold rounded-lg transition-all shadow-md group">
+<span>Nhận báo giá</span>
+<span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Mobile Menu Button -->
+<button class="lg:hidden p-2 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero/Intro Title -->
+<section class="pt-16 pb-8 px-4 lg:px-8 max-w-[1200px] mx-auto text-center">
+<span class="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent text-xs font-bold tracking-wider uppercase mb-4">Dịch vụ chuyên nghiệp</span>
+<h1 class="text-3xl md:text-5xl font-extrabold text-primary leading-tight max-w-4xl mx-auto mb-6">
+                Dịch vụ vận tải &amp; cẩu tự hành
+            </h1>
+<p class="text-lg text-text-sub max-w-2xl mx-auto">
+                Giải pháp logistics chuyên sâu cho ngành cảnh quan, đảm bảo an toàn tuyệt đối cho cây xanh và vật tư công trình.
+            </p>
+</section>
+<!-- Section 1: Operational Needs (Vertical Cards) -->
+<section class="py-12 md:py-20 px-4 lg:px-8 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-4 mb-10">
+<div class="h-px bg-gray-200 flex-1"></div>
+<h2 class="text-xl md:text-2xl font-bold text-primary text-center uppercase tracking-tight">Nhu cầu thực tế trong thi công</h2>
+<div class="h-px bg-gray-200 flex-1"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 border border-transparent hover:border-accent/20">
+<div class="aspect-[16/9] w-full bg-gray-100 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors z-10"></div>
+<img alt="Large mature tree being lifted by a crane with protected root ball" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF-lY0XcDspqUPQICrZfJCYJPFQR6SckHJVW5RqGP61PEFQzo97P5jsabZl0xObb3fItW-Cbf-VE-TelJAHonnHiP1-TcUonCMyf4yk_PnwaK2hgb1HAvLBMG7CWp1Gd_u1ttW_k-M3k4JXSL0XQhBL4AqAnnTmTFL3Ng9NGog8B4IQ6dyhMIVduAt_o2MvveoF4lyRmCabyAGCSYZDhq4xirbPgncdd5Eb-7fidaMXSf4z_m0AXT38tpefbUuAL2ywEU7ztIJ4IY"/>
+<div class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-accent text-sm">spa</span>
+<span class="text-xs font-bold text-primary uppercase">Bảo vệ cây</span>
+</div>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">Di chuyển cây lớn</h3>
+<p class="text-text-sub leading-relaxed mb-6">
+                            Đảm bảo an toàn tuyệt đối cho bộ rễ và thân cây. Giảm thiểu rủi ro dập nát, gãy cành trong quá trình di dời các cây cổ thụ, cây đại thụ từ vườn ươm đến công trình.
+                        </p>
+<div class="flex items-center text-primary font-bold text-sm cursor-pointer group-hover:translate-x-2 transition-transform">
+                            Xem quy trình <span class="material-symbols-outlined text-lg ml-1">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 border border-transparent hover:border-accent/20">
+<div class="aspect-[16/9] w-full bg-gray-100 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors z-10"></div>
+<img alt="Construction site with crane placing heavy materials precisely" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO9x4etjVaMM9xr4O8F1CkpHpLoT_nXaSa2VSVSImp1uhcmlYA93yMGxTI3vT2GTp2sO8Y5TdngLFA4a3ykf9_58iK7nJYNuhIlpzG1UxWuIuwbJj3vuZiKWvqReRxTkjSKXTgPSpPcQLixmYRilEua372UrgXBGRuV2xjNNbfUrUcZ62KqRZvVd3akKOj9vY1c6RytQqifUKU0CQgoqJpr2Qahpw6i5Fy1aqzKJS5o-QmKoMmXsERBRgR_fyGVb9-o1gF9J8h_jY"/>
+<div class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-accent text-sm">schedule</span>
+<span class="text-xs font-bold text-primary uppercase">Tiến độ</span>
+</div>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">Thi công nhanh &amp; chính xác</h3>
+<p class="text-text-sub leading-relaxed mb-6">
+                            Tối ưu hóa thời gian thi công nhờ thiết bị cơ giới hiện đại. Đảm bảo đặt cây đúng vị trí thiết kế, xoay hướng cây chính xác đến từng centimet tại công trường.
+                        </p>
+<div class="flex items-center text-primary font-bold text-sm cursor-pointer group-hover:translate-x-2 transition-transform">
+                            Xem năng lực <span class="material-symbols-outlined text-lg ml-1">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Equipment Fleet (Split Layout) -->
+<section class="py-12 md:py-20 bg-background-alt relative overflow-hidden">
+<!-- Decorative pattern -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gray-200/50 skew-x-12 translate-x-20 pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<!-- Content Left -->
+<div class="order-2 lg:order-1">
+<span class="text-accent font-bold tracking-widest text-sm uppercase mb-2 block">Năng lực thiết bị</span>
+<h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-6 leading-tight">
+                            Hệ thống thiết bị tự hành <br/>tiêu chuẩn tại KGX
+                        </h2>
+<p class="text-text-sub mb-8 text-lg">
+                            KGX sở hữu đội ngũ xe cẩu tự hành và phương tiện vận tải chuyên dụng đa dạng tải trọng, được bảo trì định kỳ để sẵn sàng đáp ứng mọi yêu cầu khắt khe.
+                        </p>
+<div class="space-y-6">
+<!-- List Item 1 -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-filled">local_shipping</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main text-lg">Đa dạng tải trọng</h4>
+<p class="text-text-sub text-sm mt-1">Hệ thống xe cẩu từ 3.5 tấn đến 15 tấn, xe đầu kéo sơ mi rơ moóc phù hợp mọi cung đường và địa hình.</p>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-filled">engineering</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main text-lg">Vận hành chuyên nghiệp</h4>
+<p class="text-text-sub text-sm mt-1">Đội ngũ lái xe và vận hành cẩu giàu kinh nghiệm, có đầy đủ chứng chỉ an toàn lao động.</p>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-filled">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main text-lg">An toàn tuyệt đối</h4>
+<p class="text-text-sub text-sm mt-1">Trang bị đầy đủ cáp vải, đai mềm chuyên dụng để nâng hạ cây, không gây tổn hại vỏ cây.</p>
+</div>
+</div>
+</div>
+<div class="mt-10">
+<a class="inline-flex items-center justify-center h-12 px-8 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-lg transition-all" href="#">
+                                Tải hồ sơ năng lực
+                            </a>
+</div>
+</div>
+<!-- Image Right -->
+<div class="order-1 lg:order-2 relative">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500 border-4 border-white">
+<img alt="Heavy duty yellow crane truck lifting a large root-balled tree on a construction site" class="w-full h-auto object-cover aspect-[4/5] lg:aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_h3rce2UPHuxS7ejE-NDqivkKkfENIAxoDn5_4KQIt4gp63IFogDMDQLtMsGo8XgQ1FwVcoOUKNUzhNJxp1WSmNdfMnlhXqP4PkOT0Mu14pRJWHZ0DNzqZ1heHp-vrzY6PwmLu6PthSLgDnMAXHikDsV5t1apoybuLBGKzFVIBEzwnS_TRAfT4Zb2G4dV5VIF3AsY7SvTGkdc-kyQpVa2M6oGvL39zxF334TeWHSg5ZaBtSf1ZX4Z1kclAKKpI0qD83pVeyzHaEQ"/>
+<!-- Floating Badge -->
+<div class="absolute bottom-6 left-6 bg-primary/90 backdrop-blur text-white p-4 rounded-xl shadow-lg max-w-[200px]">
+<p class="text-xs font-medium uppercase text-accent mb-1">Dự án tiêu biểu</p>
+<p class="text-sm font-bold">Di dời cây cổ thụ tại KĐT Ecopark Hưng Yên</p>
+</div>
+</div>
+<!-- Decorative element behind -->
+<div class="absolute -z-10 -bottom-6 -right-6 w-full h-full rounded-2xl border-2 border-accent/30 rounded-br-[4rem]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Scope of Service (Horizontal Icon Cards) -->
+<section class="py-12 md:py-24 px-4 lg:px-8 max-w-[1200px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-primary uppercase">Phạm vi phục vụ &amp; hỗ trợ</h2>
+<p class="text-text-sub mt-4 max-w-2xl mx-auto">Chúng tôi cung cấp giải pháp toàn diện cho các nhà thầu cảnh quan và chủ đầu tư dự án.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Scope Card 1 -->
+<div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col sm:flex-row gap-6 hover:shadow-lg transition-all duration-300 items-start group">
+<div class="flex-shrink-0 size-16 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl">park</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-text-main mb-3">Thi công cây công trình quy mô</h3>
+<p class="text-text-sub text-sm leading-relaxed mb-4">
+                            Hỗ trợ cẩu lắp, trồng mới các loại cây bóng mát, cây cổ thụ kích thước lớn tại các khu đô thị, resort, công viên. Tính toán phương án cẩu lắp tại các vị trí hẹp, khó tiếp cận.
+                        </p>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-text-sub">
+<span class="material-symbols-outlined text-accent text-lg mr-2">check_circle</span>
+                                Cây đường kính gốc &gt; 50cm
+                            </li>
+<li class="flex items-center text-sm text-text-sub">
+<span class="material-symbols-outlined text-accent text-lg mr-2">check_circle</span>
+                                Cây chiều cao &gt; 10m
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Scope Card 2 -->
+<div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col sm:flex-row gap-6 hover:shadow-lg transition-all duration-300 items-start group">
+<div class="flex-shrink-0 size-16 rounded-2xl bg-accent flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl">pallet</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-text-main mb-3">Vận chuyển vật tư cảnh quan</h3>
+<p class="text-text-sub text-sm leading-relaxed mb-4">
+                            Vận chuyển và cẩu hạ các loại vật tư nặng như đá khối, đá lát sân vườn, đất trồng số lượng lớn. Cung cấp giải pháp cẩu tự hành kết hợp vận chuyển tiết kiệm chi phí.
+                        </p>
+<ul class="space-y-2">
+<li class="flex items-center text-sm text-text-sub">
+<span class="material-symbols-outlined text-primary text-lg mr-2">check_circle</span>
+                                Đá tảng nguyên khối, đá non bộ
+                            </li>
+<li class="flex items-center text-sm text-text-sub">
+<span class="material-symbols-outlined text-primary text-lg mr-2">check_circle</span>
+                                Pallet gạch, vật liệu xây dựng
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Lead Capture Banner -->
+<section class="mt-auto">
+<div class="bg-primary relative overflow-hidden">
+<!-- Abstract lines background -->
+<div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #000 10px, #000 20px);"></div>
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-16 md:py-24 relative z-10">
+<div class="flex flex-col md:flex-row items-center justify-between gap-10">
+<div class="max-w-2xl">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                                Hỗ trợ thiết kế và thi công với hệ thống xe cẩu chuyên dụng
+                            </h2>
+<p class="text-white/80 text-lg">
+                                Liên hệ ngay với KGX để được tư vấn phương án vận chuyển và thi công tối ưu nhất cho dự án của bạn.
+                            </p>
+</div>
+<div class="flex-shrink-0">
+<button class="bg-accent hover:bg-white hover:text-primary text-primary-dark font-bold py-4 px-8 rounded-lg shadow-lg transform hover:-translate-y-1 transition-all duration-200 text-lg flex items-center gap-2">
+<span class="material-symbols-outlined">call</span>
+                                Yêu cầu dịch vụ vận tải
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1b1d15] text-white pt-16 pb-8 border-t border-white/5">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Column 1: Brand -->
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="size-8 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">forest</span>
+</div>
+<span class="text-lg font-bold tracking-tight uppercase">KGX Landscape</span>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Đơn vị hàng đầu trong lĩnh vực thiết kế, thi công cảnh quan và cung cấp giải pháp vận tải chuyên nghiệp tại khu vực miền Bắc.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+</div>
+</div>
+<!-- Column 2: Links -->
+<div>
+<h4 class="text-lg font-bold mb-6 text-white border-l-2 border-accent pl-3">Dịch vụ</h4>
+<ul class="space-y-3">
+<li><a class="text-gray-400 hover:text-accent transition-colors text-sm" href="#">Thiết kế cảnh quan</a></li>
+<li><a class="text-gray-400 hover:text-accent transition-colors text-sm" href="#">Thi công sân vườn</a></li>
+<li><a class="text-gray-400 hover:text-accent transition-colors text-sm" href="#">Chăm sóc bảo dưỡng</a></li>
+<li><a class="text-accent font-medium transition-colors text-sm" href="#">Vận tải &amp; Cẩu tự hành</a></li>
+<li><a class="text-gray-400 hover:text-accent transition-colors text-sm" href="#">Cung cấp cây xanh</a></li>
+</ul>
+</div>
+<!-- Column 3: Contact -->
+<div class="lg:col-span-2">
+<h4 class="text-lg font-bold mb-6 text-white border-l-2 border-accent pl-3">Thông tin liên hệ</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-accent mt-0.5">location_on</span>
+<span class="text-gray-400 text-sm">Số 15, Đường Cách Mạng Tháng 8, Phường Phan Đình Phùng, TP. Thái Nguyên</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent">phone_in_talk</span>
+<a class="text-white hover:text-accent font-bold text-lg" href="tel:0868462462">0868 462 462</a>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent">mail</span>
+<a class="text-gray-400 hover:text-white text-sm" href="mailto:info@kgx.vn">info@kgx.vn</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-500 text-xs">© 2024 KGX Landscape Architecture. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-gray-500 hover:text-white text-xs" href="#">Chính sách bảo mật</a>
+<a class="text-gray-500 hover:text-white text-xs" href="#">Điều khoản sử dụng</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
