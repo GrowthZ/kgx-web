@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KGX - Danh sách cây cảnh quan</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3b4224", // Deep Olive
+                        accent: "#FF9326",  // Warm Orange
+                        "accent-hover": "#e6821f",
+                        "background-light": "#fafbf9",
+                        "background-alt": "#f2f3f0",
+                        "background-dark": "#1b1c16",
+                        "border-color": "#dee0d7",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.625rem", // 10px
+                        "lg": "0.75rem", // 12px
+                        "xl": "1rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light text-[#161712] font-display antialiased flex flex-col min-h-screen">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 w-full bg-background-light/95 backdrop-blur-sm border-b border-border-color transition-all duration-300">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="size-8 text-primary flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-[24px]">spa</span>
+</div>
+<h2 class="text-primary text-2xl font-black tracking-tight">KGX</h2>
+</div>
+<!-- Navigation (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#161712] text-sm font-medium hover:text-primary transition-colors" href="#">Trang chủ</a>
+<a class="text-[#161712] text-sm font-medium hover:text-primary transition-colors" href="#">Giới thiệu</a>
+<a class="text-[#161712] text-sm font-medium hover:text-primary transition-colors" href="#">Dự án</a>
+<a class="text-[#161712] text-sm font-medium hover:text-primary transition-colors" href="#">Tin tức</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-3">
+<button class="hidden lg:flex h-10 px-5 items-center justify-center rounded-lg bg-accent hover:bg-accent-hover text-white text-sm font-bold transition-colors shadow-sm">
+<span>Tư vấn chọn cây</span>
+</button>
+<button class="flex h-10 px-5 items-center justify-center rounded-lg border border-primary text-primary bg-transparent hover:bg-primary/5 text-sm font-bold transition-colors">
+<span class="mr-1 material-symbols-outlined text-[18px]">call</span>
+<span class="truncate">0868 462 462</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col">
+<!-- Section 1: Plant Listing -->
+<section class="w-full py-8 md:py-12">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
+<!-- Headline -->
+<div class="flex flex-col gap-2">
+<h1 class="text-primary text-3xl md:text-4xl font-bold tracking-tight">Danh sách cây cảnh quan</h1>
+<p class="text-[#7a8165] text-base max-w-2xl">
+                        Tuyển chọn các loại cây bóng mát, cây công trình chất lượng cao phù hợp với khí hậu Việt Nam.
+                    </p>
+</div>
+<!-- Plant Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="group flex flex-col bg-white border border-border-color rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-square bg-gray-100 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Cây Bàng Đài Loan with layers of green leaves against a blue sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDXCloWTRqxzRvA9KmIpUhtorVytcL8L1q6ur13jk3eV6-__urGSENP_oTy3JpoaBnPy5b8TcHSNrboLUjakVhsPnP5QXa_qI_n3xal9gHQk2N4JUyxbJTQ7RvY5hmmoGvJxovB8jv7Ml1MXGJ9hw7QL3Aq5AB8G0ciJFmFA2YmH4pDuFOSwLGm0O5x9ekSwPegljWLx9WL9guSmkxw7XWFWyyiPQ7r6a70NJotF9ubyLzl4tneErvK9qZipO_9BzFr9I4ERDQN-w");'>
+</div>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">Cây Bàng Đài Loan</h3>
+<p class="text-[#7a8165] text-sm font-normal line-clamp-2">Cây bóng mát, tán tầng đẹp, phù hợp cảnh quan đô thị và sân vườn.</p>
+<div class="mt-auto pt-2">
+<span class="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                    Xem chi tiết 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col bg-white border border-border-color rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-square bg-gray-100 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Tall tree trunk looking up into dense green canopy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPUb-1I00p34OgIgP8-9DliUld_fZvez4Ez6YkWIED5C8EOPFmB3SBah-TemRQ6tQyE4ObaXE600LVEIMewx0kVK05EyRYPQRKsAUstqlcZFM_sht59z0eZTVAmQLoohQgM6PMwtPQqVlMdVzYOABExXC9ZpNeDKyJ3kDwLse-9NLry7HI5NAj9q4F7lBMl6zG53_lNUgu2wSMUBWSh1Pv3k0QmLoXkjRJPGfbyI07fLE3YQdDjEveK1veYuBIjyX4ceQqhq2Dfa0");'>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">Cây Sao Đen</h3>
+<p class="text-[#7a8165] text-sm font-normal line-clamp-2">Cây gỗ lớn, thân thẳng tắp, thường trồng lấy bóng mát đường phố.</p>
+<div class="mt-auto pt-2">
+<span class="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                    Xem chi tiết 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col bg-white border border-border-color rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-square bg-gray-100 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Vibrant green leaves of a tropical tree" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6v2d8lt7tI37XV6MPDvVKcc5yD9UpLMFRRNQWF7_8zinlrOs8qjyWDhitD7K33lLrVVDboRkqiwphm9Qr9DLVw3Ct1tOv1omVrlcZnsqoDFLGafh5DyDQtZZyifFiovsg6c8MBCE4TAbU8gAmUJokPACCDxHmdUPbGZvfzYHDOV0VBbhoq_rgYenAEKMTmwN4f8vGPO7_Iu1jV67VWcswtAZ-V9ttvATvmxIj7RByvNtwSRMTX0g2VYHr6-xiOM45yN7Zk-izELI");'>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">Cây Giáng Hương</h3>
+<p class="text-[#7a8165] text-sm font-normal line-clamp-2">Hoa vàng rực rỡ, gỗ quý, tạo cảnh quan đẹp và sang trọng.</p>
+<div class="mt-auto pt-2">
+<span class="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                    Xem chi tiết 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col bg-white border border-border-color rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-square bg-gray-100 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Branches of a tree hanging over water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJNu7LVBJAJ-yF_YEY-0HUEoDursgqWjAXgQ_IsR-D9ZgAgekvMX57fZMkjFD8M9i8srZhaFguPW4QoWSrt_NfqyRGh2xXDx8gGhaLpC-IDxwQg-L-1Q4mLoSITGBQ4BmTJTb4svPDm5K50GGrUNfsHwaPyN4NGqQcY7ZGQOU64DBUWewLjXP1G67Mf-zRDmYaSs_BGYG40t0jNtCsJXg7OmNXu2lQVChiUHMfZYQcjSFfC2vpBKqmvEUpXx7tSr4SZCAG53YQHJQ");'>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">Cây Lộc Vừng</h3>
+<p class="text-[#7a8165] text-sm font-normal line-clamp-2">Nằm trong tứ quý sanh sung tùng lộc, hoa đỏ rủ xuống rất đẹp.</p>
+<div class="mt-auto pt-2">
+<span class="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                    Xem chi tiết 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group flex flex-col bg-white border border-border-color rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-square bg-gray-100 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="White fragrant flowers on a tree branch" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMSsEENJ4WEXF3alIWzc0TBrf6oy2lfbMmco9nxlKbR2uAEoTgRM0yYH8hC9vbbKn8iFy-xcv4gkGSEx1_PkgbHnbDBooA6ZDYGMk5xMhwkbKoFjoJ2qBAbhp6cZ5TKgACnOTDgG-cEUDMJ589dWtgxVstovGdsKYNpV0byIn17BQ5k-6AyFycR7HOUSvJgoe4muUTPT73Yo1zxq6WZzJZKm7ZmUXUfX1ZlGgI4OwRQD_T2UZRv0OIbTJvd-m_6wDOCuGzWcWMp38");'>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">Cây Ngọc Lan</h3>
+<p class="text-[#7a8165] text-sm font-normal line-clamp-2">Hương thơm ngào ngạt, hoa trắng tinh khiết, mang lại sự thư thái.</p>
+<div class="mt-auto pt-2">
+<span class="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                    Xem chi tiết 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group flex flex-col bg-white border border-border-color rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-square bg-gray-100 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Coniferous tree texture and form" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeWtN0X4kr2xnNdmaEFgILxWPK65Zu4lvGmhQR4c1Uvlbcs9VvYdy3HFAgmxM9FY2NcdQWGJrOiVC21ZNUhYgZ9XSGLo7TVMtDiBtrbQwg8bVVINsbq8_Eax9LPaB6XHrBXIdLJQbdnR_3KDLv450ZH-h_WEADx4feRMQTOauLbF01XgonCCs56txB5OnLuj4ZQbFBajOOT1VU-QZUoHjDm-lR4J0lbuCwNYB88cSdeKkTItPAtoutO7jGOD0dz0DYWr7AKD3BjI4");'>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">Cây Tùng Bách</h3>
+<p class="text-[#7a8165] text-sm font-normal line-clamp-2">Dáng thế uy nghiêm, xanh quanh năm, biểu tượng của sự trường thọ.</p>
+<div class="mt-auto pt-2">
+<span class="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                    Xem chi tiết 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="group flex flex-col bg-white border border-border-color rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-square bg-gray-100 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Tall narrow trees lining a pathway" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLvnYIN0c_fkYlnahNE4nHeOebu34H45MlZmx_RUxO-CrYebnpSZtJsQ99VenHiShItj69K7YOSHt8oP5ihtUPBz9MX_AvFtZTOaliITSicKV013OCEX710zD9OTJd23D0KSHN5irICBWY6bjOLUW7JPEN2Fhm4vkIgZOw0GJB14PrvGgKvpWFbLxbG7jEd7aU_4rPOki5TBgqSwgh7L2rRjSSDZ0JAbXFBhvz2CJQe4MMjZ3EM239RBddSba9ioo0ZrD4MifqC4Q");'>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">Cây Hoàng Nam</h3>
+<p class="text-[#7a8165] text-sm font-normal line-clamp-2">Dáng tháp cao vút, lá rủ xuống, thường trồng làm hàng rào, lối đi.</p>
+<div class="mt-auto pt-2">
+<span class="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                    Xem chi tiết 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="group flex flex-col bg-white border border-border-color rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-square bg-gray-100 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Red flowers on a tree against sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDwREzou0NBoRxAKGzNYE1if3m0lRC1ZM9IrWodTkR5P5q_loTyAjrZINFa5eo0ZlhIviykxfOvYS2bbxrP-evbT6wZyfCzJY2Sibz1oLUondtXIMMZLLiTcz63t_VpdK8TrG54xKiSXKlOOQS_UcNLA3cXCx9qk4s4rYyxuZ5hhIqvk2NfXniIIgekEhjU0sypZI48pvuvaFpBiA50E8ChruZ0B-rMmtyrfDSbAcysNGA-Nsy2yGLIe7HexlcQb1P_aDnbwv4kbeg");'>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">Cây Osaka Đỏ</h3>
+<p class="text-[#7a8165] text-sm font-normal line-clamp-2">Sắc đỏ rực rỡ, thu hút mọi ánh nhìn, tạo điểm nhấn cho công trình.</p>
+<div class="mt-auto pt-2">
+<span class="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                    Xem chi tiết 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination (Simulated) -->
+<div class="flex justify-center pt-8">
+<nav class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-color text-gray-400 hover:text-primary hover:border-primary transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-color text-[#161712] hover:text-primary hover:border-primary transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-color text-[#161712] hover:text-primary hover:border-primary transition-colors">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-border-color text-[#161712] hover:text-primary hover:border-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</section>
+<!-- Section 2: CTA & Lead Gen -->
+<section class="w-full bg-background-alt py-16 mt-auto border-t border-border-color">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Left: Text & Actions -->
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<span class="text-accent font-bold tracking-wider text-sm uppercase">Tư vấn chuyên sâu</span>
+<h2 class="text-primary text-3xl md:text-4xl font-black leading-tight">
+                                Bạn cần tư vấn chọn cây phù hợp cho công trình?
+                            </h2>
+<p class="text-[#4e5440] text-lg leading-relaxed max-w-lg">
+                                Đội ngũ kỹ sư KGX sẽ hỗ trợ khảo sát thực tế, phân tích thổ nhưỡng và đề xuất phương án cây xanh tối ưu nhất cho ngân sách của bạn.
+                            </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="h-12 px-6 rounded-lg bg-accent hover:bg-accent-hover text-white font-bold text-base transition-colors shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2">
+<span>Nhận tư vấn chọn cây</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="h-12 px-6 rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold text-base transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">call</span>
+<span>Gọi 0868 462 462</span>
+</button>
+</div>
+<div class="flex items-center gap-4 text-sm text-[#7a8165]">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-gray-300 bg-cover" data-alt="Avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqUJBV4wcXYy47vRkBX-gfQBonbVLvPdqyIsmyUWqOpc3rS2qJ-7Tur5gUl3s-dwcIsfVnTNjsLpkFovYQULa536unbpGKf5mn59gq_c-7aalhsNUvrU_10N61uWVeNnZgBKAI6qJ_g2dKG_wyukBthXVwtbsk94fIQWIYud6EJeOM3eU5TEkSjrKm59lggmYXJjeKyfsu71h6iDWv0YOgyqwEl9PaTRiajkt77r9rLluHKFnXPkJvLNorbAvhsVMJ4_x3DATNnZU')"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-gray-300 bg-cover" data-alt="Avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnNbDkgT6yT2pwj56tHvGAOgh49yqPo2nrev5DulVyL1jGrvldvWTYHb3KXQdiQReIV4y4ERkyz_ZfBIMzMbv4abjQGzLzShhtpa1C5GHm7zzxTkTPLHjAOQQE8y7KU-ieZK4SvUClzdUV1I9wzYr1fzOv6htyXRm1BoKJrULXbUhw07r7bflBl4S22YYXHkb0xjYkTf0uue6noyju0ePvJ95iL_XdhMqOUl4-VZeqHi47zOwhM6x0pKAT9GOJ-crMTbydAYRrHUw')"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-gray-300 bg-cover" data-alt="Avatar 3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoYCYUb6bN1B6pTQIg47j5jbuz4TfmRLLCUH-1jxBUZ9m2EC2iyQ9s98SdHQvOgDt8JlipYadhAdZgbT51X6bPLTk1shFkoIGovk0Vjr6EUyaptvaS0geixP2_NlMnAGX5sz88z12NfYnKQ4PNHWoHxdl5q1G8CnWC72XIpBZ8vNv-U-Er1xtyoWnkyAC-bpxvUJm1d1BIIWXVbWFoa291HsY0VUxppKDu5APlo6rpQ3KIvQJw-VyZz1VSyb5Lxbk8rDrmtT5U-ew')"></div>
+</div>
+<p>Hơn 500+ khách hàng đã tin tưởng</p>
+</div>
+</div>
+<!-- Right: Quick Form -->
+<div class="bg-white p-8 rounded-xl shadow-lg border border-border-color">
+<div class="flex flex-col gap-6">
+<h3 class="text-xl font-bold text-primary">Gửi yêu cầu nhanh</h3>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-1.5">
+<span class="text-[#161712] text-sm font-semibold">Họ và tên</span>
+<input class="h-12 px-4 rounded-lg bg-background-light border-border-color focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400" placeholder="Nhập họ tên của bạn" type="text"/>
+</label>
+<label class="flex flex-col gap-1.5">
+<span class="text-[#161712] text-sm font-semibold">Số điện thoại</span>
+<input class="h-12 px-4 rounded-lg bg-background-light border-border-color focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400" placeholder="Ví dụ: 0912 345 678" type="tel"/>
+</label>
+<label class="flex flex-col gap-1.5">
+<span class="text-[#161712] text-sm font-semibold">Loại công trình (Tùy chọn)</span>
+<select class="h-12 px-4 rounded-lg bg-background-light border-border-color focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-[#161712]">
+<option disabled="" selected="" value="">Chọn loại công trình</option>
+<option value="biet-thu">Sân vườn Biệt thự</option>
+<option value="khu-do-thi">Khu đô thị / Resort</option>
+<option value="nha-may">Nhà máy / KCN</option>
+<option value="khac">Khác</option>
+</select>
+</label>
+</div>
+<button class="mt-2 h-12 w-full rounded-lg bg-accent hover:bg-accent-hover text-white font-bold text-base transition-colors shadow-md">
+                                GỬI YÊU CẦU NGAY
+                            </button>
+<p class="text-xs text-center text-[#7a8165]">
+                                Chúng tôi cam kết bảo mật thông tin của bạn.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-white py-12 border-t border-primary/20">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Col 1: Brand -->
+<div class="md:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="size-8 text-white flex items-center justify-center bg-white/10 rounded-lg">
+<span class="material-symbols-outlined text-[24px]">spa</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">KGX Landscape</h2>
+</div>
+<p class="text-white/70 text-sm leading-relaxed">
+                        Đơn vị tư vấn, thiết kế và thi công cảnh quan chuyên nghiệp hàng đầu tại Thái Nguyên.
+                    </p>
+</div>
+<!-- Col 2: Links -->
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-lg">Liên kết</h3>
+<div class="flex flex-col gap-2 text-sm text-white/70">
+<a class="hover:text-accent transition-colors" href="#">Về chúng tôi</a>
+<a class="hover:text-accent transition-colors" href="#">Dự án tiêu biểu</a>
+<a class="hover:text-accent transition-colors" href="#">Dịch vụ chăm sóc</a>
+<a class="hover:text-accent transition-colors" href="#">Tin tức &amp; Sự kiện</a>
+</div>
+</div>
+<!-- Col 3: Contact -->
+<div class="flex flex-col gap-4 md:col-span-2">
+<h3 class="font-bold text-lg">Thông tin liên hệ</h3>
+<div class="flex flex-col gap-3 text-sm text-white/70">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-accent shrink-0 mt-0.5">location_on</span>
+<span>Số 123 Đường Hoàng Văn Thụ, TP. Thái Nguyên, Tỉnh Thái Nguyên</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent shrink-0">call</span>
+<span>Hotline: 0868 462 462</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent shrink-0">mail</span>
+<span>contact@kgxlandscape.com</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
+<p>© 2024 KGX Landscape. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Điều khoản sử dụng</a>
+<a class="hover:text-white transition-colors" href="#">Chính sách bảo mật</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
