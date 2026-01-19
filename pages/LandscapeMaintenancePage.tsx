@@ -102,7 +102,7 @@ const LandscapeMaintenancePage: React.FC = () => {
                                             <span className="material-symbols-outlined fill-1 text-accent text-4xl">verified</span>
                                             <div className="flex flex-col">
                                                 <span className="text-lg font-black uppercase tracking-tight">Kỹ thuật viên chuyên nghiệp</span>
-                                                <span className="text-sm opacity-80 uppercase tracking-widest">> 5 năm kinh nghiệm</span>
+                                                <span className="text-sm opacity-80 uppercase tracking-widest">&gt; 5 năm kinh nghiệm</span>
                                             </div>
                                         </div>
                                     </div>
