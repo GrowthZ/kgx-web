@@ -27,38 +27,16 @@ export interface ServiceData {
 
 export const SERVICES_DATA: Record<string, ServiceData> = {
     // --- THIẾT KẾ ---
-    'thiet-ke': {
-        slug: 'thiet-ke',
-        type: 'design',
-        metaTitle: 'Thiết kế sân vườn chuyên nghiệp - KGX Landscape',
-        hero: {
-            title: <>Kiến tạo <br className="hidden md:block" />Sân vườn đẳng cấp</>,
-            subtitle: 'Dịch vụ chủ đạo',
-            description: 'Chúng tôi mang đến giải pháp thiết kế sân vườn độc bản, kết hợp hài hòa giữa phong thủy và ngôn ngữ kiến trúc hiện đại.',
-            image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=2070&auto=format&fit=crop',
-        },
-        sections: [
-            {
-                type: 'core',
-                title: 'TRIẾT LÝ THIẾT KẾ',
-                description: 'Tối ưu trải nghiệm sống trong sự giao hòa tuyệt đối với thiên nhiên.',
-                items: [
-                    { icon: 'balance', title: 'Hài hòa Phong thủy', desc: 'Bố trí cảnh quan bổ trợ vượng khí cho gia chủ.' },
-                    { icon: 'eco', title: 'Cây xanh bền vững', desc: 'Lựa chọn loại cây phù hợp vi khí hậu và dễ chăm sóc.' },
-                    { icon: 'auto_awesome', title: 'Thẩm mỹ độc bản', desc: 'Mỗi khu vườn là một câu chuyện riêng của chủ nhân.' }
-                ]
-            }
-        ]
-    },
+
     'thiet-ke-canh-quan-san-vuon': {
         slug: 'thiet-ke-canh-quan-san-vuon',
         type: 'design',
         metaTitle: 'Thiết kế cảnh quan sân vườn - KGX Landscape',
         hero: {
-            title: <>VAI TRÒ CỦA <br className="hidden md:block" />QUY HOẠCH CẢNH QUAN</>,
-            subtitle: 'Tổng quan dịch vụ',
-            description: 'Đảm bảo sự hài hòa tổng thể, kiểm soát vi khí hậu và gia tăng giá trị dài hạn cho các dự án quy mô lớn ngay từ giai đoạn khởi tạo.',
-            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0pZYP2yqfBK4Qly9OjzvOAdLDpQYWdS9BJXk5fZsttYIsL7rsbbS-4njmKdZ4gT2kjWwh73BYrFtO_XezOFODljlziBpVlKSZd8srtXOVKMQqcK4RN6Zc3K4pYi6MY3pSJNVe82xQDBl4pntiT9tihTyUtb_DInKcgBrus67hg23TBF01hF_90mPg-jj15uaoxB8vWGn4SP-BmwO9C0Akp0NwQzR7mQngy7mLHVD_IYYLfp1L4xpc0NtYWkPLzDcEnfh4U0vkgmk',
+            title: <>THIẾT KẾ <br className="hidden md:block" />CẢNH QUAN SÂN VƯỜN</>,
+            subtitle: 'Giải pháp kiến trúc xanh',
+            description: 'Kiến tạo không gian sống nghệ thuật, kết hợp tinh tế giữa phong thủy and công năng hiện đại cho ngôi nhà của bạn.',
+            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0pZYP2yqfBK4Qly9OjzvOAdLDpQYWdS9BJXk5fZsttTYIsL7rsbbS-4njmKdZ4gT2kjWwh73BYrFtO_XezOFODljlziBpVlKSZd8srtXOVKMQqcK4RN6Zc3K4pYi6MY3pSJNVe82xQDBl4pntiT9tihTyUtb_DInKcgBrus67hg23TBF01hF_90mPg-jj15uaoxB8vWGn4SP-BmwO9C0Akp0NwQzR7mQngy7mLHVD_IYYLfp1L4xpc0NtYWkPLzDcEnfh4U0vkgmk',
             ctaLabel: 'Tìm hiểu quy trình'
         },
         sections: [
@@ -90,7 +68,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
         type: 'design',
         metaTitle: 'Thiết kế quy hoạch cảnh quan - KGX Masterplan',
         hero: {
-            title: <>Quy hoạch <br className="hidden md:block" />Cảnh quan bền vững</>,
+            title: <>THIẾT KẾ <br className="hidden md:block" />QUY HOẠCH</>,
             subtitle: 'Tầm nhìn chiến lược',
             description: 'Giải pháp quy hoạch tổng thể cho khu đô thị, khu du lịch, nghỉ dưỡng và các dự án dân dụng quy mô lớn.',
             image: 'https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?q=80&w=2070&auto=format&fit=crop',
@@ -112,7 +90,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
         type: 'design',
         metaTitle: 'Thiết kế kiến trúc xanh - KGX Architecture',
         hero: {
-            title: <>Kiến trúc <br className="hidden md:block" />Xanh hiện đại</>,
+            title: <>THIẾT KẾ <br className="hidden md:block" />KIẾN TRÚC</>,
             subtitle: 'Dịch vụ thiết kế',
             description: 'Kết hợp tinh tế giữa công năng sử dụng và mảng xanh kiến trúc, kiến tạo không gian sống tiện nghi và trong lành.',
             image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop',
@@ -132,9 +110,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     'thiet-ke-khu-nghi-duong-cong-vien': {
         slug: 'thiet-ke-khu-nghi-duong-cong-vien',
         type: 'design',
-        metaTitle: 'Thiết kế Resort & Công viên bền vững - KGX',
+        metaTitle: 'Thiết kế khu nghỉ dưỡng & công viên - KGX',
         hero: {
-            title: <>Thiết kế khu nghỉ dưỡng <br className="hidden md:block" />& công viên bền vững</>,
+            title: <>THIẾT KẾ KHU NGHỈ DƯỠNG <br className="hidden md:block" />& CÔNG VIÊN</>,
             subtitle: 'Dịch vụ cao cấp',
             description: 'Kiến tạo không gian nghỉ dưỡng đẳng cấp, hòa hợp với thiên nhiên và mang lại trải nghiệm sống khác biệt.',
             image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD9y3O-l_C9c6uYhY1XfQy5A5V5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5',
@@ -204,28 +182,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     },
 
     // --- THI CÔNG ---
-    'thi-cong': {
-        slug: 'thi-cong',
-        type: 'construction',
-        metaTitle: 'Thi công cảnh quan chuyên nghiệp - KGX',
-        hero: {
-            title: <>Thi công <br className="hidden md:block" />Cảnh quan Chuyên nghiệp</>,
-            subtitle: 'Đảm bảo chất lượng',
-            description: 'Quy trình thi công chuẩn chỉ, đội ngũ kỹ thuật giàu kinh nghiệm, cam kết mang lại sản phẩm hoàn mỹ nhất.',
-            image: 'https://images.unsplash.com/photo-1598902108854-10e335adac99?q=80&w=1974&auto=format&fit=crop',
-        },
-        sections: [
-            {
-                type: 'core',
-                title: 'CAM KẾT CỦA KGX',
-                items: [
-                    { icon: 'verified', title: 'Đúng bản vẽ 100%', desc: 'Mọi chi tiết đều được thực hiện chính xác theo hồ sơ thiết kế.' },
-                    { icon: 'schedule', title: 'Đúng tiến độ', desc: 'Cam kết bàn giao công trình đúng thời hạn thỏa thuận.' },
-                    { icon: 'shield', title: 'Bảo hành dài hạn', desc: 'Chế độ bảo trì, bảo hành cây xanh sau khi bàn giao.' }
-                ]
-            }
-        ]
-    },
+
     'thi-cong-canh-quan-san-vuon': {
         slug: 'thi-cong-canh-quan-san-vuon',
         type: 'construction',
@@ -334,9 +291,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     'van-tai-cau-tu-hanh': {
         slug: 'van-tai-cau-tu-hanh',
         type: 'construction',
-        metaTitle: 'Dịch vụ vận tải & Cẩu tự hành - KGX Logistics',
+        metaTitle: 'Dịch vụ vận tải cẩu tự hành - KGX Logistics',
         hero: {
-            title: <>Dịch vụ vận tải <br className="hidden md:block" />& cẩu tự hành</>,
+            title: <>DỊCH VỤ VẬN TẢI <br className="hidden md:block" />CẨU TỰ HÀNH</>,
             subtitle: 'Dịch vụ chuyên nghiệp',
             description: 'Giải pháp logistics chuyên sâu cho ngành cảnh quan, đảm bảo an toàn tuyệt đối cho cây xanh.',
             image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA_h3rce2UPHuxS7ejE-NDqivkKkfENIAxoDn5_4KQIt4gp63IFogDMDQLtMsGo8XgQ1FwVcoOUKNUzhNJxp1WSmNdfMnlhXqP4PkOT0Mu14pRJWHZ0DNzqZ1heHp-vrzY6PwmLu6PthSLgDnMAXHikDsV5t1apoybuLBGKzFVIBEzwnS_TRAfT4Zb2G4dV5VIF3AsY7SvTGkdc-kyQpVa2M6oGvL39zxF334TeWHSg5ZaBtSf1ZX4Z1kclAKKpI0qD83pVeyzHaEQ',
@@ -357,9 +314,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     'nuoi-cay-mo-cong-nghe-cao': {
         slug: 'nuoi-cay-mo-cong-nghe-cao',
         type: 'construction',
-        metaTitle: 'Nuoi cấy mô tế bào thực vật - KGX Biotech',
+        metaTitle: 'Dịch vụ nuôi cấy mô công nghệ cao - KGX Biotech',
         hero: {
-            title: <>Nuôi cấy mô <br className="hidden md:block" />Công nghệ cao</>,
+            title: <>DỊCH VỤ NUÔI CẤY MÔ <br className="hidden md:block" />CÔNG NGHỆ CAO</>,
             subtitle: 'Biên giới khoa học',
             description: 'Nhân giống cây trồng sạch bệnh, chất lượng cao with công nghệ nuôi cấy mô tiên tiến nhất.',
             image: 'https://images.unsplash.com/photo-1581093191605-a1d30f5ec66c?q=80&w=2070&auto=format&fit=crop',

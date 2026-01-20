@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SERVICES_DATA } from '../services';
 
 const GardenDesignPage: React.FC = () => {
+    const designServices = Object.values(SERVICES_DATA).filter(s => s.type === 'design');
+
     return (
         <div className="bg-[#fafcf8] text-[#1b2210] font-body overflow-x-hidden antialiased pt-20">
             <main className="flex flex-col w-full">
@@ -97,25 +100,18 @@ const GardenDesignPage: React.FC = () => {
                             </Link>
                         </div>
                         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                            {[
-                                { title: 'Garden Design', desc: 'Thiết kế sân vườn theo phong cách Nhật Bản, Tropical, Châu Âu... tạo không gian thư giãn tuyệt đối cho gia đình.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCOREFwYO20we6tUg0lP_FZ6k_sL-ruOAK45hkD3gzckNG_4jbA1EIY3fsEJMwbb90dXB9_UXf5k6Sp8ePO_e8qyTZJP1Ggbl3LCFxoNGjBCyttnCldyx1aUz5qPL9vNk1oxeOXmCdMQupe1V4c0wpFEaSVlxQ-EuiwhDw4zzBM8D2Stogve-8PooLCMbqyn6H-wWYzoIBg4QV5ahvwq_nj_7FmezHlJUs8DB_WyLSV3GQoaMrnfLdScKhoVPofGPe0mQZBCzvM758' },
-                                { title: 'Master Planning', desc: 'Quy hoạch tổng thể các khu đô thị, resort với tầm nhìn dài hạn, đảm bảo tính bền vững và thẩm mỹ.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuChYVchyHVw9z13gSMADyBGPCuyXVkIRfCTL53bgEMfCtX7N4WZKuPJy0XPpPNmMlQ4tAqbSyvteGmisbYyVIL-uB82TfoS6iDojkGhrl7JGkmDI7V9x1-uO6793ff0K5eAdQoO7V-jqtnjPDWJeOkVhH4vHkfG0K8K0UVhTr9yJ2HfPQi1YCgynG-CorekqTsgK0qOyYXoKbUHLDaqpLdh_BraUU4PmG-84qKOqE1Y6KVPmJiqcFFlrVBI-IAvvDv9P9iuAp2qkvY' },
-                                { title: 'Architecture', desc: 'Kết hợp kiến trúc và cảnh quan, thiết kế chòi nghỉ, hồ bơi, đường dạo và các kiến trúc nhỏ ngoài trời.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB2LsFZDWK7nmETD0vP-UhQdka5Hq0_LGdANpia_7hOKCn6OLNRFLw2Bp1mzuFUSrBpQIh3Bs2uV6B8g4XectrbwikYSnkf9CvTu0mBrO0dBLnddVKn0uPWa14xwKBBc2U8FLWjtsWANYFZqPxUIrc2WFagDAcDSNGeUSyPWaXYepEQHXYQiK5EvE--_z_TKcJyn1iMkW1sVe9Csa7DsrMcYP3RNx-tUkzw0s28sg9RhDdcU_gONQnOmbkgrLDCGJEHkzx_PSPFWJ4' },
-                                { title: 'Resort Landscape', desc: 'Nâng tầm trải nghiệm nghỉ dưỡng với cảnh quan thiên nhiên ấn tượng, độc đáo và đậm chất bản địa.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB9vD0PTDfR7mfwWHftddKkHwWC7uKbd0ZFEPKCK_q6nwckvc1kdldKd9hIh1TWpbIeJC8zzoPSvcaXUE2vrNprpybLmxBU9353hpPatDj5W91tGt5vrwrViEMalux3zgYs6X5qEOWB9QPpF_gl4szBTusOQ8RAr6-0VaLQZ9JZpeq7l3vYZGp8hVQDS2qXRcxNVN5uiGWwYZeWrI5J_pkrNKlmaeIS5JSKHJK_E0Nu3JEMR7JlUQiXIYPD2_Mf_XOUDmFHXSZn6E4' },
-                                { title: 'Rooftop Garden', desc: 'Biến sân thượng thành ốc đảo xanh mát giữa lòng thành phố, giải pháp chống nóng và thư giãn hiệu quả.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDTMJaZBhhFS1t-qcbgYWuaH8qLZ46f8tYRsd0DwJLMR737js3p4B6to7_7nimt3Sg_cxu5yfiJQt1pczzL4ZAT8erOjwhw7mHXHAHYDNHQPe63hUt1yupiDbm57BZsCHZ4sRWFmxTpat9WGjt-2VkCPFfdPWcs_RTMbNgSJpNaPbl6FPdj_kpVrXBCrLoB-c2jADH1a9wgzt6lETKgFt3rt0QlE5G1PHJe_PO2-cqyNqA0bwST3NhzGNcFFKjO3Lu6kn4YlSkbkrY' },
-                                { title: 'Vertical Garden', desc: 'Vườn đứng, tường cây xanh - giải pháp tối ưu không gian xanh cho kiến trúc hiện đại.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUZ_Jbo-x6p0trH81IRYo2uTscH-rPaUhTxiuBQF9evrJw0gM6b9PBtOPUdWZ6STgwAJLH26mqoOAC5aEj7ouaaQlvgufXp-QkRBfjBz8S_mxMCc99NE0vS4jtPaq5SWJTHWnqgsZhrSRJDTSBv95V6g9kUgw02PReKxQiKOjfH4abxK73WEYVegGemUUzt7d5tg1F5ylIy3QmAq6bTcSyZFHlnArSa6f1uVcLVljvwvH1mLAK5Lk16601TaPPW_0ICGU8NdJB-uA' }
-                            ].map((service, idx) => (
-                                <div key={idx} className="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
-                                    <img className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" alt={service.title} src={service.img} />
+                            {designServices.map((service, idx) => (
+                                <Link key={idx} to={`/dich-vu/thiet-ke/${service.slug}`} className="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
+                                    <img className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" alt={service.metaTitle} src={service.hero.image} />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
                                     <div className="absolute bottom-0 left-0 p-8">
-                                        <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-                                        <p className="text-gray-300 text-sm line-clamp-3 mb-4">{service.desc}</p>
+                                        <h3 className="text-2xl font-bold text-white mb-2">{service.hero.title}</h3>
+                                        <p className="text-gray-300 text-sm line-clamp-3 mb-4">{service.hero.description}</p>
                                         <span className="inline-flex items-center gap-2 text-sm font-bold text-[#84da0b]">
                                             Xem chi tiết <span className="material-symbols-outlined text-base">arrow_forward</span>
                                         </span>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>

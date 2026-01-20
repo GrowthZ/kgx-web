@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SERVICES_DATA } from '../services';
 
 const GardenConstructionPage: React.FC = () => {
+    const constructionServices = Object.values(SERVICES_DATA).filter(s => s.type === 'construction');
+
     return (
         <div className="bg-[#f7f8f5] text-[#161c0d] font-body antialiased pt-20">
             <main className="flex flex-col w-full max-w-[1440px] mx-auto overflow-hidden">
@@ -82,37 +85,19 @@ const GardenConstructionPage: React.FC = () => {
                             <h2 className="text-[#161c0d] text-3xl font-bold mb-2">Hạng mục thi công chính</h2>
                             <p className="text-gray-500">Dịch vụ đa dạng đáp ứng mọi yêu cầu kỹ thuật khắt khe nhất.</p>
                         </div>
-                        <button className="text-[#84da0b] font-bold flex items-center hover:underline">
+                        <Link className="text-[#84da0b] font-bold flex items-center hover:underline" to="/dich-vu">
                             Xem tất cả dịch vụ <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
-                        </button>
+                        </Link>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {[
-                            { title: 'Thi công sân vườn', desc: 'Thiết kế và thi công sân vườn trọn gói, tiểu cảnh, hồ cá koi, đài phun nước nghệ thuật.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC_JAcY-w0BCJWklSOxQte-ZzWzg_8r2V7_Zz5R_3c1U7FixKdlGMKOvRp5-AAdvVt_dIC2ZMG0RjrDFh0I5M9LTmM-5IaG-tQwjzg6Y5kttZoHiydJlvq9Tdn4_YMrxsYhT7a28ZLTEySYMYHll_29gMfGOGnZ7k7esdwp5j8aYinDupfk3Va9AP0paR2UzDxc4tlyCAvy71bO06uSOpMFRG_wc01P5wuyH9imttHl8jQC052CHeyDDG_wTrSthTKdKGbJN9KCoqw' },
-                            { title: 'Chăm sóc & Bảo dưỡng', desc: 'Dịch vụ cắt tỉa, bón phân, phòng trừ sâu bệnh định kỳ giúp cảnh quan luôn xanh tốt.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDxP40ijO69wPd4UAY-_ZEG4o_Rwvf1EiDKJxZvHVtnuEROuJDVY0P0oxDOAe-bHGnAVVw7wkhP_EQdvsYLnN3_FEaxkUtGqwOvap3Jeo-6jS9pagWZnSElGI8Sc8LX4g-XMylPymmIvdcFz1sb7uBj4BGHy2u3ja7Q2wIDhKjuppB44fnorD9La7QfZwCHVpspkkIGDIU1PsKL-17T2WQxFBIYsxvkyVDzcgBw9XLW_87kXP42ez3FGCXmzQ0dLtwMY7dmVHzV56o' },
-                            { title: 'Cung cấp cây bóng mát', desc: 'Hệ thống vườn ươm quy mô lớn, cung cấp cây công trình, cây bóng mát đa dạng kích thước.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDpKl5pR-n2ocKMs2G70vTo5sZM5T3dpfqG8jOPPt4iJZ9tyV-BuY_YIFxLFWVriopto6GHAIH_kwaotyIeY009ihzlWzfzRfi8zUna6QAueWvRGD8zUTxQdekdj_82nI5SQa3gwdUQWEOjsA5RSX5tsBQxwVYOXvV50hfvA87LYahHcEbDKVfnMCegQbIXR2lsnSOZk2tDqPyEWtHtPr3IwykxOYFY_N7etmaGXlBkySxWeFfZuO7CDWQ7OFtT0aZNoSDi5DS_JYA' },
-                            { title: 'Giải pháp xanh thông minh', desc: 'Thi công vườn tường đứng, vườn trên mái, hệ thống tưới tự động tiết kiệm nước.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCvx7qglDBZax8oKR36jSnYKAS6QjJAadzTemOK0ld9RQFhLNm_arbP9XA2AHLqWsfS-Bowg6EgRTdyZXz0hZJTWgPRnG1dF_16rVf0Itxq52x8MSe6AF4H4THQYR_rTL824sZt_JPoAb8pqK4nDtzv35LlVQpnALFnZsGtKbwZx0H-8zsjTzowLZuJdmaaUH6m0KGStaAm8JTl1gBzMmv-p5aHaHw9M3jQpWXpnDfQVthrRRnIvTYNXYLW-ZJ5LyCe7XraK5Dezog' },
-                            { title: 'Dịch vụ xe cẩu & Vận tải', desc: 'Cho thuê xe cẩu tự hành, vận chuyển cây xanh và vật liệu xây dựng công trình.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiV3xHcWHtwOnQvVWlPJTXR2nHRPwxE7kpnztSH6_ufenJMiHxEwzjnMM2C4QKhlYLDJIs-hlmG44COxO-nXpEwoUMnk5UOEhtZL7ZMHj3KHKnArj7KBfMv7aDf3fJ7vGDNcQDCJREa-PRKC74erkMgLpIPVnXv8fkDhfobJM08eec9ZRxu3vKNZL1uuCZUcySBapi8CnYcCrwZY8ZSPfC5pzRxwjeSmZte2XTn2hLlwCM1UkSXWcJN7YmxhOz8hjm1LDoy7zC8DI' },
-                            { title: 'Nuôi cấy mô thực vật', desc: 'Nhân giống cây trồng chất lượng cao, sạch bệnh, đồng đều bằng công nghệ nuôi cấy mô.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmenbXRvlbZjgjYg6nBFaRXWgrkB4JlPujbiGm42mZOwGADdFtiCaMAaNTmO2aaHQUH9GAix0gntkvi1Ngp7zunGEy1KBTdEL_12p5tgIxk6EXTeB7QgrvBpL28zinHI61pLqWWC6oRX2xDns-e4HWNgqD4gIktJknugwA9L96AM2pBhVSd_mKh_Bz4xkrJkJZ6R5hcwPhLP03MET2rmE-TmXAOe8uFde41dHczblhH2YnvJUcSdkKIijALbwmEtsLtBbNLN556QE' },
-                        ].map((service, idx) => (
-                            <div key={idx} className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
-                                <div className="h-48 rounded-xl bg-cover bg-center mb-4" style={{ backgroundImage: `url('${service.img}')` }}></div>
-                                <h3 className="text-lg font-bold text-[#161c0d] mb-2">{service.title}</h3>
-                                <p className="text-sm text-gray-500 mb-3 line-clamp-3">{service.desc}</p>
-                                <a className="text-sm font-semibold text-[#84da0b] inline-flex items-center" href="#">Chi tiết <span className="material-symbols-outlined text-sm ml-1">chevron_right</span></a>
-                            </div>
+                        {constructionServices.map((service, idx) => (
+                            <Link key={idx} to={`/dich-vu/thi-cong/${service.slug}`} className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all block group">
+                                <div className="h-48 rounded-xl bg-cover bg-center mb-4 transition-transform group-hover:scale-[1.02]" style={{ backgroundImage: `url('${service.hero.image}')` }}></div>
+                                <h3 className="text-lg font-bold text-[#161c0d] mb-2 group-hover:text-[#84da0b] transition-colors">{service.hero.title}</h3>
+                                <p className="text-sm text-gray-500 mb-3 line-clamp-3">{service.hero.description}</p>
+                                <span className="text-sm font-semibold text-[#84da0b] inline-flex items-center">Chi tiết <span className="material-symbols-outlined text-sm ml-1">chevron_right</span></span>
+                            </Link>
                         ))}
-                        {/* Special Wide Item */}
-                        <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all md:col-span-2 lg:col-span-1 xl:col-span-2">
-                            <div className="flex flex-col md:flex-row gap-4 h-full">
-                                <div className="w-full md:w-1/2 h-48 md:h-auto rounded-xl bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3OW3EjLo70rpPeecw5DYcp7SqpFvWjFq2v77pULmK2Z4WUhoNRKiu035uazbc_agJDJloz48g3idB0C3ZJFVYrOHGcBazmnpiZODBsGwP0kyvdL3zAZF5PF8MeBp_KUrA-7-SswyiEyXArj735y723BwcFUaduMB3PDVqqMBlHjD5oZaO8mzioW8rLrP07Wr_2dllg1wXxZ8fW1Hmhube8TXSMxhO9rn4CAK7sknbCFGzwiqlsZZk2TURFM3sCcF3fWJGmi5HQ28')" }}></div>
-                                <div className="flex flex-col justify-center w-full md:w-1/2">
-                                    <h3 className="text-lg font-bold text-[#161c0d] mb-2">Nông nghiệp sạch công nghệ cao</h3>
-                                    <p className="text-sm text-gray-500 mb-3">Tư vấn và chuyển giao quy trình canh tác nông nghiệp hữu cơ, nhà màng, nhà lưới công nghệ cao.</p>
-                                    <a className="text-sm font-semibold text-[#84da0b] inline-flex items-center" href="#">Chi tiết <span className="material-symbols-outlined text-sm ml-1">chevron_right</span></a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </section>
 

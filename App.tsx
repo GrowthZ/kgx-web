@@ -15,19 +15,8 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import TreeCategoryPage from './pages/TreeCategoryPage';
 
-import MasterPlanningPage from './pages/MasterPlanningPage';
 import GardenConstructionPage from './pages/GardenConstructionPage';
 import GardenDesignPage from './pages/GardenDesignPage';
-import ResortParkDesignPage from './pages/ResortParkDesignPage';
-import RooftopGardenPage from './pages/RooftopGardenPage';
-import VerticalGardenPage from './pages/VerticalGardenPage';
-import LandscapeMaintenancePage from './pages/LandscapeMaintenancePage';
-import LargeTreeInstallationPage from './pages/LargeTreeInstallationPage';
-import GreenConsultingPage from './pages/GreenConsultingPage';
-import CraneLogisticsPage from './pages/CraneLogisticsPage';
-import CleanAgriculturePage from './pages/CleanAgriculturePage';
-import ArchitectureDesignPage from './pages/ArchitectureDesignPage';
-import TissueCultureBiotechPage from './pages/TissueCultureBiotechPage';
 import ProductListingPage from './pages/ProductListingPage';
 
 const App: React.FC = () => {
@@ -41,23 +30,10 @@ const App: React.FC = () => {
 
           <Route path="/dich-vu" element={<ServicesPage />} />
 
-          {/* Individual Service Pages */}
-          <Route path="/dich-vu/thiet-ke-canh-quan-san-vuon" element={<GardenDesignPage />} />
-          <Route path="/dich-vu/thiet-ke-quy-hoach" element={<MasterPlanningPage />} />
-          <Route path="/dich-vu/thiet-ke-kien-truc" element={<ArchitectureDesignPage />} />
-          <Route path="/dich-vu/thiet-ke-khu-nghi-duong-cong-vien" element={<ResortParkDesignPage />} />
-          <Route path="/dich-vu/thiet-ke-vuon-tren-mai" element={<RooftopGardenPage />} />
-          <Route path="/dich-vu/thiet-ke-vuon-thang-dung" element={<VerticalGardenPage />} />
-
-          <Route path="/dich-vu/thi-cong-canh-quan-san-vuon" element={<GardenConstructionPage />} />
-          <Route path="/dich-vu/cham-soc-canh-quan" element={<LandscapeMaintenancePage />} />
-          <Route path="/dich-vu/thi-cong-cay-cong-trinh" element={<LargeTreeInstallationPage />} />
-          <Route path="/dich-vu/tu-van-giai-phap-xanh" element={<GreenConsultingPage />} />
-          <Route path="/dich-vu/van-tai-cau-tu-hanh" element={<CraneLogisticsPage />} />
-          <Route path="/dich-vu/nuoi-cay-mo-cong-nghe-cao" element={<TissueCultureBiotechPage />} />
-          <Route path="/dich-vu/thi-cong-nong-nghiep-sach" element={<CleanAgriculturePage />} />
-
-          <Route path="/dich-vu/:slug" element={<ServiceDetailPage />} />
+          {/* Individual Service Pages handled by dynamic route */}
+          <Route path="/dich-vu/:category/:slug" element={<ServiceDetailPage />} />
+          <Route path="/dich-vu/thiet-ke" element={<GardenDesignPage />} />
+          <Route path="/dich-vu/thi-cong" element={<GardenConstructionPage />} />
 
           <Route path="/san-pham" element={<ProductListPage />} />
           <Route path="/san-pham/tat-ca" element={<ProductListingPage />} />

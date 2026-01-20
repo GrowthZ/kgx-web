@@ -6,27 +6,27 @@ export const NAV_LINKS = [
     subLinks: [
       {
         label: "Thiết kế cảnh quan",
-        href: "/dich-vu/thiet-ke-canh-quan-san-vuon",
+        href: "/dich-vu/thiet-ke",
         items: [
-          { label: "Thiết kế sân vườn", href: "/dich-vu/thiet-ke-canh-quan-san-vuon" },
-          { label: "Thiết kế quy hoạch", href: "/dich-vu/thiet-ke-quy-hoach" },
-          { label: "Thiết kế kiến trúc", href: "/dich-vu/thiet-ke-kien-truc" },
-          { label: "Khu nghỉ dưỡng & Công viên", href: "/dich-vu/thiet-ke-khu-nghi-duong-cong-vien" },
-          { label: "Vườn trên mái", href: "/dich-vu/thiet-ke-vuon-tren-mai" },
-          { label: "Vườn thẳng đứng", href: "/dich-vu/thiet-ke-vuon-thang-dung" },
+          { label: "Thiết kế sân vườn", href: "/dich-vu/thiet-ke/thiet-ke-canh-quan-san-vuon" },
+          { label: "Thiết kế quy hoạch", href: "/dich-vu/thiet-ke/thiet-ke-quy-hoach" },
+          { label: "Thiết kế kiến trúc", href: "/dich-vu/thiet-ke/thiet-ke-kien-truc" },
+          { label: "Thiết kế khu nghỉ dưỡng & công viên", href: "/dich-vu/thiet-ke/thiet-ke-khu-nghi-duong-cong-vien" },
+          { label: "Thiết kế vườn trên mái", href: "/dich-vu/thiet-ke/thiet-ke-vuon-tren-mai" },
+          { label: "Thiết kế vườn thẳng đứng", href: "/dich-vu/thiet-ke/thiet-ke-vuon-thang-dung" },
         ]
       },
       {
         label: "Thi công cảnh quan",
-        href: "/dich-vu/thi-cong-canh-quan-san-vuon",
+        href: "/dich-vu/thi-cong",
         items: [
-          { label: "Thi công sân vườn", href: "/dich-vu/thi-cong-canh-quan-san-vuon" },
-          { label: "Chăm sóc cảnh quan", href: "/dich-vu/cham-soc-canh-quan" },
-          { label: "Thi công cây công trình", href: "/dich-vu/thi-cong-cay-cong-trinh" },
-          { label: "Giải pháp xanh", href: "/dich-vu/tu-van-giai-phap-xanh" },
-          { label: "Vận tải cẩu tự hành", href: "/dich-vu/van-tai-cau-tu-hanh" },
-          { label: "Nuôi cấy mô công nghệ cao", href: "/dich-vu/nuoi-cay-mo-cong-nghe-cao" },
-          { label: "Nông nghiệp sạch", href: "/dich-vu/thi-cong-nong-nghiep-sach" },
+          { label: "Thi công sân vườn", href: "/dich-vu/thi-cong/thi-cong-canh-quan-san-vuon" },
+          { label: "Chăm sóc cảnh quan", href: "/dich-vu/thi-cong/cham-soc-canh-quan" },
+          { label: "Thi công cây công trình", href: "/dich-vu/thi-cong/thi-cong-cay-cong-trinh" },
+          { label: "Tư vấn giải pháp xanh", href: "/dich-vu/thi-cong/tu-van-giai-phap-xanh" },
+          { label: "Dịch vụ vận tải cẩu tự hành", href: "/dich-vu/thi-cong/van-tai-cau-tu-hanh" },
+          { label: "Dịch vụ nuôi cấy mô công nghệ cao", href: "/dich-vu/thi-cong/nuoi-cay-mo-cong-nghe-cao" },
+          { label: "Thi công nông nghiệp sạch", href: "/dich-vu/thi-cong/thi-cong-nong-nghiep-sach" },
         ]
       }
     ]

@@ -43,8 +43,8 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm">
               {[
                 { label: "Giới thiệu", to: "/gioi-thieu" },
-                { label: "Dịch vụ Thiết kế", to: "/dich-vu/thiet-ke-canh-quan-san-vuon" },
-                { label: "Dịch vụ Thi công", to: "/dich-vu/thi-cong-canh-quan-san-vuon" },
+                { label: "Dịch vụ Thiết kế", to: "/dich-vu/thiet-ke" },
+                { label: "Dịch vụ Thi công", to: "/dich-vu/thi-cong" },
                 { label: "Dự án tiêu biểu", to: "/du-an" },
                 { label: "Tin tức & Sự kiện", to: "/tin-tuc" },
                 { label: "Tuyển dụng", to: "#" },
@@ -62,10 +62,10 @@ const Footer: React.FC = () => {
             <h4 className="text-white font-bold mb-6">Dịch vụ</h4>
             <ul className="space-y-3 text-sm">
               {[
-                { label: "Thiết kế Sân vườn", to: "/dich-vu/thiet-ke-canh-quan-san-vuon" },
-                { label: "Thi công Sân vườn", to: "/dich-vu/thi-cong-canh-quan-san-vuon" },
-                { label: "Thiết kế Quy hoạch", to: "/dich-vu/thiet-ke-quy-hoach" },
-                { label: "Chăm sóc bảo dưỡng", to: "/dich-vu/cham-soc-canh-quan" },
+                { label: "Thiết kế Sân vườn", to: "/dich-vu/thiet-ke/thiet-ke-canh-quan-san-vuon" },
+                { label: "Thi công Sân vườn", to: "/dich-vu/thi-cong/thi-cong-canh-quan-san-vuon" },
+                { label: "Thiết kế Quy hoạch", to: "/dich-vu/thiet-ke/thiet-ke-quy-hoach" },
+                { label: "Chăm sóc bảo dưỡng", to: "/dich-vu/thi-cong/cham-soc-canh-quan" },
                 { label: "Cung cấp cây xanh", to: "/san-pham" },
               ].map((link) => (
                 <li key={link.label}>
