@@ -28,6 +28,7 @@ import CraneLogisticsPage from './pages/CraneLogisticsPage';
 import CleanAgriculturePage from './pages/CleanAgriculturePage';
 import ArchitectureDesignPage from './pages/ArchitectureDesignPage';
 import TissueCultureBiotechPage from './pages/TissueCultureBiotechPage';
+import ProductListingPage from './pages/ProductListingPage';
 
 const App: React.FC = () => {
   return (
@@ -59,6 +60,7 @@ const App: React.FC = () => {
           <Route path="/dich-vu/:slug" element={<ServiceDetailPage />} />
 
           <Route path="/san-pham" element={<ProductListPage />} />
+          <Route path="/san-pham/tat-ca" element={<ProductListingPage />} />
           <Route path="/san-pham/nhom/:categorySlug" element={<TreeCategoryPage />} />
           <Route path="/san-pham/:slug" element={<ProductDetailPage />} />
 

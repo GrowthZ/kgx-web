@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KGX Landscape Design Category Detail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#84da0b",
+                        "primary-dark": "#6cb609",
+                        "secondary": "#3a4d2e", // Deep olive green
+                        "accent": "#f97316", // Warm orange
+                        "background-light": "#fafcf8",
+                        "background-dark": "#1b2210",
+                        "surface": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-header {
+            background: rgba(250, 252, 248, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        /* Hide scrollbar for clean horizontal scrolling if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-[#1b2210] font-body overflow-x-hidden antialiased selection:bg-primary selection:text-white">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-[#eef4e7] glass-header transition-all duration-300">
+<div class="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 lg:px-12 xl:px-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-xl bg-secondary text-primary">
+<span class="material-symbols-outlined text-2xl">park</span>
+</div>
+<h1 class="text-2xl font-black tracking-tight text-secondary">KGX <span class="text-primary">Landscape</span></h1>
+</div>
+<!-- Navigation -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-sm font-semibold text-secondary hover:text-primary transition-colors" href="#">Trang chủ</a>
+<a class="text-sm font-semibold text-secondary hover:text-primary transition-colors" href="#">Giới thiệu</a>
+<a class="text-sm font-bold text-primary" href="#">Dịch vụ</a>
+<a class="text-sm font-semibold text-secondary hover:text-primary transition-colors" href="#">Dự án</a>
+<a class="text-sm font-semibold text-secondary hover:text-primary transition-colors" href="#">Tin tức</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="hidden md:flex h-11 items-center justify-center gap-2 rounded-xl bg-secondary/5 px-4 text-sm font-bold text-secondary transition-colors hover:bg-secondary/10">
+<span class="material-symbols-outlined text-xl text-accent">call</span>
+<span>0868 462 462</span>
+</button>
+<button class="h-11 items-center justify-center rounded-xl bg-primary px-6 text-sm font-bold text-white shadow-lg shadow-primary/30 transition-all hover:bg-primary-dark hover:shadow-primary/50">
+                    Nhận tư vấn
+                </button>
+<!-- Mobile Menu Icon -->
+<button class="lg:hidden p-2 text-secondary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden py-12 lg:py-20">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+<!-- Text Content -->
+<div class="flex flex-col gap-6">
+<div class="inline-flex w-fit items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent">
+<span class="size-2 rounded-full bg-accent"></span>
+                        Chuyên nghiệp &amp; Tận tâm
+                    </div>
+<h1 class="text-4xl font-black leading-[1.15] tracking-tight text-secondary sm:text-5xl lg:text-6xl">
+                        Dịch vụ thiết kế <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">cảnh quan xanh</span>
+</h1>
+<p class="text-lg leading-relaxed text-gray-600 max-w-lg">
+                        Giải pháp thiết kế bài bản, nghiên cứu kỹ lưỡng không gian, địa hình và tối ưu ngân sách cho khách hàng. Chúng tôi kiến tạo không gian sống hòa hợp với thiên nhiên.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-2">
+<button class="flex h-12 items-center justify-center gap-2 rounded-xl bg-secondary px-8 text-base font-bold text-white shadow-xl shadow-secondary/20 transition-transform hover:-translate-y-1 hover:bg-[#2f3d25]">
+                            Tư vấn ngay
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="flex h-12 items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-8 text-base font-bold text-secondary transition-colors hover:border-primary hover:text-primary hover:bg-green-50">
+<span class="material-symbols-outlined text-xl">folder_open</span>
+                            Xem hồ sơ năng lực
+                        </button>
+</div>
+</div>
+<!-- Image Content -->
+<div class="relative group">
+<div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-primary/20 to-accent/20 blur-2xl opacity-70 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] border-4 border-white shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+<img alt="Detailed technical masterplan landscape rendering with green spaces" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjA0XcveRV1S5rDUktH6EydeH9ww_UWc3Fm2V3YJZ8c9PfuUYQ_ciMpCg9sa4XhS9OJFtKGeUOnqJETqKHEnxBSsD0HDwAZxXUleigTE1OWrMGGEd45xFxorh6aSdq48bpAYYUXudqct7bbcBphg_8vzQ-O0RlVL55Jy2nzN4D4o1gxZ91R5NV3zOKZP6JZ33yR1dUBuuf1QvM0zftphNUF00ReUfppMVtxEiIrTJTT9xH5P9EUfHzNBdVL6Qa0g3tFagXKcfTCDs"/>
+<div class="absolute bottom-6 left-6 z-20 flex items-center gap-3 rounded-lg bg-white/90 p-3 backdrop-blur-md">
+<span class="material-symbols-outlined text-accent">architecture</span>
+<div>
+<p class="text-xs font-bold text-gray-500 uppercase">Quy hoạch</p>
+<p class="text-sm font-bold text-secondary">Masterplan 2024</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Audience Section -->
+<section class="bg-[#f3f6f1] py-16 lg:py-24">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="mb-12 flex flex-col items-center text-center">
+<h2 class="text-3xl font-bold text-secondary sm:text-4xl">Đối tượng khách hàng</h2>
+<div class="mt-2 h-1 w-20 rounded-full bg-primary"></div>
+</div>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<!-- Card 1 -->
+<div class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
+<div>
+<div class="mb-4 flex size-12 items-center justify-center rounded-lg bg-green-50 text-secondary group-hover:bg-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">villa</span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-secondary">Biệt thự</h3>
+<p class="text-sm text-gray-500">Thiết kế cảnh quan sân vườn đẳng cấp cho biệt thự tư nhân, villa nghỉ dưỡng.</p>
+</div>
+<div class="mt-6 aspect-[2/1] w-full overflow-hidden rounded-lg bg-gray-100">
+<img class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Modern villa garden with pool and stone path" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDySjJdMQfCOZi5NIv5GAEkVMWw81ADBNfXptPXg7Wm_RWO2TznoRhp3QbiI52ZpoGP53Cnp6XT2_ylxe2CLfuCRfBoNYohG0QaX5fwhsQorcdPDmUJl8VaP5EXTEfNxkA3J--H0TPa8h-iknuNxl2PTVajgY-rn_Z1GQ1f9JPtWT-PVzhdG7JJjahCoR62YaIhing9Wmt661YxovMiA2XTlrs4KYnwj-e8JN8An_o3RbfftrZ3WKN9_YaKZUTQ3vr7q7Xbxj0Q2Js"/>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
+<div>
+<div class="mb-4 flex size-12 items-center justify-center rounded-lg bg-green-50 text-secondary group-hover:bg-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">deck</span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-secondary">Resort</h3>
+<p class="text-sm text-gray-500">Quy hoạch tổng thể cảnh quan khu nghỉ dưỡng, khách sạn cao cấp, homestay.</p>
+</div>
+<div class="mt-6 aspect-[2/1] w-full overflow-hidden rounded-lg bg-gray-100">
+<img class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Luxury resort poolside with tropical landscaping" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Y2PlDjrwWd1EvO7QPhoH2Iu8m7HJWdmSfPUZLVi7E3NG58XHtliyjPV7ofetOtbZe92VItZtgHPTUmP5w5CKvEvcumwvkaA41KCgjmUEe1HKNtJ_Vi1V_7miophN4gInIgcGQnGu05LAPaZOmcHBCJ923cQab3r-qipQLkAsAOhuFO6IuSEPXf1ycviw_iRoT8PW9211rBWTZ1fnli5hev9VvRNyrFSZ0Y6qBojeoAuKa9EL7BSXpXT5IQccFpWSrY3L7HxeoMY"/>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
+<div>
+<div class="mb-4 flex size-12 items-center justify-center rounded-lg bg-green-50 text-secondary group-hover:bg-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-secondary">Đô thị</h3>
+<p class="text-sm text-gray-500">Cảnh quan công viên, khu dân cư, quảng trường và các công trình công cộng.</p>
+</div>
+<div class="mt-6 aspect-[2/1] w-full overflow-hidden rounded-lg bg-gray-100">
+<img class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Urban park walkway with modern benches and trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnPUdOFyxqKBq4A9GbhydvLttilfcuMxiqHtY-zK20QQKjhFmbwaN3rBHAUTT8bZsB1CiR-lIl5Q_IJ393LnFIG-vgcPBO-JpWqr-9sj9nWQC-yyeqTAbxSVbo8Sm9ms7js7BdjRFIHc00ngwvYHcoF_gj40AiJJjXWeGBeU6qnV9PHpQhB8LWEZVhfg-GL-myGL4avT2FmBPe9pSQ5og9ue8Fz7TlHBZuAhYcdlzM3QZ1_DeCu6Q5_pXq38LiPBJ-c5kRJmvMgZ0"/>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
+<div>
+<div class="mb-4 flex size-12 items-center justify-center rounded-lg bg-green-50 text-secondary group-hover:bg-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">domain</span>
+</div>
+<h3 class="mb-2 text-xl font-bold text-secondary">Doanh nghiệp</h3>
+<p class="text-sm text-gray-500">Cảnh quan nhà máy, khu công nghiệp, văn phòng xanh tạo môi trường làm việc.</p>
+</div>
+<div class="mt-6 aspect-[2/1] w-full overflow-hidden rounded-lg bg-gray-100">
+<img class="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Corporate office exterior with green plant wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr4aGFXp0sGjU3VW10P6xvWWby05jl8mH_ZG6L1mfPEF6xBUpUNZDGI5uestREyu5L5fT00NFBAjbW5xZqKt-IqKIjLghOobi6LDVQLRGd5eA10i1vuHNM6SuQx_pyv_V1As-ZMrfRvnGd1cZGdSaanVJTeu3WlNsPaa-FPs0sFey5N3H2n1n9fy21C27DXFkulnJ_JZvJgLtaB_92SJa_eQevUT05XJ5ijjTxXzkT3zWgRCbDDTvLOnEbCOW6ykQw3kz0HWFKCaA"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-16 lg:py-24">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-3xl font-bold text-secondary sm:text-4xl">Danh mục dịch vụ</h2>
+<p class="mt-2 text-gray-600">Khám phá các giải pháp thiết kế chuyên sâu của KGX Landscape</p>
+</div>
+<a class="group flex items-center gap-1 font-bold text-primary hover:text-primary-dark" href="#">
+                    Xem tất cả dịch vụ
+                    <span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+<!-- Service 1 -->
+<div class="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
+<img class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" data-alt="Japanese garden with stone lantern and pond" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOREFwYO20we6tUg0lP_FZ6k_sL-ruOAK45hkD3gzckNG_4jbA1EIY3fsEJMwbb90dXB9_UXf5k6Sp8ePO_e8qyTZJP1Ggbl3LCFxoNGjBCyttnCldyx1aUz5qPL9vNk1oxeOXmCdMQupe1V4c0wpFEaSVlxQ-EuiwhDw4zzBM8D2Stogve-8PooLCMbqyn6H-wWYzoIBg4QV5ahvwq_nj_7FmezHlJUs8DB_WyLSV3GQoaMrnfLdScKhoVPofGPe0mQZBCzvM758"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="text-2xl font-bold text-white mb-2">Garden Design</h3>
+<p class="text-gray-300 text-sm line-clamp-3 mb-4">Thiết kế sân vườn theo phong cách Nhật Bản, Tropical, Châu Âu... tạo không gian thư giãn tuyệt đối cho gia đình.</p>
+<span class="inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            Xem chi tiết <span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
+<img class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" data-alt="Large scale construction site planning document" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChYVchyHVw9z13gSMADyBGPCuyXVkIRfCTL53bgEMfCtX7N4WZKuPJy0XPpPNmMlQ4tAqbSyvteGmisbYyVIL-uB82TfoS6iDojkGhrl7JGkmDI7V9x1-uO6793ff0K5eAdQoO7V-jqtnjPDWJeOkVhH4vHkfG0K8K0UVhTr9yJ2HfPQi1YCgynG-CorekqTsgK0qOyYXoKbUHLDaqpLdh_BraUU4PmG-84qKOqE1Y6KVPmJiqcFFlrVBI-IAvvDv9P9iuAp2qkvY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="text-2xl font-bold text-white mb-2">Master Planning</h3>
+<p class="text-gray-300 text-sm line-clamp-3 mb-4">Quy hoạch tổng thể các khu đô thị, resort với tầm nhìn dài hạn, đảm bảo tính bền vững và thẩm mỹ.</p>
+<span class="inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            Xem chi tiết <span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
+<img class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" data-alt="Modern architecture exterior with integrated landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2LsFZDWK7nmETD0vP-UhQdka5Hq0_LGdANpia_7hOKCn6OLNRFLw2Bp1mzuFUSrBpQIh3Bs2uV6B8g4XectrbwikYSnkf9CvTu0mBrO0dBLnddVKn0uPWa14xwKBBc2U8FLWjtsWANYFZqPxUIrc2WFagDAcDSNGeUSyPWaXYepEQHXYQiK5EvE--_z_TKcJyn1iMkW1sVe9Csa7DsrMcYP3RNx-tUkzw0s28sg9RhDdcU_gONQnOmbkgrLDCGJEHkzx_PSPFWJ4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="text-2xl font-bold text-white mb-2">Architecture</h3>
+<p class="text-gray-300 text-sm line-clamp-3 mb-4">Kết hợp kiến trúc và cảnh quan, thiết kế chòi nghỉ, hồ bơi, đường dạo và các kiến trúc nhỏ ngoài trời.</p>
+<span class="inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            Xem chi tiết <span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
+<img class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" data-alt="Luxury resort infinity pool overlooking ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9vD0PTDfR7mfwWHftddKkHwWC7uKbd0ZFEPKCK_q6nwckvc1kdldKd9hIh1TWpbIeJC8zzoPSvcaXUE2vrNprpybLmxBU9353hpPatDj5W91tGt5vrwrViEMalux3zgYs6X5qEOWB9QPpF_gl4szBTusOQ8RAr6-0VaLQZ9JZpeq7l3vYZGp8hVQDS2qXRcxNVN5uiGWwYZeWrI5J_pkrNKlmaeIS5JSKHJK_E0Nu3JEMR7JlUQiXIYPD2_Mf_XOUDmFHXSZn6E4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="text-2xl font-bold text-white mb-2">Resort Landscape</h3>
+<p class="text-gray-300 text-sm line-clamp-3 mb-4">Nâng tầm trải nghiệm nghỉ dưỡng với cảnh quan thiên nhiên ấn tượng, độc đáo và đậm chất bản địa.</p>
+<span class="inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            Xem chi tiết <span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Service 5 -->
+<div class="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
+<img class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" data-alt="Rooftop garden with seating area and city view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTMJaZBhhFS1t-qcbgYWuaH8qLZ46f8tYRsd0DwJLMR737js3p4B6to7_7nimt3Sg_cxu5yfiJQt1pczzL4ZAT8erOjwhw7mHXHAHYDNHQPe63hUt1yupiDbm57BZsCHZ4sRWFmxTpat9WGjt-2VkCPFfdPWcs_RTMbNgSJpNaPbl6FPdj_kpVrXBCrLoB-c2jADH1a9wgzt6lETKgFt3rt0QlE5G1PHJe_PO2-cqyNqA0bwST3NhzGNcFFKjO3Lu6kn4YlSkbkrY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="text-2xl font-bold text-white mb-2">Rooftop Garden</h3>
+<p class="text-gray-300 text-sm line-clamp-3 mb-4">Biến sân thượng thành ốc đảo xanh mát giữa lòng thành phố, giải pháp chống nóng và thư giãn hiệu quả.</p>
+<span class="inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            Xem chi tiết <span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Service 6 -->
+<div class="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
+<img class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" data-alt="Vertical garden wall on modern building facade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUZ_Jbo-x6p0trH81IRYo2uTscH-rPaUhTxiuBQF9evrJw0gM6b9PBtOPUdWZ6STgwAJLH26mqoOAC5aEj7ouaaQlvgufXp-QkRBfjBz8S_mxMCc99NE0vS4jtPaq5SWJTHWnqgsZhrSRJDTSBv95V6g9kUgw02PReKxQiKOjfH4abxK73WEYVegGemUUzt7d5tg1F5ylIy3QmAq6bTcSyZFHlnArSa6f1uVcLVljvwvH1mLAK5Lk16601TaPPW_0ICGU8NdJB-uA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="text-2xl font-bold text-white mb-2">Vertical Garden</h3>
+<p class="text-gray-300 text-sm line-clamp-3 mb-4">Vườn đứng, tường cây xanh - giải pháp tối ưu không gian xanh cho kiến trúc hiện đại.</p>
+<span class="inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            Xem chi tiết <span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scope of Work Section -->
+<section class="bg-secondary text-white py-16 lg:py-24 overflow-hidden relative">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 h-96 w-96 rounded-full bg-primary/10 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 h-80 w-80 rounded-full bg-accent/10 blur-3xl"></div>
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8 relative z-10">
+<div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+<div class="order-2 lg:order-1">
+<h2 class="text-3xl font-bold mb-8">Phạm vi công việc</h2>
+<div class="space-y-4">
+<div class="flex items-start gap-4 rounded-xl bg-white/5 p-4 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-secondary font-bold">1</div>
+<div>
+<h4 class="font-bold text-lg">Khảo sát hiện trạng</h4>
+<p class="text-gray-300 text-sm mt-1">Đo đạc, đánh giá thổ nhưỡng, khí hậu và hiện trạng công trình.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-xl bg-white/5 p-4 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-secondary font-bold">2</div>
+<div>
+<h4 class="font-bold text-lg">Phân tích nhu cầu &amp; Ngân sách</h4>
+<p class="text-gray-300 text-sm mt-1">Tư vấn giải pháp phù hợp nhất với mong muốn và tài chính.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-xl bg-white/5 p-4 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-secondary font-bold">3</div>
+<div>
+<h4 class="font-bold text-lg">Concept 2D &amp; Ý tưởng</h4>
+<p class="text-gray-300 text-sm mt-1">Lên phương án mặt bằng, định hướng phong cách chủ đạo.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-xl bg-white/5 p-4 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-secondary font-bold">4</div>
+<div>
+<h4 class="font-bold text-lg">3D Rendering</h4>
+<p class="text-gray-300 text-sm mt-1">Phối cảnh 3D trực quan, sống động từng góc nhìn.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-xl bg-white/5 p-4 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-secondary font-bold">5</div>
+<div>
+<h4 class="font-bold text-lg">Hồ sơ kỹ thuật thi công</h4>
+<p class="text-gray-300 text-sm mt-1">Bản vẽ chi tiết điện nước, kết cấu, cây xanh.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-xl bg-white/5 p-4 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-secondary font-bold">6</div>
+<div>
+<h4 class="font-bold text-lg">Dự toán chi phí</h4>
+<p class="text-gray-300 text-sm mt-1">Bảng khối lượng và dự toán thi công chi tiết, minh bạch.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative">
+<div class="relative aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-2xl">
+<img class="h-full w-full object-cover" data-alt="Professional architect drawing blueprints on drafting table close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG7iDuS7h9BU_8uz5NU0G61C7hkgv_yYeG9STpgDAVWOmDCH3fvrD_k42LwhyaKisrklnh0QbOF8xgoaQAYmKxxuyGleAmssIrwdpcKlvYVpU9-FXOb33GmmFHkYnapx5PE62yCBVG1JOQnRAcWvuIiopd5Pjj2jlC8-j1aR1nJuNqE8N8MZIdGiNueHqBkDZVDnZIrYZ2ACFGd0hFIm_74cExCfF7Vr3VhXEsWJAD09wsiuKOvLiDewXIS1-OJPjE0Hno2KS7GDw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent"></div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl max-w-[240px] hidden md:block">
+<p class="text-secondary font-bold text-lg">"Chính xác từng chi tiết"</p>
+<div class="mt-3 flex items-center gap-2">
+<div class="h-8 w-8 rounded-full bg-gray-200 overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="Portrait of lead architect" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaI0kHim63Y43_nJsCd8wva9pXPf3cDndxiTe9DiUqjdndHLwWVh-k-D122rCwumAHAsaUYGFTXYx62BogQoFhQl0hhduZrfxz8XkxaD3GzzVrSKMVDkQp_LVpyYyQu1RHM21oW4gNKrESjhqDZVOeNLNbWWYk-U00mRPRevw8KTC_pXrVor3NDyqb9h6NAoJIJWZsueRlIfj2ehFpwAolGqeBbBjv6tX-OPILNsR_VShryxIwXys5zTy3M5Pu01EEAJKEJtqEHUg"/>
+</div>
+<div>
+<p class="text-xs font-bold text-secondary">KTS. Nguyễn Văn A</p>
+<p class="text-[10px] text-gray-500">Giám đốc thiết kế</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-16 lg:py-24 bg-background-light">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="mb-16 text-center">
+<h2 class="text-3xl font-bold text-secondary sm:text-4xl">Quy trình làm việc</h2>
+<p class="mt-4 text-gray-600 max-w-2xl mx-auto">Quy trình 5 bước chuyên nghiệp, minh bạch giúp khách hàng dễ dàng theo dõi tiến độ dự án.</p>
+</div>
+<div class="relative">
+<!-- Connecting Line -->
+<div class="absolute left-0 top-1/2 hidden h-0.5 w-full -translate-y-1/2 bg-gray-200 lg:block"></div>
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 relative z-10">
+<!-- Step 1 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white border-4 border-gray-100 text-secondary shadow-lg group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-secondary">Tiếp nhận</h3>
+<p class="text-sm text-gray-500">Thông tin &amp; yêu cầu</p>
+</div>
+<!-- Step 2 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white border-4 border-gray-100 text-secondary shadow-lg group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">explore</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-secondary">Khảo sát</h3>
+<p class="text-sm text-gray-500">Đo đạc thực tế</p>
+</div>
+<!-- Step 3 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white border-4 border-gray-100 text-secondary shadow-lg group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">architecture</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-secondary">Phương án</h3>
+<p class="text-sm text-gray-500">Concept &amp; 3D</p>
+</div>
+<!-- Step 4 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white border-4 border-gray-100 text-secondary shadow-lg group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">edit_note</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-secondary">Chỉnh sửa</h3>
+<p class="text-sm text-gray-500">Hoàn thiện hồ sơ</p>
+</div>
+<!-- Step 5 -->
+<div class="group flex flex-col items-center text-center">
+<div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white border-4 border-gray-100 text-secondary shadow-lg group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">verified</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-secondary">Bàn giao</h3>
+<p class="text-sm text-gray-500">Hồ sơ kỹ thuật</p>
+</div>
+</div>
+</div>
+<div class="mt-16 rounded-2xl bg-[#eef4e7] p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-8">
+<div class="w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden shadow-md">
+<img class="h-full w-full object-cover" data-alt="Design team discussing project blueprints in meeting room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVV-jn5QF9y2beTKP9RRsyvs1YGkQtIpilWoQxcPYsgxPcdfogjaGBdtQLOWdn8wK8UI0dUjJ-LOKkF49nshkVph7Jpe0HiE3_gPB01k8YqSK3Cp9MrHitTpEEhTXZCMHzx_7St1bjQUcz0844hllPQWI8d8enL09ReLne-SeczVrtyAS4MIXxbeu3TIXuSucCmtGlW6kzsd-Tu6xNoHqI1lE9HCQwkwQyi7hrHfCPbti-pGvZSv3ezly5v065xMI3cJEA9DqJFOo"/>
+</div>
+<div class="w-full lg:w-1/2">
+<h3 class="text-2xl font-bold text-secondary mb-4">Cam kết chất lượng</h3>
+<p class="text-gray-700 mb-6">Đội ngũ KGX Landscape luôn làm việc với tinh thần trách nhiệm cao nhất. Chúng tôi cam kết tiến độ bàn giao và chất lượng hồ sơ thiết kế đạt chuẩn quốc tế.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-medium text-secondary">Tư vấn nhiệt tình 24/7</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-medium text-secondary">Minh bạch trong mọi khâu</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-medium text-secondary">Hỗ trợ giám sát tác giả</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="py-16 lg:py-24">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="mb-12 text-center">
+<span class="font-bold text-accent uppercase tracking-wider text-sm">Dự án tiêu biểu</span>
+<h2 class="mt-2 text-3xl font-bold text-secondary sm:text-4xl">Các dự án đã thực hiện</h2>
+</div>
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<!-- Project 1 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Ecopark Villa Garden with modern pool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm8EYglRdsxXCe9D141QeFpykEGlSzyGDWf85MbJrl0GDNbaiJV-BcSzM_h6yINRBEsMLhzRks0u2zHM-9v9JdjOxmq_JITiAriK_adcU0hjMaN9SP-d3EPROZk7mQN0jy4Qc98Yxbbb7-sxXQlOimKyNtT0-tUzIDvzsOekmYpbNtPdfZEdfPATK-72UE3si7t5207lypn4LH7oo4nTvqR87B1JEsq3KgEALlNKXa2FRYSOzDho5_j7fBx0v6ytCTE2VtIRw7r0Y"/>
+<div class="absolute top-4 left-4 rounded-lg bg-white/90 px-3 py-1 text-xs font-bold text-secondary backdrop-blur-sm">Biệt thự</div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<h3 class="text-xl font-bold text-secondary group-hover:text-primary transition-colors">Ecopark Villa Garden</h3>
+<p class="mt-2 text-sm text-gray-500 mb-4 flex-1">Thiết kế cảnh quan sân vườn biệt thự đảo phong cách nhiệt đới.</p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-primary" href="#">
+                            Xem chi tiết <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Flamingo Resort landscape overview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVssFCSrOuPDJdcKB9ZSVghsetR97qJIGEgYwQszIfpvVlVwPYOl9C2xDkNVYDj0JPubbUAZoYLxVf3F5ubjP2CVjBS9H471q9i1a8ttTJKvSop9IB7oyXB9NL1OoPcQCpb5FhgGpIk4ih8ka93Gjye6ddUdAkQJmAOKJdZHNvVYfYo90oPdQOuYQB3t4mLWLNahwK0SZ7_LIa9sr1t0Hb_v4I2gPl-ais4nlfWRzjeS_Bm7UygQHZ_xQ847crXZJCGe0rS8sZ2T8"/>
+<div class="absolute top-4 left-4 rounded-lg bg-white/90 px-3 py-1 text-xs font-bold text-secondary backdrop-blur-sm">Resort</div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<h3 class="text-xl font-bold text-secondary group-hover:text-primary transition-colors">Flamingo Dai Lai Resort</h3>
+<p class="mt-2 text-sm text-gray-500 mb-4 flex-1">Quy hoạch cảnh quan khu nghỉ dưỡng cao cấp ven hồ.</p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-primary" href="#">
+                            Xem chi tiết <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Skyline Penthouse Rooftop Garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7rNt40YI6DkiVq5QfCL4jzDuLO9z2hOpjkwn0NVlVo65yd4eT9tn9AcFZKCYuHCcjASgpNP9EaQBTqVH7GH1ZSGGbwsOeCEQbRQUaIdkt126-fOsYeCTSUqJToSjo6tcY46F6gSjvbrytw7Ed9gfP1mvwMpU8o9hC6hkT4-p-dNESb-vYhxwAz-N3DkjIQcCOvNME5gVyZsMAElJKZ_xDmJrOE2C-QTJWj2RAWwI2JpmzOtNy0rH_4cFMaPKMK9stryJBKGBHghY"/>
+<div class="absolute top-4 left-4 rounded-lg bg-white/90 px-3 py-1 text-xs font-bold text-secondary backdrop-blur-sm">Rooftop</div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<h3 class="text-xl font-bold text-secondary group-hover:text-primary transition-colors">Skyline Penthouse</h3>
+<p class="mt-2 text-sm text-gray-500 mb-4 flex-1">Vườn thượng uyển trên cao với hồ cá Koi và chòi nghỉ.</p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-primary" href="#">
+                            Xem chi tiết <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Industrial park green landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7JJUxGR3xa5CrBgjiCEus_uWE4437Ll6-w1-6x6X66TeH4dM09y-rTlveKHFCjeZGS4SOgSbp8V4xWvoFiT1_lQtSh-tmR6mJ0XEeFY8F4ZVUbfzCXMafXzvfP8_P5OGfDqya5Nre_e8CHMtxN2zgP2Jw7OGO2MDl6Ea0LEbqkjO4Q3yz1Z8xgRWn0KKgcps_082EqBa8G4kqbuQcN6w1bh5PHjl1gY43yiHSTOCoBRiMY5CuogovGchIHgW6R_nMEg_ZcTR3l3s"/>
+<div class="absolute top-4 left-4 rounded-lg bg-white/90 px-3 py-1 text-xs font-bold text-secondary backdrop-blur-sm">Khu công nghiệp</div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<h3 class="text-xl font-bold text-secondary group-hover:text-primary transition-colors">VSIP Industrial Park</h3>
+<p class="mt-2 text-sm text-gray-500 mb-4 flex-1">Thiết kế cảnh quan xanh cho khu công nghiệp hiện đại.</p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-primary" href="#">
+                            Xem chi tiết <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern farmhouse garden landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj29NVl8SNQc1EfZ6XvW-262puYhfudmi1s8cwOL8T9ba9RSeY3B319JAs9V_EUgvUfNM1dL7fJCFt9BjH2W3DZMlqarghvScLuMzg_j7SRHFQ5wRJXEHkYmnCX0bTOlkflQqhO-VfHDVCSZOOm33n-BJzJ_NFV2gZaWSKZ58A9s6fnAXQa-Vpnz4Ic6s2cMHVGkmM907Uy-NymIbVoMy-oP1WgHobOSeNRjp9FT1UqF2K1JSiwZxgNWMj8e3kgLWtDkZValAG4Qo"/>
+<div class="absolute top-4 left-4 rounded-lg bg-white/90 px-3 py-1 text-xs font-bold text-secondary backdrop-blur-sm">Farmstay</div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<h3 class="text-xl font-bold text-secondary group-hover:text-primary transition-colors">Ba Vi Farmstay</h3>
+<p class="mt-2 text-sm text-gray-500 mb-4 flex-1">Cảnh quan nông trại kết hợp nghỉ dưỡng sinh thái.</p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-primary" href="#">
+                            Xem chi tiết <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:shadow-xl">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Vertical garden wall detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJdQa4uknig2WiPVaHxGZI7IS8G7JMTabiVlT9TjULq6PfRSvWCm0BPDGNphMhP-OfCMHE1bqN2CGrqwzd2vi5NQfioJo6DLY45fHHULHcvYfyBy4TDgINqkHmwbo6ZSN3GySmKTuN4mZjsjf5z1bhKqIoQXOcvo0jSVT8_4trih1AVi5dfKid0JkwNZPVBmIujj-Hqj8BSg5bLZ-sJrN-quN74tUMS9o_OshObJWYlRVevjlL9wrOQMHvW9j6JzVZLYOpMOyU4d8"/>
+<div class="absolute top-4 left-4 rounded-lg bg-white/90 px-3 py-1 text-xs font-bold text-secondary backdrop-blur-sm">Vườn tường</div>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<h3 class="text-xl font-bold text-secondary group-hover:text-primary transition-colors">Green Wall Office</h3>
+<p class="mt-2 text-sm text-gray-500 mb-4 flex-1">Thi công tường cây xanh cho văn phòng tập đoàn công nghệ.</p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-primary" href="#">
+                            Xem chi tiết <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-secondary bg-transparent px-8 text-base font-bold text-secondary transition-colors hover:bg-secondary hover:text-white">
+                    Xem tất cả dự án
+                </button>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="bg-secondary/5 py-16 lg:py-24">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="overflow-hidden rounded-3xl bg-white shadow-xl">
+<div class="grid lg:grid-cols-5">
+<!-- Form -->
+<div class="p-8 lg:col-span-3 lg:p-12">
+<h2 class="mb-2 text-3xl font-bold text-secondary">Đăng ký tư vấn miễn phí</h2>
+<p class="mb-8 text-gray-500">Để lại thông tin, kiến trúc sư của chúng tôi sẽ liên hệ lại trong vòng 24h.</p>
+<form class="space-y-4">
+<div class="grid gap-4 sm:grid-cols-2">
+<div>
+<label class="mb-1 block text-sm font-bold text-secondary">Họ và tên</label>
+<input class="w-full rounded-lg border-gray-300 bg-gray-50 px-4 py-3 text-sm focus:border-primary focus:ring-primary" placeholder="Nhập họ tên của bạn" type="text"/>
+</div>
+<div>
+<label class="mb-1 block text-sm font-bold text-secondary">Số điện thoại</label>
+<input class="w-full rounded-lg border-gray-300 bg-gray-50 px-4 py-3 text-sm focus:border-primary focus:ring-primary" placeholder="09xx xxx xxx" type="tel"/>
+</div>
+</div>
+<div class="grid gap-4 sm:grid-cols-2">
+<div>
+<label class="mb-1 block text-sm font-bold text-secondary">Loại hình</label>
+<select class="w-full rounded-lg border-gray-300 bg-gray-50 px-4 py-3 text-sm focus:border-primary focus:ring-primary">
+<option>Biệt thự sân vườn</option>
+<option>Resort / Khách sạn</option>
+<option>Rooftop / Ban công</option>
+<option>Dự án công nghiệp</option>
+<option>Khác</option>
+</select>
+</div>
+<div>
+<label class="mb-1 block text-sm font-bold text-secondary">Khu vực</label>
+<select class="w-full rounded-lg border-gray-300 bg-gray-50 px-4 py-3 text-sm focus:border-primary focus:ring-primary">
+<option>Miền Bắc</option>
+<option>Miền Trung</option>
+<option>Miền Nam</option>
+</select>
+</div>
+</div>
+<div>
+<label class="mb-1 block text-sm font-bold text-secondary">Nội dung yêu cầu</label>
+<textarea class="w-full rounded-lg border-gray-300 bg-gray-50 px-4 py-3 text-sm focus:border-primary focus:ring-primary" placeholder="Mô tả sơ bộ về nhu cầu thiết kế, diện tích..." rows="4"></textarea>
+</div>
+<button class="mt-4 flex w-full items-center justify-center rounded-xl bg-primary py-4 text-base font-bold text-white shadow-lg shadow-primary/30 transition-all hover:bg-primary-dark hover:shadow-primary/50" type="button">
+                                Gửi yêu cầu tư vấn
+                            </button>
+</form>
+</div>
+<!-- Contact Info -->
+<div class="bg-secondary p-8 text-white lg:col-span-2 lg:p-12 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="relative z-10">
+<h3 class="mb-6 text-2xl font-bold">Thông tin liên hệ</h3>
+<div class="mb-8 space-y-6">
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<p class="font-bold">Trụ sở chính</p>
+<p class="text-sm text-gray-300 leading-relaxed mt-1">Số 123, Đường Hoàng Văn Thụ, TP. Thái Nguyên, Tỉnh Thái Nguyên</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary">call</span>
+</div>
+<div>
+<p class="font-bold">Hotline 24/7</p>
+<p class="text-xl font-black text-primary mt-1">0868 462 462</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<p class="font-bold">Email</p>
+<p class="text-sm text-gray-300 mt-1">info@kgxlandscape.vn</p>
+</div>
+</div>
+</div>
+<div class="mt-auto">
+<p class="mb-3 text-sm font-bold">Kết nối với chúng tôi</p>
+<div class="flex gap-3">
+<a class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-primary hover:text-white" href="#">
+<svg class="h-5 w-5 fill-current" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-primary hover:text-white" href="#">
+<svg class="h-5 w-5 fill-current" viewbox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"></path></svg>
+</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-primary hover:text-white" href="#">
+<svg class="h-5 w-5 fill-current" viewbox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#1b2210] text-white pt-16 pb-8 border-t border-white/10">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="grid gap-12 lg:grid-cols-4 md:grid-cols-2 mb-12">
+<!-- Col 1 -->
+<div>
+<div class="flex items-center gap-2 mb-6">
+<div class="flex size-8 items-center justify-center rounded-lg bg-primary text-[#1b2210]">
+<span class="material-symbols-outlined text-lg">park</span>
+</div>
+<span class="text-xl font-black">KGX Landscape</span>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Đơn vị hàng đầu trong lĩnh vực thiết kế và thi công cảnh quan. Chúng tôi kiến tạo những không gian sống xanh, bền vững và đẳng cấp.
+                    </p>
+<div class="inline-flex items-center rounded bg-white/5 px-3 py-1 border border-white/10">
+<span class="text-xs text-gray-400">MST: 0123456789</span>
+</div>
+</div>
+<!-- Col 2 -->
+<div>
+<h4 class="text-lg font-bold mb-6">Dịch vụ</h4>
+<ul class="space-y-3 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Thiết kế sân vườn</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Quy hoạch cảnh quan</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Thi công hồ cá Koi</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tường cây xanh</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chăm sóc bảo dưỡng</a></li>
+</ul>
+</div>
+<!-- Col 3 -->
+<div>
+<h4 class="text-lg font-bold mb-6">Về chúng tôi</h4>
+<ul class="space-y-3 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Giới thiệu chung</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Hồ sơ năng lực</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tuyển dụng</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tin tức &amp; Sự kiện</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Liên hệ</a></li>
+</ul>
+</div>
+<!-- Col 4 -->
+<div>
+<h4 class="text-lg font-bold mb-6">Bản đồ</h4>
+<div class="aspect-video w-full rounded-lg overflow-hidden bg-gray-800 relative">
+<img class="h-full w-full object-cover opacity-50" data-alt="Map location preview" data-location="Thai Nguyen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxaE4cpnoO79NXXBoVcqzB0KulOTAKYFOmuFBoXois-hJgwym_f80tZDB5_I6EUYG2Ea_wEgHj6yvGE0z1-CTBseRAW5OuzdXtNk1jbGqlAsFERuBJKFLeIJwk9urqXOjR_49IRjTybN0d0Xpz0bJwx1PebP948T7UO9hb06DRN9yyli4-9amrXzjh633FN_1bPP1RAKuW-AolzREP4OSvlH2ZBIx6E33HOeTjU6E80-ZHCKgP80cGGBQ6rSVaZTdtKjmF9pell0I"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary animate-bounce">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-sm text-gray-500">© 2024 KGX Landscape Design. All rights reserved.</p>
+<div class="flex gap-6 text-sm text-gray-500">
+<a class="hover:text-white" href="#">Điều khoản sử dụng</a>
+<a class="hover:text-white" href="#">Chính sách bảo mật</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -34,13 +34,20 @@ const ProductDetailPage: React.FC = () => {
                         <span className="text-text-muted">/</span>
                         <span className="text-primary font-bold">{tree.name}</span>
                     </div>
+
                     {/* Hero Content */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                         {/* Text Content */}
                         <div className="flex flex-col gap-6 order-2 lg:order-1 px-4 lg:pl-10">
                             <div className="flex flex-col gap-3">
                                 <h1 className="text-[#151b0e] text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.03em] uppercase">
-                                    {tree.name}
+                                    {tree.name.includes(' ') ? (
+                                        <>
+                                            {tree.name.substring(0, tree.name.lastIndexOf(' '))}
+                                            <br className="hidden sm:block" />
+                                            {tree.name.substring(tree.name.lastIndexOf(' ') + 1)}
+                                        </>
+                                    ) : tree.name}
                                 </h1>
                                 <h2 className="text-text-muted text-lg font-medium leading-relaxed max-w-xl">
                                     {tree.description}
@@ -113,9 +120,41 @@ const ProductDetailPage: React.FC = () => {
                     </div>
                 </section>
 
+                {/* Landscape Applications */}
+                {(tree as any).applications && (
+                    <section className="w-full bg-white py-16">
+                        <div className="max-w-[1200px] mx-auto px-4">
+                            <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                                <div>
+                                    <h2 className="text-3xl font-bold text-[#151b0e] mb-2">Ứng dụng cảnh quan</h2>
+                                    <p className="text-text-muted max-w-xl">
+                                        {(tree as any).applicationTitle || `${tree.name} là lựa chọn hàng đầu cho các công trình hiện đại nhờ hình dáng tán cây tự nhiên đẹp và khả năng tạo bóng mát tốt.`}
+                                    </p>
+                                </div>
+                                <Link className="text-primary font-bold hover:underline flex items-center" to="/du-an">
+                                    Xem thêm thư viện ảnh <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                                </Link>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {(tree as any).applications.map((app: any, idx: number) => (
+                                    <div key={idx} className="group relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer">
+                                        <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url('${app.image}')` }}></div>
+                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                                        <div className="absolute bottom-0 left-0 p-6">
+                                            <h3 className="text-white text-xl font-bold mb-1">{app.title}</h3>
+                                            <p className="text-white/90 text-sm">{app.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
                 {/* Pros & Cons */}
                 <section className="w-full max-w-[1200px] px-4 py-16">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Pros */}
                         <div className="bg-primary/5 rounded-3xl p-8 border border-primary/20">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="size-10 rounded-full bg-primary flex items-center justify-center text-white">
@@ -158,21 +197,77 @@ const ProductDetailPage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Care Instructions */}
+                {/* Care & Maintenance */}
                 <section className="w-full bg-[#f1f4ed] py-16">
-                    <div className="container">
-                        <h2 className="text-3xl font-bold text-[#151b0e] mb-10 text-center">Hướng dẫn chăm sóc</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {tree.care.map((item, idx) => (
-                                <div key={idx} className="flex flex-col gap-4 p-6 bg-white rounded-xl border border-[#eef3e8]">
-                                    <div className="text-primary"><span className="material-symbols-outlined text-3xl">{item.icon}</span></div>
-                                    <h4 className="font-bold text-[#151b0e]">{item.title}</h4>
-                                    <p className="text-sm text-text-muted">{item.desc}</p>
+                    <div className="max-w-[1200px] mx-auto px-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                            <div className="rounded-2xl overflow-hidden shadow-xl aspect-video md:aspect-auto md:h-full">
+                                <div className="w-full h-full bg-cover bg-center min-h-[300px]" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=2070&auto=format&fit=crop')` }}></div>
+                            </div>
+                            <div className="flex flex-col gap-6">
+                                <h2 className="text-3xl font-bold text-[#151b0e]">Hướng dẫn chăm sóc</h2>
+                                <p className="text-text-muted">Để {tree.name} phát triển tốt nhất và giữ được dáng vẻ đẹp, KGX khuyến nghị quy trình chăm sóc cơ bản sau:</p>
+                                <div className="space-y-4">
+                                    {tree.care.map((item, idx) => (
+                                        <div key={idx} className="flex gap-4 p-4 bg-white rounded-xl border border-[#eef3e8]">
+                                            <div className="text-primary pt-1"><span className="material-symbols-outlined">{item.icon}</span></div>
+                                            <div>
+                                                <h4 className="font-bold text-[#151b0e]">{item.title}</h4>
+                                                <p className="text-sm text-text-muted mt-1">{item.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            </div>
                         </div>
                     </div>
                 </section>
+
+                {/* Target Profiles */}
+                {(tree as any).targetProfiles && (
+                    <section className="w-full max-w-[1200px] px-4 py-16">
+                        <h2 className="text-center text-3xl font-bold text-[#151b0e] mb-12">Giải pháp phù hợp cho</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {(tree as any).targetProfiles.map((profile: any, idx: number) => (
+                                <div key={idx} className="flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-[#eef3e8] hover:shadow-lg transition-shadow">
+                                    <div className={`size-16 rounded-full ${profile.color} flex items-center justify-center mb-4`}>
+                                        <span className="material-symbols-outlined text-3xl">{profile.icon}</span>
+                                    </div>
+                                    <h3 className="font-bold text-lg mb-2">{profile.title}</h3>
+                                    <p className="text-sm text-text-muted">{profile.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* Used in Projects */}
+                {(tree as any).featuredProjects && (
+                    <section className="w-full bg-white py-16 border-t border-[#eef3e8]">
+                        <div className="max-w-[1440px] mx-auto px-4">
+                            <div className="flex justify-between items-center mb-8">
+                                <h2 className="text-2xl font-bold text-[#151b0e]">Dự án đã sử dụng cây này</h2>
+                                <Link className="text-primary font-medium hover:underline" to="/du-an">Xem tất cả dự án</Link>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {(tree as any).featuredProjects.map((project: any, idx: number) => (
+                                    <div key={idx} className="flex flex-col gap-3 group cursor-pointer">
+                                        <div className="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
+                                            <div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{ backgroundImage: `url('${project.image}')` }}></div>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-[#151b0e] group-hover:text-primary transition-colors">{project.title}</h3>
+                                            <p className="text-xs text-text-muted mt-1">Hoàn thành {project.year}</p>
+                                            <Link to="/du-an" className="mt-2 text-xs font-bold text-primary uppercase tracking-wider flex items-center">
+                                                Xem dự án <span className="material-symbols-outlined text-sm ml-1">arrow_right_alt</span>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
             </main>
         </div>
     );

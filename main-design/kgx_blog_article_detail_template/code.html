@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KGX Blog Article Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#649c16",
+                        "accent": "#f97316",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#1a2111",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .prose h2 { color: #151b0e; font-weight: 700; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.75; color: #374151; }
+        .prose ul { list-style-type: none; padding-left: 0; }
+        .prose li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
+        .prose li::before { content: "•"; color: #649c16; font-weight: bold; position: absolute; left: 0; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#151b0e] font-display">
+<!-- Sticky Header -->
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+<!-- Reading Progress Bar -->
+<div class="absolute bottom-0 left-0 w-full h-1 bg-gray-100 dark:bg-gray-800">
+<div class="h-full bg-primary" style="width: 35%;"></div>
+</div>
+<div class="max-w-[1440px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-bold tracking-tight text-primary">KGX</h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Trang chủ</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Dịch vụ</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Dự án</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Tin tức</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex flex-col items-end">
+<span class="text-xs text-gray-500 uppercase tracking-widest">Hotline 24/7</span>
+<a class="text-sm font-bold text-primary" href="tel:0868462462">0868 462 462</a>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md">
+                    Nhận tư vấn
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="max-w-[1200px] mx-auto pt-12 px-6">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 text-sm font-medium mb-6">
+<a class="text-gray-500 hover:text-primary" href="#">Trang chủ</a>
+<span class="text-gray-400">/</span>
+<a class="text-gray-500 hover:text-primary" href="#">Tin tức</a>
+<span class="text-gray-400">/</span>
+<span class="text-primary">Kiến thức cây xanh</span>
+</nav>
+<h1 class="text-4xl md:text-5xl font-bold leading-tight mb-8 max-w-4xl text-gray-900 dark:text-white">
+            5 TIÊU CHÍ CHỌN CÂY CÔNG TRÌNH PHÙ HỢP KHÍ HẬU MIỀN BẮC
+        </h1>
+<div class="flex flex-wrap items-center gap-4 mb-10">
+<div class="flex h-9 items-center rounded-full bg-primary/10 px-4 text-primary text-sm font-semibold">
+                Kiến thức cây xanh
+            </div>
+<div class="flex h-9 items-center rounded-full bg-gray-100 px-4 text-gray-600 text-sm font-medium">
+<span class="material-symbols-outlined text-sm mr-2">calendar_today</span>
+                15/10/2023
+            </div>
+<div class="flex h-9 items-center rounded-full bg-gray-100 px-4 text-gray-600 text-sm font-medium">
+<span class="material-symbols-outlined text-sm mr-2">person</span>
+                Tác giả: KGX
+            </div>
+</div>
+<p class="text-xl text-gray-600 dark:text-gray-300 border-l-4 border-primary pl-6 py-2 italic mb-10">
+            Việc lựa chọn cây xanh cho công trình tại miền Bắc đòi hỏi sự am hiểu sâu sắc về thời tiết 4 mùa rõ rệt. Bài viết này KGX sẽ chia sẻ các tiêu chí kỹ thuật quan trọng nhất.
+        </p>
+<div class="aspect-[21/9] w-full bg-gray-200 rounded-xl overflow-hidden mb-12 shadow-lg">
+<img alt="Công viên cây xanh hiện đại" class="w-full h-full object-cover" data-alt="Wide shot of a lush public park with mature trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeVv1ElqpdTUlUbcvGxBKSzc2Yqe43kBrlqCKMCLMigIuooJC-QQ0qf3gY6NqIR4U4gyUMQDOopHJHFge6D84LLSK5KyE3CnmCcr5nLb4WusSexLY8tTzVj0sxRLMpASk1i83t_qf-iRZgHv5Yag1to0-tjM0lpBzwnFsF1vdtdiZWfk97Tz5G1OxCalfREJJfTXFZnqmZjMn15bNKEqE-30hXNHf6nM86zmivg5PYbg80DSUTJSzA6365ujpzLXk0qdRHtw43sUA"/>
+</div>
+</header>
+<!-- Main Content Grid -->
+<main class="max-w-[1200px] mx-auto px-6 grid grid-cols-12 gap-12">
+<article class="col-span-12 lg:col-span-8 prose prose-lg max-w-none">
+<div class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+<h2>Vì sao cần quan tâm đến thổ nhưỡng?</h2>
+<p>Khí hậu miền Bắc Việt Nam có đặc thù phân hóa rõ rệt: mùa hè nóng ẩm, mưa nhiều và mùa đông lạnh khô, thậm chí có sương muối. Đây là thử thách không nhỏ cho việc duy trì sự sống và vẻ đẹp của cây công trình.</p>
+<p>Thổ nhưỡng miền Bắc thường là đất thịt pha, đất phù sa hoặc đất đồi rừng tùy khu vực. Việc kiểm tra độ pH và khả năng thoát nước của đất là bước tiên quyết trước khi quyết định chủng loại cây.</p>
+<div class="my-10 rounded-xl overflow-hidden shadow-md">
+<img alt="Vườn ươm cây xanh quy mô" class="w-full h-auto" data-alt="Commercial tree nursery with rows of saplings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB8dnWNuEgiEecqtNRzNJEV98zl4IL8Xe7HHpdDkF2fHrbr_3e5EzWg8IoYLb8qd7Cs1WncNGKrFMy63FeLGM9S-FP2WMrthsxEKv6cCwBXkZ7qAH6e-kSYpe1JbILa1uGxwyohfywSahf-GnGv01F6UafrWv_oIXNzhYHZBC1V5tWiJQc9t8jQGD14Ygnuaetm-m-lBVYz0W5o4-aHT-YC_jizyYQoFAvidjQ4pnztOTJA7rYGNks5WQZ6VFCvm__rgu40rdFzYg"/>
+<p class="text-sm text-center text-gray-500 py-3 bg-gray-50 italic">Hệ thống vườn ươm KGX đảm bảo cây giống thuần chủng khí hậu bản địa.</p>
+</div>
+<h2>5 Tiêu chí kỹ thuật hàng đầu</h2>
+<p>Dựa trên kinh nghiệm thực chiến từ hơn 500 dự án cảnh quan, KGX đúc kết 5 tiêu chí vàng:</p>
+<ul>
+<li><strong>Khả năng chịu hạn và chịu lạnh:</strong> Ưu tiên các loại cây có bộ rễ sâu, lá dày.</li>
+<li><strong>Tốc độ sinh trưởng:</strong> Cần cân đối giữa cây phát triển nhanh (che bóng) và cây chậm (ổn định cấu trúc).</li>
+<li><strong>Tính an toàn:</strong> Rễ không làm hư hại công trình ngầm, cành dẻo dai chống chịu bão.</li>
+<li><strong>Thẩm mỹ bền vững:</strong> Cây ít rụng lá, hoa nở theo mùa đặc trưng.</li>
+<li><strong>Dễ bảo trì:</strong> Giảm thiểu chi phí cắt tỉa và phòng trừ sâu bệnh.</li>
+</ul>
+<!-- Highlight Box -->
+<div class="my-10 p-8 bg-gray-100 border-l-8 border-primary rounded-r-xl">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined font-bold">lightbulb</span>
+<h3 class="text-xl font-bold m-0 text-primary">Kinh nghiệm từ KGX</h3>
+</div>
+<p class="text-gray-700 italic m-0">
+                        Đối với các công trình ven biển miền Bắc (Hải Phòng, Quảng Ninh), hãy ưu tiên các loài cây chịu mặn và gió mạnh như Phi lao, Tra làm chiếu hoặc Cọ dầu. Đừng quên gia cố cọc chống bằng gỗ vững chắc ít nhất 2 năm đầu tiên.
+                    </p>
+</div>
+<h2>Quy trình thi công tiêu chuẩn</h2>
+<p>Không chỉ dừng lại ở việc chọn cây, quy trình hạ thổ và chăm sóc những tháng đầu chiếm 70% tỉ lệ thành công. Việc sử dụng phân bón hữu cơ vi sinh kết hợp hệ thống tưới tự động là giải pháp tối ưu cho các công trình hiện đại.</p>
+<div class="my-10 rounded-xl overflow-hidden shadow-md">
+<img alt="Thi công cảnh quan dự án" class="w-full h-auto" data-alt="Workers planting a large tree in a modern urban plaza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUYmyy811L6iPZJlLjsOo6ClqnMYsuNROKB3TzwGHbJT2Kx3hZuupEL2Y8G1BoPA8vnVFbw1ekhJ9I6RqDwzX2tl2cM7BHPUytLiKA22jxDr_wnYdS3t48SdIFXgFGqBGfdTsJFVBZujXXQ10PuPMZsmMNYbpqU0IvmR74ezAx4VscTXmGYLrkydPW-FPNIcwuOddH9I8l8PANtTp77sB596dp0cjBKo-FOEBovdcTKQD88A0NeWzTG10wMMdNQmPLI7_vJ9s89Dc"/>
+</div>
+</div>
+<!-- Service Matrix CTA -->
+<div class="mt-16 p-10 bg-primary/5 rounded-2xl border border-primary/20">
+<h3 class="text-2xl font-bold text-center mb-8">Bạn cần tư vấn thực tế cho công trình của mình?</h3>
+<div class="grid md:grid-cols-3 gap-6">
+<button class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-primary group">
+<span class="material-symbols-outlined text-4xl text-primary mb-3 group-hover:scale-110 transition-transform">architecture</span>
+<span class="font-bold">Tư vấn Thiết kế</span>
+<span class="text-xs text-gray-500 mt-2 text-center">Bản vẽ 2D/3D chuyên sâu</span>
+</button>
+<button class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-primary group">
+<span class="material-symbols-outlined text-4xl text-primary mb-3 group-hover:scale-110 transition-transform">foundation</span>
+<span class="font-bold">Thi công Trọn gói</span>
+<span class="text-xs text-gray-500 mt-2 text-center">Cam kết tiến độ &amp; chất lượng</span>
+</button>
+<button class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-primary group">
+<span class="material-symbols-outlined text-4xl text-primary mb-3 group-hover:scale-110 transition-transform">nature_people</span>
+<span class="font-bold">Cung cấp Cây</span>
+<span class="text-xs text-gray-500 mt-2 text-center">Cây giống tuyển chọn</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Sidebar / Right Column -->
+<aside class="col-span-12 lg:col-span-4 space-y-8">
+<div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+<h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+                    Xem nhiều nhất
+                </h4>
+<div class="space-y-4">
+<a class="block group" href="#">
+<p class="text-sm font-semibold group-hover:text-primary transition-colors line-clamp-2">Xu hướng thiết kế sân vườn biệt thự năm 2024</p>
+<span class="text-xs text-gray-400">2 ngày trước</span>
+</a>
+<hr class="border-gray-100 dark:border-gray-700"/>
+<a class="block group" href="#">
+<p class="text-sm font-semibold group-hover:text-primary transition-colors line-clamp-2">Cách chăm sóc cây bóng mát trong mùa bão lũ</p>
+<span class="text-xs text-gray-400">1 tuần trước</span>
+</a>
+<hr class="border-gray-100 dark:border-gray-700"/>
+<a class="block group" href="#">
+<p class="text-sm font-semibold group-hover:text-primary transition-colors line-clamp-2">Top 10 loại cây phong thủy cho sảnh văn phòng</p>
+<span class="text-xs text-gray-400">15/09/2023</span>
+</a>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group">
+<img alt="Banner tư vấn" class="w-full h-[400px] object-cover" data-alt="Vertical banner showing professional gardening tools and green leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0XdZ2e8n1fQofeTMFt5n8xPaPj00J3dYeaC6pK0ua1fKJYdv5ftyHTIEA5KztMqCENIpaLmP96T8xh3KAtJT_fF1WDtNZqI1BCcxENSya9bfXSbE-tFtHF0Awsi9i2gGcBeZ0fD4jK8dgnPUuug-8oEljPsHrvZ8mIHkS6Xm3cWtKp6mohxQ37IdhBsjIK2EZicuHPkW_PMGTPUKyn22BezMiP5_K1BT7Lf7WmtY5b9BaYxkZsSz8dlPZPfg4oprJNfDEYL0Uhi0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 text-white">
+<h5 class="text-xl font-bold mb-2">Đăng ký nhận báo giá dự án nhanh nhất</h5>
+<button class="bg-accent hover:bg-accent/90 text-white w-full py-3 rounded-lg font-bold transition-all">Gửi yêu cầu ngay</button>
+</div>
+</div>
+</aside>
+</main>
+<!-- Related Articles Section -->
+<section class="max-w-[1200px] mx-auto px-6 py-20">
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-3xl font-bold">Bài viết liên quan</h2>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+                Xem tất cả <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Related Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden mb-4 shadow-sm">
+<img alt="Cây tùng la hán" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Beautifully shaped bonsai pine tree in a garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYx_vS31glR2uC6Qxau3ZTShIBGRQK2EcUL9tk9-v9ed6WmHnPpxuNlXsGzHKBgpkefdVVuzOCeRntRCxu2HvYKdG3ewuT0ugRZh7KiNC9l71goK0r8XdxUPa_upc2qutRVMSz0md_r0FKObg3l1pAmhRuhUOmHYoLUEwQQu7OPMYAqexxKyUW4ZkCxrE88uZAiCUkZh6oLv1TT1ZikXXUVkQ4WHlJ6d5jCF4gpOxlIkXiv6vlXQ4fh-mwivztXNA7UmkiHvptgnc"/>
+</div>
+<h3 class="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Ý nghĩa phong thủy của Tùng La Hán trong cảnh quan</h3>
+<p class="text-sm text-gray-500 line-clamp-2">Tùng La Hán không chỉ là cây cảnh quý mà còn mang lại sinh khí và sự thịnh vượng cho gia chủ...</p>
+</div>
+<!-- Related Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden mb-4 shadow-sm">
+<img alt="Thiết kế sân vườn" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Colorful flower garden layout in a backyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhz01OTtfLPJiDGZDw00OtXRCqh6jeBFeh-LRdsV2IT_d3MauBvbvPRNRpDHALxXXqDeytbaVAg8pUC1wQvqgBnd4ToX-TCwyaEAzgQwhnJRbHHnhrZVr6tygV6N2Ld-Wf1XKd7HCPdenDOCld-gglOey93sUqWczxN5S316nhaFwSf-tMmjpzVQhpSq_sWp5hP4oJQpOdBABGNkGeMo3HVlytpoLXeJKLUl8Hn4vL_ADWEqZyN3hW9nQ2PMi259IP3cBwEqhU3Yc"/>
+</div>
+<h3 class="font-bold text-lg mb-2 group-hover:text-primary transition-colors">7 Lỗi thường gặp khi tự thiết kế sân vườn mini</h3>
+<p class="text-sm text-gray-500 line-clamp-2">Việc ham quá nhiều chi tiết hoặc chọn sai loại đất thường dẫn đến sự thất bại của các dự án DIY...</p>
+</div>
+<!-- Related Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden mb-4 shadow-sm">
+<img alt="Chăm sóc cây xanh" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Gardener hand watering a green plant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDjzPLpvZOxB8ETpNrVJWMgxdMHP0GC3zS7uI3IEvqNYY56qHOvjwJas_OPTfnlMJb1B8daZ5XrRfyGKMBi5NzSnYzo4w9jlOifA2nmMhB9FU4ox3rOtI7oQF3oykZyP4EWTAf93fY5TItTVK_OEREk4adLIiUMHwRJFD0qwA6HwsXwnXOfSWZcSzYh3GtjEkNQHaSaVC-nvBnBQ9Z4VIGsbp_LjebxW34fhZG-qt1IrJATuqx3MsOue65LXW2QJ_JI1J9oyPjdpQ"/>
+</div>
+<h3 class="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Lịch trình bón phân định kỳ cho cây thân gỗ lớn</h3>
+<p class="text-sm text-gray-500 line-clamp-2">Cây công trình cần chế độ dinh dưỡng khác biệt so với cây cảnh trong chậu. Cùng tìm hiểu...</p>
+</div>
+</div>
+</section>
+<!-- Final Lead Capture Banner -->
+<section class="bg-primary/10 py-16">
+<div class="max-w-[1200px] mx-auto px-6 text-center">
+<h2 class="text-3xl font-bold mb-4">Sẵn sàng nâng tầm không gian xanh của bạn?</h2>
+<p class="text-gray-600 mb-8 max-w-2xl mx-auto">Liên hệ KGX ngay hôm nay để được khảo sát thực tế và tư vấn các chủng loại cây phù hợp nhất với ngân sách và địa thế công trình.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg">
+                    Nhận tư vấn miễn phí
+                </button>
+<button class="bg-white hover:bg-gray-50 text-primary border-2 border-primary px-10 py-4 rounded-xl font-bold text-lg transition-all">
+                    Xem hồ sơ năng lực
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-dark text-gray-300 pt-20 pb-10 border-t border-gray-800">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path></svg>
+</div>
+<span class="text-xl font-bold text-white">KGX Group</span>
+</div>
+<p class="text-sm leading-relaxed text-gray-400">Đơn vị tư vấn, thiết kế và thi công cảnh quan hàng đầu tại Miền Bắc. Mang không gian xanh bền vững đến mọi công trình.</p>
+<div class="flex gap-4 mt-8">
+<a class="size-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">social_leaderboard</span>
+</a>
+<a class="size-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">smart_display</span>
+</a>
+<a class="size-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">alternate_email</span>
+</a>
+</div>
+</div>
+<!-- Links Column 1 -->
+<div>
+<h4 class="text-white font-bold mb-6">Dịch vụ</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Thiết kế cảnh quan</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Thi công sân vườn</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chăm sóc cây xanh</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Hệ thống tưới tự động</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div>
+<h4 class="text-white font-bold mb-6">Công ty</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Về chúng tôi</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Dự án tiêu biểu</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tin tức &amp; Sự kiện</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tuyển dụng</a></li>
+</ul>
+</div>
+<!-- Contact Column -->
+<div>
+<h4 class="text-white font-bold mb-6">Liên hệ</h4>
+<ul class="space-y-4 text-sm">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span>Trụ sở: TP. Thái Nguyên, Tỉnh Thái Nguyên</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+<a class="hover:text-primary" href="tel:0868462462">0868 462 462</a>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span>contact@kgx.vn</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-6 mt-16 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
+            © 2023 KGX Landscape Architecture. All rights reserved. Designed for Excellence.
+        </div>
+</footer>
+</body></html>

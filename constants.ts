@@ -36,7 +36,7 @@ export const NAV_LINKS = [
     label: "Sản phẩm",
     href: "/san-pham",
     subLinks: [
-      { label: "Tất cả sản phẩm", href: "/san-pham" },
+      { label: "Tất cả sản phẩm", href: "/san-pham/tat-ca" },
       { label: "Cây nội thất", href: "/san-pham/nhom/cay-noi-that" },
       { label: "Cây công trình", href: "/san-pham/nhom/cay-cong-trinh" },
       { label: "Cây tiểu cảnh & sân vườn", href: "/san-pham/nhom/cay-tieu-canh-san-vuon" },
@@ -75,13 +75,49 @@ export const TREES = [
     macroImage: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=2070&auto=format&fit=crop",
     pros: [
       { title: 'Dáng cây đẹp tự nhiên', desc: 'Tán xếp tầng như chiếc ô, không cần cắt tỉa cầu kỳ vẫn đẹp.' },
-      { title: 'Thích nghi tốt', desc: 'Phù hợp hoàn hảo với khí hậu nhiệt đới gió mùa tại Việt Nam.' }
+      { title: 'Thích nghi tốt', desc: 'Phù hợp hoàn hảo với khí hậu nhiệt đới gió mùa tại Việt Nam.' },
+      { title: 'Ít sâu bệnh', desc: 'Cây khỏe mạnh, ít tốn công chăm sóc và bảo vệ thực vật.' },
+      { title: 'Tuổi thọ cao', desc: 'Là cây thân gỗ lâu năm, giá trị cảnh quan tăng theo thời gian.' }
     ],
     cons: [
-      { title: 'Khoảng cách trồng', desc: 'Rễ cây phát triển mạnh, nên trồng cách công trình xây dựng tối thiểu 3-4m.' }
+      { title: 'Khoảng cách trồng', desc: 'Rễ cây phát triển mạnh, nên trồng cách công trình xây dựng tối thiểu 3-4m.' },
+      { title: 'Rụng lá theo mùa', desc: 'Cây có thể rụng lá vào mùa đông (miền Bắc), cần dọn dẹp vệ sinh.' },
+      { title: 'Chăm sóc giai đoạn đầu', desc: 'Cần cọc chống chắc chắn khi mới trồng để tránh đổ ngã do gió bão.' }
     ],
     care: [
-      { icon: 'water_drop', title: 'Tưới nước', desc: 'Tưới 2-3 lần/tuần vào sáng sớm hoặc chiều mát.' }
+      { icon: 'water_drop', title: 'Tưới nước', desc: 'Tưới 2-3 lần/tuần vào sáng sớm hoặc chiều mát. Đảm bảo đất thoát nước tốt.' },
+      { icon: 'compost', title: 'Bón phân', desc: 'Sử dụng phân NPK định kỳ 3 tháng/lần để kích thích ra lá và rễ.' },
+      { icon: 'content_cut', title: 'Cắt tỉa', desc: 'Cắt bỏ cành khô, cành gầm thấp mỗi năm 1 lần để nâng cao tán.' },
+      { icon: 'pest_control', title: 'Phòng trừ sâu bệnh', desc: 'Kiểm tra sâu ăn lá vào mùa xuân. Phun thuốc sinh học nếu cần thiết.' }
+    ],
+    applications: [
+      {
+        title: "Sân vườn Biệt thự",
+        desc: "Tạo điểm nhấn sang trọng và bóng mát cho khuôn viên.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAxwRqHXrpdjUYaYGS2rbm-jIB0ITpGwiCtKH4Rqq1kpGaJk6DKGJ5BBPOnU3QF_ogihQ-qd8nHnZP-li7Ky_OGbX2anIo_touDvF0jcHufq-uCnPiqfNeRpl6slBphzFA0HprvS2tIg1fCUWxSTEYo5bhO22X3AReWqrCSO92KD4rh7I0-PrdDiHhgPLB3Z3Iiu78IvTKUIGFmLhpuwA7TeYN4HUzeYjq4Emr7H6eGOxaXmJg6KGWHL_G0aWnSaPEl4ujzmTE13mI"
+      },
+      {
+        title: "Công viên & Đô thị",
+        desc: "Trồng dọc lối đi tạo cảnh quan thẳng tắp, xanh mát.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD3oaXgh9iL_LckBjP4JyikPyfWt-9_d_2B7WSO4rWg6Zn6PxIHVTStQs7xbVs6xkW23W3fEUZ2NYoicd1xGnboL4yLNifZKdVCV30av9lZZrZ4UyNAXbX3l0pQe1zc0fruTke8L3-Q6053Ll624drGJGF6QqdJ5WNXHmHWmR2_B24op759KR_ddy5Vn_600LyYfFpc4W1ciDgO4Rm21p-m9ENWs499cZrpsrQrTUGqoFU4Chd-naQ_MBsCqSs2-o1CWGDP0ztiyc0"
+      },
+      {
+        title: "Khu nghỉ dưỡng (Resort)",
+        desc: "Mang lại vẻ đẹp nhiệt đới hiện đại và thư giãn.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0lU0I-mTs7slnk7gK9G2otOcM4WgporkelVOWZTRtdOzD_JWXbZmznvbgout5oqY0Il6T7UJKnAeUUcpf3xX4KO9VuyZi0Q3QBaQ8qLHFU0540EG8odXrhoeNTmPc5B9yhb4-r24tab-whT40zS1tK080RlE94el3sWPHiryVIF27aUdotNs9-ukf43V07MdOpljznZR-M-vn7IX20VRgNAxOnXCyiZPlCYY9vHL7Usu0NYdS8xK2UwNDau32bLblU-6DszmCPjY"
+      }
+    ],
+    targetProfiles: [
+      { icon: "home", title: "Chủ nhà ở", desc: "Tạo bóng mát cho sân vườn, tăng tính thẩm mỹ và giá trị cho ngôi nhà.", color: "bg-blue-50 text-blue-600" },
+      { icon: "apartment", title: "Chủ đầu tư", desc: "Cảnh quan đô thị, công viên dự án với chi phí bảo dưỡng thấp.", color: "bg-purple-50 text-purple-600" },
+      { icon: "storefront", title: "Doanh nghiệp", desc: "Cây xanh văn phòng, nhà máy, tạo môi trường làm việc xanh.", color: "bg-orange-50 text-orange-600" },
+      { icon: "pool", title: "Khu nghỉ dưỡng", desc: "Kiến tạo không gian thư giãn, check-in sang trọng cho du khách.", color: "bg-green-50 text-green-600" }
+    ],
+    featuredProjects: [
+      { title: "Biệt thự Thái Nguyên", year: "2023", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDc9rM-DBcfvauzpJPtgKh7csG3nrNS_WYwkv244vRKANSSntx9ZNjZFjfZs22Y7UfOFeUwMbkCCzRL-Vem0iXIfkGZYmiJBl5ecrmVtWldn-rOZY3745R9dRFlYu-wzajGe3N6evVDVni_KmVVARX1Y4r7puBCIenisyaUhdqFGw-vXrnOnWfdTNPXM8be6CyXM-Ov0GWwKcigzuNmJWrE4cNluV99-joDDfhzt5YZ3f2QTVMRn1QPjX3YCWj1r4MEkCeShWoA3gg" },
+      { title: "Resort Flamingo", year: "2022", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDReLUDOAiD2-FyYsocYfbHv-QLdd9WxX1_7sE2-SCFXIzZgiVTvw4HmPCPMh5XeO2kNfLiSQdfFgNpvwNdQgDWHrvk3IGwyu5yrhFN_J5BFZd-2lSheNArfQSTfhPxOKloW5Gs8Ewjf-NJuZhlnUR_QwnS2Du2ZoPbntj35OdMz_bGSAA3PJE1F3GLDAd1YRlVLQrYIa-SoYVgos-8UhT2IvVNV8OG-AYDN7T5wjlysxo9lTp_E70gIJZlDmFvlCIrNe0mwOIjY_c" },
+      { title: "Khu đô thị Ecopark Hưng Yên", year: "2023", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBDDwGLSJpZ7e9P9CAo03O9cDN-kEqIWgf6KgQTlUI2tS4Hxw2Ew_HUXGW6yyPphIdMHbxWXMmRtuV9PG3Gj16IWQfUX4KiMTN5xINoL3n6QfTXPMB8SYq9QjbiDT3Ynkr5S4yDxx5t9K-7Hv0l2s9oDgtlNzqDVx46TXajXmcHtNfHTfPXiocEtbV4vQA0EJ0FE7Tx_LCAKTZNnZzvkrne6tHuWkct_CSJsbUvmV443wkuCv0JO7SmF4kS1n0OK6wlEjxsrI-kbxo" },
+      { title: "Khách sạn Mường Thanh", year: "2021", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBTTTfczl8HuEiGfqleEDhfOmTUAzbN_D0d7Ut_NGtDKpqRa82N_kh5t9vWghpCNcOGnnEKk4MoBuTw8OB5fZmWmOTY_ARfuc9AgsAoDEKWASNX6n8P6X7csdOycEcl0ear4u1Bd582OJlr-rEGJnXn8CpWT2eXeyp5plyIuoxIdtTTuJ_n1L_9ib4AMsl0U8BTXBBwK0uofebd5mqJDvFNtNqxyaRwMDkg7v0nnoC_D3RXREcVlKZzLqrumLtCVT8gX8uKINpNmxg" }
     ]
   },
   {

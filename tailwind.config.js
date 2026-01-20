@@ -12,14 +12,15 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#84da0b",
-                "primary-dark": "#6cb309",
-                accent: "#F2994A",
-                olive: "#2F3E28",
-                "olive-light": "#4A5D41",
-                "background-light": "#ffffff",
-                "background-off": "#f7f9f5",
-                "background-dark": "#1b2210",
+                primary: "#3b4224",
+                "primary-light": "#4e5440",
+                accent: "#FF9326",
+                "accent-hover": "#e6821f",
+                "background-light": "#fafbf9",
+                "background-alt": "#f2f3f0",
+                "background-dark": "#1b1c16",
+                "border-color": "#dee0d7",
+                "text-muted": "#7a8165",
             },
             fontFamily: {
                 display: ["Inter", "sans-serif"],
