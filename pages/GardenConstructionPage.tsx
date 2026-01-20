@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES_DATA } from '../services';
+import ImageWithFallback from '../components/ImageWithFallback';
 
 const GardenConstructionPage: React.FC = () => {
     const constructionServices = Object.values(SERVICES_DATA).filter(s => s.type === 'construction');

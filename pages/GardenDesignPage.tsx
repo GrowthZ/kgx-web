@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES_DATA } from '../services';
+import ImageWithFallback from '../components/ImageWithFallback';
 
 const GardenDesignPage: React.FC = () => {
     const designServices = Object.values(SERVICES_DATA).filter(s => s.type === 'design');
@@ -102,7 +103,7 @@ const GardenDesignPage: React.FC = () => {
                         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {designServices.map((service, idx) => (
                                 <Link key={idx} to={`/dich-vu/thiet-ke/${service.slug}`} className="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
-                                    <img className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" alt={service.metaTitle} src={service.hero.image} />
+                                    <ImageWithFallback className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" alt={service.metaTitle} src={service.hero.image} />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
                                     <div className="absolute bottom-0 left-0 p-8">
                                         <h3 className="text-2xl font-bold text-white mb-2">{service.hero.title}</h3>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { SERVICES_DATA } from '../services';
+import ImageWithFallback from '../components/ImageWithFallback';
 
 const ServiceDetailPage: React.FC = () => {
     const { slug } = useParams<{ category?: string; slug: string }>();
@@ -62,8 +63,7 @@ const ServiceDetailPage: React.FC = () => {
                             <div className="relative group">
                                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                                 <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
-                                    <div className="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" style={{ backgroundImage: `url('${data.hero.image}')` }}>
-                                    </div>
+                                    <ImageWithFallback isBackground className="w-full h-full transition-transform duration-700 hover:scale-105" src={data.hero.image} alt={data.metaTitle} />
                                     <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
                                         <p className="text-xs font-bold text-primary uppercase tracking-wider">Thi công thực tế</p>
                                         <p className="text-sm font-semibold text-text-main">Chất lượng KGX Landscape</p>
@@ -131,7 +131,7 @@ const ServiceDetailPage: React.FC = () => {
                                         </div>
                                         <div className="flex-1 relative">
                                             <div className="absolute -top-4 -right-4 w-32 h-32 bg-secondary/10 rounded-full blur-3xl"></div>
-                                            <div className="relative h-full min-h-[400px] w-full bg-cover bg-center rounded-lg shadow-xl" style={{ backgroundImage: `url('${section.image || data.hero.image}')` }}>
+                                            <ImageWithFallback isBackground className="relative h-full min-h-[400px] w-full bg-cover bg-center rounded-lg shadow-xl" src={section.image || data.hero.image} alt={section.title || ''}>
                                                 <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur rounded-lg p-5 shadow-lg border-l-4 border-primary">
                                                     <div className="flex items-center gap-3 mb-2">
                                                         <span className="material-symbols-outlined text-primary">engineering</span>
@@ -139,7 +139,7 @@ const ServiceDetailPage: React.FC = () => {
                                                     </div>
                                                     <p className="text-sm text-text-muted">Chúng tôi áp dụng các quy chuẩn thi công nghiêm ngặt để đảm bảo sự bền vững của công trình.</p>
                                                 </div>
-                                            </div>
+                                            </ImageWithFallback>
                                         </div>
                                     </div>
                                 </div>
@@ -264,7 +264,7 @@ const ServiceDetailPage: React.FC = () => {
                     </div>
                 </section>
             </main>
-        </div>
+        </div >
     );
 };
 

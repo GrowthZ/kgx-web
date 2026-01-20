@@ -36,7 +36,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
             title: <>THIẾT KẾ <br className="hidden md:block" />CẢNH QUAN SÂN VƯỜN</>,
             subtitle: 'Giải pháp kiến trúc xanh',
             description: 'Kiến tạo không gian sống nghệ thuật, kết hợp tinh tế giữa phong thủy and công năng hiện đại cho ngôi nhà của bạn.',
-            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0pZYP2yqfBK4Qly9OjzvOAdLDpQYWdS9BJXk5fZsttTYIsL7rsbbS-4njmKdZ4gT2kjWwh73BYrFtO_XezOFODljlziBpVlKSZd8srtXOVKMQqcK4RN6Zc3K4pYi6MY3pSJNVe82xQDBl4pntiT9tihTyUtb_DInKcgBrus67hg23TBF01hF_90mPg-jj15uaoxB8vWGn4SP-BmwO9C0Akp0NwQzR7mQngy7mLHVD_IYYLfp1L4xpc0NtYWkPLzDcEnfh4U0vkgmk',
+            image: 'https://images.unsplash.com/photo-1558904541-efa8c1965f1e?q=80&w=2070&auto=format&fit=crop',
             ctaLabel: 'Tìm hiểu quy trình'
         },
         sections: [
@@ -115,7 +115,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
             title: <>THIẾT KẾ KHU NGHỈ DƯỠNG <br className="hidden md:block" />& CÔNG VIÊN</>,
             subtitle: 'Dịch vụ cao cấp',
             description: 'Kiến tạo không gian nghỉ dưỡng đẳng cấp, hòa hợp với thiên nhiên và mang lại trải nghiệm sống khác biệt.',
-            image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD9y3O-l_C9c6uYhY1XfQy5A5V5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5_5',
+            image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop',
             ctaLabel: 'Nhận tư vấn quy hoạch'
         },
         sections: [
