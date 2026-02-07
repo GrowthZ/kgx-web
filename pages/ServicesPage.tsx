@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { servicesService, Service } from '../src/services/servicesService';
 
 const ServicesPage: React.FC = () => {
+    const [services, setServices] = useState<Service[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchServices();
+    }, []);
+
+    const fetchServices = async () => {
+        try {
+            setLoading(true);
+            const data = await servicesService.getAllServices();
+            setServices(data);
+        } catch (error) {
+            console.error('Error fetching services:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const designServices = services.filter(s => s.category === 'thiet-ke');
+    const constructionServices = services.filter(s => s.category === 'thi-cong');
+
     return (
         <div className="bg-white text-[#2F3E28] font-display antialiased overflow-x-hidden">
             <main className="flex flex-col w-full">
@@ -99,87 +122,64 @@ const ServicesPage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Design Services Section */}
-                <section className="py-20 bg-white">
-                    <div className="container mx-auto px-4 md:px-10">
-                        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                            <div>
-                                <span className="text-[#84da0b] font-bold uppercase tracking-widest text-sm">Lĩnh vực hoạt động</span>
-                                <h2 className="text-3xl md:text-4xl font-black text-[#2F3E28] mt-2">Dịch vụ Thiết kế</h2>
-                            </div>
-                            <Link to="/dich-vu" className="text-[#2F3E28] font-bold hover:text-[#84da0b] transition-colors flex items-center gap-2">
-                                Xem tất cả dịch vụ <span className="material-symbols-outlined">arrow_forward</span>
-                            </Link>
-                        </div>
-                        <div className="grid lg:grid-cols-12 gap-8">
-                            <div className="lg:col-span-7 grid md:grid-cols-2 gap-4">
-                                {[
-                                    { icon: 'park', title: 'Thiết kế Cảnh quan', desc: 'Sân vườn biệt thự, Resort, Công viên, Khu đô thị, Nhà máy công nghiệp.' },
-                                    { icon: 'map', title: 'Quy hoạch Tổng thể', desc: 'Tư vấn quy hoạch không gian xanh cho các dự án bất động sản lớn.' },
-                                    { icon: 'deck', title: 'Kiến trúc Cảnh quan', desc: 'Thiết kế chòi nghỉ, hồ cá Koi, tiểu cảnh nước, đài phun nước nghệ thuật.' },
-                                    { icon: 'lightbulb', title: 'Giải pháp Chiếu sáng', desc: 'Hệ thống chiếu sáng cảnh quan thông minh, tiết kiệm năng lượng.' }
-                                ].map((service, idx) => (
-                                    <div key={idx} className="group bg-white p-6 rounded-xl border border-[#eef4e7] hover:border-[#84da0b] hover:shadow-lg transition-all cursor-pointer">
-                                        <div className="size-12 bg-[#f2f7ed] rounded-lg flex items-center justify-center text-[#84da0b] mb-4 group-hover:bg-[#84da0b] group-hover:text-white transition-colors">
-                                            <span className="material-symbols-outlined">{service.icon}</span>
-                                        </div>
-                                        <h3 className="text-xl font-bold text-[#2F3E28] mb-2 group-hover:text-[#84da0b] transition-colors">{service.title}</h3>
-                                        <p className="text-sm text-[#2F3E28]/60 line-clamp-2">{service.desc}</p>
+                {loading ? (
+                    <div className="py-20 flex flex-col items-center justify-center">
+                        <div className="size-12 border-4 border-slate-100 border-t-[#84da0b] rounded-full animate-spin"></div>
+                        <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải dịch vụ...</p>
+                    </div>
+                ) : (
+                    <>
+                        {/* Design Services Section */}
+                        <section className="py-20 bg-white">
+                            <div className="container mx-auto px-4 md:px-10">
+                                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                                    <div>
+                                        <span className="text-[#84da0b] font-bold uppercase tracking-widest text-sm">Lĩnh vực hoạt động</span>
+                                        <h2 className="text-3xl md:text-4xl font-black text-[#2F3E28] mt-2">Dịch vụ Thiết kế</h2>
                                     </div>
-                                ))}
-                            </div>
-                            <div className="lg:col-span-5 relative h-full min-h-[400px]">
-                                <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl group">
-                                    <img alt="Landscape architectural site plan blueprint" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMEVL2EEZQdx-krYSKADnIc7Va6RTZBx4LW5bdNwxooMY5cDjNl3fnkVowUc20t1UNfpdady6Y6TJvYw8LGTiqa9w_YyVF2_tOqqFsXnLiFXCK8X46MsSv4uDsDo405zlWziTqpfFDZsPRGH_gHYypcnYx87j7B2yyqsdj1xmmI2ViXRRnv19lSBmjOIxjie-GI10mCuXQTQLeMxyKa9zRuGiKNxjLaVU5iDMbe5nJCigLu_zf00G2KTeEMly5LZzi9FWlck8y0gU" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#2F3E28]/80 to-transparent flex items-end p-8">
-                                        <div className="text-white">
-                                            <p className="text-sm font-medium uppercase opacity-80 mb-1">Dự án tiêu biểu</p>
-                                            <h3 className="text-2xl font-bold">Khu đô thị Eco Green</h3>
-                                            <p className="text-sm opacity-90 mt-2">Quy hoạch 2023 - Diện tích 5ha</p>
-                                        </div>
+                                </div>
+                                <div className="grid lg:grid-cols-12 gap-8">
+                                    <div className="lg:col-span-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                        {designServices.map((service, idx) => (
+                                            <Link key={idx} to={`/dich-vu/thiet-ke/${service.slug}`} className="group bg-white p-6 rounded-xl border border-[#eef4e7] hover:border-[#84da0b] hover:shadow-lg transition-all cursor-pointer">
+                                                <div className="size-14 rounded-2xl overflow-hidden mb-4 border border-[#eef4e7]">
+                                                    <img src={service.image} className="size-full object-cover group-hover:scale-110 transition-transform duration-500" alt={service.title} />
+                                                </div>
+                                                <h3 className="text-xl font-bold text-[#2F3E28] mb-2 group-hover:text-[#84da0b] transition-colors uppercase">{service.title}</h3>
+                                                <p className="text-sm text-[#2F3E28]/60 line-clamp-3">{service.description}</p>
+                                            </Link>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
+                        </section>
 
-                {/* Construction Services Section */}
-                <section className="py-20 bg-[#2F3E28] text-white relative">
-                    <div className="container mx-auto px-4 md:px-10">
-                        <div className="text-center mb-16 max-w-3xl mx-auto">
-                            <span className="text-[#84da0b] font-bold uppercase tracking-widest text-sm">Chất lượng hàng đầu</span>
-                            <h2 className="text-3xl md:text-4xl font-black mt-2 mb-4">Dịch vụ Thi công Chuyên nghiệp</h2>
-                            <p className="text-white/70">Đội ngũ kỹ sư, nghệ nhân lành nghề cùng trang thiết bị hiện đại, cam kết mang lại công trình chất lượng và thẩm mỹ cao nhất.</p>
-                        </div>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                            {[
-                                { title: 'Thi công Sân vườn', sub: 'Biệt thự, nhà phố, Penhouse', icon: 'grass', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLDSsV4Cg0BNHCfEMfC4fAFFDBWhBZeEpbGpgiP3PLofhzxKLbjIwu-JrCqYqL-P8w9NLQvzw9gwewiU6-FDEER8CeBkKs04qXM16cDArYsmBuxIHoqOk-hRSRlWBs4_djpDh0B6zclzkRNXrI2RYSSowTW5NbxJDyw5gmM7nisnALnKb9zlcq7LeWzAQPThQPbeUIE_AFZegoEpSbw8jSJ5COMzbmUbEP_8_a5YNhyCIodB74h2ee6-G77lh8m9RNm7ZzYMnK3ug' },
-                                { title: 'Duy tu & Bảo dưỡng', sub: 'Chăm sóc định kỳ chuyên nghiệp', icon: 'content_cut', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC8jvmzOcthG3-CuMBoBEzAPWN2_6K_6nN1Yt0snIQgzl5r8A4fHXZJl2nxoa9rGMhKgBo8efgHPb7bO18j-l4smbRaI-pbd_m1_tW9qmc9pnG0NVci82_U0QJO0-ufLzuG0_FWnp-ceoJGD3o6hlsKhoRFDwBGmtNQHSrEQdT-ZjkyJuAYLYG20_BitSMpPrcrPeKc-tUiW4mlJZKpc7uhkTDXC-h3VoZ7v-El5SZIgQzLL43Dp9MwLgf2-dHxrMhog8_ksAGsMnQ' },
-                                { title: 'Nuôi cấy mô', sub: 'Công nghệ cao, giống cây sạch bệnh', icon: 'biotech', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDL0XN5PXtxHU5eNRxlYVqVuXJB5We-mascVeourqBaqPkRuWSlGwFFgNmL5NKglrAAJJYhHM_3-q95W31-h-hJ7fc5_LTL_nj4Rjyf5NOsyEHMd8m5TIZBqQb-fIWrBdq0UEIdI278TUNg1UvKZJ9BGtqDOJQgHhJw3fjnAC78WL6LxrtcefSnNoON7lB42uLsAi70-35AYydfAWjxY4sD2Dl5rCurXsWg3nSMudMgIZH0AuxQsgii_9MNVOuSQd4snDPjnpWQ3yc' },
-                                { title: 'Tường cây xanh', sub: 'Giải pháp xanh cho đô thị', icon: 'filter_hdr', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDaIrnvIyavFPEgQR6pnY0UDABq2iUbEGtvqd80jBH3azzBYvdzzqsnvUdqqDIYxysjnex9hN8ig36sGGPNc5AtZvUdeoedv9Zew4N8VIRrx4B4NkNw09FS_x36-54W5ROewMIs5O3GV7dVbnP4pJU0XK4DpFzkp4z9szTbW1bSYxhkzyWS9Pb3k-TJFIDON1ESKB9hI-npGesRBCdtNf_uAyd0vL8PHF9fusJGIWNPZE2b01asipamuAe3kbmQDuSihq2k8gi6auw' }
-                            ].map((item, idx) => (
-                                <div key={idx} className="group relative h-64 rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-[#84da0b] transition-all">
-                                    <img alt={item.title} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" src={item.img} />
-                                    <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                                        <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                                        <p className="text-sm text-white/80 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">{item.sub}</p>
-                                        <div className="absolute top-4 right-4 bg-[#84da0b] p-2 rounded-lg">
-                                            <span className="material-symbols-outlined text-white">{item.icon}</span>
-                                        </div>
-                                    </div>
+                        {/* Construction Services Section */}
+                        <section className="py-20 bg-[#2F3E28] text-white relative">
+                            <div className="container mx-auto px-4 md:px-10">
+                                <div className="text-center mb-16 max-w-3xl mx-auto">
+                                    <span className="text-[#84da0b] font-bold uppercase tracking-widest text-sm">Chất lượng hàng đầu</span>
+                                    <h2 className="text-3xl md:text-4xl font-black mt-2 mb-4 uppercase">Dịch vụ Thi công Chuyên nghiệp</h2>
+                                    <p className="text-white/70">Đội ngũ kỹ sư, nghệ nhân lành nghề cùng trang thiết bị hiện đại, cam kết mang lại công trình chất lượng và thẩm mỹ cao nhất.</p>
                                 </div>
-                            ))}
-                        </div>
-                        <div className="mt-12 text-center">
-                            <button className="h-12 px-8 rounded-xl bg-transparent border-2 border-[#84da0b] text-[#84da0b] hover:bg-[#84da0b] hover:text-white font-bold text-base transition-all">
-                                Xem toàn bộ dịch vụ thi công
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Process Section */}
+                                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                                    {constructionServices.map((item, idx) => (
+                                        <Link key={idx} to={`/dich-vu/thi-cong/${item.slug}`} className="group relative h-72 rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-[#84da0b] transition-all">
+                                            <img alt={item.title} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" src={item.image} />
+                                            <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                                <h3 className="text-xl font-bold mb-1 uppercase tracking-tight">{item.title}</h3>
+                                                <p className="text-sm text-white/80 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all line-clamp-2">{item.description}</p>
+                                                <div className="absolute top-4 right-4 bg-[#84da0b] p-2 rounded-lg">
+                                                    <span className="material-symbols-outlined text-white">construction</span>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </section>
+                    </>
+                )}
                 <section className="py-20 bg-[#f7f9f5]">
                     <div className="container mx-auto px-4 md:px-10">
                         <div className="text-center mb-16">
@@ -210,7 +210,6 @@ const ServicesPage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* FAQ Section */}
                 <section className="py-20 bg-[#f7f9f5]">
                     <div className="container mx-auto px-4 md:px-10 max-w-4xl">
                         <div className="text-center mb-12">
@@ -242,7 +241,6 @@ const ServicesPage: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Contact Section */}
                 <section className="py-20 bg-white overflow-hidden">
                     <div className="container mx-auto px-4 md:px-10">
                         <div className="bg-[#2F3E28] rounded-3xl p-8 lg:p-12 text-white relative shadow-2xl overflow-hidden">

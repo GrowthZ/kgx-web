@@ -1,83 +1,89 @@
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KGX Landscape & Construction</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#84da0b",
-              "primary-dark": "#6cb309",
-              accent: "#F2994A",
-              olive: "#2F3E28",
-              "olive-light": "#4A5D41",
-              "background-light": "#ffffff",
-              "background-off": "#f7f9f5",
-              "background-dark": "#1b2210",
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGX Landscape & Construction</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#84da0b",
+            "primary-dark": "#6cb309",
+            accent: "#F2994A",
+            olive: "#2F3E28",
+            "olive-light": "#4A5D41",
+            "background-light": "#ffffff",
+            "background-off": "#f7f9f5",
+            "background-dark": "#1b2210",
+            // Admin redesign colors
+            "admin-primary": "#008a8a",
+            "admin-secondary": "#f3a812",
+            "admin-bg-light": "#f8fafc",
+            "admin-bg-dark": "#0f2323",
+            "admin-sidebar": "#0c1d1d",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            "2xl": "1.5rem",
+            full: "9999px",
+          },
+          container: {
+            center: true,
+            padding: "1rem",
+            screens: {
+              sm: "640px",
+              md: "768px",
+              lg: "1024px",
+              xl: "1200px",
             },
-            fontFamily: {
-              display: ["Inter", "sans-serif"],
-              body: ["Inter", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.5rem",
-              lg: "0.75rem",
-              xl: "1rem",
-              "2xl": "1.5rem",
-              full: "9999px",
-            },
-            container: {
-              center: true,
-              padding: "1rem",
-              screens: {
-                sm: "640px",
-                md: "768px",
-                lg: "1024px",
-                xl: "1200px",
-              },
-            },
-            animation: {
-              fadeIn: "fadeIn 0.3s ease-in-out",
-            },
-            keyframes: {
-              fadeIn: {
-                "0%": { opacity: "0", transform: "translateY(-10px)" },
-                "100%": { opacity: "1", transform: "translateY(0)" },
-              },
+          },
+          animation: {
+            fadeIn: "fadeIn 0.3s ease-in-out",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: "0", transform: "translateY(-10px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" },
             },
           },
         },
-      };
-    </script>
-    <style>
-        /* Custom scrollbar for better aesthetics */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-    </style>
+      },
+    };
+  </script>
+  <style>
+    /* Custom scrollbar for better aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -89,8 +95,10 @@
 </script>
 
 </head>
-  <body class="bg-background-light text-olive font-display antialiased overflow-x-hidden">
-    <div id="root"></div>
+
+<body class="bg-background-light text-olive font-display antialiased overflow-x-hidden">
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

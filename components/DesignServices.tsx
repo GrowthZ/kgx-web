@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { DESIGN_SERVICES } from '../constants';
+import { servicesService, Service } from '../src/services/servicesService';
 
 const DesignServices: React.FC = () => {
+  const [services, setServices] = useState<Service[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchServices();
+  }, []);
+
+  const fetchServices = async () => {
+    try {
+      setLoading(true);
+      const data = await servicesService.getAllServices();
+      // Filter to show specific services if needed, here we'll just take the top ones related to design
+      const designServices = data.filter(s =>
+        s.title.toLowerCase().includes('thiết kế')
+      ).slice(0, 4);
+      setServices(designServices);
+    } catch (error) {
+      console.error('Error fetching design services:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) return null;
+
   return (
     <section className="py-20 bg-background-light">
       <div className="container">
@@ -26,20 +51,20 @@ const DesignServices: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Left: Service Cards */}
           <div className="lg:col-span-7 grid md:grid-cols-2 gap-4">
-            {DESIGN_SERVICES.map((service, index) => (
+            {services.map((service, index) => (
               <Link
-                key={index}
-                to="/dich-vu"
+                key={service.slug}
+                to={`/dich-vu/${service.slug}`}
                 className="group bg-white p-6 rounded-xl border border-[#eef4e7] hover:border-primary hover:shadow-lg transition-all cursor-pointer block"
               >
                 <div className="size-12 bg-[#f2f7ed] rounded-lg flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                  <span className="material-symbols-outlined">{service.icon}</span>
+                  <span className="material-symbols-outlined">{service.icon || 'architecture'}</span>
                 </div>
-                <h3 className="text-xl font-bold text-olive mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-olive mb-2 group-hover:text-primary transition-colors uppercase">
                   {service.title}
                 </h3>
                 <p className="text-sm text-olive/60 line-clamp-2">
-                  {service.desc}
+                  {service.description || 'Giải pháp kiến trúc cảnh quan chuyên sâu.'}
                 </p>
               </Link>
             ))}
@@ -57,7 +82,7 @@ const DesignServices: React.FC = () => {
                   <p className="text-sm font-medium uppercase opacity-80 mb-1">
                     Dự án tiêu biểu
                   </p>
-                  <h3 className="text-2xl font-bold">Khu đô thị Eco Green</h3>
+                  <h3 className="text-2xl font-bold uppercase">Khu đô thị Eco Green</h3>
                   <p className="text-sm opacity-90 mt-2">
                     Quy hoạch 2023 - Diện tích 5ha
                   </p>

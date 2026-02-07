@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { SERVICES_DATA } from '../services';
+import { servicesService, Service } from '../src/services/servicesService';
 import ImageWithFallback from '../components/ImageWithFallback';
 
 const GardenDesignPage: React.FC = () => {
-    const designServices = Object.values(SERVICES_DATA).filter(s => s.type === 'design');
+    const [services, setServices] = useState<Service[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                setLoading(true);
+                const data = await servicesService.getAllServices('thiet-ke');
+                setServices(data);
+            } catch (error) {
+                console.error('Error fetching design services:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchServices();
+    }, []);
 
     return (
         <div className="bg-[#fafcf8] text-[#1b2210] font-body overflow-x-hidden antialiased pt-20">
@@ -101,13 +117,20 @@ const GardenDesignPage: React.FC = () => {
                             </Link>
                         </div>
                         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                            {designServices.map((service, idx) => (
-                                <Link key={idx} to={`/dich-vu/thiet-ke/${service.slug}`} className="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
-                                    <ImageWithFallback className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" alt={service.metaTitle} src={service.hero.image} />
+                            {loading ? (
+                                <div className="col-span-full py-20 flex flex-col items-center justify-center">
+                                    <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
+                                    <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải danh mục...</p>
+                                </div>
+                            ) : services.length === 0 ? (
+                                <div className="col-span-full py-10 text-center text-gray-400">Không tìm thấy hạng mục nào.</div>
+                            ) : services.map((service, idx) => (
+                                <Link key={service.slug} to={`/dich-vu/${service.slug}`} className="group relative h-[380px] overflow-hidden rounded-2xl bg-gray-900 cursor-pointer">
+                                    <ImageWithFallback className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" alt={service.title} src={service.image} />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
                                     <div className="absolute bottom-0 left-0 p-8">
-                                        <h3 className="text-2xl font-bold text-white mb-2">{service.hero.title}</h3>
-                                        <p className="text-gray-300 text-sm line-clamp-3 mb-4">{service.hero.description}</p>
+                                        <h3 className="text-2xl font-bold text-white mb-2 uppercase">{service.title}</h3>
+                                        <p className="text-gray-300 text-sm line-clamp-3 mb-4">{service.description}</p>
                                         <span className="inline-flex items-center gap-2 text-sm font-bold text-[#84da0b]">
                                             Xem chi tiết <span className="material-symbols-outlined text-base">arrow_forward</span>
                                         </span>

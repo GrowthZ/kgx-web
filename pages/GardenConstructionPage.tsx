@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { SERVICES_DATA } from '../services';
+import { servicesService, Service } from '../src/services/servicesService';
 import ImageWithFallback from '../components/ImageWithFallback';
 
 const GardenConstructionPage: React.FC = () => {
-    const constructionServices = Object.values(SERVICES_DATA).filter(s => s.type === 'construction');
+    const [services, setServices] = useState<Service[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                setLoading(true);
+                const data = await servicesService.getAllServices('thi-cong');
+                setServices(data);
+            } catch (error) {
+                console.error('Error fetching construction services:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchServices();
+    }, []);
 
     return (
         <div className="bg-[#f7f8f5] text-[#161c0d] font-body antialiased pt-20">
@@ -91,11 +107,18 @@ const GardenConstructionPage: React.FC = () => {
                         </Link>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {constructionServices.map((service, idx) => (
-                            <Link key={idx} to={`/dich-vu/thi-cong/${service.slug}`} className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all block group">
-                                <div className="h-48 rounded-xl bg-cover bg-center mb-4 transition-transform group-hover:scale-[1.02]" style={{ backgroundImage: `url('${service.hero.image}')` }}></div>
-                                <h3 className="text-lg font-bold text-[#161c0d] mb-2 group-hover:text-[#84da0b] transition-colors">{service.hero.title}</h3>
-                                <p className="text-sm text-gray-500 mb-3 line-clamp-3">{service.hero.description}</p>
+                        {loading ? (
+                            <div className="col-span-full py-20 flex flex-col items-center justify-center">
+                                <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
+                                <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải danh mục...</p>
+                            </div>
+                        ) : services.length === 0 ? (
+                            <div className="col-span-full py-10 text-center text-gray-400">Không tìm thấy hạng mục nào.</div>
+                        ) : services.map((service, idx) => (
+                            <Link key={service.slug} to={`/dich-vu/${service.slug}`} className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all block group">
+                                <div className="h-48 rounded-xl bg-cover bg-center mb-4 transition-transform group-hover:scale-[1.02]" style={{ backgroundImage: `url('${service.image}')` }}></div>
+                                <h3 className="text-lg font-bold text-[#161c0d] mb-2 group-hover:text-[#84da0b] transition-colors">{service.title}</h3>
+                                <p className="text-sm text-gray-500 mb-3 line-clamp-3">{service.description}</p>
                                 <span className="text-sm font-semibold text-[#84da0b] inline-flex items-center">Chi tiết <span className="material-symbols-outlined text-sm ml-1">chevron_right</span></span>
                             </Link>
                         ))}

@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { TREES } from '../constants';
+import { productsService, Product } from '../src/services/productsService';
+import ImageWithFallback from '../components/ImageWithFallback';
 
 const ProductListingPage: React.FC = () => {
+    const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    const fetchProducts = async () => {
+        try {
+            setLoading(true);
+            const data = await productsService.getAllProducts();
+            setProducts(data);
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="bg-background-light text-[#161712] font-display antialiased flex flex-col min-h-screen">
             <main className="flex-grow flex flex-col">
@@ -17,38 +37,50 @@ const ProductListingPage: React.FC = () => {
                             </p>
                         </div>
 
-                        {/* Plant Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {TREES.map((tree) => (
-                                <Link
-                                    key={tree.slug}
-                                    to={`/san-pham/${tree.slug}`}
-                                    className="group flex flex-col bg-white border border-[#dee0d7] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-                                >
-                                    <div className="w-full aspect-square bg-gray-100 overflow-hidden relative">
-                                        <div
-                                            className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                            style={{ backgroundImage: `url("${tree.image}")` }}
-                                        ></div>
-                                        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+                        {loading ? (
+                            <div className="py-20 flex flex-col items-center justify-center">
+                                <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
+                                <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải sản phẩm...</p>
+                            </div>
+                        ) : (
+                            <>
+                                {/* Plant Grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    {products.map((tree) => (
+                                        <Link
+                                            key={tree.slug}
+                                            to={`/san-pham/${tree.slug}`}
+                                            className="group flex flex-col bg-white border border-[#dee0d7] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                                        >
+                                            <div className="w-full aspect-square bg-gray-100 overflow-hidden relative">
+                                                <ImageWithFallback isBackground className="w-full h-full transition-transform duration-700 group-hover:scale-105" src={tree.image} />
+                                                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+                                            </div>
+                                            <div className="p-4 flex flex-col gap-2 flex-grow">
+                                                <h3 className="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">
+                                                    {tree.name}
+                                                </h3>
+                                                <p className="text-[#7a8165] text-sm font-normal line-clamp-2">
+                                                    {tree.description}
+                                                </p>
+                                                <div className="mt-auto pt-2">
+                                                    <span className="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                                        Xem chi tiết
+                                                        <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+
+                                {products.length === 0 && (
+                                    <div className="text-center py-20 text-gray-500">
+                                        Không tìm thấy sản phẩm nào.
                                     </div>
-                                    <div className="p-4 flex flex-col gap-2 flex-grow">
-                                        <h3 className="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">
-                                            {tree.name}
-                                        </h3>
-                                        <p className="text-[#7a8165] text-sm font-normal line-clamp-2">
-                                            {tree.description}
-                                        </p>
-                                        <div className="mt-auto pt-2">
-                                            <span className="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
-                                                Xem chi tiết
-                                                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
+                                )}
+                            </>
+                        )}
 
                         {/* Pagination (Simulated) */}
                         <div className="flex justify-center pt-8">
@@ -94,9 +126,9 @@ const ProductListingPage: React.FC = () => {
                                 </div>
                                 <div className="flex items-center gap-4 text-sm text-[#7a8165]">
                                     <div className="flex -space-x-2">
-                                        <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-300 bg-cover" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqUJBV4wcXYy47vRkBX-gfQBonbVLvPdqyIsmyUWqOpc3rS2qJ-7Tur5gUl3s-dwcIsfVnTNjsLpkFovYQULa536unbpGKf5mn59gq_c-7aalhsNUvrU_10N61uWVeNnZgBKAI6qJ_g2dKG_wyukBthXVwtbsk94fIQWIYud6EJeOM3eU5TEkSjrKm59lggmYXJjeKyfsu71h6iDWv0YOgyqwEl9PaTRiajkt77r9rLluHKFnXPkJvLNorbAvhsVMJ4_x3DATNnZU')" }}></div>
-                                        <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-300 bg-cover" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnNbDkgT6yT2pwj56tHvGAOgh49yqPo2nrev5DulVyL1jGrvldvWTYHb3KXQdiQReIV4y4ERkyz_ZfBIMzMbv4abjQGzLzShhtpa1C5GHm7zzxTkTPLHjAOQQE8y7KU-ieZK4SvUClzdUV1I9wzYr1fzOv6htyXRm1BoKJrULXbUhw07r7bflBl4S22YYXHkb0xjYkTf0uue6noyju0ePvJ95iL_XdhMqOUl4-VZeqHi47zOwhM6x0pKAT9GOJ-crMTbydAYRrHUw')" }}></div>
-                                        <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-300 bg-cover" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoYCYUb6bN1B6pTQIg47j5jbuz4TfmRLLCUH-1jxBUZ9m2EC2iyQ9s98SdHQvOgDt8JlipYadhAdZgbT51X6bPLTk1shFkoIGovk0Vjr6EUyaptvaS0geixP2_NlMnAGX5sz88z12NfYnKQ4PNHWoHxdl5q1G8CnWC72XIpBZ8vNv-U-Er1xtyoWnkyAC-bpxvUJm1d1BIIWXVbWFoa291HsY0VUxppKDu5APlo6rpQ3KIvQJw-VyZz1VSyb5Lxbk8rDrmtT5U-ew')" }}></div>
+                                        <ImageWithFallback src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                                        <ImageWithFallback src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                                        <ImageWithFallback src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
                                     </div>
                                     <p>Hơn 500+ khách hàng đã tin tưởng</p>
                                 </div>

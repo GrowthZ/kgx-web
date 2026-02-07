@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { PROJECTS } from '../constants';
+import { projectsService, Project } from '../src/services/projectsService';
 
 const CATEGORIES = [
   "Tất cả",
@@ -12,10 +12,27 @@ const CATEGORIES = [
 
 const Portfolio: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("Tất cả");
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredProjects = PROJECTS.filter((project) => {
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  const fetchProjects = async () => {
+    try {
+      setLoading(true);
+      const data = await projectsService.getAllProjects();
+      setProjects(data);
+    } catch (error) {
+      console.error('Error fetching projects:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const filteredProjects = projects.filter((project) => {
     if (activeCategory === "Tất cả") return true;
-    // Handle specific mappings if needed, or simple direct match
     if (project.filterCategory) {
       return project.filterCategory === activeCategory;
     }

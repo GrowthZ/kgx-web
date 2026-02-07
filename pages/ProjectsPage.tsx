@@ -1,12 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { projectsService, Project } from '../src/services/projectsService';
+import ImageWithFallback from '../components/ImageWithFallback';
 
 const ProjectsPage: React.FC = () => {
+    const [projects, setProjects] = useState<Project[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [activeCategory, setActiveCategory] = useState('Tất cả');
+
+    useEffect(() => {
+        fetchProjects();
+    }, []);
+
+    const fetchProjects = async () => {
+        try {
+            setLoading(true);
+            const data = await projectsService.getAllProjects();
+            setProjects(data);
+        } catch (error) {
+            console.error('Error fetching projects:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const categories = ['Tất cả', 'Biệt thự', 'Resort', 'Khu đô thị', 'Doanh nghiệp'];
+
+    const filteredProjects = projects.filter(project => {
+        if (activeCategory === 'Tất cả') return true;
+        return project.category === activeCategory || project.filterCategory === activeCategory;
+    });
+
     return (
         <div className="bg-background-light text-text-main antialiased selection:bg-primary/30">
             {/* Hero Section */}
             <section className="relative w-full overflow-hidden py-12 lg:py-20">
-                <div className="container">
+                <div className="container px-4 mx-auto">
                     <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
                         {/* Left Content */}
                         <div className="flex flex-col gap-6">
@@ -31,7 +60,7 @@ const ProjectsPage: React.FC = () => {
                             <div className="flex items-center gap-6 pt-4 text-sm font-medium text-gray-500">
                                 <div className="flex items-center gap-2">
                                     <span className="material-symbols-outlined text-primary">check_circle</span>
-                                    <span>100+ Dự án đã hoàn thiện</span>
+                                    <span>{projects.length}+ Dự án đã hoàn thiện</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <span className="material-symbols-outlined text-primary">check_circle</span>
@@ -41,32 +70,30 @@ const ProjectsPage: React.FC = () => {
                         </div>
                         {/* Right Collage */}
                         <div className="relative h-[400px] lg:h-[500px] w-full">
-                            <div className="absolute top-0 right-0 h-[85%] w-[65%] overflow-hidden rounded-2xl shadow-xl">
-                                <div className="h-full w-full bg-cover bg-center transition-transform duration-700 hover:scale-105" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2FEwQp7nnRxt5LTXtc2pgk2DFSlyVa2IAEzFD8jLjGg75pXxNSAy9U-2RyM85QljBmarxtLi7vtfxwfGrNuykgh-o9p3ZH3YJx6MPFdEmr0QeI8WXUUG2q3LK7tUE2Yi6_LuyweaOmwtzGcFuy2G5y1pAPT_IHCpd8xDYHVf-GuMHtRbLh7-ut_-nbrek9Z9rMMn3w_o4DDInAKDFouUGlG73Sv-GWdksb-Vj3txsiITkCMhH3RfZIAjFBlG_oJ4Grd91yTaVWmw')" }}></div>
-                            </div>
-                            <div className="absolute bottom-0 left-0 h-[55%] w-[55%] overflow-hidden rounded-2xl shadow-xl ring-8 ring-[#fafcf8]">
-                                <div className="h-full w-full bg-cover bg-center transition-transform duration-700 hover:scale-105" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVTPJeTWNLA2YpFecX7MkdZjbhVxEzEE3nXRdZvclW44X3OuqWbPB-XLMdUOaFD6BYrl4w93P5gAMgXBLOiGzlwYnSSlm-aWkw60mZCgVF0GFQst2gmrBN6rlwCPmySOjYfV3I6H7RUBwTIE8gxcxQaWAwmk8ottEaZDunRXqWJH5vtqqizn7eWQn9YdBvoe8j8EGoY6YWl4N7l_awlna0tSYTdOrZLWHE7yz-XIWMZGaiZ2aTREwchy3WJNYxbCRaz-vZRmMtBoc')" }}></div>
-                            </div>
-                            {/* Decorative element */}
-                            <div className="absolute top-10 left-10 hidden lg:block">
-                                <div className="flex size-24 animate-spin-slow items-center justify-center rounded-full border border-dashed border-primary/40 p-2">
-                                    <div className="size-full rounded-full bg-primary/10"></div>
-                                </div>
-                            </div>
+                            <ImageWithFallback
+                                isBackground
+                                className="absolute top-0 right-0 h-[85%] w-[65%] overflow-hidden rounded-2xl shadow-xl transition-transform duration-700 hover:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2FEwQp7nnRxt5LTXtc2pgk2DFSlyVa2IAEzFD8jLjGg75pXxNSAy9U-2RyM85QljBmarxtLi7vtfxwfGrNuykgh-o9p3ZH3YJx6MPFdEmr0QeI8WXUUG2q3LK7tUE2Yi6_LuyweaOmwtzGcFuy2G5y1pAPT_IHCpd8xDYHVf-GuMHtRbLh7-ut_-nbrek9Z9rMMn3w_o4DDInAKDFouUGlG73Sv-GWdksb-Vj3txsiITkCMhH3RfZIAjFBlG_oJ4Grd91yTaVWmw"
+                            />
+                            <ImageWithFallback
+                                isBackground
+                                className="absolute bottom-0 left-0 h-[55%] w-[55%] overflow-hidden rounded-2xl shadow-xl ring-8 ring-[#fafcf8] transition-transform duration-700 hover:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVTPJeTWNLA2YpFecX7MkdZjbhVxEzEE3nXRdZvclW44X3OuqWbPB-XLMdUOaFD6BYrl4w93P5gAMgXBLOiGzlwYnSSlm-aWkw60mZCgVF0GFQst2gmrBN6rlwCPmySOjYfV3I6H7RUBwTIE8gxcxQaWAwmk8ottEaZDunRXqWJH5vtqqizn7eWQn9YdBvoe8j8EGoY6YWl4N7l_awlna0tSYTdOrZLWHE7yz-XIWMZGaiZ2aTREwchy3WJNYxbCRaz-vZRmMtBoc')"
+                            />
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Filters Section */}
-            <section className="container py-8 border-y border-gray-100 bg-white sticky top-20 z-30">
+            <section className="container px-4 mx-auto py-8 border-y border-gray-100 bg-white sticky top-20 z-30">
                 <div className="mb-10 text-center">
                     <h2 className="text-3xl font-black text-text-main mb-3">Lĩnh vực hoạt động</h2>
                     <p className="text-gray-500 max-w-2xl mx-auto">Các loại hình dự án tiêu biểu mà KGX tập trung phát triển với chất lượng cao nhất.</p>
                 </div>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    {/* Card 1 */}
-                    <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer">
+                    {/* Activity Cards */}
+                    <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer" onClick={() => setActiveCategory('Biệt thự')}>
                         <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                             <span className="material-symbols-outlined" style={{ fontSize: '28px' }}>villa</span>
                         </div>
@@ -74,8 +101,7 @@ const ProjectsPage: React.FC = () => {
                         <p className="text-sm text-gray-500 mb-4 flex-grow">Thiết kế &amp; thi công trọn gói sân vườn, tiểu cảnh, hồ cá Koi cho biệt thự.</p>
                         <div className="h-32 w-full rounded-lg bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXRZX_sWS_jKLNE5UpJQorhVUG7Q79eLY1eer1Iut00jMF9sfOZdQQ7c-HBi6mT67rcJo7yX0x_To3-6HhxWgMtdYHXi6RnlZriQ-4DN8qzJDqeYvH2p4Ux67UBniFNwnG7NriadW2THQ2gzAB29VwuUeIzmJUpx519JvwOQTBogB8o7Nb2Z9icmB0P5iOqQ980aq7Sh9ITwzlbYAQnQuZ9LdFJbjWGVB71_qbRXhCGL53DRMLyenVa6ZYBibWT8RZg5yIh5R3MtQ')" }}></div>
                     </div>
-                    {/* Card 2 */}
-                    <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer">
+                    <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer" onClick={() => setActiveCategory('Resort')}>
                         <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                             <span className="material-symbols-outlined" style={{ fontSize: '28px' }}>deck</span>
                         </div>
@@ -83,8 +109,7 @@ const ProjectsPage: React.FC = () => {
                         <p className="text-sm text-gray-500 mb-4 flex-grow">Giải pháp cảnh quan nghỉ dưỡng đẳng cấp, hài hòa với thiên nhiên bản địa.</p>
                         <div className="h-32 w-full rounded-lg bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0QDbGwyTNe3iuqa0xNDT2uee8XnFLKn0XYFGQ3zcB5Cwn5NrwZJBr3iaWQqbiyoeInPbvO3FKnNOj_IF_lvLi5S_2Lbd8pPYG_nePhVmx1I-8Sv0J7Q-9klSkWDdb_3QPQkFP_WagtYg3GP7dZcmnmk2bUslTE7x2xgSDDG_I9NmHWv75843q-_ZDVdjDXx0xWQMtBNQpf2XuIxrf5y_MHdVwfffN0QoIYynyQpN-GuEkrFU4reaJaRzidacNckpuppfDkW9T7r8')" }}></div>
                     </div>
-                    {/* Card 3 */}
-                    <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer">
+                    <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer" onClick={() => setActiveCategory('Khu đô thị')}>
                         <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                             <span className="material-symbols-outlined" style={{ fontSize: '28px' }}>park</span>
                         </div>
@@ -92,8 +117,7 @@ const ProjectsPage: React.FC = () => {
                         <p className="text-sm text-gray-500 mb-4 flex-grow">Quy hoạch và thi công cảnh quan đô thị, công viên công cộng quy mô lớn.</p>
                         <div className="h-32 w-full rounded-lg bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9ADblp2ejVNwc-KbgzyMWRpw4XayB_t0LfNcC-LSIopPSP4PCn67qgBimnvV37sYhArMKUz098vF8QEnWxTXxJfDbT0Kdpb8ZWFyqg8vg2iK4lLmFV9a87evk8gtKx2XiWi4o0VRLCENWsMIbriUTey70VWrb00vwM6c9tUsLKOnruxJVXcK_BnfjV_f3ib-jlJy0t0A651qctEzZ458HsPlVw6WLTLUm3D92EjyCmM')" }}></div>
                     </div>
-                    {/* Card 4 */}
-                    <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer">
+                    <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer" onClick={() => setActiveCategory('Doanh nghiệp')}>
                         <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                             <span className="material-symbols-outlined" style={{ fontSize: '28px' }}>domain</span>
                         </div>
@@ -106,109 +130,59 @@ const ProjectsPage: React.FC = () => {
 
             {/* Filter & Project List Section */}
             <section className="py-16 bg-[#fafcf8]">
-                <div className="container">
+                <div className="container px-4 mx-auto">
                     {/* Filter Tabs */}
-                    <div className="mb-10 overflow-x-auto pb-2">
+                    <div className="mb-10 overflow-x-auto pb-2 no-scrollbar">
                         <div className="flex min-w-max border-b border-[#dde8ce] px-4 gap-8">
-                            <button className="group flex flex-col items-center justify-center border-b-[3px] border-b-primary pb-[13px] pt-4 text-text-main outline-none">
-                                <p className="text-sm font-bold leading-normal tracking-wide">Tất cả dự án</p>
-                            </button>
-                            <button className="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-[13px] pt-4 text-gray-500 hover:text-primary transition-colors outline-none">
-                                <p className="text-sm font-bold leading-normal tracking-wide">Biệt thự</p>
-                            </button>
-                            <button className="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-[13px] pt-4 text-gray-500 hover:text-primary transition-colors outline-none">
-                                <p className="text-sm font-bold leading-normal tracking-wide">Resort</p>
-                            </button>
-                            <button className="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-[13px] pt-4 text-gray-500 hover:text-primary transition-colors outline-none">
-                                <p className="text-sm font-bold leading-normal tracking-wide">Khu đô thị</p>
-                            </button>
-                            <button className="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-[13px] pt-4 text-gray-500 hover:text-primary transition-colors outline-none">
-                                <p className="text-sm font-bold leading-normal tracking-wide">Doanh nghiệp</p>
-                            </button>
+                            {categories.map((cat) => (
+                                <button
+                                    key={cat}
+                                    onClick={() => setActiveCategory(cat)}
+                                    className={`group flex flex-col items-center justify-center border-b-[3px] pb-[13px] pt-4 transition-all outline-none ${activeCategory === cat ? 'border-b-primary text-text-main' : 'border-b-transparent text-gray-500 hover:text-primary'}`}
+                                >
+                                    <p className="text-sm font-bold leading-normal tracking-wide">{cat === 'Tất cả' ? 'Tất cả dự án' : cat}</p>
+                                </button>
+                            ))}
                         </div>
                     </div>
-                    {/* Project Grid */}
-                    <div className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {/* Project Card 1 */}
-                        <div className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#eef4e7]">
-                            <div className="relative aspect-[16/10] w-full overflow-hidden">
-                                <div className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDANnOg9h46n6hAt-m-WXV-3W8sOR2JOGZKGBGjESbaQ8UJQ0zC7fcsJ415XmH7mBL_A-C0PcSrq1N3Tzt0oZagRdp0W6IsamN3EGeovT4qzolqhoqCRcdpRfsn8-qYsBNUyt4xn0uMzboV_4OBNNSkwZAa8IF9DKaSx0GkhrZvZvfj-NPZ9hTbpq98m9FlkLP6AyRpgfSx_D1PivYxyOAS2BFtvyxjEXiFyS9FY6NAH6ILqRC5v5xgb5T1r7dtqn5yMc74ohjMBxU')" }}></div>
-                                <div className="absolute top-4 right-4 rounded-full bg-primary px-3 py-1 text-[10px] font-black uppercase tracking-wider text-white shadow-lg backdrop-blur-md">
-                                    Đã hoàn thiện
-                                </div>
-                            </div>
-                            <div className="flex flex-1 flex-col p-6 lg:p-8">
-                                <h3 className="mb-4 text-xl font-bold leading-tight text-olive group-hover:text-primary transition-colors">Khu biệt thự sinh thái – Thái Nguyên</h3>
-                                <div className="mb-6 flex flex-col gap-3 border-t border-olive/5 pt-5 text-sm">
-                                    <div className="flex items-center gap-3 text-olive-light font-medium">
-                                        <span className="material-symbols-outlined text-[20px] text-primary">location_on</span>
-                                        <span>Thái Nguyên</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-olive-light font-medium">
-                                        <span className="material-symbols-outlined text-[20px] text-primary">square_foot</span>
-                                        <span>500m²</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-olive-light font-medium">
-                                        <span className="material-symbols-outlined text-[20px] text-primary">architecture</span>
-                                        <span>Tiêu chuẩn: Premium</span>
-                                    </div>
-                                </div>
-                                <Link to="/du-an/vuon-nhat-zen-garden" className="mt-auto flex w-full items-center justify-center rounded-xl bg-background-off py-4 text-sm font-bold text-olive hover:bg-primary hover:text-white hover:shadow-lg transition-all">
-                                    Xem chi tiết dự án
-                                </Link>
-                            </div>
+
+                    {loading ? (
+                        <div className="py-20 flex flex-col items-center justify-center">
+                            <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
+                            <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải dự án...</p>
                         </div>
-                        {/* Project Card 2 */}
-                        <div className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#eef4e7]">
-                            <div className="relative aspect-[16/10] w-full overflow-hidden">
-                                <div className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwABBafvqAqY1sJUIrMlMN7jTITR6vfS27K1TqYfoqLx24N0CugMCIh7Wn1RCLZIrjbDAsvJ_Cdq0HSn-V1Ux6p5miHxcntHhT7HwbmhG9UJSgMUdVqmyhxD1twd6frZsVmFsST3tcgJlR-YAOiP3E69o_UIaqWTkHFHQwJDR2mIHkpv2NXkKC7FbIJ5v3kHxAA0vfp6dhusNU33OlKZ8VcLXrUMgNG4RciT5VbJRlhvf4nNWpirJuFbpDtAho26MaddJ7UjBsIQY')" }}></div>
-                            </div>
-                            <div className="flex flex-1 flex-col p-6 lg:p-8">
-                                <h3 className="mb-4 text-xl font-bold leading-tight text-olive group-hover:text-primary transition-colors">Resort Biển Xanh - Đà Nẵng</h3>
-                                <div className="mb-6 flex flex-col gap-3 border-t border-olive/5 pt-5 text-sm">
-                                    <div className="flex items-center gap-3 text-olive-light font-medium">
-                                        <span className="material-symbols-outlined text-[20px] text-primary">location_on</span>
-                                        <span>Đà Nẵng</span>
+                    ) : (
+                        <div className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+                            {filteredProjects.map((project, idx) => (
+                                <div key={idx} className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#eef4e7]">
+                                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                                        <ImageWithFallback isBackground className="h-full w-full transition-transform duration-700 group-hover:scale-110" src={project.image} />
+                                        <div className="absolute top-4 right-4 rounded-full bg-primary px-3 py-1 text-[10px] font-black uppercase tracking-wider text-white shadow-lg backdrop-blur-md">
+                                            {project.status || 'Đã hoàn thiện'}
+                                        </div>
                                     </div>
-                                    <div className="flex items-center gap-3 text-olive-light font-medium">
-                                        <span className="material-symbols-outlined text-[20px] text-primary">square_foot</span>
-                                        <span>2.500m²</span>
-                                    </div>
-                                </div>
-                                <Link to="/du-an/flamingo-dai-lai-villa" className="mt-auto flex w-full items-center justify-center rounded-xl bg-background-off py-4 text-sm font-bold text-olive hover:bg-primary hover:text-white hover:shadow-lg transition-all">
-                                    Xem chi tiết dự án
-                                </Link>
-                            </div>
-                        </div>
-                        {/* Project Card 3 */}
-                        <div className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#eef4e7]">
-                            <div className="relative aspect-[16/10] w-full overflow-hidden">
-                                <div className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGapnXmd1BSMXyVppomkqHT-kRkK6AXUGNQjnH-fK6LoizvG3suHQmtrAq7ek-Iceb7nQEe7XKec9oaF3Gkxrex4zTe9PWixk5Zxs9mER56lVzC6GeA9fWuJII8HYvP-D8NmT5z4AFShe42jvCdSiae8e2JyImMrOBq_AwTFmVuQf2YPJkzZ5Obg8Wtn_a07vRz7SkbQyi464teGidr-4ez0F5cnffpDBdKJSCJcDKftRMfcHeKMgFr-15-JPWQyT_MTVobtKDSvw')" }}></div>
-                            </div>
-                            <div className="flex flex-1 flex-col p-6 lg:p-8">
-                                <h3 className="mb-4 text-xl font-bold leading-tight text-olive group-hover:text-primary transition-colors">Công viên Trung tâm - Hà Nội</h3>
-                                <div className="mb-6 flex flex-col gap-3 border-t border-olive/5 pt-5 text-sm">
-                                    <div className="flex items-center gap-3 text-olive-light font-medium">
-                                        <span className="material-symbols-outlined text-[20px] text-primary">location_on</span>
-                                        <span>Hà Nội</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-olive-light font-medium">
-                                        <span className="material-symbols-outlined text-[20px] text-primary">square_foot</span>
-                                        <span>10.000m²</span>
+                                    <div className="flex flex-1 flex-col p-6 lg:p-8">
+                                        <h3 className="mb-4 text-xl font-bold leading-tight text-olive group-hover:text-primary transition-colors line-clamp-2 uppercase">{project.title}</h3>
+                                        <div className="mb-6 flex flex-col gap-3 border-t border-olive/5 pt-5 text-sm">
+                                            <div className="flex items-center gap-3 text-olive-light font-medium">
+                                                <span className="material-symbols-outlined text-[20px] text-primary">location_on</span>
+                                                <span>{project.location}</span>
+                                            </div>
+                                            {project.scale && (
+                                                <div className="flex items-center gap-3 text-olive-light font-medium">
+                                                    <span className="material-symbols-outlined text-[20px] text-primary">square_foot</span>
+                                                    <span>{project.scale}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <Link to={`/du-an/${project.slug}`} className="mt-auto flex w-full items-center justify-center rounded-xl bg-background-off py-4 text-sm font-bold text-olive hover:bg-primary hover:text-white hover:shadow-lg transition-all">
+                                            Xem chi tiết dự án
+                                        </Link>
                                     </div>
                                 </div>
-                                <Link to="/du-an/sky-garden-office" className="mt-auto flex w-full items-center justify-center rounded-xl bg-background-off py-4 text-sm font-bold text-olive hover:bg-primary hover:text-white hover:shadow-lg transition-all">
-                                    Xem chi tiết dự án
-                                </Link>
-                            </div>
+                            ))}
                         </div>
-                    </div>
-                    {/* More cards can be added here if needed */}
-                    <div className="mt-12 flex justify-center">
-                        <button className="flex h-12 items-center justify-center rounded-xl border border-gray-300 bg-white px-8 text-base font-bold text-text-main hover:border-primary hover:text-primary transition-all">
-                            Xem thêm dự án
-                        </button>
-                    </div>
+                    )}
                 </div>
             </section>
 

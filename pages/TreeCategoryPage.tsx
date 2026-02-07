@@ -1,17 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { TREES, TREE_CATEGORIES } from '../constants';
+import { productsService, Product } from '../src/services/productsService';
+import { TREE_CATEGORIES } from '../constants';
 
 const TreeCategoryPage: React.FC = () => {
     const { categorySlug } = useParams<{ categorySlug: string }>();
+    const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
+
     const category = TREE_CATEGORIES.find(c => c.slug === categorySlug);
-    const filteredTrees = TREES.filter(t => t.categorySlug === categorySlug);
+
+    useEffect(() => {
+        if (categorySlug) {
+            fetchProducts();
+        }
+    }, [categorySlug]);
+
+    const fetchProducts = async () => {
+        try {
+            setLoading(true);
+            const data = await productsService.getAllProducts(categorySlug!);
+            setProducts(data);
+        } catch (error) {
+            console.error('Error fetching products by category:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     if (!category) {
         return (
             <div className="min-h-[60vh] flex flex-col items-center justify-center gap-6 bg-background-light">
                 <h2 className="text-2xl font-bold text-primary">Không tìm thấy nhóm cây này</h2>
-                <Link to="/san-pham/tat-ca" className="px-6 py-2 bg-primary text-white rounded-lg font-bold">
+                <Link to="/san-pham/danh-sach" className="px-6 py-2 bg-primary text-white rounded-lg font-bold">
                     Quay lại danh sách sản phẩm
                 </Link>
             </div>
@@ -34,48 +55,54 @@ const TreeCategoryPage: React.FC = () => {
                             </p>
                         </div>
 
-                        {/* Plant Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {filteredTrees.length > 0 ? (
-                                filteredTrees.map((tree) => (
-                                    <Link
-                                        key={tree.slug}
-                                        to={`/san-pham/${tree.slug}`}
-                                        className="group flex flex-col bg-white border border-[#dee0d7] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-                                    >
-                                        <div className="w-full aspect-square bg-gray-100 overflow-hidden relative">
-                                            <div
-                                                className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                                style={{ backgroundImage: `url("${tree.image}")` }}
-                                            ></div>
-                                            <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
-                                        </div>
-                                        <div className="p-4 flex flex-col gap-2 flex-grow">
-                                            <h3 className="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">
-                                                {tree.name}
-                                            </h3>
-                                            <p className="text-[#7a8165] text-sm font-normal line-clamp-2">
-                                                {tree.description}
-                                            </p>
-                                            <div className="mt-auto pt-2">
-                                                <span className="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
-                                                    Xem chi tiết
-                                                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                                                </span>
+                        {loading ? (
+                            <div className="py-20 flex flex-col items-center justify-center">
+                                <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
+                                <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải sản phẩm...</p>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {products.length > 0 ? (
+                                    products.map((tree) => (
+                                        <Link
+                                            key={tree.slug}
+                                            to={`/san-pham/${tree.slug}`}
+                                            className="group flex flex-col bg-white border border-[#dee0d7] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                                        >
+                                            <div className="w-full aspect-square bg-gray-100 overflow-hidden relative">
+                                                <div
+                                                    className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                                                    style={{ backgroundImage: `url("${tree.image}")` }}
+                                                ></div>
+                                                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                                             </div>
+                                            <div className="p-4 flex flex-col gap-2 flex-grow">
+                                                <h3 className="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">
+                                                    {tree.name}
+                                                </h3>
+                                                <p className="text-[#7a8165] text-sm font-normal line-clamp-2">
+                                                    {tree.description}
+                                                </p>
+                                                <div className="mt-auto pt-2">
+                                                    <span className="text-primary text-sm font-bold inline-flex items-center gap-1 group-hover:underline">
+                                                        Xem chi tiết
+                                                        <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))
+                                ) : (
+                                    <div className="col-span-full py-20 text-center border-2 border-dashed border-[#dee0d7] rounded-xl bg-white/50">
+                                        <div className="size-16 bg-primary/5 text-primary/30 flex items-center justify-center rounded-full mx-auto mb-4">
+                                            <span className="material-symbols-outlined text-3xl">inventory_2</span>
                                         </div>
-                                    </Link>
-                                ))
-                            ) : (
-                                <div className="col-span-full py-20 text-center border-2 border-dashed border-[#dee0d7] rounded-xl bg-white/50">
-                                    <div className="size-16 bg-primary/5 text-primary/30 flex items-center justify-center rounded-full mx-auto mb-4">
-                                        <span className="material-symbols-outlined text-3xl">inventory_2</span>
+                                        <h3 className="text-xl font-bold text-primary">Đang cập nhật danh sách cây</h3>
+                                        <p className="text-[#7a8165] mt-2">Dữ liệu cho nhóm này đang được bộ phận kỹ thuật KGX chuẩn bị.</p>
                                     </div>
-                                    <h3 className="text-xl font-bold text-primary">Đang cập nhật danh sách cây</h3>
-                                    <p className="text-[#7a8165] mt-2">Dữ liệu cho nhóm này đang được bộ phận kỹ thuật KGX chuẩn bị.</p>
-                                </div>
-                            )}
-                        </div>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </section>
 

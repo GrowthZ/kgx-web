@@ -9,9 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^11.0.1",
+    "@hookform/resolvers": "^5.2.2",
+    "ckeditor5": "^47.4.0",
+    "cropperjs": "^1.6.2",
+    "firebase": "^12.8.0",
     "react": "^19.2.3",
+    "react-cropper": "^2.3.3",
     "react-dom": "^19.2.3",
-    "react-router-dom": "^7.12.0"
+    "react-firebase-hooks": "^5.1.1",
+    "react-hook-form": "^7.71.1",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.12.0",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

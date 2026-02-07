@@ -1,16 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { TREES } from '../constants';
+import { productsService, Product } from '../src/services/productsService';
 
 const ProductDetailPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
-    const tree = TREES.find(t => t.slug === slug);
+    const [tree, setTree] = useState<Product | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (slug) {
+            fetchProduct();
+        }
+    }, [slug]);
+
+    const fetchProduct = async () => {
+        try {
+            setLoading(true);
+            const data = await productsService.getProductBySlug(slug!);
+            setTree(data);
+        } catch (error) {
+            console.error('Error fetching product details:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    if (loading) {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center bg-background-light">
+                <div className="size-16 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
+                <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải thông tin sản phẩm...</p>
+            </div>
+        );
+    }
 
     if (!tree) {
         return (
             <div className="min-h-[60vh] flex flex-col items-center justify-center gap-6">
                 <h2 className="text-2xl font-bold text-olive">Không tìm thấy thông tin cây</h2>
-                <Link to="/san-pham" className="px-6 py-2 bg-primary text-white rounded-xl font-bold">
+                <Link to="/san-pham/danh-sach" className="px-6 py-2 bg-primary text-white rounded-xl font-bold">
                     Quay lại danh sách
                 </Link>
             </div>
@@ -121,14 +149,14 @@ const ProductDetailPage: React.FC = () => {
                 </section>
 
                 {/* Landscape Applications */}
-                {(tree as any).applications && (
+                {tree.applications && tree.applications.length > 0 && (
                     <section className="w-full bg-white py-16">
                         <div className="max-w-[1200px] mx-auto px-4">
                             <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
                                 <div>
                                     <h2 className="text-3xl font-bold text-[#151b0e] mb-2">Ứng dụng cảnh quan</h2>
                                     <p className="text-text-muted max-w-xl">
-                                        {(tree as any).applicationTitle || `${tree.name} là lựa chọn hàng đầu cho các công trình hiện đại nhờ hình dáng tán cây tự nhiên đẹp và khả năng tạo bóng mát tốt.`}
+                                        {tree.name} là lựa chọn hàng đầu cho các công trình hiện đại nhờ hình dáng tán cây tự nhiên đẹp và khả năng tạo bóng mát tốt.
                                     </p>
                                 </div>
                                 <Link className="text-primary font-bold hover:underline flex items-center" to="/du-an">
@@ -136,7 +164,7 @@ const ProductDetailPage: React.FC = () => {
                                 </Link>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {(tree as any).applications.map((app: any, idx: number) => (
+                                {tree.applications.map((app: any, idx: number) => (
                                     <div key={idx} className="group relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer">
                                         <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url('${app.image}')` }}></div>
                                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
@@ -163,7 +191,7 @@ const ProductDetailPage: React.FC = () => {
                                 <h3 className="text-xl font-bold text-primary">Ưu điểm nổi bật</h3>
                             </div>
                             <ul className="space-y-4">
-                                {tree.pros.map((item, idx) => (
+                                {tree.pros?.map((item, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
                                         <span className="material-symbols-outlined text-primary mt-0.5">check_circle</span>
                                         <div>
@@ -183,7 +211,7 @@ const ProductDetailPage: React.FC = () => {
                                 <h3 className="text-xl font-bold text-orange-600">Lưu ý khi trồng</h3>
                             </div>
                             <ul className="space-y-4 relative z-10">
-                                {tree.cons.map((item, idx) => (
+                                {tree.cons?.map((item, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
                                         <span className="material-symbols-outlined text-orange-400 mt-0.5">error</span>
                                         <div>
@@ -208,7 +236,7 @@ const ProductDetailPage: React.FC = () => {
                                 <h2 className="text-3xl font-bold text-[#151b0e]">Hướng dẫn chăm sóc</h2>
                                 <p className="text-text-muted">Để {tree.name} phát triển tốt nhất và giữ được dáng vẻ đẹp, KGX khuyến nghị quy trình chăm sóc cơ bản sau:</p>
                                 <div className="space-y-4">
-                                    {tree.care.map((item, idx) => (
+                                    {tree.care?.map((item, idx) => (
                                         <div key={idx} className="flex gap-4 p-4 bg-white rounded-xl border border-[#eef3e8]">
                                             <div className="text-primary pt-1"><span className="material-symbols-outlined">{item.icon}</span></div>
                                             <div>
@@ -224,11 +252,11 @@ const ProductDetailPage: React.FC = () => {
                 </section>
 
                 {/* Target Profiles */}
-                {(tree as any).targetProfiles && (
+                {tree.targetProfiles && tree.targetProfiles.length > 0 && (
                     <section className="w-full max-w-[1200px] px-4 py-16">
                         <h2 className="text-center text-3xl font-bold text-[#151b0e] mb-12">Giải pháp phù hợp cho</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {(tree as any).targetProfiles.map((profile: any, idx: number) => (
+                            {tree.targetProfiles.map((profile: any, idx: number) => (
                                 <div key={idx} className="flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-[#eef3e8] hover:shadow-lg transition-shadow">
                                     <div className={`size-16 rounded-full ${profile.color} flex items-center justify-center mb-4`}>
                                         <span className="material-symbols-outlined text-3xl">{profile.icon}</span>
@@ -242,7 +270,7 @@ const ProductDetailPage: React.FC = () => {
                 )}
 
                 {/* Used in Projects */}
-                {(tree as any).featuredProjects && (
+                {tree.featuredProjects && tree.featuredProjects.length > 0 && (
                     <section className="w-full bg-white py-16 border-t border-[#eef3e8]">
                         <div className="max-w-[1440px] mx-auto px-4">
                             <div className="flex justify-between items-center mb-8">
@@ -250,7 +278,7 @@ const ProductDetailPage: React.FC = () => {
                                 <Link className="text-primary font-medium hover:underline" to="/du-an">Xem tất cả dự án</Link>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                                {(tree as any).featuredProjects.map((project: any, idx: number) => (
+                                {tree.featuredProjects.map((project: any, idx: number) => (
                                     <div key={idx} className="flex flex-col gap-3 group cursor-pointer">
                                         <div className="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
                                             <div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{ backgroundImage: `url('${project.image}')` }}></div>
