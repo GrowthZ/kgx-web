@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                 <span className="material-symbols-outlined text-primary">
                   mail
                 </span>
-                <span>info@kgxlandscape.com</span>
+                <span>khonggianxanhthainguyen@gmail.com</span>
               </li>
             </ul>
           </div>

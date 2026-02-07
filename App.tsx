@@ -16,6 +16,7 @@ import ServiceDetailPage from './pages/ServiceDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import TreeCategoryPage from './pages/TreeCategoryPage';
+import CatalogPage from './pages/CatalogPage';
 
 import GardenConstructionPage from './pages/GardenConstructionPage';
 import GardenDesignPage from './pages/GardenDesignPage';
@@ -154,6 +155,7 @@ const App: React.FC = () => {
                     <Route path="/san-pham/tat-ca" element={<ProductListingPage />} />
                     <Route path="/san-pham/nhom/:categorySlug" element={<TreeCategoryPage />} />
                     <Route path="/san-pham/:slug" element={<ProductDetailPage />} />
+                    <Route path="/catalog" element={<CatalogPage />} />
 
                     <Route path="/du-an" element={<ProjectsPage />} />
                     <Route path="/du-an/:slug" element={<ProjectDetailPage />} />

@@ -1,0 +1,1522 @@
+{
+    "company": {
+        "name": "CÔNG TY CỔ PHẦN KHÔNG GIAN XANH THÁI NGUYÊN",
+        "address": "12e khu dân cư số 9, phường Gia Sàng, tỉnh Thái Nguyên",
+        "hotline": "0868 462 462",
+        "email": "Khonggianxanhthainguyen@Gmail.com",
+        "website": "Kgxvn.vn"
+    },
+    "categories": [
+        {
+            "id": "cay-bonsai",
+            "name": "Cây Bonsai",
+            "description": "Cây cổ thụ thu nhỏ, nghệ thuật để làm đẹp cho không gian"
+        },
+        {
+            "id": "cay-co-hoa",
+            "name": "Cây có hoa",
+            "description": "Ra hoa quanh năm, phù hợp trồng viền, ban công, chậu sân thượng, nội thất, trang trí cảnh quan"
+        },
+        {
+            "id": "cay-la-mau",
+            "name": "Cây lá màu",
+            "description": "Phù hợp trồng viền, ban công, chậu sân thượng, nội thất, tạo viền lối đi hoặc phủ nền mềm mại"
+        },
+        {
+            "id": "cay-la-mon",
+            "name": "Cây lá môn",
+            "description": "Cây lá môn có lá lớn, hình dáng lạ mắt giúp tạo điểm nhấn trong cảnh quan nhiệt đới. Thích hợp trồng ở nơi ẩm, râm mát như tiểu cảnh nước hoặc trồng chậu trang trí"
+        }
+    ],
+    "plants": [
+        {
+            "id": "sanh",
+            "name": "Sanh",
+            "categoryId": "cay-bonsai",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "son-lieu",
+            "name": "Sơn liễu",
+            "categoryId": "cay-bonsai",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "trang-do",
+            "name": "Trang đỏ/Trang Thái",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ",
+                "hồng",
+                "vàng"
+            ],
+            "image": null
+        },
+        {
+            "id": "dam-but",
+            "name": "Dâm bụt (đơn/kép)",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ",
+                "hồng",
+                "cam",
+                "vàng"
+            ],
+            "image": null
+        },
+        {
+            "id": "hoa-giay",
+            "name": "Hoa giấy",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng",
+                "đỏ",
+                "cam",
+                "hồng"
+            ],
+            "image": null
+        },
+        {
+            "id": "sao-nhai",
+            "name": "Sao nhái",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Vàng",
+                "cam",
+                "hồng",
+                "đỏ"
+            ],
+            "image": null
+        },
+        {
+            "id": "do-quyen",
+            "name": "Đỗ quyên",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Hồng",
+                "đỏ",
+                "trắng",
+                "tím"
+            ],
+            "image": null
+        },
+        {
+            "id": "dong-hau",
+            "name": "Đông hầu",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Vàng nhạt",
+                "vàng kem"
+            ],
+            "image": null
+        },
+        {
+            "id": "diem-chau",
+            "name": "Diễm châu",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Tím",
+                "đỏ",
+                "hồng",
+                "trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "ngoc-nu",
+            "name": "Ngọc nữ",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng – đỏ (2 tầng)"
+            ],
+            "image": null
+        },
+        {
+            "id": "ngoc-mai",
+            "name": "Ngọc mai",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng",
+                "hồng nhạt"
+            ],
+            "image": null
+        },
+        {
+            "id": "ngu-sac",
+            "name": "Ngũ sắc",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ",
+                "cam",
+                "vàng",
+                "tím"
+            ],
+            "image": null
+        },
+        {
+            "id": "thien-dieu",
+            "name": "Thiên điểu",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Cam – xanh"
+            ],
+            "image": null
+        },
+        {
+            "id": "da-ngoc-minh-chau",
+            "name": "Dạ ngọc minh châu",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng – đỏ"
+            ],
+            "image": null
+        },
+        {
+            "id": "phong-lu-thao",
+            "name": "Phong lữ thảo",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Hồng",
+                "đỏ",
+                "trắng",
+                "tím"
+            ],
+            "image": null
+        },
+        {
+            "id": "hong-sa-dec",
+            "name": "Hồng sa đéc",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ",
+                "hồng",
+                "trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "man-dinh-hong",
+            "name": "Mãn đình hồng",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ",
+                "hồng",
+                "vàng",
+                "trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "hong-mon",
+            "name": "Hồng môn",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ",
+                "trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "su-sa-mac",
+            "name": "Sứ sa mạc",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Hồng",
+                "trắng viền hồng"
+            ],
+            "image": null
+        },
+        {
+            "id": "thu-hai-duong",
+            "name": "Thu hải đường",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng",
+                "hồng",
+                "đỏ"
+            ],
+            "image": null
+        },
+        {
+            "id": "hoa-tra",
+            "name": "Hoa trà",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng",
+                "hồng"
+            ],
+            "image": null
+        },
+        {
+            "id": "tuong-vi",
+            "name": "Tường vi",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Hồng",
+                "đỏ",
+                "trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "mokara-do",
+            "name": "Mokara đỏ cánh sáp",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ cam"
+            ],
+            "image": null
+        },
+        {
+            "id": "ngoc-han",
+            "name": "Ngọc hân",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Tím",
+                "hồng",
+                "trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "hoa-hoang",
+            "name": "Hỏa hoàng",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Cam",
+                "đỏ"
+            ],
+            "image": null
+        },
+        {
+            "id": "ngoc-thao-cam",
+            "name": "Ngọc thảo cam",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Cam",
+                "hồng",
+                "đỏ"
+            ],
+            "image": null
+        },
+        {
+            "id": "cam-tu-mai",
+            "name": "Cẩm tú mai",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Tím",
+                "trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "dua-can",
+            "name": "Dừa cạn",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Hồng",
+                "trắng",
+                "tím"
+            ],
+            "image": null
+        },
+        {
+            "id": "chieu-tim",
+            "name": "Chiều tím",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Tím"
+            ],
+            "image": null
+        },
+        {
+            "id": "mai-chieu-thuy",
+            "name": "Mai chiếu thủy",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "chuoi-mo-ket",
+            "name": "Chuối mỏ két",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ",
+                "cam"
+            ],
+            "image": null
+        },
+        {
+            "id": "hoa-anh-duong",
+            "name": "Hoa ánh dương",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Vàng cam",
+                "vàng nhạt",
+                "trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "huynh-anh-la-nho",
+            "name": "Huỳnh anh lá nhỏ",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Vàng"
+            ],
+            "image": null
+        },
+        {
+            "id": "nguyet-que",
+            "name": "Nguyệt quế",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "mai-thai-do",
+            "name": "Mai Thái đỏ",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "dai-tuong-quan",
+            "name": "Đại tướng quân",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Nhiều màu"
+            ],
+            "image": null
+        },
+        {
+            "id": "kim-dong",
+            "name": "Kim đồng",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Vàng"
+            ],
+            "image": null
+        },
+        {
+            "id": "thanh-tu",
+            "name": "Thanh tú",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Tím"
+            ],
+            "image": null
+        },
+        {
+            "id": "tuyet-son-phi-hong",
+            "name": "Tuyết sơn phi hồng",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Tím"
+            ],
+            "image": null
+        },
+        {
+            "id": "hong-leo",
+            "name": "Hồng leo",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Nhiều màu"
+            ],
+            "image": null
+        },
+        {
+            "id": "ngoc-thao",
+            "name": "Ngọc thảo",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Hồng",
+                "cam",
+                "đỏ",
+                "trắng"
+            ],
+            "image": null
+        },
+        {
+            "id": "hoa-thanh-xa",
+            "name": "Hoa Thanh Xà",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Xanh tím nhạt"
+            ],
+            "image": null
+        },
+        {
+            "id": "toc-tien",
+            "name": "Tóc tiên",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ",
+                "cam"
+            ],
+            "image": null
+        },
+        {
+            "id": "hoa-canh-buom",
+            "name": "Hoa cánh bướm",
+            "categoryId": "cay-co-hoa",
+            "colors": null,
+            "note": "Cây nội thất",
+            "image": null
+        },
+        {
+            "id": "xac-phao",
+            "name": "Xác pháo",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ"
+            ],
+            "image": null
+        },
+        {
+            "id": "cam-tu-cau",
+            "name": "Cẩm tú cầu",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Xanh",
+                "hồng",
+                "trắng",
+                "đỏ",
+                "tím"
+            ],
+            "image": null
+        },
+        {
+            "id": "da-yen-thao",
+            "name": "Dạ yến thảo",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Nhiều màu"
+            ],
+            "image": null
+        },
+        {
+            "id": "cuc-do",
+            "name": "Cúc đỏ",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Đỏ"
+            ],
+            "image": null
+        },
+        {
+            "id": "mai-dia-thao",
+            "name": "Mai địa thảo",
+            "categoryId": "cay-co-hoa",
+            "colors": [
+                "Trắng",
+                "hồng",
+                "tím",
+                "vàng"
+            ],
+            "image": null
+        },
+        {
+            "id": "co-tong-duoi-luon",
+            "name": "Cô tòng đuôi lươn",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "co-tong-la-dom",
+            "name": "Cô tòng lá đốm",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "co-tong-la-xoan-vang",
+            "name": "Cô tòng lá xoắn vàng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "co-tong-la-xoan-do",
+            "name": "Cô tòng lá xoắn đỏ",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "co-tong-vang-anh",
+            "name": "Cô tòng vàng anh",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "rang-o-phung",
+            "name": "Ráng ổ phụng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "bach-ma-hoang-tu",
+            "name": "Bạch mã hoàng tử",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "bao-thanh-thien",
+            "name": "Bao thanh thiên",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "luoi-ho",
+            "name": "Lưỡi hổ",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "cung-dien-vang",
+            "name": "Cung điện vàng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "van-loc",
+            "name": "Vạn lộc",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "phu-quy",
+            "name": "Phú quý",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "phat-du-nuoc",
+            "name": "Phát dụ nước",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "phat-tai-nui",
+            "name": "Phát tài núi",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "phat-tai-bup-sen",
+            "name": "Phát tài búp sen",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "phat-tai-soc",
+            "name": "Phát tài sọc",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "phat-tai-la-tim",
+            "name": "Phát tài lá tím",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "tia-to-canh",
+            "name": "Tía tô cảnh",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "ngoc-ngan",
+            "name": "Ngọc ngân",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "huyet-du-kiem-do",
+            "name": "Huyết dụ kiếm đỏ",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "huyet-du-kiem-xanh",
+            "name": "Huyết dụ kiếm xanh",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "huyet-du-xanh",
+            "name": "Huyết dụ xanh",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "huyet-long-trang",
+            "name": "Huyết long trắng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duong-xi-co",
+            "name": "Dương xỉ cổ",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "huyet-du",
+            "name": "Huyết dụ",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "tam-tai",
+            "name": "Tam tài",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "da-lam",
+            "name": "Dạ lam",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "dong-bac",
+            "name": "Dong bạc",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duoi-cong-hong",
+            "name": "Đuôi công hồng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duoi-cong-la-soc",
+            "name": "Đuôi công lá sọc",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duoi-cong-tao-xanh",
+            "name": "Đuôi công táo xanh",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duoi-cong-soc-tim",
+            "name": "Đuôi công sọc tím",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duoi-cong-cam-thach",
+            "name": "Đuôi công cẩm thạch",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duoi-phung",
+            "name": "Đuôi phụng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "bay-sac-cau-vong",
+            "name": "Bảy sắc cầu vồng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "thai-lai-tim",
+            "name": "Thài lài tím",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "le-ban",
+            "name": "Lẻ bạn",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "tai-tuong-do",
+            "name": "Tai tượng đỏ",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "cam-thach-day",
+            "name": "Cẩm thạch dây",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "khong-tuoc",
+            "name": "Khổng tước",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "tran-chau",
+            "name": "Trân châu",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "thai-lai-tia",
+            "name": "Thài lài tía",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "o-ro-gan-vang",
+            "name": "Ô rô gân vàng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "cao-cang-soc-trang",
+            "name": "Cao cẳng sọc trắng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duong-xi-la-me",
+            "name": "Dương xỉ lá me",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duong-xi-duoi-tom",
+            "name": "Dương xỉ đuôi tôm",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duong-xi-gac-nai",
+            "name": "Dương xỉ gạc nai",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duong-xi-thong-thai",
+            "name": "Dương xỉ thòng Thái",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "co-tong-hoang-kim",
+            "name": "Cô tòng hoàng kim",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "co-tong-la-mit",
+            "name": "Cô tong lá mít",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "truc-nhat-dom",
+            "name": "Trúc nhật đốm",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duong-xi-khong-tuoc",
+            "name": "Dương xỉ khổng tước",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duong-xi-la-nhuyen",
+            "name": "Dương xỉ lá nhuyễn",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "hong-phat-tai",
+            "name": "Hồng phát tài",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "bach-tang",
+            "name": "Bạch tạng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "bach-dan-do-la-bac",
+            "name": "Bạch đàn đô la bạc",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "canh-buom-dem",
+            "name": "Cánh bướm đêm",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "thien-than-tuyet",
+            "name": "Thiên thần tuyết",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "cuc-moc",
+            "name": "Cúc mốc",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "trau-ba-de-vuong-soc",
+            "name": "Trầu bà đế vương sọc",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "bach-thuy-tien",
+            "name": "Bách thủy tiên",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "cay-vang-bac",
+            "name": "Cây vàng bạc",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "trang-nguyen",
+            "name": "Trạng nguyên",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "xuan-hoa-do",
+            "name": "Xuân hoa đỏ",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "diep-lac-thach",
+            "name": "Diệp Lạc Thạch",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "hac-o",
+            "name": "Hắc ó",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "ngu-gia-bi",
+            "name": "Ngũ gia bì",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "dua-canh",
+            "name": "Dứa cảnh",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "vay-rong",
+            "name": "Vẩy rồng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "gam-long",
+            "name": "Gấm lông",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "tung-thom",
+            "name": "Tùng thơm",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "do-trong",
+            "name": "Đỗ trọng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "trau-ba-canh-en",
+            "name": "Trầu bà cánh én",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "dai-phu-gia",
+            "name": "Đại Phú Gia",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "phuc-loc-tho",
+            "name": "Phúc Lộc Thọ",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "solanum-uleanum",
+            "name": "Solanum Uleanum",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "bao-lien",
+            "name": "Bảo liên",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "o-rong",
+            "name": "Ổ rồng",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "tung-thien-mom",
+            "name": "Tùng thiên môm",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "tung-duoi-chon",
+            "name": "Tùng đuôi chồn",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "quyen-ba",
+            "name": "Quyển bá",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "bengoia",
+            "name": "Bengoia",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "labisia",
+            "name": "Labisia",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "bach-tuyet-mai",
+            "name": "Bạch tuyết mai",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mican",
+            "name": "Mican",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "o-phung-nhun",
+            "name": "Ổ phụng nhún",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "o-phung-duoi-ca",
+            "name": "Ổ phụng đuôi cá",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "ngua-van",
+            "name": "Ngựa vằn",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "chan-ret",
+            "name": "Chân rết",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "duong-xi-ca-sau",
+            "name": "Dương xỉ cá sấu",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "ho-nhi",
+            "name": "Hổ nhĩ",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "kim-tuyen",
+            "name": "Kim tuyến",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "nap-am",
+            "name": "Nắp ấm",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "binh-an",
+            "name": "Bình an",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "tieu-diep-xich-nam",
+            "name": "Tiêu diệp xích nam",
+            "categoryId": "cay-la-mau",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-dom-trang",
+            "name": "Môn đốm trắng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-nhung-den",
+            "name": "Môn nhung đen",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-quan-am",
+            "name": "Môn quan âm",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-xanh",
+            "name": "Môn xanh",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-hop-qua",
+            "name": "Môn hợp quả",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-do",
+            "name": "Môn đỏ",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-tai-phat",
+            "name": "Môn tai phật",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-anh-trang",
+            "name": "Môn ánh trắng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-nguoi-tinh-trang",
+            "name": "Môn người tình trắng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-truong-sinh",
+            "name": "Môn trường sinh",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-den",
+            "name": "Môn đen",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-trai-tim-chay-bong",
+            "name": "Môn trái tim cháy bỏng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-chu-he",
+            "name": "Môn chú hề",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-anh-hong",
+            "name": "Môn ánh hồng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-anh-bac",
+            "name": "Môn ánh bạc",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-gia-la-bac",
+            "name": "Môn giả lá bạc",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-alocasia",
+            "name": "Môn Alocasia",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-anh-vang",
+            "name": "Môn ánh vàng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-nhung-xanh",
+            "name": "Môn nhung xanh",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-ngua",
+            "name": "Môn ngựa",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "hong-mon-do",
+            "name": "Hồng môn đỏ",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-rong-tim",
+            "name": "Môn rồng tím",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-rong-bac",
+            "name": "Môn rồng bạc",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-vay-rong",
+            "name": "Môn vẩy rồng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-alocasia-melo",
+            "name": "Môn Alocasia Melo",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-jacklyn",
+            "name": "Môn Jacklyn",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-khien-hoang-gia",
+            "name": "Môn khiên hoàng gia",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-tai-voi",
+            "name": "Môn tai voi",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-rong-do",
+            "name": "Môn rồng đỏ",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-reversa",
+            "name": "Môn Reversa",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-rong-xanh",
+            "name": "Môn rồng xanh",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-nuoc-philodendro",
+            "name": "Môn nước Philodendro",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-co",
+            "name": "Môn cổ",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-la-do",
+            "name": "Môn lá đỏ",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-mojito",
+            "name": "Môn Mojito",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-dau-kim-cuong",
+            "name": "Môn đầu kim cương",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-trung-quoc-hong",
+            "name": "Môn Trung Quốc hồng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-hoang-gia-hawaii",
+            "name": "Môn hoàng gia Hawaii",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-khong-lo-thai-lan",
+            "name": "Môn khổng lồ Thái Lan",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-hawaii-xanh",
+            "name": "Môn Hawaii xanh",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-tach-ca-phe",
+            "name": "Môn tách cà phê",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-midori-chua",
+            "name": "Môn Midori chua",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-dung-nham-trang",
+            "name": "Môn dung nham trắng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-ca-duoi",
+            "name": "Môn cá đuối",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-bombshell",
+            "name": "Môn Bombshell",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-qua-mong",
+            "name": "Môn quả mọng",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        },
+        {
+            "id": "mon-chinook",
+            "name": "Môn Chinook",
+            "categoryId": "cay-la-mon",
+            "colors": null,
+            "image": null
+        }
+    ]
+}
