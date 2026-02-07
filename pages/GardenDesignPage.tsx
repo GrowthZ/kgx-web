@@ -31,11 +31,11 @@ const GardenDesignPage: React.FC = () => {
                         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
                             {/* Text Content */}
                             <div className="flex flex-col gap-6">
-                                <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#f97316]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#f97316]">
+                                <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#f97316]/10 px-3 py-1 text-xs font-bold  tracking-wider text-[#f97316]">
                                     <span className="size-2 rounded-full bg-[#f97316]"></span>
                                     Chuyên nghiệp & Tận tâm
                                 </div>
-                                <h1 className="text-4xl font-black leading-[1.15] tracking-tight text-[#3a4d2e] sm:text-5xl lg:text-6xl">
+                                <h1 className="text-3xl font-black leading-[1.8] tracking-normal text-[#3a4d2e] sm:text-4xl lg:text-5xl">
                                     Dịch vụ thiết kế <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#84da0b] to-green-600">cảnh quan xanh</span>
                                 </h1>
@@ -62,7 +62,7 @@ const GardenDesignPage: React.FC = () => {
                                     <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3 rounded-lg bg-white/90 p-3 backdrop-blur-md">
                                         <span className="material-symbols-outlined text-[#f97316]">architecture</span>
                                         <div>
-                                            <p className="text-xs font-bold text-gray-500 uppercase">Quy hoạch</p>
+                                            <p className="text-xs font-bold text-gray-500 ">Quy hoạch</p>
                                             <p className="text-sm font-bold text-[#3a4d2e]">Masterplan 2024</p>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@ const GardenDesignPage: React.FC = () => {
                 <section className="bg-[#f3f6f1] py-16 lg:py-24">
                     <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
                         <div className="mb-12 flex flex-col items-center text-center">
-                            <h2 className="text-3xl font-bold text-[#3a4d2e] sm:text-4xl">Đối tượng khách hàng</h2>
+                            <h2 className="text-2xl font-bold text-[#3a4d2e] sm:text-3xl">Đối tượng khách hàng</h2>
                             <div className="mt-2 h-1 w-20 rounded-full bg-[#84da0b]"></div>
                         </div>
                         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -108,8 +108,8 @@ const GardenDesignPage: React.FC = () => {
                     <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
                         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
                             <div>
-                                <h2 className="text-3xl font-bold text-[#3a4d2e] sm:text-4xl">Danh mục dịch vụ</h2>
-                                <p className="mt-2 text-gray-600">Khám phá các giải pháp thiết kế chuyên sâu của KGX Landscape</p>
+                                <h2 className="text-2xl font-bold text-[#3a4d2e] sm:text-3xl">Danh mục dịch vụ</h2>
+                                <p className="mt-2 text-gray-600">Khám phá các giải pháp thiết kế chuyên sâu của KGX - Không Gian Xanh</p>
                             </div>
                             <Link className="group flex items-center gap-1 font-bold text-[#84da0b] hover:text-[#6cb609]" to="/dich-vu">
                                 Xem tất cả dịch vụ
@@ -120,7 +120,7 @@ const GardenDesignPage: React.FC = () => {
                             {loading ? (
                                 <div className="col-span-full py-20 flex flex-col items-center justify-center">
                                     <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                                    <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải danh mục...</p>
+                                    <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải danh mục...</p>
                                 </div>
                             ) : services.length === 0 ? (
                                 <div className="col-span-full py-10 text-center text-gray-400">Không tìm thấy hạng mục nào.</div>
@@ -129,7 +129,7 @@ const GardenDesignPage: React.FC = () => {
                                     <ImageWithFallback className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-110" alt={service.title} src={service.image} />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90"></div>
                                     <div className="absolute bottom-0 left-0 p-8">
-                                        <h3 className="text-2xl font-bold text-white mb-2 uppercase">{service.title}</h3>
+                                        <h3 className="text-2xl font-bold text-white mb-2 ">{service.title}</h3>
                                         <p className="text-gray-300 text-sm line-clamp-3 mb-4">{service.description}</p>
                                         <span className="inline-flex items-center gap-2 text-sm font-bold text-[#84da0b]">
                                             Xem chi tiết <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -148,7 +148,7 @@ const GardenDesignPage: React.FC = () => {
                     <div className="mx-auto max-w-[1200px] px-6 lg:px-8 relative z-10">
                         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
                             <div className="order-2 lg:order-1">
-                                <h2 className="text-3xl font-bold mb-8">Phạm vi công việc</h2>
+                                <h2 className="text-2xl font-bold mb-8">Phạm vi công việc</h2>
                                 <div className="grid gap-4">
                                     {[
                                         { n: 1, title: 'Khảo sát hiện trạng', desc: 'Đo đạc, đánh giá thổ nhưỡng, khí hậu và hiện trạng công trình.' },
@@ -194,7 +194,7 @@ const GardenDesignPage: React.FC = () => {
                 <section className="py-16 lg:py-24 bg-[#fafcf8]">
                     <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
                         <div className="mb-16 text-center">
-                            <h2 className="text-3xl font-bold text-[#3a4d2e] sm:text-4xl">Quy trình làm việc</h2>
+                            <h2 className="text-2xl font-bold text-[#3a4d2e] sm:text-3xl">Quy trình làm việc</h2>
                             <p className="mt-4 text-gray-600 max-w-2xl mx-auto">Quy trình 5 bước chuyên nghiệp, minh bạch giúp khách hàng dễ dàng theo dõi tiến độ dự án.</p>
                         </div>
                         <div className="relative">
@@ -223,7 +223,7 @@ const GardenDesignPage: React.FC = () => {
                             </div>
                             <div className="w-full lg:w-1/2">
                                 <h3 className="text-2xl font-bold text-[#3a4d2e] mb-4">Cam kết chất lượng</h3>
-                                <p className="text-gray-700 mb-6">Đội ngũ KGX Landscape luôn làm việc với tinh thần trách nhiệm cao nhất. Chúng tôi cam kết tiến độ bàn giao và chất lượng hồ sơ thiết kế đạt chuẩn quốc tế.</p>
+                                <p className="text-gray-700 mb-6">Đội ngũ KGX - Không Gian Xanh luôn làm việc với tinh thần trách nhiệm cao nhất. Chúng tôi cam kết tiến độ bàn giao và chất lượng hồ sơ thiết kế đạt chuẩn quốc tế.</p>
                                 <ul className="space-y-3">
                                     {[
                                         'Tư vấn nhiệt tình 24/7',
@@ -245,8 +245,8 @@ const GardenDesignPage: React.FC = () => {
                 <section className="py-16 lg:py-24">
                     <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
                         <div className="mb-12 text-center">
-                            <span className="font-bold text-[#f97316] uppercase tracking-wider text-sm">Dự án tiêu biểu</span>
-                            <h2 className="mt-2 text-3xl font-bold text-[#3a4d2e] sm:text-4xl">Các dự án đã thực hiện</h2>
+                            <span className="font-bold text-[#f97316]  tracking-wider text-sm">Dự án tiêu biểu</span>
+                            <h2 className="mt-2 text-2xl font-bold text-[#3a4d2e] sm:text-3xl">Các dự án đã thực hiện</h2>
                         </div>
                         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                             {[
@@ -289,7 +289,7 @@ const GardenDesignPage: React.FC = () => {
                             <div className="grid lg:grid-cols-5">
                                 {/* Form */}
                                 <div className="p-8 lg:col-span-3 lg:p-12">
-                                    <h2 className="mb-2 text-3xl font-bold text-[#3a4d2e]">Đăng ký tư vấn miễn phí</h2>
+                                    <h2 className="mb-2 text-2xl font-bold text-[#3a4d2e]">Đăng ký tư vấn miễn phí</h2>
                                     <p className="mb-8 text-gray-500">Để lại thông tin, kiến trúc sư của chúng tôi sẽ liên hệ lại trong vòng 24h.</p>
                                     <form className="space-y-4">
                                         <div className="grid gap-4 sm:grid-cols-2">

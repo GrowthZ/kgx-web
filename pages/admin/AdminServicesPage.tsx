@@ -46,7 +46,7 @@ const AdminServicesPage: React.FC = () => {
             <div className="space-y-8 animate-fadeIn">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
-                        <h1 className="text-3xl font-black text-slate-800 tracking-tight">Quản lý Dịch vụ</h1>
+                        <h1 className="text-2xl font-black text-slate-800 tracking-normal">Quản lý Dịch vụ</h1>
                         <p className="text-slate-500 font-medium mt-1">Quản lý các giải pháp thiết kế và thi công</p>
                     </div>
                 </div>
@@ -55,21 +55,21 @@ const AdminServicesPage: React.FC = () => {
                     {loading ? (
                         <div className="py-20 flex flex-col items-center justify-center">
                             <div className="size-12 border-4 border-slate-100 border-t-admin-primary rounded-full animate-spin"></div>
-                            <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải dịch vụ...</p>
+                            <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải dịch vụ...</p>
                         </div>
                     ) : services.length === 0 ? (
                         <div className="py-20 flex flex-col items-center justify-center text-slate-300">
-                            <span className="material-symbols-outlined text-6xl mb-4">settings_suggest</span>
-                            <p className="font-bold uppercase tracking-widest text-sm">Chưa có dịch vụ nào</p>
+                            <span className="material-symbols-outlined text-5xl mb-4">settings_suggest</span>
+                            <p className="font-bold  tracking-widest text-sm">Chưa có dịch vụ nào</p>
                         </div>
                     ) : (
                         <div className="overflow-x-auto text-left">
                             <table className="w-full text-left">
                                 <thead>
                                     <tr className="border-b border-slate-50">
-                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Dịch vụ</th>
-                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Danh mục</th>
-                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest text-right">Thao tác</th>
+                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Dịch vụ</th>
+                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Danh mục</th>
+                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest text-right">Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-50">
@@ -91,7 +91,7 @@ const AdminServicesPage: React.FC = () => {
                                                 </div>
                                             </td>
                                             <td className="px-8 py-5">
-                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${service.category === 'thiet-ke' ? 'bg-blue-100 text-blue-600' : 'bg-orange-100 text-orange-600'
+                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black  tracking-widest ${service.category === 'thiet-ke' ? 'bg-blue-100 text-blue-600' : 'bg-orange-100 text-orange-600'
                                                     }`}>
                                                     {service.category === 'thiet-ke' ? 'Thiết kế' : 'Thi công'}
                                                 </span>

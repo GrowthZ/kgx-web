@@ -30,7 +30,7 @@ const ProjectDetailPage: React.FC = () => {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-background-light">
                 <div className="size-16 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải thông tin dự án...</p>
+                <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải thông tin dự án...</p>
             </div>
         );
     }
@@ -61,7 +61,7 @@ const ProjectDetailPage: React.FC = () => {
                                 <span className="text-olive font-semibold">{project.title}</span>
                             </div>
                             <div className="space-y-4">
-                                <h1 className="text-4xl lg:text-5xl font-black text-olive leading-[1.15] tracking-tight uppercase">
+                                <h1 className="text-3xl lg:text-4xl font-black text-olive leading-[1.8] tracking-normal ">
                                     {project.title}
                                 </h1>
                                 <p className="text-lg lg:text-xl text-text-light font-normal max-w-[500px]">
@@ -97,7 +97,7 @@ const ProjectDetailPage: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className="text-text-light text-sm font-medium mb-1">Địa điểm</p>
-                                    <p className="text-olive text-lg font-bold leading-tight">{project.location}</p>
+                                    <p className="text-olive text-lg font-bold leading-normal">{project.location}</p>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 group">
@@ -106,7 +106,7 @@ const ProjectDetailPage: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className="text-text-light text-sm font-medium mb-1">Loại hình</p>
-                                    <p className="text-olive text-lg font-bold leading-tight uppercase">{project.category}</p>
+                                    <p className="text-olive text-lg font-bold leading-normal ">{project.category}</p>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 group">
@@ -115,7 +115,7 @@ const ProjectDetailPage: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className="text-text-light text-sm font-medium mb-1">Hạng mục</p>
-                                    <p className="text-olive text-lg font-bold leading-tight">{project.type || 'Sân vườn & Hồ Koi'}</p>
+                                    <p className="text-olive text-lg font-bold leading-normal">{project.type || 'Sân vườn & Hồ Koi'}</p>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 group">
@@ -124,7 +124,7 @@ const ProjectDetailPage: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className="text-text-light text-sm font-medium mb-1">Quy mô</p>
-                                    <p className="text-olive text-lg font-bold leading-tight">{project.scale || 'Updating'}</p>
+                                    <p className="text-olive text-lg font-bold leading-normal">{project.scale || 'Updating'}</p>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 group">
@@ -133,7 +133,7 @@ const ProjectDetailPage: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className="text-text-light text-sm font-medium mb-1">Thời gian</p>
-                                    <p className="text-olive text-lg font-bold leading-tight">{project.completionTime || 'Updating'}</p>
+                                    <p className="text-olive text-lg font-bold leading-normal">{project.completionTime || 'Updating'}</p>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +147,7 @@ const ProjectDetailPage: React.FC = () => {
 
                 {/* Gallery */}
                 <section id="images" className="w-full max-w-[1280px] mx-auto px-5 xl:px-20 py-16 lg:py-24 space-y-8">
-                    <h2 className="text-olive text-3xl font-bold border-b border-[#eef4e7] pb-4">Hình ảnh dự án</h2>
+                    <h2 className="text-olive text-2xl font-bold border-b border-[#eef4e7] pb-4">Hình ảnh dự án</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                         {project.images && project.images.map((img, idx) => (
                             <div key={idx} className="rounded-xl overflow-hidden shadow-sm aspect-[4/3] group relative">
@@ -162,8 +162,8 @@ const ProjectDetailPage: React.FC = () => {
                     <div className="max-w-[1280px] mx-auto px-5 xl:px-20">
                         <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl flex flex-col lg:flex-row gap-12 lg:gap-20">
                             <div className="flex-1 flex flex-col justify-center">
-                                <span className="text-primary font-bold tracking-wider text-sm mb-2 uppercase">Liên hệ với chúng tôi</span>
-                                <h2 className="text-3xl lg:text-4xl font-black text-olive mb-6 leading-tight">Nhận tư vấn cho dự án tương tự?</h2>
+                                <span className="text-primary font-bold tracking-wider text-sm mb-2 ">Liên hệ với chúng tôi</span>
+                                <h2 className="text-2xl lg:text-3xl font-black text-olive mb-6 leading-[1.8]">Nhận tư vấn cho dự án tương tự?</h2>
                                 <p className="text-text-light text-lg mb-8">
                                     Để lại thông tin, kiến trúc sư của KGX sẽ liên hệ tư vấn giải pháp thiết kế &amp; thi công cảnh quan tối ưu nhất cho ngôi nhà của bạn.
                                 </p>

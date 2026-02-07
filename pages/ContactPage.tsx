@@ -16,9 +16,9 @@ const ContactPage: React.FC = () => {
                                 <div className="space-y-4">
                                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#a4d411]/20 rounded-full w-fit">
                                         <span className="size-2 rounded-full bg-[#a4d411] animate-pulse"></span>
-                                        <span className="text-[#a4d411] text-xs font-bold uppercase tracking-wider">Tư vấn miễn phí</span>
+                                        <span className="text-[#a4d411] text-xs font-bold  tracking-wider">Tư vấn miễn phí</span>
                                     </div>
-                                    <h1 className="text-white text-4xl lg:text-5xl font-black leading-tight tracking-tight">
+                                    <h1 className="text-white text-3xl lg:text-4xl font-black leading-[1.8] tracking-normal">
                                         LIÊN HỆ & NHẬN <br />
                                         <span className="text-[#a4d411]">TƯ VẤN DỰ ÁN</span>
                                     </h1>
@@ -86,7 +86,7 @@ const ContactPage: React.FC = () => {
                             <div className="lg:col-span-7">
                                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
                                     <div className="mb-8">
-                                        <h2 className="text-2xl md:text-3xl font-bold text-[#1d2210] mb-2">Gửi thông tin dự án</h2>
+                                        <h2 className="text-2xl md:text-2xl font-bold text-[#1d2210] mb-2">Gửi thông tin dự án</h2>
                                         <p className="text-gray-600">Hãy để lại thông tin, đội ngũ kỹ sư của KGX sẽ liên hệ tư vấn trong vòng 30 phút.</p>
                                     </div>
                                     <form action="#" className="space-y-6">
@@ -170,7 +170,7 @@ const ContactPage: React.FC = () => {
                                                 <span className="material-symbols-outlined">location_on</span>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-semibold text-gray-500 uppercase mb-1">Trụ sở chính</p>
+                                                <p className="text-sm font-semibold text-gray-500  mb-1">Trụ sở chính</p>
                                                 <p className="text-base text-[#1d2210] font-medium leading-relaxed">
                                                     Số 123, Đường Lương Ngọc Quyến, TP. Thái Nguyên, Tỉnh Thái Nguyên
                                                 </p>
@@ -182,7 +182,7 @@ const ContactPage: React.FC = () => {
                                                 <span className="material-symbols-outlined">mail</span>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-semibold text-gray-500 uppercase mb-1">Email hỗ trợ</p>
+                                                <p className="text-sm font-semibold text-gray-500  mb-1">Email hỗ trợ</p>
                                                 <a className="text-base text-[#1d2210] font-medium hover:text-[#a4d411] transition-colors" href="mailto:contact@kgx.vn">
                                                     contact@kgx.vn
                                                 </a>
@@ -194,7 +194,7 @@ const ContactPage: React.FC = () => {
                                                 <span className="material-symbols-outlined">schedule</span>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-semibold text-gray-500 uppercase mb-1">Giờ làm việc</p>
+                                                <p className="text-sm font-semibold text-gray-500  mb-1">Giờ làm việc</p>
                                                 <p className="text-base text-[#1d2210] font-medium">
                                                     Thứ 2 - Thứ 7: 8:00 - 17:30
                                                 </p>
@@ -204,13 +204,13 @@ const ContactPage: React.FC = () => {
                                     <hr className="my-6 border-gray-100" />
                                     <div className="grid grid-cols-2 gap-3">
                                         <a className="flex flex-col items-center justify-center p-4 rounded-xl bg-orange-50 border border-orange-100 hover:bg-orange-100 transition-colors group" href="tel:0868462462">
-                                            <span className="material-symbols-outlined text-[#f59e0b] text-3xl mb-1 group-hover:scale-110 transition-transform">call</span>
-                                            <span className="text-xs font-semibold text-orange-800 uppercase">Gọi ngay</span>
+                                            <span className="material-symbols-outlined text-[#f59e0b] text-2xl mb-1 group-hover:scale-110 transition-transform">call</span>
+                                            <span className="text-xs font-semibold text-orange-800 ">Gọi ngay</span>
                                             <span className="text-sm font-bold text-[#f59e0b]">0868 462 462</span>
                                         </a>
                                         <a className="flex flex-col items-center justify-center p-4 rounded-xl bg-blue-50 border border-blue-100 hover:bg-blue-100 transition-colors group" href="#">
-                                            <span className="material-symbols-outlined text-blue-600 text-3xl mb-1 group-hover:scale-110 transition-transform">chat</span>
-                                            <span className="text-xs font-semibold text-blue-800 uppercase">Chat Zalo</span>
+                                            <span className="material-symbols-outlined text-blue-600 text-2xl mb-1 group-hover:scale-110 transition-transform">chat</span>
+                                            <span className="text-xs font-semibold text-blue-800 ">Chat Zalo</span>
                                             <span className="text-sm font-bold text-blue-600">KGX Connect</span>
                                         </a>
                                     </div>
@@ -250,7 +250,7 @@ const ContactPage: React.FC = () => {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm px-4">
                         <div className="bg-white p-6 rounded-2xl shadow-2xl text-center transform transition-transform hover:scale-105 duration-300">
                             <div className="size-16 bg-[#a4d411]/20 rounded-full flex items-center justify-center mx-auto mb-4 text-[#a4d411]">
-                                <span className="material-symbols-outlined text-3xl">map</span>
+                                <span className="material-symbols-outlined text-2xl">map</span>
                             </div>
                             <h3 className="text-xl font-bold text-[#1d2210] mb-2">Phục vụ toàn quốc</h3>
                             <p className="text-gray-500 text-sm mb-4">
@@ -265,7 +265,7 @@ const ContactPage: React.FC = () => {
                 <section className="py-24 bg-white">
                     <div className="container px-4">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-[#1d2210] mb-4">Câu hỏi thường gặp</h2>
+                            <h2 className="text-2xl font-bold text-[#1d2210] mb-4">Câu hỏi thường gặp</h2>
                             <p className="text-gray-600">Giải đáp nhanh những thắc mắc của bạn về quy trình làm việc của KGX</p>
                         </div>
                         <div className="space-y-4">
@@ -319,7 +319,7 @@ const ContactPage: React.FC = () => {
                     <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#a4d411]/10 rounded-full blur-3xl"></div>
                     <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-[#f59e0b]/10 rounded-full blur-3xl"></div>
                     <div className="max-w-[1200px] mx-auto px-4 relative z-10 text-center">
-                        <h2 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tight">Kiến tạo không gian sống mơ ước</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-white mb-6 tracking-normal">Kiến tạo không gian sống mơ ước</h2>
                         <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-lg">Đừng ngần ngại chia sẻ ý tưởng của bạn. Chúng tôi ở đây để hiện thực hóa nó thành những khu vườn tuyệt tác.</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <button className="w-full sm:w-auto px-8 h-14 bg-[#a4d411] hover:bg-[#8cb60e] text-[#1d2210] font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(164,212,17,0.3)] hover:shadow-[0_0_30px_rgba(164,212,17,0.5)]">

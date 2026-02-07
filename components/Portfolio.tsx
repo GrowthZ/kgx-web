@@ -43,10 +43,10 @@ const Portfolio: React.FC = () => {
     <section className="py-20 bg-background-light">
       <div className="container">
         <div className="text-center mb-10">
-          <span className="text-primary font-bold uppercase tracking-widest text-sm">
+          <span className="text-primary font-bold  tracking-widest text-sm">
             Dự án đã thực hiện
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-olive mt-2">
+          <h2 className="text-2xl md:text-3xl font-black text-olive mt-2">
             Công trình Tiêu biểu
           </h2>
         </div>
@@ -82,7 +82,7 @@ const Portfolio: React.FC = () => {
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="p-6">
-                <span className="text-primary text-xs font-bold uppercase mb-1 block">
+                <span className="text-primary text-xs font-bold  mb-1 block">
                   {project.displayCategory || project.category}
                 </span>
                 <h3 className="text-lg font-bold text-olive mb-1">

@@ -41,7 +41,7 @@ const MultiImageUpload: React.FC<MultiImageUploadProps> = ({
     return (
         <div className="space-y-4">
             <div className="flex items-center justify-between">
-                <label className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest ml-1">
+                <label className="text-[10px] font-extrabold text-slate-400  tracking-widest ml-1">
                     {label} ({images.length})
                 </label>
                 <button
@@ -101,8 +101,8 @@ const MultiImageUpload: React.FC<MultiImageUploadProps> = ({
                     onClick={() => setIsMediaModalOpen(true)}
                     className="aspect-square rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-300 hover:border-admin-primary/40 hover:text-admin-primary hover:bg-admin-primary/5 transition-all group"
                 >
-                    <span className="material-symbols-outlined text-3xl mb-1 group-hover:scale-110 transition-transform">add_circle</span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest">Thêm ảnh</span>
+                    <span className="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">add_circle</span>
+                    <span className="text-[10px] font-bold  tracking-widest">Thêm ảnh</span>
                 </button>
             </div>
 

@@ -11,11 +11,11 @@ const Hero: React.FC = () => {
         <div className="lg:col-span-6 flex flex-col gap-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#dde8ce] w-fit shadow-sm">
             <span className="size-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-xs font-bold text-olive tracking-wider uppercase">
+            <span className="text-xs font-bold text-olive tracking-wider ">
               Đối tác cảnh quan tin cậy
             </span>
           </div>
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black leading-tight text-olive tracking-tight">
+          <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-[1.8] text-olive tracking-normal">
             KGX – Thiết kế &amp; <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-olive-light">
               Thi công Cảnh quan
@@ -98,12 +98,12 @@ const Hero: React.FC = () => {
             </div>
           </div>
           {/* Floating badge */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white flex flex-col items-center text-center animate-[bounce_3s_infinite]">
-            <span className="text-4xl font-black text-primary">10+</span>
-            <span className="text-xs font-bold text-olive uppercase mt-1">
+          {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white flex flex-col items-center text-center animate-[bounce_3s_infinite]">
+            <span className="text-3xl font-black text-primary">10+</span>
+            <span className="text-xs font-bold text-olive  mt-1">
               Năm kinh nghiệm
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

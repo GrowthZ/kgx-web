@@ -11,10 +11,10 @@ const Contact: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 relative z-10">
             <div>
-              <span className="text-primary font-bold uppercase tracking-widest text-sm">
+              <span className="text-primary font-bold  tracking-widest text-sm">
                 Liên hệ ngay
               </span>
-              <h2 className="text-3xl md:text-4xl font-black mt-2 mb-6">
+              <h2 className="text-2xl md:text-3xl font-black mt-2 mb-6">
                 Đăng ký tư vấn miễn phí
               </h2>
               <p className="text-white/80 mb-8 leading-relaxed">
@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold uppercase text-olive/60">
+                    <label className="text-xs font-semibold  text-olive/60">
                       Họ và tên
                     </label>
                     <input
@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold uppercase text-olive/60">
+                    <label className="text-xs font-semibold  text-olive/60">
                       Số điện thoại
                     </label>
                     <input
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold uppercase text-olive/60">
+                    <label className="text-xs font-semibold  text-olive/60">
                       Loại dự án
                     </label>
                     <select className="w-full h-11 px-4 rounded-lg bg-[#f7f9f5] border border-[#dde8ce] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                     </select>
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold uppercase text-olive/60">
+                    <label className="text-xs font-semibold  text-olive/60">
                       Khu vực
                     </label>
                     <select className="w-full h-11 px-4 rounded-lg bg-[#f7f9f5] border border-[#dde8ce] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold uppercase text-olive/60">
+                  <label className="text-xs font-semibold  text-olive/60">
                     Ghi chú thêm
                   </label>
                   <textarea

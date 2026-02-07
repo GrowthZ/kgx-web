@@ -22,8 +22,8 @@ const TissueCultureBiotechPage: React.FC = () => {
                     </div>
 
                     <div className="container mx-auto px-6 relative z-10 text-center">
-                        <span className="text-accent font-black tracking-[0.6em] text-xs uppercase mb-6 block drop-shadow-lg">Scientific Innovation</span>
-                        <h1 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight uppercase tracking-tight drop-shadow-2xl">
+                        <span className="text-accent font-black tracking-[0.6em] text-xs  mb-6 block drop-shadow-lg">Scientific Innovation</span>
+                        <h1 className="text-4xl md:text-6xl font-black text-white mb-8 leading-[1.8]  tracking-normal drop-shadow-2xl">
                             Nuôi Cấy Mô <br /><span className="text-accent">Công Nghệ Cao</span>
                         </h1>
                         <p className="text-white/90 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed italic mb-12 drop-shadow-md">
@@ -36,7 +36,7 @@ const TissueCultureBiotechPage: React.FC = () => {
                 <section className="py-24 bg-white dark:bg-background-dark">
                     <div className="container mx-auto px-6">
                         <div className="text-center mb-20">
-                            <h2 className="text-3xl md:text-5xl font-black text-primary dark:text-white uppercase tracking-tighter">ƯU ĐIỂM VƯỢT TRỘI</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-primary dark:text-white  tracking-normaler">Ưu điểm vượt trội</h2>
                             <p className="text-text-muted dark:text-gray-400 mt-4 text-xl font-light">Lợi thế cạnh tranh từ phòng Lab hiện đại của KGX.</p>
                         </div>
 
@@ -48,9 +48,9 @@ const TissueCultureBiotechPage: React.FC = () => {
                             ].map((adv, i) => (
                                 <div key={i} className="bg-stone-50 dark:bg-[#34382e] p-12 rounded-[48px] text-center group border border-transparent hover:border-accent/20 transition-all duration-700 shadow-xl hover:-translate-y-4">
                                     <div className="size-24 bg-white dark:bg-white/5 rounded-3xl flex items-center justify-center mb-8 shadow-inner mx-auto group-hover:bg-accent group-hover:text-white transition-colors duration-500">
-                                        <span className="material-symbols-outlined text-5xl">{adv.icon}</span>
+                                        <span className="material-symbols-outlined text-4xl">{adv.icon}</span>
                                     </div>
-                                    <h3 className="text-2xl font-black text-text-main dark:text-white mb-4 uppercase tracking-tight">{adv.title}</h3>
+                                    <h3 className="text-2xl font-black text-text-main dark:text-white mb-4  tracking-normal">{adv.title}</h3>
                                     <p className="text-text-muted dark:text-gray-400 leading-relaxed italic">
                                         "{adv.desc}"
                                     </p>
@@ -66,8 +66,8 @@ const TissueCultureBiotechPage: React.FC = () => {
                         <div className="flex flex-col lg:flex-row gap-20 items-center">
                             <div className="lg:w-1/2 space-y-12 order-2 lg:order-1">
                                 <div>
-                                    <span className="text-primary dark:text-accent font-black tracking-widest text-sm uppercase mb-4 block">Our Laboratory</span>
-                                    <h2 className="text-4xl md:text-5xl font-black text-primary dark:text-white leading-tight uppercase tracking-tight">TIÊU CHUẨN <br />VÔ TRÙNG TUYỆT ĐỐI</h2>
+                                    <span className="text-primary dark:text-accent font-black tracking-widest text-sm  mb-4 block">Our Laboratory</span>
+                                    <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white leading-[1.8]  tracking-normal">Tiêu chuẩn <br />vô trùng tuyệt đối</h2>
                                 </div>
                                 <p className="text-text-muted dark:text-gray-300 text-xl font-light leading-relaxed">
                                     Phòng thí nghiệm của KGX được trang bị hệ thống lọc khí HEPA, tủ cấy vi sinh Clean Bench and hệ thống kiểm soát nhiệt độ nghiêm ngặt, đảm bảo môi trường lý tưởng for sự phát triển của mô thực vật.
@@ -83,7 +83,7 @@ const TissueCultureBiotechPage: React.FC = () => {
                                             <div className="size-8 rounded-full bg-accent/10 dark:bg-white/10 flex items-center justify-center text-accent dark:text-white group-hover:scale-125 transition-transform">
                                                 <span className="material-symbols-outlined text-xs font-black">check</span>
                                             </div>
-                                            <span className="text-lg font-bold text-text-main dark:text-white uppercase tracking-tight">{item}</span>
+                                            <span className="text-lg font-bold text-text-main dark:text-white  tracking-normal">{item}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -95,8 +95,8 @@ const TissueCultureBiotechPage: React.FC = () => {
                                 </div>
                                 <div className="absolute -bottom-10 -left-10 size-40 bg-accent rounded-[40px] shadow-2xl z-20 flex items-center justify-center text-white rotate-[-12deg] border-4 border-white/20">
                                     <div className="text-center">
-                                        <p className="text-4xl font-black">100%</p>
-                                        <p className="text-[10px] font-black uppercase tracking-widest">Sạch bệnh</p>
+                                        <p className="text-3xl font-black">100%</p>
+                                        <p className="text-[10px] font-black  tracking-widest">Sạch bệnh</p>
                                     </div>
                                 </div>
                             </div>
@@ -108,18 +108,18 @@ const TissueCultureBiotechPage: React.FC = () => {
                 <section className="py-24 bg-primary relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(45deg, #ffffff 1px, transparent 1px), linear-gradient(-45deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
                     <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-                        <h2 className="text-4xl md:text-6xl font-black text-white mb-10 leading-tight uppercase tracking-tight">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-[1.8]  tracking-normal">
                             Đột phá nông nghiệp <br className="hidden md:block" /> từ tế bào
                         </h2>
                         <p className="text-white/80 text-2xl mb-14 max-w-3xl font-light italic">
                             Liên hệ with KGX Biotech for được tư vấn giải pháp nhân giống công nghệ cao for dự án hoặc trang trại của bạn.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-8">
-                            <button className="h-16 px-12 bg-accent text-white hover:bg-orange-600 text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2 uppercase tracking-widest flex items-center justify-center gap-4">
+                            <button className="h-16 px-12 bg-accent text-white hover:bg-orange-600 text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2  tracking-widest flex items-center justify-center gap-4">
                                 <span className="material-symbols-outlined font-black">biotech</span>
-                                YÊU CẦU TƯ VẤN
+                                Yêu cầu tư vấn
                             </button>
-                            <button className="h-16 px-12 bg-white text-primary text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2 uppercase tracking-widest">
+                            <button className="h-16 px-12 bg-white text-primary text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2  tracking-widest">
                                 0868 462 462
                             </button>
                         </div>

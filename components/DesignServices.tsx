@@ -33,10 +33,10 @@ const DesignServices: React.FC = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
-            <span className="text-primary font-bold uppercase tracking-widest text-sm">
+            <span className="text-primary font-bold  tracking-widest text-sm">
               Lĩnh vực hoạt động
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-olive mt-2">
+            <h2 className="text-2xl md:text-3xl font-black text-olive mt-2">
               Dịch vụ Thiết kế
             </h2>
           </div>
@@ -60,7 +60,7 @@ const DesignServices: React.FC = () => {
                 <div className="size-12 bg-[#f2f7ed] rounded-lg flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                   <span className="material-symbols-outlined">{service.icon || 'architecture'}</span>
                 </div>
-                <h3 className="text-xl font-bold text-olive mb-2 group-hover:text-primary transition-colors uppercase">
+                <h3 className="text-xl font-bold text-olive mb-2 group-hover:text-primary transition-colors ">
                   {service.title}
                 </h3>
                 <p className="text-sm text-olive/60 line-clamp-2">
@@ -79,10 +79,10 @@ const DesignServices: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-olive/80 to-transparent flex items-end p-8">
                 <div className="text-white">
-                  <p className="text-sm font-medium uppercase opacity-80 mb-1">
+                  <p className="text-sm font-medium  opacity-80 mb-1">
                     Dự án tiêu biểu
                   </p>
-                  <h3 className="text-2xl font-bold uppercase">Khu đô thị Eco Green</h3>
+                  <h3 className="text-2xl font-bold ">Khu đô thị Eco Green</h3>
                   <p className="text-sm opacity-90 mt-2">
                     Quy hoạch 2023 - Diện tích 5ha
                   </p>

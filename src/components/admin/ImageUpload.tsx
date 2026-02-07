@@ -53,7 +53,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 
     return (
         <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">
+            <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">
                 {label}
             </label>
 
@@ -88,10 +88,10 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                 ) : (
                     <label className="flex flex-col items-center justify-center w-full h-full cursor-pointer p-8">
                         <div className="size-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-4 group-hover:bg-admin-primary group-hover:text-white transition-all duration-300">
-                            <span className="material-symbols-outlined text-3xl">cloud_upload</span>
+                            <span className="material-symbols-outlined text-2xl">cloud_upload</span>
                         </div>
                         <span className="text-sm font-bold text-slate-700 mb-1">Kéo thả hình ảnh hoặc click</span>
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">PNG, JPG, WEBP (tối đa 5MB)</span>
+                        <span className="text-[10px] font-bold text-slate-400  tracking-widest">PNG, JPG, WEBP (tối đa 5MB)</span>
                         <input
                             type="file"
                             accept="image/*"

@@ -36,9 +36,9 @@ const ServicesPage: React.FC = () => {
                         <div className="lg:col-span-6 flex flex-col gap-6">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#dde8ce] w-fit shadow-sm">
                                 <span className="size-2 rounded-full bg-[#84da0b] animate-pulse"></span>
-                                <span className="text-xs font-bold text-[#2F3E28] tracking-wider uppercase">Đối tác cảnh quan tin cậy</span>
+                                <span className="text-xs font-bold text-[#2F3E28] tracking-wider ">Đối tác cảnh quan tin cậy</span>
                             </div>
-                            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black leading-tight text-[#2F3E28] tracking-tight">
+                            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-[1.8] text-[#2F3E28] tracking-normal">
                                 KGX – Thiết kế & <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#84da0b] to-[#4A5D41]">Thi công Cảnh quan</span> Trọn Gói
                             </h1>
@@ -91,8 +91,8 @@ const ServicesPage: React.FC = () => {
                             </div>
                             {/* Floating badge */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white flex flex-col items-center text-center">
-                                <span className="text-4xl font-black text-[#84da0b]">10+</span>
-                                <span className="text-xs font-bold text-[#2F3E28] uppercase mt-1">Năm kinh nghiệm</span>
+                                <span className="text-3xl font-black text-[#84da0b]">10+</span>
+                                <span className="text-xs font-bold text-[#2F3E28]  mt-1">Năm kinh nghiệm</span>
                             </div>
                         </div>
                     </div>
@@ -125,7 +125,7 @@ const ServicesPage: React.FC = () => {
                 {loading ? (
                     <div className="py-20 flex flex-col items-center justify-center">
                         <div className="size-12 border-4 border-slate-100 border-t-[#84da0b] rounded-full animate-spin"></div>
-                        <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải dịch vụ...</p>
+                        <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải dịch vụ...</p>
                     </div>
                 ) : (
                     <>
@@ -134,8 +134,8 @@ const ServicesPage: React.FC = () => {
                             <div className="container mx-auto px-4 md:px-10">
                                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                                     <div>
-                                        <span className="text-[#84da0b] font-bold uppercase tracking-widest text-sm">Lĩnh vực hoạt động</span>
-                                        <h2 className="text-3xl md:text-4xl font-black text-[#2F3E28] mt-2">Dịch vụ Thiết kế</h2>
+                                        <span className="text-[#84da0b] font-bold  tracking-widest text-sm">Lĩnh vực hoạt động</span>
+                                        <h2 className="text-2xl md:text-3xl font-black text-[#2F3E28] mt-2">Dịch vụ Thiết kế</h2>
                                     </div>
                                 </div>
                                 <div className="grid lg:grid-cols-12 gap-8">
@@ -145,7 +145,7 @@ const ServicesPage: React.FC = () => {
                                                 <div className="size-14 rounded-2xl overflow-hidden mb-4 border border-[#eef4e7]">
                                                     <img src={service.image} className="size-full object-cover group-hover:scale-110 transition-transform duration-500" alt={service.title} />
                                                 </div>
-                                                <h3 className="text-xl font-bold text-[#2F3E28] mb-2 group-hover:text-[#84da0b] transition-colors uppercase">{service.title}</h3>
+                                                <h3 className="text-xl font-bold text-[#2F3E28] mb-2 group-hover:text-[#84da0b] transition-colors ">{service.title}</h3>
                                                 <p className="text-sm text-[#2F3E28]/60 line-clamp-3">{service.description}</p>
                                             </Link>
                                         ))}
@@ -158,8 +158,8 @@ const ServicesPage: React.FC = () => {
                         <section className="py-20 bg-[#2F3E28] text-white relative">
                             <div className="container mx-auto px-4 md:px-10">
                                 <div className="text-center mb-16 max-w-3xl mx-auto">
-                                    <span className="text-[#84da0b] font-bold uppercase tracking-widest text-sm">Chất lượng hàng đầu</span>
-                                    <h2 className="text-3xl md:text-4xl font-black mt-2 mb-4 uppercase">Dịch vụ Thi công Chuyên nghiệp</h2>
+                                    <span className="text-[#84da0b] font-bold  tracking-widest text-sm">Chất lượng hàng đầu</span>
+                                    <h2 className="text-2xl md:text-3xl font-black mt-2 mb-4 ">Dịch vụ Thi công Chuyên nghiệp</h2>
                                     <p className="text-white/70">Đội ngũ kỹ sư, nghệ nhân lành nghề cùng trang thiết bị hiện đại, cam kết mang lại công trình chất lượng và thẩm mỹ cao nhất.</p>
                                 </div>
                                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -167,7 +167,7 @@ const ServicesPage: React.FC = () => {
                                         <Link key={idx} to={`/dich-vu/thi-cong/${item.slug}`} className="group relative h-72 rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-[#84da0b] transition-all">
                                             <img alt={item.title} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" src={item.image} />
                                             <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                                                <h3 className="text-xl font-bold mb-1 uppercase tracking-tight">{item.title}</h3>
+                                                <h3 className="text-xl font-bold mb-1  tracking-normal">{item.title}</h3>
                                                 <p className="text-sm text-white/80 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all line-clamp-2">{item.description}</p>
                                                 <div className="absolute top-4 right-4 bg-[#84da0b] p-2 rounded-lg">
                                                     <span className="material-symbols-outlined text-white">construction</span>
@@ -183,8 +183,8 @@ const ServicesPage: React.FC = () => {
                 <section className="py-20 bg-[#f7f9f5]">
                     <div className="container mx-auto px-4 md:px-10">
                         <div className="text-center mb-16">
-                            <span className="text-[#84da0b] font-bold uppercase tracking-widest text-sm">Quy trình làm việc</span>
-                            <h2 className="text-3xl md:text-4xl font-black text-[#2F3E28] mt-2">6 Bước Triển Khai Chuyên Nghiệp</h2>
+                            <span className="text-[#84da0b] font-bold  tracking-widest text-sm">Quy trình làm việc</span>
+                            <h2 className="text-2xl md:text-3xl font-black text-[#2F3E28] mt-2">6 Bước Triển Khai Chuyên Nghiệp</h2>
                         </div>
                         <div className="relative">
                             <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
@@ -213,7 +213,7 @@ const ServicesPage: React.FC = () => {
                 <section className="py-20 bg-[#f7f9f5]">
                     <div className="container mx-auto px-4 md:px-10 max-w-4xl">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl font-black text-[#2F3E28]">Câu hỏi thường gặp</h2>
+                            <h2 className="text-2xl font-black text-[#2F3E28]">Câu hỏi thường gặp</h2>
                             <p className="text-[#2F3E28]/60 mt-2">Giải đáp những thắc mắc phổ biến của khách hàng về dịch vụ của KGX</p>
                         </div>
                         <div className="space-y-4">
@@ -248,8 +248,8 @@ const ServicesPage: React.FC = () => {
                             <div className="absolute -bottom-24 -left-24 size-64 bg-[#84da0b]/20 rounded-full blur-3xl"></div>
                             <div className="grid lg:grid-cols-2 gap-12 relative z-10">
                                 <div>
-                                    <span className="text-[#84da0b] font-bold uppercase tracking-widest text-sm">Liên hệ ngay</span>
-                                    <h2 className="text-3xl md:text-4xl font-black mt-2 mb-6">Đăng ký tư vấn miễn phí</h2>
+                                    <span className="text-[#84da0b] font-bold  tracking-widest text-sm">Liên hệ ngay</span>
+                                    <h2 className="text-2xl md:text-3xl font-black mt-2 mb-6">Đăng ký tư vấn miễn phí</h2>
                                     <p className="text-white/80 mb-8 leading-relaxed">
                                         Để lại thông tin dự án của bạn, đội ngũ chuyên gia của KGX sẽ liên hệ tư vấn giải pháp và báo giá sơ bộ trong vòng 24h.
                                     </p>
@@ -288,17 +288,17 @@ const ServicesPage: React.FC = () => {
                                     <form className="space-y-4">
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-1">
-                                                <label className="text-xs font-semibold uppercase text-[#2F3E28]/60">Họ và tên</label>
+                                                <label className="text-xs font-semibold  text-[#2F3E28]/60">Họ và tên</label>
                                                 <input className="w-full h-11 px-4 rounded-lg bg-[#f7f9f5] border border-[#dde8ce] focus:border-[#84da0b] focus:ring-1 focus:ring-[#84da0b] outline-none transition-all" placeholder="Nhập họ tên" type="text" />
                                             </div>
                                             <div className="space-y-1">
-                                                <label className="text-xs font-semibold uppercase text-[#2F3E28]/60">Số điện thoại</label>
+                                                <label className="text-xs font-semibold  text-[#2F3E28]/60">Số điện thoại</label>
                                                 <input className="w-full h-11 px-4 rounded-lg bg-[#f7f9f5] border border-[#dde8ce] focus:border-[#84da0b] focus:ring-1 focus:ring-[#84da0b] outline-none transition-all" placeholder="Nhập SĐT" type="tel" />
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-1">
-                                                <label className="text-xs font-semibold uppercase text-[#2F3E28]/60">Loại dự án</label>
+                                                <label className="text-xs font-semibold  text-[#2F3E28]/60">Loại dự án</label>
                                                 <select className="w-full h-11 px-4 rounded-lg bg-[#f7f9f5] border border-[#dde8ce] focus:border-[#84da0b] focus:ring-1 focus:ring-[#84da0b] outline-none transition-all">
                                                     <option>Biệt thự sân vườn</option>
                                                     <option>Resort / Khách sạn</option>
@@ -307,7 +307,7 @@ const ServicesPage: React.FC = () => {
                                                 </select>
                                             </div>
                                             <div className="space-y-1">
-                                                <label className="text-xs font-semibold uppercase text-[#2F3E28]/60">Khu vực</label>
+                                                <label className="text-xs font-semibold  text-[#2F3E28]/60">Khu vực</label>
                                                 <select className="w-full h-11 px-4 rounded-lg bg-[#f7f9f5] border border-[#dde8ce] focus:border-[#84da0b] focus:ring-1 focus:ring-[#84da0b] outline-none transition-all">
                                                     <option>Miền Bắc</option>
                                                     <option>Miền Trung</option>
@@ -316,7 +316,7 @@ const ServicesPage: React.FC = () => {
                                             </div>
                                         </div>
                                         <div className="space-y-1">
-                                            <label className="text-xs font-semibold uppercase text-[#2F3E28]/60">Ghi chú thêm</label>
+                                            <label className="text-xs font-semibold  text-[#2F3E28]/60">Ghi chú thêm</label>
                                             <textarea className="w-full p-4 rounded-lg bg-[#f7f9f5] border border-[#dde8ce] focus:border-[#84da0b] focus:ring-1 focus:ring-[#84da0b] outline-none transition-all h-24 resize-none" placeholder="Mô tả sơ bộ về yêu cầu của bạn..."></textarea>
                                         </div>
                                         <button className="w-full h-12 bg-[#84da0b] hover:bg-[#6cb309] text-white font-bold rounded-lg shadow-lg shadow-[#84da0b]/30 transition-all mt-2" type="button">

@@ -36,10 +36,10 @@ const ConstructionServices: React.FC = () => {
     <section className="py-20 bg-olive text-white relative">
       <div className="container">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="text-primary font-bold uppercase tracking-widest text-sm">
+          <span className="text-primary font-bold  tracking-widest text-sm">
             Chất lượng hàng đầu
           </span>
-          <h2 className="text-3xl md:text-4xl font-black mt-2 mb-4">
+          <h2 className="text-2xl md:text-3xl font-black mt-2 mb-4">
             Dịch vụ Thi công Chuyên nghiệp
           </h2>
           <p className="text-white/70">

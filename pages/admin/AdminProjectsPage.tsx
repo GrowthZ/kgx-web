@@ -61,7 +61,7 @@ const AdminProjectsPage: React.FC = () => {
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
-                        <h1 className="text-3xl font-black text-slate-800 tracking-tight">Quản lý Dự án</h1>
+                        <h1 className="text-2xl font-black text-slate-800 tracking-normal">Quản lý Dự án</h1>
                         <p className="text-slate-500 font-medium mt-1">Quản lý các dự án thiết kế và thi công của KGX</p>
                     </div>
                     <Link
@@ -106,22 +106,22 @@ const AdminProjectsPage: React.FC = () => {
                     {loading ? (
                         <div className="py-20 flex flex-col items-center justify-center">
                             <div className="size-12 border-4 border-slate-100 border-t-admin-primary rounded-full animate-spin"></div>
-                            <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải dự án...</p>
+                            <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải dự án...</p>
                         </div>
                     ) : filteredProjects.length === 0 ? (
                         <div className="py-20 flex flex-col items-center justify-center text-slate-300">
-                            <span className="material-symbols-outlined text-6xl mb-4">inventory_2</span>
-                            <p className="font-bold uppercase tracking-widest text-sm">Không tìm thấy dự án nào</p>
+                            <span className="material-symbols-outlined text-5xl mb-4">inventory_2</span>
+                            <p className="font-bold  tracking-widest text-sm">Không tìm thấy dự án nào</p>
                         </div>
                     ) : (
                         <div className="overflow-x-auto">
                             <table className="w-full text-left">
                                 <thead>
                                     <tr className="border-b border-slate-50">
-                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Dự án</th>
-                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Phân loại</th>
-                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Địa điểm / Năm</th>
-                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest text-right">Thao tác</th>
+                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Dự án</th>
+                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Phân loại</th>
+                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Địa điểm / Năm</th>
+                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest text-right">Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-50">
@@ -143,7 +143,7 @@ const AdminProjectsPage: React.FC = () => {
                                                 </div>
                                             </td>
                                             <td className="px-8 py-5">
-                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${project.category === 'thiet-ke' ? 'bg-blue-100 text-blue-600' :
+                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black  tracking-widest ${project.category === 'thiet-ke' ? 'bg-blue-100 text-blue-600' :
                                                         project.category === 'thi-cong' ? 'bg-orange-100 text-orange-600' :
                                                             'bg-admin-primary/10 text-admin-primary'
                                                     }`}>
@@ -183,7 +183,7 @@ const AdminProjectsPage: React.FC = () => {
 
                     {/* Footer / Pagination Placeholder */}
                     <div className="px-8 py-5 bg-slate-50/30 border-t border-slate-50 flex items-center justify-between">
-                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                        <p className="text-[10px] font-black text-slate-400  tracking-widest">
                             Hiển thị {filteredProjects.length} dự án
                         </p>
                     </div>

@@ -29,7 +29,7 @@ const ProductDetailPage: React.FC = () => {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-background-light">
                 <div className="size-16 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải thông tin sản phẩm...</p>
+                <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải thông tin sản phẩm...</p>
             </div>
         );
     }
@@ -68,7 +68,7 @@ const ProductDetailPage: React.FC = () => {
                         {/* Text Content */}
                         <div className="flex flex-col gap-6 order-2 lg:order-1 px-4 lg:pl-10">
                             <div className="flex flex-col gap-3">
-                                <h1 className="text-[#151b0e] text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.03em] uppercase">
+                                <h1 className="text-[#151b0e] text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.8] tracking-normal ">
                                     {tree.name.includes(' ') ? (
                                         <>
                                             {tree.name.substring(0, tree.name.lastIndexOf(' '))}
@@ -77,7 +77,7 @@ const ProductDetailPage: React.FC = () => {
                                         </>
                                     ) : tree.name}
                                 </h1>
-                                <h2 className="text-text-muted text-lg font-medium leading-relaxed max-w-xl">
+                                <h2 className="text-text-muted text-lg font-medium leading-[1.8] max-w-xl">
                                     {tree.description}
                                 </h2>
                             </div>
@@ -130,7 +130,7 @@ const ProductDetailPage: React.FC = () => {
                                     { label: 'Đặc điểm lá', value: tree.leaves }
                                 ].map((fact, idx) => (
                                     <div key={idx} className="flex flex-col gap-1 border-t border-dashed border-[#dde6d1] pt-3">
-                                        <p className="text-text-muted text-xs uppercase tracking-wider font-semibold">{fact.label}</p>
+                                        <p className="text-text-muted text-xs  tracking-wider font-semibold">{fact.label}</p>
                                         <div className="flex items-center gap-2">
                                             {fact.icon && <span className={`material-symbols-outlined text-sm ${fact.icon === 'water_drop' ? 'text-blue-500' : fact.icon === 'light_mode' ? 'text-accent' : 'text-primary'}`}>{fact.icon}</span>}
                                             <p className={`text-[#151b0e] font-medium ${fact.italic ? 'italic' : ''}`}>{fact.value}</p>
@@ -154,7 +154,7 @@ const ProductDetailPage: React.FC = () => {
                         <div className="max-w-[1200px] mx-auto px-4">
                             <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
                                 <div>
-                                    <h2 className="text-3xl font-bold text-[#151b0e] mb-2">Ứng dụng cảnh quan</h2>
+                                    <h2 className="text-2xl font-bold text-[#151b0e] mb-2">Ứng dụng cảnh quan</h2>
                                     <p className="text-text-muted max-w-xl">
                                         {tree.name} là lựa chọn hàng đầu cho các công trình hiện đại nhờ hình dáng tán cây tự nhiên đẹp và khả năng tạo bóng mát tốt.
                                     </p>
@@ -233,7 +233,7 @@ const ProductDetailPage: React.FC = () => {
                                 <div className="w-full h-full bg-cover bg-center min-h-[300px]" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=2070&auto=format&fit=crop')` }}></div>
                             </div>
                             <div className="flex flex-col gap-6">
-                                <h2 className="text-3xl font-bold text-[#151b0e]">Hướng dẫn chăm sóc</h2>
+                                <h2 className="text-2xl font-bold text-[#151b0e]">Hướng dẫn chăm sóc</h2>
                                 <p className="text-text-muted">Để {tree.name} phát triển tốt nhất và giữ được dáng vẻ đẹp, KGX khuyến nghị quy trình chăm sóc cơ bản sau:</p>
                                 <div className="space-y-4">
                                     {tree.care?.map((item, idx) => (
@@ -254,12 +254,12 @@ const ProductDetailPage: React.FC = () => {
                 {/* Target Profiles */}
                 {tree.targetProfiles && tree.targetProfiles.length > 0 && (
                     <section className="w-full max-w-[1200px] px-4 py-16">
-                        <h2 className="text-center text-3xl font-bold text-[#151b0e] mb-12">Giải pháp phù hợp cho</h2>
+                        <h2 className="text-center text-2xl font-bold text-[#151b0e] mb-12">Giải pháp phù hợp cho</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                             {tree.targetProfiles.map((profile: any, idx: number) => (
                                 <div key={idx} className="flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-[#eef3e8] hover:shadow-lg transition-shadow">
                                     <div className={`size-16 rounded-full ${profile.color} flex items-center justify-center mb-4`}>
-                                        <span className="material-symbols-outlined text-3xl">{profile.icon}</span>
+                                        <span className="material-symbols-outlined text-2xl">{profile.icon}</span>
                                     </div>
                                     <h3 className="font-bold text-lg mb-2">{profile.title}</h3>
                                     <p className="text-sm text-text-muted">{profile.desc}</p>

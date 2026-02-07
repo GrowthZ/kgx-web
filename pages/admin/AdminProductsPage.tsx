@@ -55,7 +55,7 @@ const AdminProductsPage: React.FC = () => {
                 {/* Header Section */}
                 <div className="flex flex-wrap items-center justify-between gap-6 pb-6 border-b border-slate-100">
                     <div>
-                        <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">Quản lý Sản phẩm</h2>
+                        <h2 className="text-2xl font-extrabold tracking-normal text-slate-900">Quản lý Sản phẩm</h2>
                         <p className="text-slate-500 mt-1">Quản lý danh sách cây xanh và hệ thống sản phẩm KGX VN.</p>
                     </div>
                     <Link
@@ -113,7 +113,7 @@ const AdminProductsPage: React.FC = () => {
                     ) : filteredProducts.length === 0 ? (
                         <div className="p-20 text-center">
                             <div className="size-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6 text-slate-300">
-                                <span className="material-symbols-outlined text-4xl">inventory_2</span>
+                                <span className="material-symbols-outlined text-3xl">inventory_2</span>
                             </div>
                             <h3 className="text-lg font-bold text-slate-800">Không tìm thấy sản phẩm</h3>
                             <p className="text-slate-500 mt-2">Vui lòng kiểm tra lại bộ lọc hoặc thêm sản phẩm mới.</p>
@@ -130,11 +130,11 @@ const AdminProductsPage: React.FC = () => {
                             <table className="w-full text-left">
                                 <thead>
                                     <tr className="bg-slate-50 border-b border-slate-200">
-                                        <th className="px-8 py-5 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest">Sản phẩm</th>
-                                        <th className="px-6 py-5 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest text-center">Danh mục</th>
-                                        <th className="px-6 py-5 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest text-center">Chiều cao</th>
-                                        <th className="px-6 py-5 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest text-center">Tốc độ</th>
-                                        <th className="px-8 py-5 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest text-right">Thao tác</th>
+                                        <th className="px-8 py-5 text-[11px] font-extrabold text-slate-500  tracking-widest">Sản phẩm</th>
+                                        <th className="px-6 py-5 text-[11px] font-extrabold text-slate-500  tracking-widest text-center">Danh mục</th>
+                                        <th className="px-6 py-5 text-[11px] font-extrabold text-slate-500  tracking-widest text-center">Chiều cao</th>
+                                        <th className="px-6 py-5 text-[11px] font-extrabold text-slate-500  tracking-widest text-center">Tốc độ</th>
+                                        <th className="px-8 py-5 text-[11px] font-extrabold text-slate-500  tracking-widest text-right">Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
@@ -156,7 +156,7 @@ const AdminProductsPage: React.FC = () => {
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5 text-center">
-                                                <span className="inline-flex px-3 py-1.5 text-[11px] font-bold bg-admin-primary/10 text-admin-primary rounded-full uppercase tracking-wider">
+                                                <span className="inline-flex px-3 py-1.5 text-[11px] font-bold bg-admin-primary/10 text-admin-primary rounded-full  tracking-wider">
                                                     {product.category}
                                                 </span>
                                             </td>
@@ -195,7 +195,7 @@ const AdminProductsPage: React.FC = () => {
                 {/* Footer Info */}
                 {!loading && filteredProducts.length > 0 && (
                     <div className="flex items-center justify-between px-2">
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        <p className="text-xs font-bold text-slate-400  tracking-widest">
                             HIỂN THỊ {filteredProducts.length} KẾT QUẢ
                             {searchQuery && ` CHO "${searchQuery}"`}
                         </p>

@@ -53,9 +53,9 @@ const AdminLoginPage: React.FC = () => {
                 {/* Brand Logo */}
                 <div className="flex flex-col items-center mb-10">
                     <div className="bg-admin-primary size-14 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-admin-primary/20 mb-4 transition-transform hover:scale-105 duration-300">
-                        <span className="material-symbols-outlined text-3xl">architecture</span>
+                        <span className="material-symbols-outlined text-2xl">architecture</span>
                     </div>
-                    <h1 className="text-2xl font-bold text-[#0c1d1d] tracking-tight">KGX ADMIN</h1>
+                    <h1 className="text-2xl font-bold text-[#0c1d1d] tracking-normal">KGX ADMIN</h1>
                     <div className="h-0.5 w-10 bg-admin-secondary mt-2 rounded-full"></div>
                 </div>
 
@@ -68,7 +68,7 @@ const AdminLoginPage: React.FC = () => {
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="space-y-2">
-                            <label htmlFor="email" className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">
+                            <label htmlFor="email" className="text-xs font-bold text-slate-400  tracking-widest ml-1">
                                 Email Quản trị
                             </label>
                             <div className="relative group">
@@ -90,7 +90,7 @@ const AdminLoginPage: React.FC = () => {
 
                         <div className="space-y-2">
                             <div className="flex items-center justify-between ml-1">
-                                <label htmlFor="password" className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                                <label htmlFor="password" className="text-xs font-bold text-slate-400  tracking-widest">
                                     Mật khẩu
                                 </label>
                                 <a href="#" className="text-xs font-bold text-admin-primary hover:underline">Quên?</a>
@@ -124,7 +124,7 @@ const AdminLoginPage: React.FC = () => {
                                 </>
                             ) : (
                                 <>
-                                    <span>VÀO HỆ THỐNG</span>
+                                    <span>Vào hệ thống</span>
                                     <span className="material-symbols-outlined text-xl">arrow_forward</span>
                                 </>
                             )}
@@ -144,7 +144,7 @@ const AdminLoginPage: React.FC = () => {
                 {/* Status Indicator */}
                 <div className="mt-8 flex items-center justify-center gap-2">
                     <div className="size-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">MÁY CHỦ TRỰC TUYẾN</span>
+                    <span className="text-[10px] font-bold text-slate-400  tracking-widest">Máy chủ trực tuyến</span>
                 </div>
             </div>
         </div>

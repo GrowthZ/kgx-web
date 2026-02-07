@@ -9,26 +9,33 @@ const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-[#eef4e7] shadow-sm">
       <div className="container h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 text-olive">
-          <div className="size-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg">
-            <span className="material-symbols-outlined text-3xl font-bold">spa</span>
-          </div>
-          <h2 className="text-2xl font-black tracking-tighter text-olive uppercase hidden sm:block">KGX Landscape</h2>
-          <h2 className="text-xl font-black tracking-tighter text-olive uppercase sm:hidden">KGX</h2>
+        <Link to="/" className="flex items-center">
+          <img src="/src/media/logo-kgx.png" alt="KGX Logo" className="h-10 md:h-12 w-auto object-contain" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <div key={link.label} className="relative group py-4">
-              <Link
-                className="text-olive font-medium hover:text-primary transition-colors text-xs xl:text-sm uppercase tracking-wide flex items-center gap-1 whitespace-nowrap"
-                to={link.href}
-              >
-                {link.label}
-                {link.subLinks && (
-                  <span className="material-symbols-outlined text-xs">expand_more</span>
-                )}
-              </Link>
+              {link.href.startsWith('http') ? (
+                <a
+                  className="text-olive font-medium hover:text-primary transition-colors text-xs xl:text-sm uppercase tracking-wide flex items-center gap-1 whitespace-nowrap"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  className="text-olive font-medium hover:text-primary transition-colors text-xs xl:text-sm uppercase tracking-wide flex items-center gap-1 whitespace-nowrap"
+                  to={link.href}
+                >
+                  {link.label}
+                  {link.subLinks && (
+                    <span className="material-symbols-outlined text-xs">expand_more</span>
+                  )}
+                </Link>
+              )}
 
               {link.subLinks && (
                 <div className={`absolute top-16 left-0 bg-white border border-[#eef4e7] shadow-xl rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 ${link.label === 'Dịch vụ' ? 'w-[480px] grid grid-cols-2 p-4' : 'w-64'}`}>
@@ -86,13 +93,25 @@ const Header: React.FC = () => {
             return (
               <div key={link.label} className="border-b border-gray-100 last:border-0">
                 <div className="flex items-center justify-between py-3">
-                  <Link
-                    className="text-olive font-bold hover:text-primary transition-colors text-base uppercase tracking-wide flex-grow"
-                    to={link.href}
-                    onClick={() => !link.subLinks && setMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
+                  {link.href.startsWith('http') ? (
+                    <a
+                      className="text-olive font-bold hover:text-primary transition-colors text-base uppercase tracking-wide flex-grow"
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      className="text-olive font-bold hover:text-primary transition-colors text-base uppercase tracking-wide flex-grow"
+                      to={link.href}
+                      onClick={() => !link.subLinks && setMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                   {link.subLinks && (
                     <button
                       onClick={() => setActiveSubmenu(activeSubmenu === link.label ? null : link.label)}

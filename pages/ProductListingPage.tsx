@@ -31,7 +31,7 @@ const ProductListingPage: React.FC = () => {
                     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
                         {/* Headline */}
                         <div className="flex flex-col gap-2">
-                            <h1 className="text-primary text-3xl md:text-4xl font-bold tracking-tight">Danh sách cây cảnh quan</h1>
+                            <h1 className="text-primary text-2xl md:text-3xl font-bold tracking-normal">Danh sách cây cảnh quan</h1>
                             <p className="text-[#7a8165] text-base max-w-2xl">
                                 Tuyển chọn các loại cây bóng mát, cây công trình chất lượng cao phù hợp với khí hậu Việt Nam.
                             </p>
@@ -40,7 +40,7 @@ const ProductListingPage: React.FC = () => {
                         {loading ? (
                             <div className="py-20 flex flex-col items-center justify-center">
                                 <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                                <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải sản phẩm...</p>
+                                <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải sản phẩm...</p>
                             </div>
                         ) : (
                             <>
@@ -57,7 +57,7 @@ const ProductListingPage: React.FC = () => {
                                                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                                             </div>
                                             <div className="p-4 flex flex-col gap-2 flex-grow">
-                                                <h3 className="text-[#161712] text-lg font-bold leading-tight group-hover:text-primary transition-colors">
+                                                <h3 className="text-[#161712] text-lg font-bold leading-[1.8] group-hover:text-primary transition-colors">
                                                     {tree.name}
                                                 </h3>
                                                 <p className="text-[#7a8165] text-sm font-normal line-clamp-2">
@@ -106,8 +106,8 @@ const ProductListingPage: React.FC = () => {
                             {/* Left: Text & Actions */}
                             <div className="flex flex-col gap-8">
                                 <div className="flex flex-col gap-4">
-                                    <span className="text-accent font-bold tracking-wider text-sm uppercase">Tư vấn chuyên sâu</span>
-                                    <h2 className="text-primary text-3xl md:text-4xl font-black leading-tight">
+                                    <span className="text-accent font-bold tracking-wider text-sm ">Tư vấn chuyên sâu</span>
+                                    <h2 className="text-primary text-2xl md:text-3xl font-black leading-[1.8]">
                                         Bạn cần tư vấn chọn cây phù hợp cho công trình?
                                     </h2>
                                     <p className="text-[#4e5440] text-lg leading-relaxed max-w-lg">

@@ -46,6 +46,7 @@ export const NAV_LINKS = [
     ]
   },
   { label: "Tin tức", href: "/tin-tuc" },
+  { label: "AI", href: "https://ai.studio/apps/drive/1D-atdAKDf1y0-wr6QPhV5J-nOAtF_Vmf?fullscreenApplet=true" },
   { label: "Liên hệ", href: "/lien-he" },
 ];
 

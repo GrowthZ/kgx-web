@@ -52,8 +52,8 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                             <span className="material-symbols-outlined text-2xl">architecture</span>
                         </div>
                         <div className="flex flex-col">
-                            <h1 className="text-[#0c1d1d] text-lg font-bold leading-tight">KGX VN</h1>
-                            <p className="text-admin-primary text-[10px] font-bold uppercase tracking-widest">Cổng Phân Tích</p>
+                            <h1 className="text-[#0c1d1d] text-lg font-bold leading-[1.8]">KGX VN</h1>
+                            <p className="text-admin-primary text-[10px] font-bold  tracking-widest">Cổng Phân Tích</p>
                         </div>
                     </div>
 
@@ -95,7 +95,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
             <main className="flex-1 ml-72">
                 {/* Header */}
                 <header className="h-16 bg-white/90 backdrop-blur-md sticky top-0 z-30 border-b border-slate-200 px-8 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs font-medium text-slate-400 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-medium text-slate-400  tracking-wider">
                         <span>Quản trị viên</span>
                         <span className="material-symbols-outlined text-sm">chevron_right</span>
                         <span className="text-slate-700">{activeItemLabel}</span>
@@ -104,7 +104,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                     <div className="flex items-center gap-6">
                         <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-full">
                             <span className="size-2 rounded-full bg-emerald-500"></span>
-                            <span className="text-[11px] font-bold text-slate-600">MÁY CHỦ TRỰC TUYẾN</span>
+                            <span className="text-[11px] font-bold text-slate-600">Máy chủ trực tuyến</span>
                         </div>
 
                         <div className="flex items-center gap-4 border-l border-slate-200 pl-6">
@@ -114,8 +114,8 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                             </button>
                             <div className="flex items-center gap-3">
                                 <div className="flex flex-col text-right">
-                                    <span className="text-sm font-bold leading-tight">Admin User</span>
-                                    <span className="text-[10px] text-admin-primary font-bold uppercase">Quản trị viên</span>
+                                    <span className="text-sm font-bold leading-normal">Admin User</span>
+                                    <span className="text-[10px] text-admin-primary font-bold ">Quản trị viên</span>
                                 </div>
                                 <div className="size-9 rounded-full bg-cover bg-center border-2 border-admin-primary/20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80')" }}></div>
                             </div>

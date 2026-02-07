@@ -15,7 +15,7 @@ const AdminDashboardPage: React.FC = () => {
                 {/* Dashboard Header */}
                 <div className="flex flex-wrap justify-between items-center gap-6 pb-6 border-b border-slate-100">
                     <div>
-                        <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">Tổng quan Phân tích</h2>
+                        <h2 className="text-2xl font-extrabold tracking-normal text-slate-900">Tổng quan Phân tích</h2>
                         <p className="text-slate-500 mt-1">Chỉ số hiệu suất thời gian thực cho Nền tảng Kỹ thuật số KGX VN.</p>
                     </div>
                     <div className="flex items-center gap-3">
@@ -46,8 +46,8 @@ const AdminDashboardPage: React.FC = () => {
                                     {stat.trend}
                                 </span>
                             </div>
-                            <h3 className="text-slate-500 text-xs font-bold uppercase tracking-wider">{stat.label}</h3>
-                            <p className="text-3xl font-extrabold text-slate-900 mt-1">{stat.value}</p>
+                            <h3 className="text-slate-500 text-xs font-bold  tracking-wider">{stat.label}</h3>
+                            <p className="text-2xl font-extrabold text-slate-900 mt-1">{stat.value}</p>
                             <p className="text-[10px] text-slate-400 mt-2">Giai đoạn 01 Th10 - 31 Th10</p>
                         </div>
                     ))}
@@ -60,7 +60,7 @@ const AdminDashboardPage: React.FC = () => {
                             <div>
                                 <div className="flex items-center gap-2">
                                     <h3 className="font-bold text-slate-900">Xu hướng Tương tác</h3>
-                                    <span className="px-2 py-0.5 bg-admin-primary/10 text-admin-primary text-[10px] font-bold rounded">PHẠM VI TRỰC TIẾP</span>
+                                    <span className="px-2 py-0.5 bg-admin-primary/10 text-admin-primary text-[10px] font-bold rounded">Phạm vi trực tiếp</span>
                                 </div>
                                 <p className="text-xs text-slate-400">Phân tích lưu lượng và lượt click trong khoảng thời gian đã chọn</p>
                             </div>
@@ -95,7 +95,7 @@ const AdminDashboardPage: React.FC = () => {
                                 <div className="border-b border-slate-100 w-full h-px"></div>
                                 <div className="border-b border-slate-100 w-full h-px"></div>
                             </div>
-                            <div className="flex justify-between px-2 text-[10px] font-bold text-slate-400 uppercase">
+                            <div className="flex justify-between px-2 text-[10px] font-bold text-slate-400 ">
                                 <span>01 Th10</span>
                                 <span>07 Th10</span>
                                 <span>14 Th10</span>
@@ -158,11 +158,11 @@ const AdminDashboardPage: React.FC = () => {
                         <table className="w-full text-left">
                             <thead>
                                 <tr className="bg-slate-50 border-b border-slate-200">
-                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest">Từ khóa</th>
-                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest text-center">Lượt Tìm kiếm</th>
-                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest text-center">Vị trí</th>
-                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest text-center">Tỷ lệ Click</th>
-                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500 uppercase tracking-widest text-right">Chuyển đổi</th>
+                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500  tracking-widest">Từ khóa</th>
+                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500  tracking-widest text-center">Lượt Tìm kiếm</th>
+                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500  tracking-widest text-center">Vị trí</th>
+                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500  tracking-widest text-center">Tỷ lệ Click</th>
+                                    <th className="px-6 py-4 text-[11px] font-extrabold text-slate-500  tracking-widest text-right">Chuyển đổi</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">

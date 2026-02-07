@@ -15,11 +15,11 @@ const AboutPage: React.FC = () => {
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
                         <div className="relative z-10 flex flex-col items-center justify-center text-center p-6 max-w-4xl">
-                            <span className="inline-block py-1 px-4 border border-white/30 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-                                KGX Landscape
+                            <span className="inline-block py-1 px-4 border border-white/30 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-bold tracking-[0.2em]  mb-8 shadow-sm">
+                                KGX - Không Gian Xanh
                             </span>
-                            <h1 className="text-white text-5xl md:text-6xl lg:text-8xl font-black leading-[0.9] tracking-tight mb-8 drop-shadow-lg">
-                                TỰ HÀO <br /><span className="text-white/90">KHÔNG GIAN VIỆT</span>
+                            <h1 className="text-white text-4xl md:text-5xl lg:text-8xl font-black leading-[1.8] tracking-normal mb-8 drop-shadow-lg">
+                                Tự hào <br /><span className="text-white/90">không gian Việt</span>
                             </h1>
                             <p className="text-gray-200 text-lg md:text-2xl font-normal max-w-3xl mb-10 leading-relaxed drop-shadow-md">
                                 Thiết kế - Thi công - Tư vấn cảnh quan. <br className="hidden md:block" />Kiến tạo không gian sống hài hòa với khí hậu và văn hóa bản địa.
@@ -44,9 +44,9 @@ const AboutPage: React.FC = () => {
                         <div className="flex flex-col gap-8">
                             <div className="flex items-center gap-3">
                                 <span className="w-16 h-[3px] bg-[#E9724C]"></span>
-                                <span className="text-[#546a2f] font-bold uppercase tracking-widest text-sm">Câu chuyện khởi nguồn</span>
+                                <span className="text-[#546a2f] font-bold  tracking-widest text-sm">Câu chuyện khởi nguồn</span>
                             </div>
-                            <h2 className="text-4xl lg:text-6xl font-black text-[#151711] leading-[1.1] tracking-tight">
+                            <h2 className="text-3xl lg:text-5xl font-black text-[#151711] leading-[1.8] tracking-normal">
                                 Từ đất công trường <br className="hidden lg:block" />đến nét vẽ kỹ thuật
                             </h2>
                             <div className="space-y-6 text-[#151711]/80 text-lg leading-relaxed font-light">
@@ -97,26 +97,26 @@ const AboutPage: React.FC = () => {
                                 <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent lg:hidden"></div>
                             </div>
                             <div className="lg:col-span-5 p-8 lg:p-16 flex flex-col justify-center bg-white lg:bg-transparent">
-                                <span className="text-[#E9724C] font-bold uppercase tracking-wider text-xs mb-4">Đội ngũ chuyên gia</span>
-                                <h3 className="text-4xl font-bold text-[#151711] mb-6">Kỹ thuật & Am hiểu</h3>
+                                <span className="text-[#E9724C] font-bold  tracking-wider text-xs mb-4">Đội ngũ chuyên gia</span>
+                                <h3 className="text-3xl font-bold text-[#151711] mb-6">Kỹ thuật & Am hiểu</h3>
                                 <p className="text-gray-600 mb-10 leading-relaxed">
                                     Chúng tôi là những chuyên gia kỹ thuật với sự thấu hiểu sâu sắc về thổ nhưỡng và văn hóa Việt Nam. Tại KGX, mỗi thành viên đều mang trong mình tình yêu với thiên nhiên và kỷ luật trong công việc.
                                 </p>
                                 <div className="grid grid-cols-2 gap-y-10 gap-x-6">
                                     <div className="flex flex-col border-l-4 border-[#546a2f]/20 pl-4">
-                                        <span className="text-4xl font-black text-[#546a2f]">10+</span>
+                                        <span className="text-3xl font-black text-[#546a2f]">10+</span>
                                         <span className="text-sm font-medium text-gray-500 mt-1">Năm kinh nghiệm</span>
                                     </div>
                                     <div className="flex flex-col border-l-4 border-[#546a2f]/20 pl-4">
-                                        <span className="text-4xl font-black text-[#546a2f]">150+</span>
+                                        <span className="text-3xl font-black text-[#546a2f]">150+</span>
                                         <span className="text-sm font-medium text-gray-500 mt-1">Dự án hoàn thiện</span>
                                     </div>
                                     <div className="flex flex-col border-l-4 border-[#546a2f]/20 pl-4">
-                                        <span className="text-4xl font-black text-[#546a2f]">100%</span>
+                                        <span className="text-3xl font-black text-[#546a2f]">100%</span>
                                         <span className="text-sm font-medium text-gray-500 mt-1">Hài lòng</span>
                                     </div>
                                     <div className="flex flex-col border-l-4 border-[#546a2f]/20 pl-4">
-                                        <span className="text-4xl font-black text-[#546a2f]">24/7</span>
+                                        <span className="text-3xl font-black text-[#546a2f]">24/7</span>
                                         <span className="text-sm font-medium text-gray-500 mt-1">Hỗ trợ kỹ thuật</span>
                                     </div>
                                 </div>
@@ -128,15 +128,15 @@ const AboutPage: React.FC = () => {
                 {/* Philosophy Section */}
                 <section className="container py-24">
                     <div className="flex flex-col items-center text-center mb-20">
-                        <span className="text-[#546a2f] font-bold uppercase tracking-wider text-sm mb-4 block">Triết lý thiết kế</span>
-                        <h2 className="text-4xl lg:text-6xl font-bold text-[#151711] max-w-4xl leading-tight">
+                        <span className="text-[#546a2f] font-bold  tracking-wider text-sm mb-4 block">Triết lý thiết kế</span>
+                        <h2 className="text-3xl lg:text-5xl font-bold text-[#151711] max-w-4xl leading-[1.8]">
                             Tôn trọng tự nhiên, <br /> từ chối sự sao chép
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="bg-[#546a2f]/5 p-10 rounded-2xl border border-[#546a2f]/10 hover:border-[#546a2f]/30 transition-colors group">
                             <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#546a2f] mb-8 shadow-sm group-hover:scale-110 transition-transform">
-                                <span className="material-symbols-outlined text-3xl">forest</span>
+                                <span className="material-symbols-outlined text-2xl">forest</span>
                             </div>
                             <h4 className="text-2xl font-bold text-[#151711] mb-4">Thuận theo tự nhiên</h4>
                             <p className="text-gray-600 text-base leading-relaxed">
@@ -146,7 +146,7 @@ const AboutPage: React.FC = () => {
                         <div className="bg-white p-10 rounded-2xl border border-gray-200 hover:border-[#546a2f]/30 transition-colors shadow-xl shadow-gray-100/50 group relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#546a2f]/5 rounded-bl-full -mr-8 -mt-8"></div>
                             <div className="w-14 h-14 bg-[#546a2f] rounded-xl flex items-center justify-center text-white mb-8 shadow-lg shadow-[#546a2f]/20 group-hover:scale-110 transition-transform relative z-10">
-                                <span className="material-symbols-outlined text-3xl">fingerprint</span>
+                                <span className="material-symbols-outlined text-2xl">fingerprint</span>
                             </div>
                             <h4 className="text-2xl font-bold text-[#151711] mb-4 relative z-10">Bản sắc riêng biệt</h4>
                             <p className="text-gray-600 text-base leading-relaxed relative z-10">
@@ -155,7 +155,7 @@ const AboutPage: React.FC = () => {
                         </div>
                         <div className="bg-[#546a2f]/5 p-10 rounded-2xl border border-[#546a2f]/10 hover:border-[#546a2f]/30 transition-colors group">
                             <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#546a2f] mb-8 shadow-sm group-hover:scale-110 transition-transform">
-                                <span className="material-symbols-outlined text-3xl">wb_sunny</span>
+                                <span className="material-symbols-outlined text-2xl">wb_sunny</span>
                             </div>
                             <h4 className="text-2xl font-bold text-[#151711] mb-4">Thích ứng khí hậu</h4>
                             <p className="text-gray-600 text-base leading-relaxed">
@@ -171,7 +171,7 @@ const AboutPage: React.FC = () => {
                     <div className="container relative z-10">
                         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                             <div>
-                                <h2 className="text-4xl md:text-5xl font-bold mb-3">Lĩnh vực hoạt động</h2>
+                                <h2 className="text-3xl md:text-4xl font-bold mb-3">Lĩnh vực hoạt động</h2>
                                 <p className="text-white/60 font-medium text-xl">Giải pháp toàn diện cho không gian xanh</p>
                             </div>
                             <button className="border border-white/30 hover:bg-white hover:text-[#546a2f] px-8 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-2">
@@ -188,7 +188,7 @@ const AboutPage: React.FC = () => {
                                 { icon: "spa", title: "Chăm sóc", desc: "Dịch vụ bảo dưỡng, cắt tỉa định kỳ để duy trì vẻ đẹp bền vững." }
                             ].map((item, index) => (
                                 <div key={index} className="group bg-white/5 hover:bg-white/10 border border-white/10 p-6 rounded-2xl transition-all cursor-pointer flex flex-col h-full">
-                                    <span className="material-symbols-outlined text-5xl mb-6 text-[#E9724C] font-light">{item.icon}</span>
+                                    <span className="material-symbols-outlined text-4xl mb-6 text-[#E9724C] font-light">{item.icon}</span>
                                     <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                                     <p className="text-sm text-white/70 leading-relaxed font-light">{item.desc}</p>
                                 </div>
@@ -200,7 +200,7 @@ const AboutPage: React.FC = () => {
                 {/* Workflow (6 steps) */}
                 <section className="container py-28 overflow-hidden">
                     <div className="text-center mb-20">
-                        <h2 className="text-3xl lg:text-4xl font-bold text-[#151711]">Quy trình làm việc chuyên nghiệp</h2>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-[#151711]">Quy trình làm việc chuyên nghiệp</h2>
                     </div>
                     <div className="relative">
                         <div className="absolute top-[48px] left-0 w-full h-[2px] bg-gray-200 hidden lg:block -z-10"></div>
@@ -229,8 +229,8 @@ const AboutPage: React.FC = () => {
                 {/* Core Values */}
                 <section className="container py-20 bg-white rounded-[2.5rem] mb-12 shadow-sm border border-gray-100">
                     <div className="text-center mb-16">
-                        <span className="text-[#546a2f] font-bold uppercase tracking-wider text-sm mb-3 block">Giá trị cốt lõi</span>
-                        <h2 className="text-3xl font-bold text-[#151711]">Kim chỉ nam hành động</h2>
+                        <span className="text-[#546a2f] font-bold  tracking-wider text-sm mb-3 block">Giá trị cốt lõi</span>
+                        <h2 className="text-2xl font-bold text-[#151711]">Kim chỉ nam hành động</h2>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
@@ -240,7 +240,7 @@ const AboutPage: React.FC = () => {
                             { icon: "handshake", title: "Trách nhiệm", desc: "Đồng hành cùng khách hàng ngay cả sau khi bàn giao." }
                         ].map((item, index) => (
                             <div key={index} className="aspect-square bg-[#F8F9FA] rounded-3xl p-8 flex flex-col justify-between group hover:bg-[#546a2f] transition-colors duration-500 cursor-default">
-                                <span className="material-symbols-outlined text-4xl text-[#546a2f] group-hover:text-white transition-colors">{item.icon}</span>
+                                <span className="material-symbols-outlined text-3xl text-[#546a2f] group-hover:text-white transition-colors">{item.icon}</span>
                                 <div>
                                     <h3 className="text-2xl font-black text-[#151711] group-hover:text-white mb-2 transition-colors">{item.title}</h3>
                                     <p className="text-sm text-gray-500 group-hover:text-white/80 transition-colors">{item.desc}</p>
@@ -256,7 +256,7 @@ const AboutPage: React.FC = () => {
                         <div className="grid grid-cols-2 gap-4 h-[560px]">
                             <div className="bg-gray-200 rounded-2xl overflow-hidden col-span-2 row-span-2 relative group">
                                 <img alt="Koi pond" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWK9XERlcrEtNPxzh6Vy57gCpQlCRQy5suYP-KZCFtsNlIRDjEECwKZ295gR24MAFvpTcrMi7jrNz09gFPxfkuY7nMgdP48-gLvY3I9M2LVJgR9qlac8Gmoa8ZfX0zMe7S-sQbtrTN254PbnKUOY9EcKy_UlFlEZ0o5xOXGst4Y1-MHKRKZsawA1RtXzZSCCQ0eQJm8OGkbIwXWySzrNfJT08xt33HEvbw6MfUUL0IQxwaCd0u2VTHqZQ_sQT1GOearciNj1pF-s0" />
-                                <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg text-white text-xs font-bold uppercase tracking-wide">Dự án biệt thự Ecopark</div>
+                                <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg text-white text-xs font-bold  tracking-wide">Dự án biệt thự Ecopark</div>
                             </div>
                             <div className="bg-gray-200 rounded-2xl overflow-hidden relative group">
                                 <img alt="Vertical garden" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnWw69ZvJAv2Hf9zpcEy3ygjCDt0BOOo9o5-3RA2JwTJ2D28lF7bxrCMPHLABpej0f5DZ3SiC59C_4BPZBBcB08feLP05LOjRVuFgd5G7ir8ljojW4lX8DenTxYFQ2SnnWCLpgQkKKYuP_vdirqv-rF2f70OOz4pgjwIdXH7IGTJ0R-haO__y8n0RdIDCfAwVV_KEAkZLjwJQxfAfFIbbu3YppdQcC3Pe5LlERAVutubC1YM_y6fvhpQeM7KD1fOyJunlLL16O1FY" />
@@ -266,7 +266,7 @@ const AboutPage: React.FC = () => {
                             </div>
                         </div>
                         <div className="flex flex-col gap-10">
-                            <h2 className="text-3xl lg:text-5xl font-bold text-[#151711]">Cam kết chất lượng <br />từ KGX Landscape</h2>
+                            <h2 className="text-2xl lg:text-4xl font-bold text-[#151711]">Cam kết chất lượng <br />từ KGX - Không Gian Xanh</h2>
                             <ul className="space-y-8">
                                 <li className="flex items-start gap-6">
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#E9724C]/10 flex items-center justify-center mt-1">
@@ -306,7 +306,7 @@ const AboutPage: React.FC = () => {
                     <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-[#546a2f]/30 to-transparent"></div>
                     <div className="container relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
                         <div className="max-w-2xl">
-                            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">Sẵn sàng kiến tạo <br /><span className="text-[#546a2f]">không gian mơ ước?</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-[1.8]">Sẵn sàng kiến tạo <br /><span className="text-[#546a2f]">không gian mơ ước?</span></h2>
                             <p className="text-gray-400 text-xl mb-10 font-light">Hãy để KGX đồng hành cùng bạn tạo nên những mảng xanh giá trị và bền vững.</p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <button className="bg-[#546a2f] hover:bg-[#435525] text-white px-10 py-5 rounded-xl text-lg font-bold transition-all shadow-lg shadow-[#546a2f]/20 text-center">
@@ -319,7 +319,7 @@ const AboutPage: React.FC = () => {
                             </div>
                         </div>
                         <div className="hidden lg:block">
-                            <div className="text-[240px] font-black text-white/5 leading-none select-none tracking-tighter">KGX</div>
+                            <div className="text-[240px] font-black text-white/5 leading-normal select-none tracking-normaler">KGX</div>
                         </div>
                     </div>
                 </section>

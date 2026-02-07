@@ -198,8 +198,8 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                         </div>
                     ) : folders.length === 0 && files.length === 0 ? (
                         <div className="h-full flex flex-col items-center justify-center text-slate-300">
-                            <span className="material-symbols-outlined text-6xl mb-4">folder_open</span>
-                            <p className="text-sm font-bold uppercase tracking-widest">Thư mục trống</p>
+                            <span className="material-symbols-outlined text-5xl mb-4">folder_open</span>
+                            <p className="text-sm font-bold  tracking-widest">Thư mục trống</p>
                         </div>
                     ) : (
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
@@ -211,7 +211,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                                     className="flex flex-col items-center group gap-2"
                                 >
                                     <div className="size-full aspect-square bg-white rounded-2xl border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-admin-primary/50 group-hover:text-admin-primary transition-all shadow-sm">
-                                        <span className="material-symbols-outlined text-4xl">folder</span>
+                                        <span className="material-symbols-outlined text-3xl">folder</span>
                                     </div>
                                     <span className="text-xs font-bold text-slate-600 truncate w-full text-center px-1">
                                         {folder.name}
@@ -236,7 +236,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                                                 <img src={file.url} className="w-full h-full object-cover" alt={file.name} loading="lazy" />
                                             ) : (
                                                 <div className="w-full h-full bg-slate-50 flex items-center justify-center text-slate-300">
-                                                    <span className="material-symbols-outlined text-4xl">description</span>
+                                                    <span className="material-symbols-outlined text-3xl">description</span>
                                                 </div>
                                             )}
                                             {isSelected && (
@@ -245,7 +245,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                                                 </div>
                                             )}
                                         </div>
-                                        <span className={`text-[10px] font-bold truncate w-full text-center px-1 uppercase tracking-tighter ${isSelected ? 'text-admin-primary' : 'text-slate-500'}`}>
+                                        <span className={`text-[10px] font-bold truncate w-full text-center px-1  tracking-normaler ${isSelected ? 'text-admin-primary' : 'text-slate-500'}`}>
                                             {file.name}
                                         </span>
                                     </div>
@@ -258,33 +258,33 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                 {/* Sidebar Info */}
                 {selectedFile && (
                     <div className="w-72 border-l border-slate-100 bg-white p-6 overflow-y-auto hidden lg:block animate-in slide-in-from-right duration-300">
-                        <h3 className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-6">Chi tiết Tệp tin</h3>
+                        <h3 className="text-xs font-extrabold text-slate-400  tracking-widest mb-6">Chi tiết Tệp tin</h3>
 
                         <div className="aspect-square rounded-2xl overflow-hidden border border-slate-200 mb-6 bg-slate-50">
                             {selectedFile.type.startsWith('image/') ? (
                                 <img src={selectedFile.url} className="w-full h-full object-contain" alt="Preview" />
                             ) : (
                                 <div className="w-full h-full flex items-center justify-center text-slate-300">
-                                    <span className="material-symbols-outlined text-6xl">draft</span>
+                                    <span className="material-symbols-outlined text-5xl">draft</span>
                                 </div>
                             )}
                         </div>
 
                         <div className="space-y-4">
                             <div>
-                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Tên tệp</label>
+                                <label className="text-[10px] font-bold text-slate-400  tracking-widest block mb-1">Tên tệp</label>
                                 <p className="text-sm font-bold text-slate-800 break-all">{selectedFile.name}</p>
                             </div>
                             <div>
-                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Loại</label>
+                                <label className="text-[10px] font-bold text-slate-400  tracking-widest block mb-1">Loại</label>
                                 <p className="text-xs text-slate-600">{selectedFile.type}</p>
                             </div>
                             <div>
-                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Dung lượng</label>
+                                <label className="text-[10px] font-bold text-slate-400  tracking-widest block mb-1">Dung lượng</label>
                                 <p className="text-xs text-slate-600">{(selectedFile.size / 1024).toFixed(1)} KB</p>
                             </div>
                             <div>
-                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Cập nhật lần cuối</label>
+                                <label className="text-[10px] font-bold text-slate-400  tracking-widest block mb-1">Cập nhật lần cuối</label>
                                 <p className="text-xs text-slate-600">{new Date(selectedFile.updatedAt).toLocaleString()}</p>
                             </div>
                         </div>

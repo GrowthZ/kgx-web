@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const ArchitectureDesignPage: React.FC = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = "Thiết kế Kiến trúc Xanh - KGX Landscape";
+        document.title = "Thiết kế Kiến trúc Xanh - KGX - Không Gian Xanh";
     }, []);
 
     return (
@@ -21,14 +21,14 @@ const ArchitectureDesignPage: React.FC = () => {
                     </div>
 
                     <div className="container mx-auto px-6 relative z-10 text-center">
-                        <span className="text-accent font-black tracking-[0.4em] text-xs uppercase mb-6 block">Premium Design</span>
-                        <h1 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight uppercase tracking-tight">
+                        <span className="text-accent font-black tracking-[0.4em] text-xs  mb-6 block">Premium Design</span>
+                        <h1 className="text-4xl md:text-6xl font-black text-white mb-8 leading-[1.8]  tracking-normal">
                             Kiến Trúc <br /><span className="text-accent">Xanh Hiện Đại</span>
                         </h1>
                         <p className="text-white/80 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed italic mb-12">
                             "Kết hợp tinh tế giữa công năng sử dụng and mảng xanh kiến trúc, kiến tạo không gian sống tiện nghi and trong lành."
                         </p>
-                        <button className="h-16 px-12 bg-white text-primary hover:bg-stone-50 text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2 uppercase tracking-widest">
+                        <button className="h-16 px-12 bg-white text-primary hover:bg-stone-50 text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2  tracking-widest">
                             Nhận tư vấn thiết kế
                         </button>
                     </div>
@@ -38,7 +38,7 @@ const ArchitectureDesignPage: React.FC = () => {
                 <section className="py-24 bg-white dark:bg-background-dark">
                     <div className="container mx-auto px-6">
                         <div className="text-center mb-20">
-                            <h2 className="text-3xl md:text-5xl font-black text-primary dark:text-white uppercase tracking-tight">PHONG CÁCH THIẾT KẾ</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-primary dark:text-white  tracking-normal">Phong cách thiết kế</h2>
                             <div className="h-2 w-24 bg-accent mx-auto mt-6 rounded-full"></div>
                         </div>
 
@@ -50,9 +50,9 @@ const ArchitectureDesignPage: React.FC = () => {
                             ].map((style, i) => (
                                 <div key={i} className="flex flex-col items-center text-center group">
                                     <div className="size-24 bg-stone-50 dark:bg-white/5 rounded-[32px] flex items-center justify-center mb-8 shadow-xl group-hover:bg-primary group-hover:text-white dark:group-hover:bg-accent transition-all duration-500">
-                                        <span className="material-symbols-outlined text-4xl">{style.icon}</span>
+                                        <span className="material-symbols-outlined text-3xl">{style.icon}</span>
                                     </div>
-                                    <h3 className="text-2xl font-bold text-text-main dark:text-white mb-4 uppercase tracking-tight">{style.title}</h3>
+                                    <h3 className="text-2xl font-bold text-text-main dark:text-white mb-4  tracking-normal">{style.title}</h3>
                                     <p className="text-text-muted dark:text-gray-400 leading-relaxed italic">
                                         "{style.desc}"
                                     </p>
@@ -73,7 +73,7 @@ const ArchitectureDesignPage: React.FC = () => {
                                 </div>
                             </div>
                             <div className="lg:w-1/2 space-y-10">
-                                <h2 className="text-4xl md:text-5xl font-black text-primary dark:text-white leading-tight uppercase tracking-tight">KẾT NỐI <br />KHÔNG GIAN SỐNG</h2>
+                                <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white leading-[1.8]  tracking-normal">Kết nối <br />không gian sống</h2>
                                 <p className="text-text-muted dark:text-gray-300 text-xl font-light leading-relaxed">
                                     Chúng tôi không chỉ thiết kế ngôi nhà, chúng tôi kiến tạo phong cách sống. Mỗi đường nét kiến trúc đều được tính toán để mang lại sự thoải mái tối ưu and cảm hứng mỗi ngày.
                                 </p>
@@ -88,7 +88,7 @@ const ArchitectureDesignPage: React.FC = () => {
                                             <div className="size-10 rounded-full bg-primary/10 dark:bg-accent/10 flex items-center justify-center text-primary dark:text-accent font-black">
                                                 <span className="material-symbols-outlined text-sm">check</span>
                                             </div>
-                                            <span className="text-lg font-bold text-text-main dark:text-white uppercase tracking-tight">{item}</span>
+                                            <span className="text-lg font-bold text-text-main dark:text-white  tracking-normal">{item}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -101,18 +101,18 @@ const ArchitectureDesignPage: React.FC = () => {
                 <section className="py-24 bg-primary relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
                     <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-                        <h2 className="text-4xl md:text-6xl font-black text-white mb-10 leading-tight uppercase tracking-tight">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-[1.8]  tracking-normal">
                             Kiến tạo tổ ấm xanh <br className="hidden md:block" /> của riêng bạn
                         </h2>
                         <p className="text-white/80 text-2xl mb-14 max-w-2xl font-light italic">
                             Liên hệ ngay để KGX đồng hành cùng bạn hiện thực hóa ý tưởng về một ngôi nhà xanh hiện đại.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-8">
-                            <button className="h-16 px-12 bg-accent text-white hover:bg-orange-600 text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2 uppercase tracking-widest flex items-center justify-center gap-4">
+                            <button className="h-16 px-12 bg-accent text-white hover:bg-orange-600 text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2  tracking-widest flex items-center justify-center gap-4">
                                 <span className="material-symbols-outlined font-black">call</span>
                                 0868 462 462
                             </button>
-                            <button className="h-16 px-12 bg-white text-primary text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2 uppercase tracking-widest">
+                            <button className="h-16 px-12 bg-white text-primary text-lg font-black rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2  tracking-widest">
                                 Nhận báo giá ngay
                             </button>
                         </div>

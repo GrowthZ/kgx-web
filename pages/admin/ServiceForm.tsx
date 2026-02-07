@@ -112,7 +112,7 @@ const ServiceForm: React.FC = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 animate-fadeIn pb-20">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sticky top-0 z-20 bg-admin-bg/80 backdrop-blur-md py-4 border-b border-slate-100">
                     <div>
-                        <h1 className="text-2xl font-black text-slate-800 tracking-tight">
+                        <h1 className="text-2xl font-black text-slate-800 tracking-normal">
                             {id ? 'Chỉnh sửa Dịch vụ' : 'Thêm Dịch vụ mới'}
                         </h1>
                     </div>
@@ -129,23 +129,23 @@ const ServiceForm: React.FC = () => {
                         <div className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Tên dịch vụ</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest">Tên dịch vụ</label>
                                     <input {...register('title')} type="text" className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium" />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Slug</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest">Slug</label>
                                     <input {...register('slug')} type="text" className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium" />
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Danh mục</label>
+                                <label className="text-xs font-bold text-slate-400  tracking-widest">Danh mục</label>
                                 <select {...register('category')} className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium">
                                     <option value="thiet-ke">Thiết kế</option>
                                     <option value="thi-cong">Thi công</option>
                                 </select>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Mô tả ngắn</label>
+                                <label className="text-xs font-bold text-slate-400  tracking-widest">Mô tả ngắn</label>
                                 <textarea {...register('description')} rows={3} className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium" />
                             </div>
                         </div>
@@ -180,7 +180,7 @@ const ServiceForm: React.FC = () => {
                                     <ImageWithFallback src={watchImage} className="w-full h-full object-cover" alt="Preview" />
                                 ) : (
                                     <div className="size-full flex flex-col items-center justify-center text-slate-300">
-                                        <span className="material-symbols-outlined text-4xl">add_photo_alternate</span>
+                                        <span className="material-symbols-outlined text-3xl">add_photo_alternate</span>
                                     </div>
                                 )}
                             </div>
@@ -220,7 +220,7 @@ const SectionItem: React.FC<{
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">Tiêu đề phần {index + 1}</label>
+                    <label className="text-[10px] font-bold text-slate-400  tracking-widest leading-normal">Tiêu đề phần {index + 1}</label>
                     <input
                         {...register(`sections.${index}.title`)}
                         placeholder="Tiêu đề chính (ví dụ: GIẢI PHÁP KGX TRIỂN KHAI)"
@@ -228,7 +228,7 @@ const SectionItem: React.FC<{
                     />
                 </div>
                 <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">Subtitle</label>
+                    <label className="text-[10px] font-bold text-slate-400  tracking-widest leading-normal">Subtitle</label>
                     <input
                         {...register(`sections.${index}.subtitle`)}
                         placeholder="Tiêu đề phụ (ví dụ: Giải pháp kỹ thuật)"
@@ -240,7 +240,7 @@ const SectionItem: React.FC<{
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="md:col-span-2 space-y-4">
                     <div className="space-y-2">
-                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">Mô tả phần</label>
+                        <label className="text-[10px] font-bold text-slate-400  tracking-widest leading-normal">Mô tả phần</label>
                         <textarea
                             {...register(`sections.${index}.description`)}
                             rows={3}
@@ -250,7 +250,7 @@ const SectionItem: React.FC<{
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">Nội dung tự do (HTML)</label>
+                        <label className="text-[10px] font-bold text-slate-400  tracking-widest leading-normal">Nội dung tự do (HTML)</label>
                         <RichTextEditor
                             value={watch(`sections.${index}.content`) || ''}
                             onChange={(val) => setValue(`sections.${index}.content`, val)}
@@ -259,7 +259,7 @@ const SectionItem: React.FC<{
                 </div>
 
                 <div className="space-y-4">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none block">Ảnh minh họa phần</label>
+                    <label className="text-[10px] font-bold text-slate-400  tracking-widest leading-normal block">Ảnh minh họa phần</label>
                     <div
                         onClick={() => setIsMediaModalOpen(true)}
                         className="aspect-square bg-white rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer overflow-hidden group/img relative shadow-sm"
@@ -273,8 +273,8 @@ const SectionItem: React.FC<{
                             </>
                         ) : (
                             <div className="text-slate-300 flex flex-col items-center gap-2">
-                                <span className="material-symbols-outlined text-3xl">add_photo_alternate</span>
-                                <span className="text-[10px] font-bold uppercase tracking-wider">Chọn ảnh</span>
+                                <span className="material-symbols-outlined text-2xl">add_photo_alternate</span>
+                                <span className="text-[10px] font-bold  tracking-wider">Chọn ảnh</span>
                             </div>
                         )}
                     </div>
@@ -283,7 +283,7 @@ const SectionItem: React.FC<{
 
             <div className="space-y-4 pt-4 border-t border-slate-200/60">
                 <div className="flex items-center justify-between">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Danh sách các mục (Items)</label>
+                    <label className="text-[10px] font-bold text-slate-400  tracking-widest">Danh sách các mục (Items)</label>
                     <button
                         type="button"
                         onClick={() => appendItem({ title: '', desc: '', icon: 'check_circle' })}
@@ -306,7 +306,7 @@ const SectionItem: React.FC<{
                             </button>
 
                             <div className="w-12 space-y-2">
-                                <label className="text-[8px] font-bold text-slate-300 uppercase block text-center">Icon</label>
+                                <label className="text-[8px] font-bold text-slate-300  block text-center">Icon</label>
                                 <div className="aspect-square bg-slate-50 rounded-lg flex items-center justify-center border border-slate-100">
                                     <input
                                         {...register(`sections.${index}.items.${itemIdx}.icon`)}

@@ -39,7 +39,7 @@ const ArticlesPage: React.FC = () => {
                 {/* Hero Section */}
                 <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                     <div className="space-y-6">
-                        <h1 className="text-5xl lg:text-6xl font-black text-charcoal dark:text-white leading-[1.1] tracking-tight">
+                        <h1 className="text-4xl lg:text-5xl font-black text-charcoal dark:text-white leading-[1.8] tracking-normal">
                             Kiến thức &amp; <br /><span className="text-primary">Tin tức cảnh quan</span>
                         </h1>
                         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-xl">
@@ -71,7 +71,7 @@ const ArticlesPage: React.FC = () => {
                 {loading ? (
                     <div className="py-20 flex flex-col items-center justify-center">
                         <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                        <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải bài viết...</p>
+                        <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải bài viết...</p>
                     </div>
                 ) : articles.length === 0 ? (
                     <div className="py-20 text-center text-slate-400">Chưa có bài viết nào được đăng.</div>
@@ -91,13 +91,13 @@ const ArticlesPage: React.FC = () => {
                                         </div>
                                         <div className="p-8 flex-1 flex flex-col">
                                             <div className="flex gap-3 mb-4">
-                                                <span className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">{featuredArticle.category}</span>
+                                                <span className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full  tracking-wider">{featuredArticle.category}</span>
                                                 <span className="text-gray-400 text-xs font-medium flex items-center gap-1">
                                                     <span className="material-symbols-outlined text-xs">calendar_today</span>
                                                     {featuredArticle.publishedAt ? new Date(featuredArticle.publishedAt.seconds * 1000).toLocaleDateString('vi-VN') : ''}
                                                 </span>
                                             </div>
-                                            <h3 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors uppercase">{featuredArticle.title}</h3>
+                                            <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors ">{featuredArticle.title}</h3>
                                             <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed flex-1">
                                                 {featuredArticle.excerpt}
                                             </p>
@@ -114,8 +114,8 @@ const ArticlesPage: React.FC = () => {
                                     <Link key={idx} to={`/tin-tuc/${item.slug}`} className="group flex gap-4 items-start bg-white dark:bg-charcoal p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer">
                                         <div className="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style={{ backgroundImage: `url('${item.featuredImage}')` }}></div>
                                         <div>
-                                            <h4 className="font-bold text-sm leading-snug group-hover:text-primary transition-colors mb-2 line-clamp-2 uppercase">{item.title}</h4>
-                                            <span className="text-[10px] text-gray-400 font-bold uppercase">{item.category}</span>
+                                            <h4 className="font-bold text-sm leading-[1.8] group-hover:text-primary transition-colors mb-2 line-clamp-2 ">{item.title}</h4>
+                                            <span className="text-[10px] text-gray-400 font-bold ">{item.category}</span>
                                         </div>
                                     </Link>
                                 ))}
@@ -132,12 +132,12 @@ const ArticlesPage: React.FC = () => {
                                             <div className="aspect-[16/10] bg-cover bg-center" style={{ backgroundImage: `url('${post.featuredImage}')` }}></div>
                                             <div className="p-6">
                                                 <div className="flex justify-between items-center mb-3">
-                                                    <span className="text-[10px] font-bold text-primary uppercase bg-primary/5 px-2 py-1 rounded">{post.category}</span>
+                                                    <span className="text-[10px] font-bold text-primary  bg-primary/5 px-2 py-1 rounded">{post.category}</span>
                                                     <span className="text-[11px] text-gray-400">
                                                         {post.publishedAt ? new Date(post.publishedAt.seconds * 1000).toLocaleDateString('vi-VN') : ''}
                                                     </span>
                                                 </div>
-                                                <h3 className="font-bold text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors uppercase">{post.title}</h3>
+                                                <h3 className="font-bold text-lg mb-3 line-clamp-2 group-hover:text-primary transition-colors ">{post.title}</h3>
                                                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-3">{post.excerpt}</p>
                                                 <span className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:underline">Xem chi tiết <span className="material-symbols-outlined text-xs">open_in_new</span></span>
                                             </div>

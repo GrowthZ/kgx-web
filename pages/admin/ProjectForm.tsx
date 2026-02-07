@@ -120,10 +120,10 @@ const ProjectForm: React.FC = () => {
                 {/* Fixed Action Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sticky top-0 z-20 bg-admin-bg/80 backdrop-blur-md py-4 border-b border-slate-100">
                     <div>
-                        <h1 className="text-2xl font-black text-slate-800 tracking-tight">
+                        <h1 className="text-2xl font-black text-slate-800 tracking-normal">
                             {id ? 'Chỉnh sửa Dự án' : 'Thêm Dự án mới'}
                         </h1>
-                        <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">
+                        <p className="text-xs text-slate-400 font-bold  tracking-widest mt-1">
                             {id ? `ID: ${id}` : 'Điền đầy đủ thông tin bên dưới'}
                         </p>
                     </div>
@@ -159,7 +159,7 @@ const ProjectForm: React.FC = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Tên dự án</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Tên dự án</label>
                                     <input
                                         {...register('title')}
                                         type="text"
@@ -169,7 +169,7 @@ const ProjectForm: React.FC = () => {
                                     {errors.title && <p className="text-xs text-rose-500 font-bold ml-1">{errors.title.message}</p>}
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Slug (URL)</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Slug (URL)</label>
                                     <input
                                         {...register('slug')}
                                         type="text"
@@ -182,7 +182,7 @@ const ProjectForm: React.FC = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Danh mục</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Danh mục</label>
                                     <select
                                         {...register('category')}
                                         className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium"
@@ -193,7 +193,7 @@ const ProjectForm: React.FC = () => {
                                     </select>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Năm</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Năm</label>
                                     <input
                                         {...register('year')}
                                         type="text"
@@ -202,7 +202,7 @@ const ProjectForm: React.FC = () => {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Diện tích / Quy mô</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Diện tích / Quy mô</label>
                                     <input
                                         {...register('area')}
                                         type="text"
@@ -214,7 +214,7 @@ const ProjectForm: React.FC = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Khách hàng</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Khách hàng</label>
                                     <input
                                         {...register('client')}
                                         type="text"
@@ -223,7 +223,7 @@ const ProjectForm: React.FC = () => {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Địa điểm</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Địa điểm</label>
                                     <input
                                         {...register('location')}
                                         type="text"
@@ -270,16 +270,16 @@ const ProjectForm: React.FC = () => {
                                     <>
                                         <img src={watchImage} className="w-full h-full object-cover" alt="Preview" />
                                         <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-all flex flex-col items-center justify-center backdrop-blur-[2px]">
-                                            <span className="material-symbols-outlined text-white text-4xl mb-2">photo_library</span>
-                                            <span className="text-white text-xs font-bold uppercase tracking-widest">Thay đổi ảnh</span>
+                                            <span className="material-symbols-outlined text-white text-3xl mb-2">photo_library</span>
+                                            <span className="text-white text-xs font-bold  tracking-widest">Thay đổi ảnh</span>
                                         </div>
                                     </>
                                 ) : (
                                     <div className="size-full flex flex-col items-center justify-center text-slate-300 gap-3">
                                         <div className="size-16 bg-slate-50 rounded-2xl flex items-center justify-center shadow-inner">
-                                            <span className="material-symbols-outlined text-4xl">add_photo_alternate</span>
+                                            <span className="material-symbols-outlined text-3xl">add_photo_alternate</span>
                                         </div>
-                                        <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Chọn ảnh đại diện</p>
+                                        <p className="text-xs font-bold  tracking-widest text-slate-400">Chọn ảnh đại diện</p>
                                     </div>
                                 )}
                             </div>
@@ -295,7 +295,7 @@ const ProjectForm: React.FC = () => {
                             </h3>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Nhãn danh mục</label>
+                                <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Nhãn danh mục</label>
                                 <input
                                     {...register('displayCategory')}
                                     type="text"

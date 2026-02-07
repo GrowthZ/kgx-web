@@ -10,7 +10,7 @@ const FAQ: React.FC = () => {
     <section className="py-20 bg-[#f7f9f5]">
       <div className="container max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-black text-olive">Câu hỏi thường gặp</h2>
+          <h2 className="text-2xl font-black text-olive">Câu hỏi thường gặp</h2>
           <p className="text-olive/60 mt-2">
             Giải đáp những thắc mắc phổ biến của khách hàng về dịch vụ của KGX
           </p>

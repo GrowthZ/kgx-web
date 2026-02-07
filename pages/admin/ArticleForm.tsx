@@ -100,10 +100,10 @@ const ArticleForm: React.FC = () => {
                 {/* Fixed Action Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sticky top-0 z-20 bg-admin-bg/80 backdrop-blur-md py-4 border-b border-slate-100">
                     <div>
-                        <h1 className="text-2xl font-black text-slate-800 tracking-tight">
+                        <h1 className="text-2xl font-black text-slate-800 tracking-normal">
                             {id ? 'Chỉnh sửa Bài viết' : 'Soạn thảo Bài viết mới'}
                         </h1>
-                        <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">
+                        <p className="text-xs text-slate-400 font-bold  tracking-widest mt-1">
                             {id ? `Đang chỉnh sửa bài viết ID: ${id}` : 'Xây dựng nội dung chất lượng cho KGX'}
                         </p>
                     </div>
@@ -132,7 +132,7 @@ const ArticleForm: React.FC = () => {
                     <div className="lg:col-span-3 space-y-8">
                         <div className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm space-y-6">
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Tiêu đề bài viết</label>
+                                <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Tiêu đề bài viết</label>
                                 <input
                                     {...register('title')}
                                     type="text"
@@ -143,7 +143,7 @@ const ArticleForm: React.FC = () => {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Slug (URL)</label>
+                                <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Slug (URL)</label>
                                 <input
                                     {...register('slug')}
                                     type="text"
@@ -153,7 +153,7 @@ const ArticleForm: React.FC = () => {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Mô tả ngắn (Excerpt)</label>
+                                <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Mô tả ngắn (Excerpt)</label>
                                 <textarea
                                     {...register('excerpt')}
                                     rows={3}
@@ -203,7 +203,7 @@ const ArticleForm: React.FC = () => {
 
                             <div className="space-y-4 pt-2">
                                 <div className="space-y-1">
-                                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Danh mục</label>
+                                    <label className="text-[10px] font-bold text-slate-400  tracking-widest ml-1">Danh mục</label>
                                     <select
                                         {...register('category')}
                                         className="w-full px-4 py-3 bg-slate-50 rounded-xl border-none focus:ring-2 focus:ring-admin-primary/20 font-bold text-sm"
@@ -215,7 +215,7 @@ const ArticleForm: React.FC = () => {
                                     </select>
                                 </div>
                                 <div className="space-y-1">
-                                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Tác giả</label>
+                                    <label className="text-[10px] font-bold text-slate-400  tracking-widest ml-1">Tác giả</label>
                                     <input
                                         {...register('author')}
                                         type="text"
@@ -240,14 +240,14 @@ const ArticleForm: React.FC = () => {
                                     <>
                                         <img src={watchFeaturedImage} className="w-full h-full object-cover" alt="Featured" />
                                         <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-all flex flex-col items-center justify-center backdrop-blur-[2px]">
-                                            <span className="material-symbols-outlined text-white text-3xl mb-1">photo_library</span>
-                                            <span className="text-white text-[10px] font-bold uppercase tracking-widest">Thay đổi ảnh</span>
+                                            <span className="material-symbols-outlined text-white text-2xl mb-1">photo_library</span>
+                                            <span className="text-white text-[10px] font-bold  tracking-widest">Thay đổi ảnh</span>
                                         </div>
                                     </>
                                 ) : (
                                     <div className="size-full flex flex-col items-center justify-center text-slate-300 gap-2">
-                                        <span className="material-symbols-outlined text-4xl">add_photo_alternate</span>
-                                        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Chọn ảnh tiêu đề</p>
+                                        <span className="material-symbols-outlined text-3xl">add_photo_alternate</span>
+                                        <p className="text-[10px] font-bold  tracking-widest text-slate-400">Chọn ảnh tiêu đề</p>
                                     </div>
                                 )}
                             </div>

@@ -9,13 +9,9 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
-              <div className="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
-                <span className="material-symbols-outlined text-3xl font-bold">
-                  spa
-                </span>
-              </div>
-              <h2 className="text-xl font-bold uppercase tracking-tight">
-                KGX Landscape
+              <img src="/src/media/logo-kgx.png" alt="KGX Logo" className="h-10 w-auto object-contain" />
+              <h2 className="text-xl font-bold tracking-normal">
+                KGX - Không Gian Xanh
               </h2>
             </Link>
             <p className="text-sm leading-relaxed">
@@ -102,7 +98,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-          <p>© 2024 KGX Landscape. All rights reserved.</p>
+          <p>© 2024 KGX - Không Gian Xanh. All rights reserved.</p>
           <div className="flex gap-6">
             <a className="hover:text-white transition-colors" href="#">
               Chính sách bảo mật

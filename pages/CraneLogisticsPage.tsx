@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const CraneLogisticsPage: React.FC = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = "Vận tải & Cẩu tự hành - KGX Landscape";
+        document.title = "Vận tải & Cẩu tự hành - KGX - Không Gian Xanh";
     }, []);
 
     return (
@@ -11,8 +11,8 @@ const CraneLogisticsPage: React.FC = () => {
             <main className="flex-grow">
                 {/* Hero Section */}
                 <section className="pt-20 pb-12 px-6 max-w-[1200px] mx-auto text-center">
-                    <span className="inline-block py-1.5 px-4 rounded-full bg-accent/10 text-accent text-xs font-black tracking-widest uppercase mb-6 border border-accent/10">Dịch vụ chuyên nghiệp</span>
-                    <h1 className="text-4xl md:text-6xl font-black text-primary dark:text-white leading-tight max-w-4xl mx-auto mb-8 uppercase tracking-tight">
+                    <span className="inline-block py-1.5 px-4 rounded-full bg-accent/10 text-accent text-xs font-black tracking-widest  mb-6 border border-accent/10">Dịch vụ chuyên nghiệp</span>
+                    <h1 className="text-3xl md:text-5xl font-black text-primary dark:text-white leading-[1.8] max-w-4xl mx-auto mb-8  tracking-normal">
                         Dịch vụ vận tải & <br /><span className="text-accent">cẩu tự hành</span>
                     </h1>
                     <p className="text-xl text-text-sub dark:text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
@@ -24,7 +24,7 @@ const CraneLogisticsPage: React.FC = () => {
                 <section className="py-20 px-6 max-w-[1200px] mx-auto">
                     <div className="flex items-center gap-6 mb-16">
                         <div className="h-px bg-primary/10 dark:bg-white/10 flex-1"></div>
-                        <h2 className="text-2xl md:text-3xl font-black text-primary dark:text-white text-center uppercase tracking-widest px-4">Nhu cầu thực tế</h2>
+                        <h2 className="text-2xl md:text-2xl font-black text-primary dark:text-white text-center  tracking-widest px-4">Nhu cầu thực tế</h2>
                         <div className="h-px bg-primary/10 dark:bg-white/10 flex-1"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -47,16 +47,16 @@ const CraneLogisticsPage: React.FC = () => {
                                     <img alt={card.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src={card.image} />
                                     <div className="absolute top-8 left-8 z-20 bg-white/90 dark:bg-black/80 backdrop-blur-xl px-4 py-2 rounded-2xl flex items-center gap-2 shadow-xl border border-white/20">
                                         <span className="material-symbols-outlined text-accent text-sm font-black">verified</span>
-                                        <span className="text-[10px] font-black text-primary dark:text-accent uppercase tracking-[0.2em]">{card.tag}</span>
+                                        <span className="text-[10px] font-black text-primary dark:text-accent  tracking-[0.2em]">{card.tag}</span>
                                     </div>
                                 </div>
                                 <div className="p-10">
-                                    <h3 className="text-3xl font-black text-primary dark:text-white mb-4 group-hover:text-accent transition-colors uppercase tracking-tight">{card.title}</h3>
+                                    <h3 className="text-2xl font-black text-primary dark:text-white mb-4 group-hover:text-accent transition-colors  tracking-normal">{card.title}</h3>
                                     <p className="text-text-sub dark:text-gray-400 leading-relaxed mb-8 italic">
                                         "{card.desc}"
                                     </p>
-                                    <button className="flex items-center text-primary dark:text-accent font-black text-sm uppercase tracking-widest group-hover:translate-x-4 transition-all">
-                                        XEM QUY TRÌNH <span className="material-symbols-outlined text-xl ml-2">arrow_forward</span>
+                                    <button className="flex items-center text-primary dark:text-accent font-black text-sm  tracking-widest group-hover:translate-x-4 transition-all">
+                                        Xem quy trình <span className="material-symbols-outlined text-xl ml-2">arrow_forward</span>
                                     </button>
                                 </div>
                             </div>
@@ -69,8 +69,8 @@ const CraneLogisticsPage: React.FC = () => {
                     <div className="max-w-[1200px] mx-auto px-6">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                             <div className="order-2 lg:order-1">
-                                <span className="text-accent font-black tracking-[0.3em] text-xs uppercase mb-4 block">Năng lực thiết bị</span>
-                                <h2 className="text-4xl md:text-5xl font-black text-primary dark:text-white mb-8 leading-tight uppercase tracking-tight">
+                                <span className="text-accent font-black tracking-[0.3em] text-xs  mb-4 block">Năng lực thiết bị</span>
+                                <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white mb-8 leading-[1.8]  tracking-normal">
                                     Hệ thống thiết bị <br />tự hành tiêu chuẩn
                                 </h2>
                                 <p className="text-text-sub dark:text-gray-300 mb-12 text-xl font-light leading-relaxed">
@@ -84,17 +84,17 @@ const CraneLogisticsPage: React.FC = () => {
                                     ].map((item, i) => (
                                         <div key={i} className="flex gap-6 group">
                                             <div className="flex-shrink-0 size-14 rounded-2xl bg-white dark:bg-white/5 flex items-center justify-center text-primary dark:text-accent shadow-xl border border-primary/10 dark:border-white/10 group-hover:bg-primary group-hover:text-white dark:group-hover:bg-accent transition-all duration-500">
-                                                <span className="material-symbols-outlined text-3xl font-black">{item.icon}</span>
+                                                <span className="material-symbols-outlined text-2xl font-black">{item.icon}</span>
                                             </div>
                                             <div>
-                                                <h4 className="font-black text-text-main dark:text-white text-xl uppercase tracking-tight">{item.title}</h4>
+                                                <h4 className="font-black text-text-main dark:text-white text-xl  tracking-normal">{item.title}</h4>
                                                 <p className="text-text-sub dark:text-gray-400 text-sm mt-2 leading-relaxed italic">{item.desc}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                                 <div className="mt-14">
-                                    <button className="h-16 px-10 border-4 border-primary dark:border-accent text-primary dark:text-white hover:bg-primary dark:hover:bg-accent hover:text-white font-black rounded-2xl transition-all shadow-2xl uppercase tracking-widest text-sm">
+                                    <button className="h-16 px-10 border-4 border-primary dark:border-accent text-primary dark:text-white hover:bg-primary dark:hover:bg-accent hover:text-white font-black rounded-2xl transition-all shadow-2xl  tracking-widest text-sm">
                                         Tải hồ sơ năng lực
                                     </button>
                                 </div>
@@ -104,8 +104,8 @@ const CraneLogisticsPage: React.FC = () => {
                                     <img alt="Equipment" className="w-full h-auto object-cover aspect-[4/5] transform group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_h3rce2UPHuxS7ejE-NDqivkKkfENIAxoDn5_4KQIt4gp63IFogDMDQLtMsGo8XgQ1FwVcoOUKNUzhNJxp1WSmNdfMnlhXqP4PkOT0Mu14pRJWHZ0DNzqZ1heHp-vrzY6PwmLu6PthSLgDnMAXHikDsV5t1apoybuLBGKzFVIBEzwnS_TRAfT4Zb2G4dV5VIF3AsY7SvTGkdc-kyQpVa2M6oGvL39zxF334TeWHSg5ZaBtSf1ZX4Z1kclAKKpI0qD83pVeyzHaEQ" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60"></div>
                                     <div className="absolute bottom-10 left-10 right-10 bg-white/95 dark:bg-black/80 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border-l-[12px] border-accent">
-                                        <p className="text-xs font-black uppercase text-accent tracking-[0.3em] mb-3">Dự án tiêu biểu</p>
-                                        <p className="text-xl font-bold leading-tight text-primary dark:text-white uppercase tracking-tight">Di dời cây cổ thụ tại <br />KĐT Ecopark Hưng Yên</p>
+                                        <p className="text-xs font-black  text-accent tracking-[0.3em] mb-3">Dự án tiêu biểu</p>
+                                        <p className="text-xl font-bold leading-normal text-primary dark:text-white  tracking-normal">Di dời cây cổ thụ tại <br />KĐT Ecopark Hưng Yên</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,18 +117,18 @@ const CraneLogisticsPage: React.FC = () => {
                 <section className="py-24 bg-primary relative overflow-hidden transition-colors">
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 20px, #ffffff 20px, #ffffff 40px)' }}></div>
                     <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-                        <h2 className="text-4xl md:text-6xl font-black text-white mb-10 leading-[1.1] uppercase max-w-4xl tracking-tight">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-[1.8]  max-w-4xl tracking-normal">
                             Hỗ trợ thi công với <br className="hidden md:block" /> hệ thống xe cẩu chuyên dụng
                         </h2>
                         <p className="text-white/80 text-xl mb-14 max-w-2xl font-light italic leading-relaxed">
                             "Liên hệ ngay với KGX để nhận tư vấn phương án vận chuyển and thi công tối ưu nhất cho dự án của bạn."
                         </p>
                         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center w-full">
-                            <button className="w-full sm:w-auto px-12 py-6 bg-accent hover:bg-orange-600 text-white text-xl font-black rounded-2xl shadow-2xl shadow-orange-500/30 transition-all transform hover:-translate-y-2 uppercase tracking-widest flex items-center justify-center gap-4">
+                            <button className="w-full sm:w-auto px-12 py-6 bg-accent hover:bg-orange-600 text-white text-xl font-black rounded-2xl shadow-2xl shadow-orange-500/30 transition-all transform hover:-translate-y-2  tracking-widest flex items-center justify-center gap-4">
                                 <span className="material-symbols-outlined font-black">call</span>
-                                YÊU CẦU DỊCH VỤ VẬN TẢI
+                                Yêu cầu dịch vụ vận tải
                             </button>
-                            <button className="w-full sm:w-auto px-12 py-6 bg-white text-primary text-xl font-black rounded-2xl hover:bg-stone-50 transition-all shadow-2xl uppercase tracking-widest transform hover:-translate-y-2">
+                            <button className="w-full sm:w-auto px-12 py-6 bg-white text-primary text-xl font-black rounded-2xl hover:bg-stone-50 transition-all shadow-2xl  tracking-widest transform hover:-translate-y-2">
                                 0868 462 462
                             </button>
                         </div>

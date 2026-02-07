@@ -30,8 +30,8 @@ const GardenConstructionPage: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col gap-6 max-w-2xl">
                             <div className="flex flex-col gap-3">
-                                <span className="text-[#84da0b] font-bold tracking-wider uppercase text-sm">Chuyên nghiệp & Tận tâm</span>
-                                <h1 className="text-[#161c0d] text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
+                                <span className="text-[#84da0b] font-bold tracking-wider  text-sm">Chuyên nghiệp & Tận tâm</span>
+                                <h1 className="text-[#161c0d] text-3xl md:text-4xl lg:text-5xl font-black leading-[1.8] tracking-normal">
                                     Dịch vụ thi công cảnh quan trọn gói
                                 </h1>
                                 <p className="text-gray-600 text-base md:text-lg font-normal leading-relaxed mt-2">
@@ -48,15 +48,15 @@ const GardenConstructionPage: React.FC = () => {
                             </div>
                             <div className="flex gap-8 mt-4 pt-6 border-t border-gray-100">
                                 <div>
-                                    <p className="text-3xl font-black text-[#161c0d]">10+</p>
+                                    <p className="text-2xl font-black text-[#161c0d]">10+</p>
                                     <p className="text-sm text-gray-500">Năm kinh nghiệm</p>
                                 </div>
                                 <div>
-                                    <p className="text-3xl font-black text-[#161c0d]">500+</p>
+                                    <p className="text-2xl font-black text-[#161c0d]">500+</p>
                                     <p className="text-sm text-gray-500">Dự án hoàn thành</p>
                                 </div>
                                 <div>
-                                    <p className="text-3xl font-black text-[#161c0d]">100%</p>
+                                    <p className="text-2xl font-black text-[#161c0d]">100%</p>
                                     <p className="text-sm text-gray-500">Hài lòng</p>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ const GardenConstructionPage: React.FC = () => {
                 {/* Target Audience Section */}
                 <section className="px-4 md:px-10 py-16 bg-white">
                     <div className="text-center mb-12">
-                        <h2 className="text-[#161c0d] text-3xl font-bold mb-4">Đối tượng khách hàng</h2>
+                        <h2 className="text-[#161c0d] text-2xl font-bold mb-4">Đối tượng khách hàng</h2>
                         <p className="text-gray-500 max-w-2xl mx-auto">Chúng tôi cung cấp giải pháp cảnh quan toàn diện cho đa dạng các loại hình dự án, từ tư nhân đến công cộng.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -99,7 +99,7 @@ const GardenConstructionPage: React.FC = () => {
                 <section className="px-4 md:px-10 py-16 bg-[#f7f8f5]">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                         <div>
-                            <h2 className="text-[#161c0d] text-3xl font-bold mb-2">Hạng mục thi công chính</h2>
+                            <h2 className="text-[#161c0d] text-2xl font-bold mb-2">Hạng mục thi công chính</h2>
                             <p className="text-gray-500">Dịch vụ đa dạng đáp ứng mọi yêu cầu kỹ thuật khắt khe nhất.</p>
                         </div>
                         <Link className="text-[#84da0b] font-bold flex items-center hover:underline" to="/dich-vu">
@@ -110,7 +110,7 @@ const GardenConstructionPage: React.FC = () => {
                         {loading ? (
                             <div className="col-span-full py-20 flex flex-col items-center justify-center">
                                 <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                                <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải danh mục...</p>
+                                <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải danh mục...</p>
                             </div>
                         ) : services.length === 0 ? (
                             <div className="col-span-full py-10 text-center text-gray-400">Không tìm thấy hạng mục nào.</div>
@@ -129,7 +129,7 @@ const GardenConstructionPage: React.FC = () => {
                 <section className="px-4 md:px-10 py-16 bg-white overflow-hidden">
                     <div className="flex flex-col lg:flex-row gap-12 items-center">
                         <div className="w-full lg:w-1/2">
-                            <h2 className="text-[#161c0d] text-3xl font-bold mb-8">Phạm vi công việc & Quy chuẩn</h2>
+                            <h2 className="text-[#161c0d] text-2xl font-bold mb-8">Phạm vi công việc & Quy chuẩn</h2>
                             <ul className="space-y-6">
                                 {[
                                     { title: 'Chuẩn bị mặt bằng', desc: 'Dọn dẹp, san lấp, xử lý đất nền, định vị hố trồng theo thiết kế.' },
@@ -163,8 +163,8 @@ const GardenConstructionPage: React.FC = () => {
                 {/* Process Timeline */}
                 <section className="px-4 md:px-10 py-16 bg-[#161c0d] text-white overflow-hidden">
                     <div className="text-center mb-16">
-                        <span className="text-[#84da0b] font-bold tracking-widest uppercase text-xs mb-2 block">Quy trình làm việc</span>
-                        <h2 className="text-3xl font-bold">6 Bước triển khai dự án</h2>
+                        <span className="text-[#84da0b] font-bold tracking-widest  text-xs mb-2 block">Quy trình làm việc</span>
+                        <h2 className="text-2xl font-bold">6 Bước triển khai dự án</h2>
                     </div>
                     <div className="relative">
                         <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-700 -translate-y-1/2 z-0"></div>
@@ -198,7 +198,7 @@ const GardenConstructionPage: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <div className="h-full min-h-[400px] rounded-2xl bg-cover bg-center shadow-lg" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFd_p9Tjqmsqq3xsEW5V1uRNkVvozsTrZols8LUPDatSubpVFUIhMlxjXGwmdMdrVJLoC5fnqKj9ddmh1Y-5oICGtm9qZDHDnSKQUMdbJ0u2wBXLaSIJR84J7d6AIvFha8McLFRV7T9HzIyYPcs_CinZrliJy0uzWyfv273jvDArh49IDrW2TJ9K-zivHbuahY_vPMOiBwhCFg9evZe-RlRBmAXYMOPuT3oepT8MttBmamtpAaEHkibBlENGe-_38qeJvy-5aHtE4')" }}></div>
                         <div className="flex flex-col justify-center">
-                            <h2 className="text-[#161c0d] text-3xl font-bold mb-8">Cam kết chất lượng</h2>
+                            <h2 className="text-[#161c0d] text-2xl font-bold mb-8">Cam kết chất lượng</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {[
                                     { title: 'Thi công đúng thiết kế', desc: 'Tuân thủ 100% bản vẽ kỹ thuật và chủng loại vật tư đã thống nhất.' },
@@ -219,7 +219,7 @@ const GardenConstructionPage: React.FC = () => {
                 {/* Featured Projects */}
                 <section className="px-4 md:px-10 py-16 bg-white">
                     <div className="flex justify-between items-end mb-10">
-                        <h2 className="text-[#161c0d] text-3xl font-bold">Dự án tiêu biểu</h2>
+                        <h2 className="text-[#161c0d] text-2xl font-bold">Dự án tiêu biểu</h2>
                         <Link className="text-sm font-bold text-[#161c0d] hover:text-[#84da0b] transition-colors" to="/du-an">Xem tất cả dự án →</Link>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -237,7 +237,7 @@ const GardenConstructionPage: React.FC = () => {
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
                                 </div>
                                 <div className="flex flex-col gap-1">
-                                    <span className="text-xs font-bold text-[#84da0b] uppercase tracking-wider">{project.sub}</span>
+                                    <span className="text-xs font-bold text-[#84da0b]  tracking-wider">{project.sub}</span>
                                     <h3 className="text-xl font-bold text-[#161c0d] group-hover:text-[#84da0b] transition-colors">{project.title}</h3>
                                     <p className="text-sm text-gray-500">Quy mô: {project.scale}</p>
                                 </div>
@@ -250,7 +250,7 @@ const GardenConstructionPage: React.FC = () => {
                 <section className="px-4 md:px-10 py-16 bg-[#eef4e7]">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
                         <div className="lg:col-span-7">
-                            <h2 className="text-[#161c0d] text-3xl font-bold mb-2">Đăng ký tư vấn miễn phí</h2>
+                            <h2 className="text-[#161c0d] text-2xl font-bold mb-2">Đăng ký tư vấn miễn phí</h2>
                             <p className="text-gray-500 mb-8">Để lại thông tin, đội ngũ kỹ sư KGX sẽ liên hệ khảo sát và báo giá trong vòng 24h.</p>
                             <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="col-span-1">

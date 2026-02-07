@@ -17,9 +17,9 @@ const MasterPlanningPage: React.FC = () => {
                             {/* Text Content */}
                             <div className="flex-1 flex flex-col gap-6 text-left">
                                 <div className="space-y-4">
-                                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-full dark:bg-white/10 dark:text-white">Tổng quan dịch vụ</span>
-                                    <h1 className="text-text-main dark:text-white text-4xl md:text-5xl font-black leading-[1.15] tracking-tight">
-                                        VAI TRÒ CỦA <br className="hidden md:block" />QUY HOẠCH CẢNH QUAN
+                                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold  tracking-wider rounded-full dark:bg-white/10 dark:text-white">Tổng quan dịch vụ</span>
+                                    <h1 className="text-text-main dark:text-white text-3xl md:text-4xl font-black leading-[1.8] tracking-normal">
+                                        Vai trò của <br className="hidden md:block" />quy hoạch cảnh quan
                                     </h1>
                                     <p className="text-text-muted dark:text-gray-300 text-base md:text-lg font-normal leading-relaxed max-w-[540px]">
                                         Đảm bảo sự hài hòa tổng thể, kiểm soát vi khí hậu và gia tăng giá trị dài hạn cho các dự án quy mô lớn ngay từ giai đoạn khởi tạo. Chúng tôi kiến tạo những không gian sống bền vững, nơi thiên nhiên và kiến trúc giao hòa.
@@ -43,7 +43,7 @@ const MasterPlanningPage: React.FC = () => {
                                     />
                                     {/* Floating Caption */}
                                     <div className="absolute bottom-6 left-6 z-20 bg-white/90 dark:bg-black/80 backdrop-blur-md px-4 py-3 rounded-lg border-l-4 border-accent shadow-lg max-w-[280px]">
-                                        <p className="text-xs font-bold text-text-main dark:text-white uppercase tracking-wide">Tầm nhìn quy hoạch</p>
+                                        <p className="text-xs font-bold text-text-main dark:text-white  tracking-wide">Tầm nhìn quy hoạch</p>
                                         <p className="text-sm text-text-muted dark:text-gray-300 mt-1">Kết nối không gian xanh và hạ tầng đô thị hiện đại.</p>
                                     </div>
                                 </div>
@@ -57,8 +57,8 @@ const MasterPlanningPage: React.FC = () => {
                     <div className="w-full max-w-[1200px] px-5 md:px-10">
                         <div className="flex flex-col gap-12">
                             <div className="flex flex-col gap-3 max-w-[720px]">
-                                <h2 className="text-text-main dark:text-white text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase">
-                                    GIẢI PHÁP KGX TRIỂN KHAI
+                                <h2 className="text-text-main dark:text-white text-2xl md:text-3xl font-black tracking-normal leading-[1.8] ">
+                                    Giải pháp KGX triển khai
                                 </h2>
                                 <p className="text-text-muted dark:text-gray-400 text-lg font-normal leading-relaxed">
                                     Cách tiếp cận toàn diện và chuyên sâu cho từng dự án, tập trung vào tính khả thi và thẩm mỹ bền vững.
@@ -75,7 +75,7 @@ const MasterPlanningPage: React.FC = () => {
                                             <span className="material-symbols-outlined text-[32px]">{item.icon}</span>
                                         </div>
                                         <div className="flex flex-col gap-3">
-                                            <h3 className="text-text-main dark:text-white text-xl font-bold leading-tight group-hover:text-primary dark:group-hover:text-white transition-colors">{item.title}</h3>
+                                            <h3 className="text-text-main dark:text-white text-xl font-bold leading-[1.8] group-hover:text-primary dark:group-hover:text-white transition-colors">{item.title}</h3>
                                             <div className="h-0.5 w-12 bg-accent/30 group-hover:w-full group-hover:bg-accent transition-all duration-500"></div>
                                             <p className="text-text-muted dark:text-gray-300 text-sm leading-relaxed">{item.desc}</p>
                                         </div>
@@ -91,7 +91,7 @@ const MasterPlanningPage: React.FC = () => {
                     <div className="w-full max-w-[1200px] px-5 md:px-10">
                         <div className="flex flex-col gap-10">
                             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-primary/10 dark:border-white/10 pb-6">
-                                <h2 className="text-text-main dark:text-white text-3xl font-bold tracking-tight uppercase">CÁC LOẠI DỰ ÁN PHÙ HỢP</h2>
+                                <h2 className="text-text-main dark:text-white text-2xl font-bold tracking-normal ">Các loại dự án phù hợp</h2>
                                 <Link to="/du-an" className="text-primary dark:text-white font-bold text-sm hover:underline flex items-center gap-1 group">
                                     Xem tất cả dự án
                                     <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
@@ -128,8 +128,8 @@ const MasterPlanningPage: React.FC = () => {
                         <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
                             <div className="flex-1 flex flex-col gap-8 w-full">
                                 <div className="flex flex-col gap-3">
-                                    <h2 className="text-text-main dark:text-white text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase">
-                                        SẢN PHẨM BÀN GIAO
+                                    <h2 className="text-text-main dark:text-white text-2xl md:text-3xl font-black tracking-normal leading-[1.8] ">
+                                        Sản phẩm bàn giao
                                     </h2>
                                     <p className="text-text-muted dark:text-gray-400 text-base">Bộ hồ sơ kỹ thuật chi tiết, đảm bảo tính pháp lý và thi công chính xác.</p>
                                 </div>
@@ -157,7 +157,7 @@ const MasterPlanningPage: React.FC = () => {
                                     <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
                                         <div className="text-white">
                                             <p className="font-mono text-sm opacity-80 mb-1">PROJECT ID: KGX-2024</p>
-                                            <p className="font-bold text-lg uppercase">TIÊU CHUẨN KỸ THUẬT QUỐC TẾ</p>
+                                            <p className="font-bold text-lg ">Tiêu chuẩn kỹ thuật quốc tế</p>
                                         </div>
                                     </div>
                                 </div>
@@ -172,7 +172,7 @@ const MasterPlanningPage: React.FC = () => {
                         <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
                         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-10 md:p-16 gap-8 text-center md:text-left">
                             <div className="max-w-xl">
-                                <h2 className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">Cần giải pháp quy hoạch xanh cho dự án của bạn?</h2>
+                                <h2 className="text-2xl md:text-3xl font-black text-white mb-4 leading-[1.8]">Cần giải pháp quy hoạch xanh cho dự án của bạn?</h2>
                                 <p className="text-white/80 text-lg">Để lại thông tin để chuyên gia KGX tư vấn giải pháp hiệu quả và bền vững nhất.</p>
                             </div>
                             <div className="shrink-0">

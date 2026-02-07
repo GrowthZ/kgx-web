@@ -59,7 +59,7 @@ const AdminContactsPage: React.FC = () => {
             <div className="space-y-8 animate-fadeIn">
                 {/* Header Section */}
                 <div>
-                    <h1 className="text-3xl font-black text-slate-800 tracking-tight">Quản lý Liên hệ</h1>
+                    <h1 className="text-2xl font-black text-slate-800 tracking-normal">Quản lý Liên hệ</h1>
                     <p className="text-slate-500 font-medium mt-1">Quản lý các yêu cầu tư vấn và tin nhắn từ khách hàng</p>
                 </div>
 
@@ -70,22 +70,22 @@ const AdminContactsPage: React.FC = () => {
                             {loading ? (
                                 <div className="py-20 flex flex-col items-center justify-center">
                                     <div className="size-12 border-4 border-slate-100 border-t-admin-primary rounded-full animate-spin"></div>
-                                    <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải dữ liệu...</p>
+                                    <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải dữ liệu...</p>
                                 </div>
                             ) : inquiries.length === 0 ? (
                                 <div className="py-20 flex flex-col items-center justify-center text-slate-300">
-                                    <span className="material-symbols-outlined text-6xl mb-4">mail</span>
-                                    <p className="font-bold uppercase tracking-widest text-sm">Chưa có liên hệ nào</p>
+                                    <span className="material-symbols-outlined text-5xl mb-4">mail</span>
+                                    <p className="font-bold  tracking-widest text-sm">Chưa có liên hệ nào</p>
                                 </div>
                             ) : (
                                 <div className="overflow-x-auto">
                                     <table className="w-full text-left">
                                         <thead>
                                             <tr className="border-b border-slate-50">
-                                                <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Khách hàng</th>
-                                                <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Trạng thái</th>
-                                                <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest">Thời gian</th>
-                                                <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-widest text-right">Thao tác</th>
+                                                <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Khách hàng</th>
+                                                <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Trạng thái</th>
+                                                <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Thời gian</th>
+                                                <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest text-right">Thao tác</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-50">
@@ -104,7 +104,7 @@ const AdminContactsPage: React.FC = () => {
                                                         </div>
                                                     </td>
                                                     <td className="px-8 py-5">
-                                                        <span className={`px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest ${inquiry.status === 'new' ? 'bg-rose-100 text-rose-600' :
+                                                        <span className={`px-2 py-0.5 rounded-full text-[9px] font-black  tracking-widest ${inquiry.status === 'new' ? 'bg-rose-100 text-rose-600' :
                                                                 inquiry.status === 'read' ? 'bg-blue-100 text-blue-600' :
                                                                     'bg-green-100 text-green-600'
                                                             }`}>
@@ -140,7 +140,7 @@ const AdminContactsPage: React.FC = () => {
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between">
                                         <h3 className="text-xl font-bold text-slate-800">Chi tiết tin nhắn</h3>
-                                        <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${selectedInquiry.status === 'new' ? 'bg-rose-100 text-rose-600' :
+                                        <span className={`px-3 py-1 rounded-full text-[10px] font-black  tracking-widest ${selectedInquiry.status === 'new' ? 'bg-rose-100 text-rose-600' :
                                                 selectedInquiry.status === 'read' ? 'bg-blue-100 text-blue-600' :
                                                     'bg-green-100 text-green-600'
                                             }`}>
@@ -153,20 +153,20 @@ const AdminContactsPage: React.FC = () => {
                                 <div className="space-y-6">
                                     <div className="grid grid-cols-2 gap-4">
                                         <div>
-                                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Họ tên</label>
+                                            <label className="text-[10px] font-bold text-slate-400  tracking-widest block mb-1">Họ tên</label>
                                             <p className="text-sm font-bold text-slate-700">{selectedInquiry.name}</p>
                                         </div>
                                         <div>
-                                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Số điện thoại</label>
+                                            <label className="text-[10px] font-bold text-slate-400  tracking-widest block mb-1">Số điện thoại</label>
                                             <p className="text-sm font-bold text-slate-700 hover:text-admin-primary transition-colors cursor-pointer">{selectedInquiry.phone}</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Email</label>
+                                        <label className="text-[10px] font-bold text-slate-400  tracking-widest block mb-1">Email</label>
                                         <p className="text-sm font-bold text-slate-700">{selectedInquiry.email}</p>
                                     </div>
                                     <div>
-                                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Nội dung / Chủ đề</label>
+                                        <label className="text-[10px] font-bold text-slate-400  tracking-widest block mb-1">Nội dung / Chủ đề</label>
                                         <p className="text-sm font-bold text-slate-800 bg-slate-50 p-4 rounded-2xl italic leading-relaxed">
                                             "{selectedInquiry.message}"
                                         </p>
@@ -203,9 +203,9 @@ const AdminContactsPage: React.FC = () => {
                         ) : (
                             <div className="bg-white rounded-[2rem] border border-slate-100 shadow-sm p-12 flex flex-col items-center justify-center text-slate-300 text-center space-y-4">
                                 <div className="size-20 bg-slate-50 rounded-full flex items-center justify-center">
-                                    <span className="material-symbols-outlined text-4xl">ads_click</span>
+                                    <span className="material-symbols-outlined text-3xl">ads_click</span>
                                 </div>
-                                <p className="text-xs font-bold uppercase tracking-widest max-w-[150px]">Chọn một yêu cầu để xem chi tiết</p>
+                                <p className="text-xs font-bold  tracking-widest max-w-[150px]">Chọn một yêu cầu để xem chi tiết</p>
                             </div>
                         )}
                     </div>

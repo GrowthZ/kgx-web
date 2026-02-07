@@ -46,7 +46,7 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
             <div className="bg-white rounded-3xl shadow-2xl shadow-slate-900/20 max-w-sm w-full p-8 border border-slate-100 scale-100 animate-in fade-in zoom-in duration-300">
                 <div className="flex flex-col items-center text-center">
                     <div className={`size-16 rounded-2xl ${iconClasses[type]} flex items-center justify-center mb-6`}>
-                        <span className="material-symbols-outlined text-3xl">
+                        <span className="material-symbols-outlined text-2xl">
                             {icons[type]}
                         </span>
                     </div>

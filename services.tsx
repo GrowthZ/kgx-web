@@ -31,7 +31,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     'thiet-ke-canh-quan-san-vuon': {
         slug: 'thiet-ke-canh-quan-san-vuon',
         type: 'design',
-        metaTitle: 'Thiết kế cảnh quan sân vườn - KGX Landscape',
+        metaTitle: 'Thiết kế cảnh quan sân vườn - KGX - Không Gian Xanh',
         hero: {
             title: <>THIẾT KẾ <br className="hidden md:block" />CẢNH QUAN SÂN VƯỜN</>,
             subtitle: 'Giải pháp kiến trúc xanh',
@@ -134,7 +134,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     'thiet-ke-vuon-tren-mai': {
         slug: 'thiet-ke-vuon-tren-mai',
         type: 'design',
-        metaTitle: 'Thiết kế vườn trên mái - KGX Landscape',
+        metaTitle: 'Thiết kế vườn trên mái - KGX - Không Gian Xanh',
         hero: {
             title: <>THIẾT KẾ <br className="hidden md:block" />VƯỜN TRÊN MÁI</>,
             subtitle: 'Giải pháp nhà phố',
@@ -269,7 +269,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     'tu-van-giai-phap-xanh': {
         slug: 'tu-van-giai-phap-xanh',
         type: 'construction',
-        metaTitle: 'Tư vấn giải pháp xanh bền vững - KGX Landscape',
+        metaTitle: 'Tư vấn giải pháp xanh bền vững - KGX - Không Gian Xanh',
         hero: {
             title: <>TƯ VẤN <br className="hidden md:block" />GIẢI PHÁP XANH</>,
             subtitle: 'Vấn đề thường gặp',

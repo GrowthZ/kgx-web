@@ -6,10 +6,10 @@ const Process: React.FC = () => {
     <section className="py-20 bg-[#f7f9f5]">
       <div className="container">
         <div className="text-center mb-16">
-          <span className="text-primary font-bold uppercase tracking-widest text-sm">
+          <span className="text-primary font-bold  tracking-widest text-sm">
             Quy trình làm việc
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-olive mt-2">
+          <h2 className="text-2xl md:text-3xl font-black text-olive mt-2">
             6 Bước Triển Khai Chuyên Nghiệp
           </h2>
         </div>

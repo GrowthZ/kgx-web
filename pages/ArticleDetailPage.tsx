@@ -39,7 +39,7 @@ const ArticleDetailPage: React.FC = () => {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-background-light">
                 <div className="size-16 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải bài viết...</p>
+                <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải bài viết...</p>
             </div>
         );
     }
@@ -63,13 +63,13 @@ const ArticleDetailPage: React.FC = () => {
                     <span className="text-gray-400">/</span>
                     <Link className="text-gray-500 hover:text-primary" to="/tin-tuc">Tin tức</Link>
                     <span className="text-gray-400">/</span>
-                    <span className="text-primary uppercase">{article.category}</span>
+                    <span className="text-primary ">{article.category}</span>
                 </nav>
-                <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-8 max-w-4xl text-gray-900 dark:text-white uppercase">
+                <h1 className="text-2xl md:text-4xl font-bold leading-[1.8] mb-8 max-w-4xl text-gray-900 dark:text-white ">
                     {article.title}
                 </h1>
                 <div className="flex flex-wrap items-center gap-4 mb-10">
-                    <div className="flex h-9 items-center rounded-full bg-primary/10 px-4 text-primary text-sm font-semibold uppercase">
+                    <div className="flex h-9 items-center rounded-full bg-primary/10 px-4 text-primary text-sm font-semibold ">
                         {article.category}
                     </div>
                     <div className="flex h-9 items-center rounded-full bg-gray-100 px-4 text-gray-600 text-sm font-medium">
@@ -107,7 +107,7 @@ const ArticleDetailPage: React.FC = () => {
                             {relatedArticles.map((item, idx) => (
                                 <div key={idx}>
                                     <Link className="block group" to={`/tin-tuc/${item.slug}`}>
-                                        <p className="text-sm font-semibold group-hover:text-primary transition-colors line-clamp-2 uppercase">{item.title}</p>
+                                        <p className="text-sm font-semibold group-hover:text-primary transition-colors line-clamp-2 ">{item.title}</p>
                                         <span className="text-xs text-gray-400">
                                             {item.createdAt instanceof Date ? item.createdAt.toLocaleDateString('vi-VN') : new Date(item.createdAt).toLocaleDateString('vi-VN')}
                                         </span>
@@ -131,7 +131,7 @@ const ArticleDetailPage: React.FC = () => {
             {relatedArticles.length > 0 && (
                 <section className="max-w-[1200px] mx-auto px-6 py-20 border-t border-gray-100">
                     <div className="flex items-center justify-between mb-10">
-                        <h2 className="text-3xl font-bold uppercase tracking-tight text-primary">Bài viết liên quan</h2>
+                        <h2 className="text-2xl font-bold  tracking-normal text-primary">Bài viết liên quan</h2>
                         <Link className="text-primary font-bold flex items-center gap-2 hover:underline" to="/tin-tuc">
                             Xem tất cả <span className="material-symbols-outlined">arrow_forward</span>
                         </Link>
@@ -142,7 +142,7 @@ const ArticleDetailPage: React.FC = () => {
                                 <div className="aspect-video rounded-xl overflow-hidden mb-4 shadow-sm border border-gray-100 dark:border-gray-800">
                                     <img alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={post.featuredImage} />
                                 </div>
-                                <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors uppercase line-clamp-2">{post.title}</h3>
+                                <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors  line-clamp-2">{post.title}</h3>
                                 <p className="text-sm text-gray-500 line-clamp-2">{post.excerpt}</p>
                             </Link>
                         ))}

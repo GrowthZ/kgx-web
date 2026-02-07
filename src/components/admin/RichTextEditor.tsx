@@ -58,7 +58,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
         <div className="space-y-4">
             <div className="flex items-center justify-between">
                 {label && (
-                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">
+                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">
                         {label}
                     </label>
                 )}

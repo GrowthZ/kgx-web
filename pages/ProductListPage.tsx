@@ -11,9 +11,9 @@ const ProductListPage: React.FC = () => {
                     <div className="flex flex-col gap-6">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#75c20a]/10 w-fit">
                             <span className="material-symbols-outlined text-[#75c20a] text-sm">verified</span>
-                            <span className="text-[#75c20a] text-xs font-bold uppercase tracking-wide">Giải pháp cây xanh chuyên nghiệp</span>
+                            <span className="text-[#75c20a] text-xs font-bold  tracking-wide">Giải pháp cây xanh chuyên nghiệp</span>
                         </div>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-[#161c0d]">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.8] tracking-normal text-[#161c0d]">
                             Sản phẩm &amp; cây xanh <br />
                             <span className="text-[#75c20a]">phục vụ công trình</span>
                         </h1>
@@ -62,7 +62,7 @@ const ProductListPage: React.FC = () => {
                 <div className="max-w-[1440px] mx-auto px-4 md:px-10">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                         <div className="max-w-2xl">
-                            <h2 className="text-3xl font-bold text-[#161c0d] mb-4">Nguyên tắc tư vấn cây xanh</h2>
+                            <h2 className="text-2xl font-bold text-[#161c0d] mb-4">Nguyên tắc tư vấn cây xanh</h2>
                             <p className="text-gray-600">Tiêu chuẩn lựa chọn khắt khe dựa trên 4 yếu tố cốt lõi để đảm bảo sự bền vững cho công trình.</p>
                         </div>
                         <a className="text-[#75c20a] font-bold flex items-center hover:underline" href="#">
@@ -93,8 +93,8 @@ const ProductListPage: React.FC = () => {
             <section className="py-16 md:py-24 bg-[#f7f8f5]">
                 <div className="max-w-[1440px] mx-auto px-4 md:px-10">
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="text-[#75c20a] font-bold tracking-wider uppercase text-sm">Danh mục sản phẩm</span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#161c0d] mt-3 mb-4">Các nhóm cây &amp; dịch vụ chủ lực</h2>
+                        <span className="text-[#75c20a] font-bold tracking-wider  text-sm">Danh mục sản phẩm</span>
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#161c0d] mt-3 mb-4">Các nhóm cây &amp; dịch vụ chủ lực</h2>
                         <p className="text-gray-600">Đa dạng chủng loại từ cây công trình bóng mát đến cây trang trí nội thất cao cấp.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -128,7 +128,7 @@ const ProductListPage: React.FC = () => {
             <section className="py-16 bg-white">
                 <div className="max-w-[1440px] mx-auto px-4 md:px-10">
                     <div className="mb-12">
-                        <h2 className="text-3xl font-bold text-[#161c0d] mb-3">Ứng dụng thực tế</h2>
+                        <h2 className="text-2xl font-bold text-[#161c0d] mb-3">Ứng dụng thực tế</h2>
                         <p className="text-gray-600">Hình ảnh cây xanh được triển khai tại các công trình tiêu biểu.</p>
                     </div>
                     <div className="flex flex-col gap-12">
@@ -139,7 +139,7 @@ const ProductListPage: React.FC = () => {
                             <div className="lg:w-1/2 w-full flex flex-col justify-center px-4">
                                 <div className="flex items-center gap-2 mb-3">
                                     <div className="h-[2px] w-10 bg-[#75c20a]"></div>
-                                    <span className="text-sm font-bold text-[#75c20a] uppercase">Biệt thự &amp; Resort</span>
+                                    <span className="text-sm font-bold text-[#75c20a] ">Biệt thự &amp; Resort</span>
                                 </div>
                                 <h3 className="text-2xl font-bold text-[#161c0d] mb-4">Nâng tầm không gian nghỉ dưỡng</h3>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -164,7 +164,7 @@ const ProductListPage: React.FC = () => {
                             <div className="lg:w-1/2 w-full flex flex-col justify-center px-4">
                                 <div className="flex items-center gap-2 mb-3">
                                     <div className="h-[2px] w-10 bg-[#75c20a]"></div>
-                                    <span className="text-sm font-bold text-[#75c20a] uppercase">Đô thị &amp; Văn phòng</span>
+                                    <span className="text-sm font-bold text-[#75c20a] ">Đô thị &amp; Văn phòng</span>
                                 </div>
                                 <h3 className="text-2xl font-bold text-[#161c0d] mb-4">Xanh hóa không gian làm việc</h3>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -189,7 +189,7 @@ const ProductListPage: React.FC = () => {
             {/* FAQ Section */}
             <section className="py-16 bg-[#f7f8f5]">
                 <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center text-[#161c0d] mb-10">Câu hỏi thường gặp</h2>
+                    <h2 className="text-2xl font-bold text-center text-[#161c0d] mb-10">Câu hỏi thường gặp</h2>
                     <div className="flex flex-col gap-4">
                         {[
                             { q: 'Tiêu chuẩn chọn cây cho công trình là gì?', a: 'Chúng tôi chọn cây dựa trên: sức khỏe bộ rễ, độ tuổi của cây, sự thích nghi với khí hậu địa phương và hình dáng tán cây đảm bảo tính thẩm mỹ theo thiết kế. Tất cả cây đều được dưỡng tại vườn ươm KGX trước khi xuất vườn.' },
@@ -219,7 +219,7 @@ const ProductListPage: React.FC = () => {
                             {/* Form */}
                             <div className="flex flex-col gap-6">
                                 <div className="mb-2">
-                                    <h2 className="text-3xl font-bold text-[#161c0d]">Đăng ký tư vấn miễn phí</h2>
+                                    <h2 className="text-2xl font-bold text-[#161c0d]">Đăng ký tư vấn miễn phí</h2>
                                     <p className="text-gray-600 mt-2">Để lại thông tin, chuyên gia cây xanh của chúng tôi sẽ liên hệ lại trong vòng 24h.</p>
                                 </div>
                                 <form className="flex flex-col gap-4">

@@ -41,10 +41,10 @@ const ProjectsPage: React.FC = () => {
                         <div className="flex flex-col gap-6">
                             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1">
                                 <span className="material-symbols-outlined text-[18px] text-primary">verified</span>
-                                <span className="text-xs font-bold text-primary uppercase tracking-wide">Đối tác cảnh quan tin cậy</span>
+                                <span className="text-xs font-bold text-primary  tracking-wide">Đối tác cảnh quan tin cậy</span>
                             </div>
-                            <h1 className="text-4xl font-black leading-tight tracking-tight text-text-main sm:text-5xl lg:text-6xl">
-                                Dự án cảnh quan <br /> <span className="text-primary">KGX Landscape</span>
+                            <h1 className="text-3xl font-black leading-[1.8] tracking-normal text-text-main sm:text-4xl lg:text-5xl">
+                                Dự án cảnh quan <br /> <span className="text-primary">KGX - Không Gian Xanh</span>
                             </h1>
                             <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
                                 Chúng tôi mang đến giải pháp thiết kế và thi công cảnh quan thực tế, kiến tạo không gian xanh đẳng cấp cho Biệt thự, Resort và Khu đô thị sinh thái. Nâng tầm giá trị sống bền vững.
@@ -88,7 +88,7 @@ const ProjectsPage: React.FC = () => {
             {/* Filters Section */}
             <section className="container px-4 mx-auto py-8 border-y border-gray-100 bg-white sticky top-20 z-30">
                 <div className="mb-10 text-center">
-                    <h2 className="text-3xl font-black text-text-main mb-3">Lĩnh vực hoạt động</h2>
+                    <h2 className="text-2xl font-black text-text-main mb-3">Lĩnh vực hoạt động</h2>
                     <p className="text-gray-500 max-w-2xl mx-auto">Các loại hình dự án tiêu biểu mà KGX tập trung phát triển với chất lượng cao nhất.</p>
                 </div>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -149,7 +149,7 @@ const ProjectsPage: React.FC = () => {
                     {loading ? (
                         <div className="py-20 flex flex-col items-center justify-center">
                             <div className="size-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                            <p className="text-slate-400 font-bold text-sm mt-4 uppercase tracking-widest">Đang tải dự án...</p>
+                            <p className="text-slate-400 font-bold text-sm mt-4  tracking-widest">Đang tải dự án...</p>
                         </div>
                     ) : (
                         <div className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -157,12 +157,12 @@ const ProjectsPage: React.FC = () => {
                                 <div key={idx} className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#eef4e7]">
                                     <div className="relative aspect-[16/10] w-full overflow-hidden">
                                         <ImageWithFallback isBackground className="h-full w-full transition-transform duration-700 group-hover:scale-110" src={project.image} />
-                                        <div className="absolute top-4 right-4 rounded-full bg-primary px-3 py-1 text-[10px] font-black uppercase tracking-wider text-white shadow-lg backdrop-blur-md">
+                                        <div className="absolute top-4 right-4 rounded-full bg-primary px-3 py-1 text-[10px] font-black  tracking-wider text-white shadow-lg backdrop-blur-md">
                                             {project.status || 'Đã hoàn thiện'}
                                         </div>
                                     </div>
                                     <div className="flex flex-1 flex-col p-6 lg:p-8">
-                                        <h3 className="mb-4 text-xl font-bold leading-tight text-olive group-hover:text-primary transition-colors line-clamp-2 uppercase">{project.title}</h3>
+                                        <h3 className="mb-4 text-xl font-bold leading-[1.8] text-olive group-hover:text-primary transition-colors line-clamp-2 ">{project.title}</h3>
                                         <div className="mb-6 flex flex-col gap-3 border-t border-olive/5 pt-5 text-sm">
                                             <div className="flex items-center gap-3 text-olive-light font-medium">
                                                 <span className="material-symbols-outlined text-[20px] text-primary">location_on</span>
@@ -190,7 +190,7 @@ const ProjectsPage: React.FC = () => {
             <section className="bg-white py-16 lg:py-24">
                 <div className="container">
                     <div className="mb-12 text-center">
-                        <h2 className="text-3xl font-black text-text-main mb-3">Quy trình làm việc</h2>
+                        <h2 className="text-2xl font-black text-text-main mb-3">Quy trình làm việc</h2>
                         <p className="text-gray-500">Quy trình chuyên nghiệp, minh bạch từ ý tưởng đến hiện thực.</p>
                     </div>
                     <div className="relative">
@@ -265,28 +265,28 @@ const ProjectsPage: React.FC = () => {
                     <div className="grid items-center gap-12 lg:grid-cols-2">
                         <div className="order-2 lg:order-1 grid gap-6 sm:grid-cols-2">
                             <div className="rounded-xl bg-white p-6 shadow-sm border border-[#eef4e7]">
-                                <span className="material-symbols-outlined mb-3 text-4xl text-primary">verified_user</span>
+                                <span className="material-symbols-outlined mb-3 text-3xl text-primary">verified_user</span>
                                 <h3 className="mb-2 text-lg font-bold text-text-main">Phương pháp rõ ràng</h3>
                                 <p className="text-sm text-gray-500">Quy trình làm việc minh bạch, giúp khách hàng dễ dàng nắm bắt và giám sát.</p>
                             </div>
                             <div className="rounded-xl bg-white p-6 shadow-sm border border-[#eef4e7]">
-                                <span className="material-symbols-outlined mb-3 text-4xl text-primary">schedule</span>
+                                <span className="material-symbols-outlined mb-3 text-3xl text-primary">schedule</span>
                                 <h3 className="mb-2 text-lg font-bold text-text-main">Tiến độ chủ động</h3>
                                 <p className="text-sm text-gray-500">Cam kết thi công đúng tiến độ, bàn giao công trình đúng hẹn.</p>
                             </div>
                             <div className="rounded-xl bg-white p-6 shadow-sm border border-[#eef4e7]">
-                                <span className="material-symbols-outlined mb-3 text-4xl text-primary">eco</span>
+                                <span className="material-symbols-outlined mb-3 text-3xl text-primary">eco</span>
                                 <h3 className="mb-2 text-lg font-bold text-text-main">Vật liệu chuẩn</h3>
                                 <p className="text-sm text-gray-500">Sử dụng cây xanh và vật liệu chất lượng cao, phù hợp khí hậu địa phương.</p>
                             </div>
                             <div className="rounded-xl bg-white p-6 shadow-sm border border-[#eef4e7]">
-                                <span className="material-symbols-outlined mb-3 text-4xl text-primary">handshake</span>
+                                <span className="material-symbols-outlined mb-3 text-3xl text-primary">handshake</span>
                                 <h3 className="mb-2 text-lg font-bold text-text-main">Đồng hành dài lâu</h3>
                                 <p className="text-sm text-gray-500">Dịch vụ bảo hành, bảo dưỡng tận tâm sau khi bàn giao dự án.</p>
                             </div>
                         </div>
                         <div className="order-1 lg:order-2">
-                            <h2 className="mb-6 text-3xl font-black text-text-main leading-tight">Tại sao chọn <br /> <span className="text-primary">KGX Landscape?</span></h2>
+                            <h2 className="mb-6 text-2xl font-black text-text-main leading-[1.8]">Tại sao chọn <br /> <span className="text-primary">KGX - Không Gian Xanh?</span></h2>
                             <div className="relative h-[400px] w-full overflow-hidden rounded-2xl shadow-xl">
                                 <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6yc2h3MFUC7-L-tnVawdoWOrF2DGOUC_LhbUA8kWakPAgKMfHUpxAgFmzDiIa6R_y8CvBYjOHNjVaMbfNATb8cNFGzKCF_AjODH8Jq-R0osOHp0fudCSmGPyT2elC6JYw8sKjeKu5sJgSFtSjjaqQyTwGFvObuD5WRFy-fTrA3CvswV9SB88YQHCQvz_h1452NZ8oyiJwml6ze2I_Yi3xMoxNsaBFoGuqWEtQ4byfixjrDmNFCZuD2GlfLnj2tfBVjqZBrIUaVa4')" }}></div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -332,7 +332,7 @@ const ProjectsPage: React.FC = () => {
                         {/* Right Info */}
                         <div className="flex flex-col gap-8 pt-4 lg:pl-10">
                             <div>
-                                <h3 className="text-3xl font-black text-text-main mb-6">Liên hệ với KGX</h3>
+                                <h3 className="text-2xl font-black text-text-main mb-6">Liên hệ với KGX</h3>
                                 <p className="text-gray-600 mb-8 leading-relaxed">
                                     Chúng tôi luôn sẵn sàng lắng nghe và đưa ra giải pháp tối ưu nhất cho không gian của bạn. Hãy liên hệ ngay hôm nay để nhận ưu đãi thiết kế.
                                 </p>
