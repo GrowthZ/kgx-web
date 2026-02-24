@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { listStorageFiles, StorageFile, StorageFolder, uploadImage, deleteImage } from '../../lib/firebaseService';
 import toast from 'react-hot-toast';
 import ImageCropper from './ImageCropper';
-import { uploadToCloudinary } from '../../lib/cloudinaryService';
+import { uploadToR2 } from '../../lib/r2Service';
 
 interface MediaManagerProps {
     onSelect?: (url: string) => void;
@@ -74,23 +74,20 @@ const MediaManager: React.FC<MediaManagerProps> = ({
         try {
             setIsUploading(true);
 
-            // Upload to Cloudinary instead of Firebase
-            const url = await uploadToCloudinary(fileBlob);
+            // Upload to Cloudflare R2
+            const url = await uploadToR2(fileBlob);
 
-            toast.success('Upload lên Cloudinary thành công');
+            toast.success('Upload lên R2 thành công');
 
             // If used in selection mode, auto-select the new upload
             if (onSelect) {
                 onSelect(url);
             } else {
-                // If not in selection mode, we might want to refresh, 
-                // but Cloudinary doesn't show up in the Firebase list.
-                // For now, let's just refresh the current path list.
                 loadMedia();
             }
         } catch (error) {
             console.error('Upload error:', error);
-            toast.error('Lỗi khi upload lên Cloudinary');
+            toast.error('Lỗi khi upload lên R2');
         } finally {
             setIsUploading(false);
             setCropSource(null);

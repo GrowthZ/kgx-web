@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
+import logoKgx from '../src/media/logo-kgx.png';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,7 +11,8 @@ const Header: React.FC = () => {
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-[#eef4e7] shadow-sm">
       <div className="container h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src="/src/media/logo-kgx.png" alt="KGX Logo" className="h-10 md:h-12 w-auto object-contain" />
+          <img src={logoKgx} alt="KGX Logo" className="h-10 md:h-12 w-auto object-contain" />
+
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

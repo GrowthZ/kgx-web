@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logoKgx from '../src/media/logo-kgx.png';
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +10,8 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-3 text-white hover:opacity-80 transition-opacity">
-              <img src="/src/media/logo-kgx.png" alt="KGX Logo" className="h-10 w-auto object-contain" />
+              <img src={logoKgx} alt="KGX Logo" className="h-10 w-auto object-contain" />
+
               <h2 className="text-xl font-bold tracking-normal">
                 KGX - Không Gian Xanh
               </h2>
