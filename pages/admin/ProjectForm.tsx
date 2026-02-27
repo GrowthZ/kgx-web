@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AdminLayout from '../../src/components/admin/AdminLayout';
 import { projectsService, Project } from '../../src/services/projectsService';
@@ -6,10 +6,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import toast from 'react-hot-toast';
-import MediaManager from '../../src/components/admin/MediaManager';
-import Modal from '../../src/components/admin/Modal';
 import MultiImageUpload from '../../src/components/admin/MultiImageUpload';
 import RichTextEditor from '../../src/components/admin/RichTextEditor';
+import { ImagePicker } from '../../src/components/admin/ImageUpload';
 
 const schema = yup.object().shape({
     title: yup.string().required('Tên dự án là bắt buộc'),
@@ -26,12 +25,10 @@ const schema = yup.object().shape({
     displayCategory: yup.string().optional(),
 });
 
-const ProjectForm: React.FC = () => {
+const ProjectForm: FC = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
-    const [isMediaModalOpen, setIsMediaModalOpen] = useState(false);
-    const [mediaTarget, setMediaTarget] = useState<'image' | null>(null);
 
     const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
@@ -106,13 +103,6 @@ const ProjectForm: React.FC = () => {
         }
     };
 
-    const handleMediaSelect = (url: string) => {
-        if (mediaTarget === 'image') {
-            setValue('image', url);
-        }
-        setIsMediaModalOpen(false);
-        setMediaTarget(null);
-    };
 
     return (
         <AdminLayout>
@@ -262,29 +252,14 @@ const ProjectForm: React.FC = () => {
                                 Ảnh đại diện
                             </h3>
 
-                            <div
-                                className={`relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-dashed transition-all group cursor-pointer ${watchImage ? 'border-transparent' : 'border-slate-200 hover:border-admin-primary/50'}`}
-                                onClick={() => { setMediaTarget('image'); setIsMediaModalOpen(true); }}
-                            >
-                                {watchImage ? (
-                                    <>
-                                        <img src={watchImage} className="w-full h-full object-cover" alt="Preview" />
-                                        <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-all flex flex-col items-center justify-center backdrop-blur-[2px]">
-                                            <span className="material-symbols-outlined text-white text-3xl mb-2">photo_library</span>
-                                            <span className="text-white text-xs font-bold  tracking-widest">Thay đổi ảnh</span>
-                                        </div>
-                                    </>
-                                ) : (
-                                    <div className="size-full flex flex-col items-center justify-center text-slate-300 gap-3">
-                                        <div className="size-16 bg-slate-50 rounded-2xl flex items-center justify-center shadow-inner">
-                                            <span className="material-symbols-outlined text-3xl">add_photo_alternate</span>
-                                        </div>
-                                        <p className="text-xs font-bold  tracking-widest text-slate-400">Chọn ảnh đại diện</p>
-                                    </div>
-                                )}
-                            </div>
+                            <ImagePicker
+                                value={watchImage || ''}
+                                onChange={(url) => setValue('image', url, { shouldValidate: true })}
+                                label="Chọn ảnh đại diện"
+                                aspect="aspect-[4/3]"
+                            />
                             {errors.image && <p className="text-xs text-rose-500 font-bold text-center mt-2">{errors.image.message}</p>}
-                            <p className="text-[10px] text-slate-400 font-medium text-center italic">Đề xuất tỉ lệ 4:3 hoặc 16:9 cho ảnh đại diện</p>
+                            <p className="text-[10px] text-slate-400 font-medium text-center italic mt-2">Đề xuất tỉ lệ 4:3 hoặc 16:9 cho ảnh đại diện</p>
                         </div>
 
                         {/* Additional Settings */}
@@ -324,12 +299,6 @@ const ProjectForm: React.FC = () => {
                 </div>
             </form>
 
-            <Modal isOpen={isMediaModalOpen} onClose={() => setIsMediaModalOpen(false)}>
-                <MediaManager
-                    onSelect={handleMediaSelect}
-                    onClose={() => setIsMediaModalOpen(false)}
-                />
-            </Modal>
         </AdminLayout>
     );
 };

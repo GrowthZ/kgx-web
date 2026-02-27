@@ -14,14 +14,14 @@ interface CompanySettings {
 
 const DEFAULT: CompanySettings = {
     name: 'CÔNG TY CỔ PHẦN TẬP ĐOÀN MAZTECH', taxId: '4601597927',
-    address: 'Tổ 11, Phường Trung Thành, TP. Thái Nguyên', hotline: '0979.xxx.xxx',
-    email: 'kgxvietnam@gmail.com', website: 'https://kgxvn.vn',
+    address: '12e khu dân cư số 9, phường Gia Sàng, tỉnh Thái Nguyên , Thái Nguyên, Vietnam', hotline: '0868 462 462',
+    email: 'khonggianxanhthainguyen@gmail.com', website: 'https://khonggianxanhthainguyen.vn',
     description: 'Chuyên thiết kế, thi công và cung cấp cây xanh cảnh quan trên toàn quốc.',
     founded: '2018', employees: '50+',
-    facebook: '', youtube: '', tiktok: '', zalo: '', googleMapsEmbed: '',
+    facebook: 'https://www.facebook.com/khonggianxanhthainguyen', youtube: '', tiktok: '', zalo: 'https://zalo.me/0868462462', googleMapsEmbed: '',
     defaultMetaTitle: 'KGX VN – Cây Xanh Cảnh Quan Chuyên Nghiệp',
-    defaultMetaDesc: 'Thiết kế, thi công và cung cấp cây xanh cảnh quan cao cấp tại Việt Nam.',
-    notifyOnContact: true, notifyOnOrder: false, notifyEmail: '',
+    defaultMetaDesc: 'Thiết kế, thi công và cung cấp cây xanh cảnh quan cao cấp tại Thái Nguyên và toàn quốc.',
+    notifyOnContact: true, notifyOnOrder: false, notifyEmail: 'khonggianxanhthainguyen@gmail.com',
 };
 
 const inputCls = 'w-full px-4 py-3 bg-slate-50 rounded-xl text-sm font-medium focus:ring-2 focus:ring-admin-primary/20 outline-none transition-all';

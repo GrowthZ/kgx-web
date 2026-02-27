@@ -1,7 +1,105 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../src/lib/firebase';
+import { contactService } from '../src/services/contactService';
+import toast from 'react-hot-toast';
+
+interface CompanySettings {
+    name: string;
+    address: string;
+    hotline: string;
+    email: string;
+    zalo: string;
+    googleMapsEmbed: string;
+}
 
 const ContactPage: React.FC = () => {
+    // Form State
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [projectType, setProjectType] = useState('Biệt thự sân vườn');
+    const [location, setLocation] = useState('');
+    const [message, setMessage] = useState('');
+    const [services, setServices] = useState<string[]>([]);
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Settings State
+    const [settings, setSettings] = useState<CompanySettings>({
+        name: 'CÔNG TY CP KHÔNG GIAN XANH THÁI NGUYÊN',
+        address: '12e khu dân cư số 9, phường Gia Sàng, tỉnh Thái Nguyên , Thái Nguyên, Vietnam',
+        hotline: '0868 462 462',
+        email: 'khonggianxanhthainguyen@gmail.com',
+        zalo: 'https://zalo.me/0868462462',
+        googleMapsEmbed: ''
+    });
+
+    useEffect(() => {
+        const fetchSettings = async () => {
+            try {
+                const snap = await getDoc(doc(db, 'settings', 'company'));
+                if (snap.exists()) {
+                    setSettings(prev => ({ ...prev, ...snap.data() as CompanySettings }));
+                }
+            } catch (error) {
+                console.error('Error fetching settings:', error);
+            }
+        };
+        fetchSettings();
+    }, []);
+
+    const handleServiceToggle = (service: string) => {
+        setServices(prev =>
+            prev.includes(service) ? prev.filter(s => s !== service) : [...prev, service]
+        );
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (!name.trim() || !phone.trim()) {
+            toast.error('Vui lòng điền Họ tên và Số điện thoại!');
+            return;
+        }
+
+        setIsSubmitting(true);
+        try {
+            const finalMessage = `
+**Loại công trình:** ${projectType}
+**Khu vực:** ${location || 'Không xác định'}
+**Nhu cầu dịch vụ:** ${services.length > 0 ? services.join(', ') : 'Chưa chọn'}
+**Lời nhắn chi tiết:**
+${message}
+            `.trim();
+
+            await contactService.submitContactForm({
+                name: name.trim(),
+                phone: phone.trim(),
+                email: email.trim(),
+                message: finalMessage,
+                subject: `[Web] Yêu cầu tư vấn - ${projectType}`
+            });
+
+            toast.success('Gửi yêu cầu thành công, chúng tôi sẽ liên hệ lại sớm nhất!');
+
+            // Reset form
+            setName('');
+            setPhone('');
+            setEmail('');
+            setLocation('');
+            setMessage('');
+            setServices([]);
+
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            toast.error('Có lỗi xảy ra, vui lòng thử lại sau!');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <div className="bg-[#f8f8f6] text-[#181b0d] flex flex-col min-h-screen overflow-x-hidden transition-colors duration-300">
             <main className="flex-grow">
@@ -16,7 +114,7 @@ const ContactPage: React.FC = () => {
                                 <div className="space-y-4">
                                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#a4d411]/20 rounded-full w-fit">
                                         <span className="size-2 rounded-full bg-[#a4d411] animate-pulse"></span>
-                                        <span className="text-[#a4d411] text-xs font-bold  tracking-wider">Tư vấn miễn phí</span>
+                                        <span className="text-[#a4d411] text-xs font-bold tracking-wider">Tư vấn miễn phí</span>
                                     </div>
                                     <h1 className="text-white text-3xl lg:text-4xl font-black leading-[1.8] tracking-normal">
                                         LIÊN HỆ & NHẬN <br />
@@ -89,31 +187,31 @@ const ContactPage: React.FC = () => {
                                         <h2 className="text-2xl md:text-2xl font-bold text-[#1d2210] mb-2">Gửi thông tin dự án</h2>
                                         <p className="text-gray-600">Hãy để lại thông tin, đội ngũ kỹ sư của KGX sẽ liên hệ tư vấn trong vòng 30 phút.</p>
                                     </div>
-                                    <form action="#" className="space-y-6">
+                                    <form onSubmit={handleSubmit} className="space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div className="space-y-2">
                                                 <label className="text-sm font-semibold text-gray-700" htmlFor="name">Họ và tên *</label>
-                                                <input className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none" id="name" placeholder="Nguyễn Văn A" type="text" />
+                                                <input required value={name} onChange={e => setName(e.target.value)} className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none border" id="name" placeholder="Nguyễn Văn A" type="text" />
                                             </div>
                                             <div className="space-y-2">
                                                 <label className="text-sm font-semibold text-gray-700" htmlFor="phone">Số điện thoại *</label>
-                                                <input className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none" id="phone" placeholder="0912 xxx xxx" type="tel" />
+                                                <input required value={phone} onChange={e => setPhone(e.target.value)} className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none border" id="phone" placeholder="0912 xxx xxx" type="tel" />
                                             </div>
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-sm font-semibold text-gray-700" htmlFor="email">Email</label>
-                                            <input className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none" id="email" placeholder="example@gmail.com" type="email" />
+                                            <input value={email} onChange={e => setEmail(e.target.value)} className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none border" id="email" placeholder="example@gmail.com" type="email" />
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div className="space-y-2">
                                                 <label className="text-sm font-semibold text-gray-700" htmlFor="project-type">Loại công trình</label>
                                                 <div className="relative">
-                                                    <select className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none appearance-none cursor-pointer" id="project-type">
-                                                        <option>Biệt thự sân vườn</option>
-                                                        <option>Khu nghỉ dưỡng (Resort)</option>
-                                                        <option>Quán Cafe / Nhà hàng</option>
-                                                        <option>Công trình công cộng</option>
-                                                        <option>Khác</option>
+                                                    <select value={projectType} onChange={e => setProjectType(e.target.value)} className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none appearance-none cursor-pointer border" id="project-type">
+                                                        <option value="Biệt thự sân vườn">Biệt thự sân vườn</option>
+                                                        <option value="Khu nghỉ dưỡng (Resort)">Khu nghỉ dưỡng (Resort)</option>
+                                                        <option value="Quán Cafe / Nhà hàng">Quán Cafe / Nhà hàng</option>
+                                                        <option value="Công trình công cộng">Công trình công cộng</option>
+                                                        <option value="Khác">Khác</option>
                                                     </select>
                                                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                                                         <span className="material-symbols-outlined">expand_more</span>
@@ -122,37 +220,37 @@ const ContactPage: React.FC = () => {
                                             </div>
                                             <div className="space-y-2">
                                                 <label className="text-sm font-semibold text-gray-700" htmlFor="location">Khu vực</label>
-                                                <input className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none" id="location" placeholder="Ví dụ: Thái Nguyên, Hà Nội..." type="text" />
+                                                <input value={location} onChange={e => setLocation(e.target.value)} className="w-full h-12 px-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none border" id="location" placeholder="Ví dụ: Thái Nguyên, Hà Nội..." type="text" />
                                             </div>
                                         </div>
                                         <div className="space-y-3">
                                             <label className="text-sm font-semibold text-gray-700">Nhu cầu dịch vụ</label>
                                             <div className="flex flex-wrap gap-4">
-                                                <label className="inline-flex items-center gap-2 cursor-pointer group">
-                                                    <input className="w-5 h-5 rounded border-gray-300 text-[#a4d411] focus:ring-[#a4d411]/20 transition-all" type="checkbox" />
-                                                    <span className="text-sm text-gray-600 group-hover:text-[#a4d411] transition-colors">Thiết kế cảnh quan</span>
-                                                </label>
-                                                <label className="inline-flex items-center gap-2 cursor-pointer group">
-                                                    <input className="w-5 h-5 rounded border-gray-300 text-[#a4d411] focus:ring-[#a4d411]/20 transition-all" type="checkbox" />
-                                                    <span className="text-sm text-gray-600 group-hover:text-[#a4d411] transition-colors">Thi công trọn gói</span>
-                                                </label>
-                                                <label className="inline-flex items-center gap-2 cursor-pointer group">
-                                                    <input className="w-5 h-5 rounded border-gray-300 text-[#a4d411] focus:ring-[#a4d411]/20 transition-all" type="checkbox" />
-                                                    <span className="text-sm text-gray-600 group-hover:text-[#a4d411] transition-colors">Bảo dưỡng định kỳ</span>
-                                                </label>
-                                                <label className="inline-flex items-center gap-2 cursor-pointer group">
-                                                    <input className="w-5 h-5 rounded border-gray-300 text-[#a4d411] focus:ring-[#a4d411]/20 transition-all" type="checkbox" />
-                                                    <span className="text-sm text-gray-600 group-hover:text-[#a4d411] transition-colors">Cung cấp vật tư</span>
-                                                </label>
+                                                {[
+                                                    'Thiết kế cảnh quan',
+                                                    'Thi công trọn gói',
+                                                    'Bảo dưỡng định kỳ',
+                                                    'Cung cấp vật tư'
+                                                ].map(svc => (
+                                                    <label key={svc} className="inline-flex items-center gap-2 cursor-pointer group">
+                                                        <input
+                                                            checked={services.includes(svc)}
+                                                            onChange={() => handleServiceToggle(svc)}
+                                                            className="w-5 h-5 rounded border-gray-300 text-[#a4d411] focus:ring-[#a4d411]/20 transition-all"
+                                                            type="checkbox"
+                                                        />
+                                                        <span className="text-sm text-gray-600 group-hover:text-[#a4d411] transition-colors">{svc}</span>
+                                                    </label>
+                                                ))}
                                             </div>
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-sm font-semibold text-gray-700" htmlFor="message">Lời nhắn chi tiết</label>
-                                            <textarea className="w-full p-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none resize-none" id="message" placeholder="Mô tả sơ bộ về ý tưởng, diện tích hoặc ngân sách dự kiến..." rows={4}></textarea>
+                                            <textarea value={message} onChange={e => setMessage(e.target.value)} className="w-full p-4 rounded-lg border-gray-200 bg-gray-50 focus:border-[#a4d411] focus:ring-[#a4d411]/20 transition-all text-sm outline-none resize-none border" id="message" placeholder="Mô tả sơ bộ về ý tưởng, diện tích hoặc ngân sách dự kiến..." rows={4}></textarea>
                                         </div>
-                                        <button className="w-full h-14 bg-[#a4d411] hover:bg-[#8cb60e] text-[#1d2210] font-bold text-base rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2" type="button">
-                                            <span>Gửi yêu cầu tư vấn</span>
-                                            <span className="material-symbols-outlined">send</span>
+                                        <button disabled={isSubmitting} className="w-full h-14 bg-[#a4d411] hover:bg-[#8cb60e] text-[#1d2210] font-bold text-base rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-50" type="submit">
+                                            <span>{isSubmitting ? 'Đang gửi...' : 'Gửi yêu cầu tư vấn'}</span>
+                                            {!isSubmitting && <span className="material-symbols-outlined">send</span>}
                                         </button>
                                         <p className="text-xs text-center text-gray-500">Chúng tôi cam kết bảo mật thông tin cá nhân của bạn.</p>
                                     </form>
@@ -170,9 +268,9 @@ const ContactPage: React.FC = () => {
                                                 <span className="material-symbols-outlined">location_on</span>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-semibold text-gray-500  mb-1">Trụ sở chính</p>
+                                                <p className="text-sm font-semibold text-gray-500 mb-1">Trụ sở chính</p>
                                                 <p className="text-base text-[#1d2210] font-medium leading-relaxed">
-                                                    Số 123, Đường Lương Ngọc Quyến, TP. Thái Nguyên, Tỉnh Thái Nguyên
+                                                    {settings.address}
                                                 </p>
                                             </div>
                                         </div>
@@ -182,9 +280,9 @@ const ContactPage: React.FC = () => {
                                                 <span className="material-symbols-outlined">mail</span>
                                             </div>
                                             <div>
-                                                <p className="text-sm font-semibold text-gray-500  mb-1">Email hỗ trợ</p>
-                                                <a className="text-base text-[#1d2210] font-medium hover:text-[#a4d411] transition-colors" href="mailto:contact@kgx.vn">
-                                                    contact@kgx.vn
+                                                <p className="text-sm font-semibold text-gray-500 mb-1">Email hỗ trợ</p>
+                                                <a className="text-base text-[#1d2210] font-medium hover:text-[#a4d411] transition-colors" href={`mailto:${settings.email}`}>
+                                                    {settings.email}
                                                 </a>
                                             </div>
                                         </div>
@@ -203,12 +301,12 @@ const ContactPage: React.FC = () => {
                                     </div>
                                     <hr className="my-6 border-gray-100" />
                                     <div className="grid grid-cols-2 gap-3">
-                                        <a className="flex flex-col items-center justify-center p-4 rounded-xl bg-orange-50 border border-orange-100 hover:bg-orange-100 transition-colors group" href="tel:0868462462">
+                                        <a className="flex flex-col items-center justify-center p-4 rounded-xl bg-orange-50 border border-orange-100 hover:bg-orange-100 transition-colors group" href={`tel:${settings.hotline.replace(/\s+/g, '')}`}>
                                             <span className="material-symbols-outlined text-[#f59e0b] text-2xl mb-1 group-hover:scale-110 transition-transform">call</span>
                                             <span className="text-xs font-semibold text-orange-800 ">Gọi ngay</span>
-                                            <span className="text-sm font-bold text-[#f59e0b]">0868 462 462</span>
+                                            <span className="text-sm font-bold text-[#f59e0b]">{settings.hotline}</span>
                                         </a>
-                                        <a className="flex flex-col items-center justify-center p-4 rounded-xl bg-blue-50 border border-blue-100 hover:bg-blue-100 transition-colors group" href="#">
+                                        <a className="flex flex-col items-center justify-center p-4 rounded-xl bg-blue-50 border border-blue-100 hover:bg-blue-100 transition-colors group" href={settings.zalo} target="_blank" rel="noopener noreferrer">
                                             <span className="material-symbols-outlined text-blue-600 text-2xl mb-1 group-hover:scale-110 transition-transform">chat</span>
                                             <span className="text-xs font-semibold text-blue-800 ">Chat Zalo</span>
                                             <span className="text-sm font-bold text-blue-600">KGX Connect</span>
@@ -220,19 +318,19 @@ const ContactPage: React.FC = () => {
                                     <div className="absolute top-0 right-0 p-8 opacity-10">
                                         <span className="material-symbols-outlined text-9xl">verified_user</span>
                                     </div>
-                                    <h3 className="text-lg font-bold mb-4 relative z-10">Tại sao chọn KGX?</h3>
+                                    <h3 className="text-lg font-bold mb-4 relative z-10">Tại sao chọn {settings.name}?</h3>
                                     <ul className="space-y-4 relative z-10">
                                         <li className="flex items-start gap-3">
                                             <span className="material-symbols-outlined text-[#a4d411] mt-0.5">star</span>
-                                            <span className="text-sm text-gray-200">Top 10 đơn vị thi công cảnh quan uy tín miền Bắc.</span>
+                                            <span className="text-sm text-gray-200">Top đơn vị thi công cảnh quan uy tín.</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="material-symbols-outlined text-[#a4d411] mt-0.5">engineering</span>
-                                            <span className="text-sm text-gray-200">Đội ngũ kỹ sư & nghệ nhân {'>'} 5 năm kinh nghiệm.</span>
+                                            <span className="text-sm text-gray-200">Đội ngũ kỹ sư & nghệ nhân kinh nghiệm.</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <span className="material-symbols-outlined text-[#a4d411] mt-0.5">inventory_2</span>
-                                            <span className="text-sm text-gray-200">Sở hữu vườn ươm 5000m² tại Thái Nguyên.</span>
+                                            <span className="text-sm text-gray-200">Cam kết chất lượng và bảo hành chuyên nghiệp.</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -243,22 +341,39 @@ const ContactPage: React.FC = () => {
 
                 {/* Map Section */}
                 <section className="relative h-[400px] bg-gray-100 group">
-                    <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAw8SasX9gVvVGgET9Ue9oONNT4OOJgBfIw560lb_QnUCUJST2d7bRf7gYdYy-Kgvj0w4-SW89wf9zTayxJ40TzOEPPsp_3DhQ1FH_6jPwpeSPWOLyFeswiKm9Qrh6Af3Tp_SEJ2KVaqMZwNRlLPCOGWLC98YwwL4Zd14PiJWnhlyhJVf6QExKLXW_bT77iGiEaI6vUxlW-xjusN2oEuxjEUIWa9VbonIBlScjkg4OMduXksmkL-zldtKPh7jGh3VYUQrJKW0DaI44')" }}>
-                        <div className="absolute inset-0 bg-black/10"></div>
-                    </div>
-                    {/* Map Overlay Card */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm px-4">
-                        <div className="bg-white p-6 rounded-2xl shadow-2xl text-center transform transition-transform hover:scale-105 duration-300">
-                            <div className="size-16 bg-[#a4d411]/20 rounded-full flex items-center justify-center mx-auto mb-4 text-[#a4d411]">
-                                <span className="material-symbols-outlined text-2xl">map</span>
-                            </div>
-                            <h3 className="text-xl font-bold text-[#1d2210] mb-2">Phục vụ toàn quốc</h3>
-                            <p className="text-gray-500 text-sm mb-4">
-                                Dù trụ sở tại Thái Nguyên, KGX sẵn sàng thực hiện các dự án quy mô lớn trên khắp 63 tỉnh thành.
-                            </p>
-                            <button className="text-[#a4d411] font-bold text-sm hover:underline">Xem chỉ đường trên Google Maps</button>
+                    {settings.googleMapsEmbed ? (
+                        <div className="absolute inset-0">
+                            <iframe
+                                src={settings.googleMapsEmbed}
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="filter grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                            ></iframe>
                         </div>
-                    </div>
+                    ) : (
+                        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAw8SasX9gVvVGgET9Ue9oONNT4OOJgBfIw560lb_QnUCUJST2d7bRf7gYdYy-Kgvj0w4-SW89wf9zTayxJ40TzOEPPsp_3DhQ1FH_6jPwpeSPWOLyFeswiKm9Qrh6Af3Tp_SEJ2KVaqMZwNRlLPCOGWLC98YwwL4Zd14PiJWnhlyhJVf6QExKLXW_bT77iGiEaI6vUxlW-xjusN2oEuxjEUIWa9VbonIBlScjkg4OMduXksmkL-zldtKPh7jGh3VYUQrJKW0DaI44')" }}>
+                            <div className="absolute inset-0 bg-black/10"></div>
+                        </div>
+                    )}
+
+                    {/* Map Overlay Card (Only show if no map is provided, or as a small subtle overlay) */}
+                    {!settings.googleMapsEmbed && (
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm px-4">
+                            <div className="bg-white p-6 rounded-2xl shadow-2xl text-center transform transition-transform hover:scale-105 duration-300">
+                                <div className="size-16 bg-[#a4d411]/20 rounded-full flex items-center justify-center mx-auto mb-4 text-[#a4d411]">
+                                    <span className="material-symbols-outlined text-2xl">map</span>
+                                </div>
+                                <h3 className="text-xl font-bold text-[#1d2210] mb-2">Phục vụ toàn quốc</h3>
+                                <p className="text-gray-500 text-sm mb-4">
+                                    Sẵn sàng thực hiện các dự án quy mô lớn trên khắp 63 tỉnh thành.
+                                </p>
+                            </div>
+                        </div>
+                    )}
                 </section>
 
                 {/* FAQ Section */}
@@ -271,7 +386,7 @@ const ContactPage: React.FC = () => {
                         <div className="space-y-4">
                             {/* FAQ Item 1 */}
                             <details className="group bg-[#f8f8f6] rounded-xl overflow-hidden transition-all duration-300 open:bg-white open:shadow-md border border-transparent open:border-gray-100">
-                                <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
+                                <summary className="flex items-center justify-between p-5 cursor-pointer list-none outline-none">
                                     <span className="font-bold text-[#1d2210] group-open:text-[#a4d411]">Bao lâu thì tôi nhận được báo giá?</span>
                                     <span className="material-symbols-outlined text-gray-400 transition-transform group-open:rotate-180 group-open:text-[#a4d411]">expand_more</span>
                                 </summary>
@@ -281,7 +396,7 @@ const ContactPage: React.FC = () => {
                             </details>
                             {/* FAQ Item 2 */}
                             <details className="group bg-[#f8f8f6] rounded-xl overflow-hidden transition-all duration-300 open:bg-white open:shadow-md border border-transparent open:border-gray-100">
-                                <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
+                                <summary className="flex items-center justify-between p-5 cursor-pointer list-none outline-none">
                                     <span className="font-bold text-[#1d2210] group-open:text-[#a4d411]">KGX có hỗ trợ khảo sát tận nơi không?</span>
                                     <span className="material-symbols-outlined text-gray-400 transition-transform group-open:rotate-180 group-open:text-[#a4d411]">expand_more</span>
                                 </summary>
@@ -291,7 +406,7 @@ const ContactPage: React.FC = () => {
                             </details>
                             {/* FAQ Item 3 */}
                             <details className="group bg-[#f8f8f6] rounded-xl overflow-hidden transition-all duration-300 open:bg-white open:shadow-md border border-transparent open:border-gray-100">
-                                <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
+                                <summary className="flex items-center justify-between p-5 cursor-pointer list-none outline-none">
                                     <span className="font-bold text-[#1d2210] group-open:text-[#a4d411]">Quy trình bảo hành cây xanh như thế nào?</span>
                                     <span className="material-symbols-outlined text-gray-400 transition-transform group-open:rotate-180 group-open:text-[#a4d411]">expand_more</span>
                                 </summary>
@@ -301,7 +416,7 @@ const ContactPage: React.FC = () => {
                             </details>
                             {/* FAQ Item 4 */}
                             <details className="group bg-[#f8f8f6] rounded-xl overflow-hidden transition-all duration-300 open:bg-white open:shadow-md border border-transparent open:border-gray-100">
-                                <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
+                                <summary className="flex items-center justify-between p-5 cursor-pointer list-none outline-none">
                                     <span className="font-bold text-[#1d2210] group-open:text-[#a4d411]">Chi phí thiết kế được tính ra sao?</span>
                                     <span className="material-symbols-outlined text-gray-400 transition-transform group-open:rotate-180 group-open:text-[#a4d411]">expand_more</span>
                                 </summary>
@@ -322,7 +437,7 @@ const ContactPage: React.FC = () => {
                         <h2 className="text-2xl md:text-3xl font-black text-white mb-6 tracking-normal">Kiến tạo không gian sống mơ ước</h2>
                         <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-lg">Đừng ngần ngại chia sẻ ý tưởng của bạn. Chúng tôi ở đây để hiện thực hóa nó thành những khu vườn tuyệt tác.</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <button className="w-full sm:w-auto px-8 h-14 bg-[#a4d411] hover:bg-[#8cb60e] text-[#1d2210] font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(164,212,17,0.3)] hover:shadow-[0_0_30px_rgba(164,212,17,0.5)]">
+                            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="w-full sm:w-auto px-8 h-14 bg-[#a4d411] hover:bg-[#8cb60e] text-[#1d2210] font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(164,212,17,0.3)] hover:shadow-[0_0_30px_rgba(164,212,17,0.5)]">
                                 Đăng ký tư vấn ngay
                             </button>
                             <Link to="/du-an" className="w-full sm:w-auto px-8 h-14 bg-transparent border-2 border-white/20 hover:border-white text-white font-bold rounded-xl transition-all hover:bg-white/5 flex items-center justify-center">

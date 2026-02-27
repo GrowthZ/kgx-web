@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { productsService, Product } from '../src/services/productsService';
 import ImageWithFallback from '../components/ImageWithFallback';
@@ -101,70 +101,31 @@ const ProductListingPage: React.FC = () => {
 
                 {/* Section 2: CTA & Lead Gen */}
                 <section className="w-full bg-[#f2f3f0] py-16 mt-auto border-t border-[#dee0d7]">
-                    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            {/* Left: Text & Actions */}
-                            <div className="flex flex-col gap-8">
-                                <div className="flex flex-col gap-4">
-                                    <span className="text-accent font-bold tracking-wider text-sm ">Tư vấn chuyên sâu</span>
-                                    <h2 className="text-primary text-2xl md:text-3xl font-black leading-[1.8]">
-                                        Bạn cần tư vấn chọn cây phù hợp cho công trình?
-                                    </h2>
-                                    <p className="text-[#4e5440] text-lg leading-relaxed max-w-lg">
-                                        Đội ngũ kỹ sư KGX sẽ hỗ trợ khảo sát thực tế, phân tích thổ nhưỡng và đề xuất phương án cây xanh tối ưu nhất cho ngân sách của bạn.
-                                    </p>
-                                </div>
-                                <div className="flex flex-col sm:flex-row gap-4">
-                                    <button className="h-12 px-6 rounded-lg bg-accent hover:bg-accent-hover text-white font-bold text-base transition-colors shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2">
-                                        <span>Nhận tư vấn chọn cây</span>
-                                        <span className="material-symbols-outlined">arrow_forward</span>
-                                    </button>
-                                    <button className="h-12 px-6 rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold text-base transition-colors flex items-center justify-center gap-2">
-                                        <span className="material-symbols-outlined">call</span>
-                                        <span>Gọi 0868 462 462</span>
-                                    </button>
-                                </div>
-                                <div className="flex items-center gap-4 text-sm text-[#7a8165]">
-                                    <div className="flex -space-x-2">
-                                        <ImageWithFallback src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-                                        <ImageWithFallback src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-                                        <ImageWithFallback src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-                                    </div>
-                                    <p>Hơn 500+ khách hàng đã tin tưởng</p>
-                                </div>
+                    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+                        <span className="text-accent font-bold tracking-wider text-sm mb-4">Tư vấn chuyên sâu</span>
+                        <h2 className="text-primary text-2xl md:text-3xl font-black leading-[1.8] mb-4">
+                            Bạn cần tư vấn chọn cây phù hợp cho công trình?
+                        </h2>
+                        <p className="text-[#4e5440] text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+                            Đội ngũ kỹ sư KGX sẽ hỗ trợ khảo sát thực tế, phân tích thổ nhưỡng và đề xuất phương án cây xanh tối ưu nhất cho ngân sách của bạn.
+                        </p>
+                        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                            <Link to="/lien-he" className="h-12 px-8 rounded-lg bg-accent hover:bg-accent-hover text-white font-bold text-base transition-colors shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                                <span>Nhận tư vấn chọn cây ngay</span>
+                                <span className="material-symbols-outlined">arrow_forward</span>
+                            </Link>
+                            <a href="tel:0868462462" className="h-12 px-8 rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold text-base transition-colors flex items-center justify-center gap-2">
+                                <span className="material-symbols-outlined">call</span>
+                                <span>Gọi 0868 462 462</span>
+                            </a>
+                        </div>
+                        <div className="flex items-center justify-center gap-4 text-sm text-[#7a8165]">
+                            <div className="flex -space-x-2">
+                                <ImageWithFallback src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                                <ImageWithFallback src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                                <ImageWithFallback src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
                             </div>
-                            {/* Right: Quick Form */}
-                            <div className="bg-white p-8 rounded-xl shadow-lg border border-[#dee0d7]">
-                                <div className="flex flex-col gap-6">
-                                    <h3 className="text-xl font-bold text-primary">Gửi yêu cầu nhanh</h3>
-                                    <div className="flex flex-col gap-4">
-                                        <label className="flex flex-col gap-1.5">
-                                            <span className="text-[#161712] text-sm font-semibold">Họ và tên</span>
-                                            <input className="h-12 px-4 rounded-lg bg-[#fafbf9] border-[#dee0d7] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400" placeholder="Nhập họ tên của bạn" type="text" />
-                                        </label>
-                                        <label className="flex flex-col gap-1.5">
-                                            <span className="text-[#161712] text-sm font-semibold">Số điện thoại</span>
-                                            <input className="h-12 px-4 rounded-lg bg-[#fafbf9] border-[#dee0d7] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400" placeholder="Ví dụ: 0912 345 678" type="tel" />
-                                        </label>
-                                        <label className="flex flex-col gap-1.5">
-                                            <span className="text-[#161712] text-sm font-semibold">Loại công trình (Tùy chọn)</span>
-                                            <select className="h-12 px-4 rounded-lg bg-[#fafbf9] border-[#dee0d7] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-[#161712]">
-                                                <option disabled selected value="">Chọn loại công trình</option>
-                                                <option value="biet-thu">Sân vườn Biệt thự</option>
-                                                <option value="khu-do-thi">Khu đô thị / Resort</option>
-                                                <option value="nha-may">Nhà máy / KCN</option>
-                                                <option value="khac">Khác</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <button className="mt-2 h-12 w-full rounded-lg bg-accent hover:bg-accent-hover text-white font-bold text-base transition-colors shadow-md">
-                                        GỬI YÊU CẦU NGAY
-                                    </button>
-                                    <p className="text-xs text-center text-[#7a8165]">
-                                        Chúng tôi cam kết bảo mật thông tin của bạn.
-                                    </p>
-                                </div>
-                            </div>
+                            <p>Hơn 500+ khách hàng đã tin tưởng</p>
                         </div>
                     </div>
                 </section>

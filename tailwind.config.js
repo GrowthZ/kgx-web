@@ -46,11 +46,16 @@ export default {
             },
             animation: {
                 fadeIn: "fadeIn 0.3s ease-in-out",
+                wiggle: 'wiggle 1s ease-in-out infinite',
             },
             keyframes: {
                 fadeIn: {
                     "0%": { opacity: "0", transform: "translateY(-10px)" },
                     "100%": { opacity: "1", transform: "translateY(0)" },
+                },
+                wiggle: {
+                    '0%, 100%': { transform: 'rotate(-10deg)' },
+                    '50%': { transform: 'rotate(10deg)' },
                 },
             },
         },

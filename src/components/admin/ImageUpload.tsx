@@ -1,108 +1,72 @@
-import React, { useState } from 'react';
+import { useRef, useState } from 'react';
+import toast from 'react-hot-toast';
+import ImageCropper from './ImageCropper';
+import { uploadToR2 } from '../../lib/r2Service';
 
-interface ImageUploadProps {
-    onImageSelected: (file: File) => void;
-    currentImage?: string;
-    label?: string;
-    aspectRatio?: string;
-}
+export const useImageUpload = (onDone: (url: string) => void) => {
+    const inputRef = useRef<HTMLInputElement>(null);
+    const [cropSrc, setCropSrc] = useState<string | null>(null);
+    const [uploading, setUploading] = useState(false);
 
-const ImageUpload: React.FC<ImageUploadProps> = ({
-    onImageSelected,
-    currentImage,
-    label = 'Hình ảnh',
-    aspectRatio = 'aspect-video',
-}) => {
-    const [preview, setPreview] = useState<string | null>(currentImage || null);
-    const [isDragging, setIsDragging] = useState(false);
-
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const pick = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
-        if (file) {
-            processFile(file);
-        }
-    };
-
-    const handleDrop = (e: React.DragEvent) => {
-        e.preventDefault();
-        setIsDragging(false);
-
-        const file = e.dataTransfer.files?.[0];
-        if (file && file.type.startsWith('image/')) {
-            processFile(file);
-        }
-    };
-
-    const processFile = (file: File) => {
+        if (!file) return;
         const reader = new FileReader();
-        reader.onloadend = () => {
-            setPreview(reader.result as string);
-        };
+        reader.onload = (ev) => setCropSrc(ev.target?.result as string);
         reader.readAsDataURL(file);
-        onImageSelected(file);
+        e.target.value = '';
     };
 
-    const handleDragOver = (e: React.DragEvent) => {
-        e.preventDefault();
-        setIsDragging(true);
+    const crop = async (blob: Blob) => {
+        try {
+            setUploading(true);
+            const url = await uploadToR2(blob);
+            onDone(url);
+            toast.success('Tải ảnh lên thành công');
+        } catch {
+            toast.error('Lỗi khi upload ảnh');
+        } finally {
+            setUploading(false);
+            setCropSrc(null);
+        }
     };
 
-    const handleDragLeave = () => {
-        setIsDragging(false);
-    };
-
-    return (
-        <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">
-                {label}
-            </label>
-
-            <div
-                onDrop={handleDrop}
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                className={`relative ${aspectRatio} w-full border-2 border-dashed rounded-3xl overflow-hidden transition-all duration-300 group ${isDragging
-                    ? 'border-admin-primary bg-admin-primary/5'
-                    : 'border-slate-200 hover:border-admin-primary/50 bg-slate-50/50'
-                    }`}
-            >
-                {preview ? (
-                    <div className="relative w-full h-full">
-                        <img
-                            src={preview}
-                            alt="Preview"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center backdrop-blur-[2px]">
-                            <label className="cursor-pointer bg-white text-slate-800 px-6 py-2.5 rounded-2xl font-bold text-sm shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                Thay đổi ảnh
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={handleFileChange}
-                                    className="hidden"
-                                />
-                            </label>
-                        </div>
-                    </div>
-                ) : (
-                    <label className="flex flex-col items-center justify-center w-full h-full cursor-pointer p-8">
-                        <div className="size-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-4 group-hover:bg-admin-primary group-hover:text-white transition-all duration-300">
-                            <span className="material-symbols-outlined text-2xl">cloud_upload</span>
-                        </div>
-                        <span className="text-sm font-bold text-slate-700 mb-1">Kéo thả hình ảnh hoặc click</span>
-                        <span className="text-[10px] font-bold text-slate-400  tracking-widest">PNG, JPG, WEBP (tối đa 5MB)</span>
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onChange={handleFileChange}
-                            className="hidden"
-                        />
-                    </label>
-                )}
-            </div>
-        </div>
-    );
+    return { inputRef, cropSrc, setCropSrc, uploading, pick, crop };
 };
 
-export default ImageUpload;
+export const ImagePicker = ({ value, onChange, label, aspect }: { value: string; onChange: (url: string) => void; label: string; aspect?: string }) => {
+    const { inputRef, cropSrc, setCropSrc, uploading, pick, crop } = useImageUpload(onChange);
+
+    return (
+        <>
+            <input ref={inputRef} type="file" accept="image/*" className="hidden" onChange={pick} />
+            <div
+                className={`relative rounded-2xl overflow-hidden border-2 border-dashed transition-all group cursor-pointer ${value ? 'border-transparent' : 'border-slate-200 hover:border-admin-primary/50'} ${uploading ? 'opacity-60 pointer-events-none' : ''} ${aspect || 'aspect-[4/3]'}`}
+                onClick={() => inputRef.current?.click()}
+            >
+                {uploading && (
+                    <div className="absolute inset-0 bg-white/80 flex items-center justify-center z-10">
+                        <div className="size-8 border-2 border-admin-primary/30 border-t-admin-primary rounded-full animate-spin" />
+                    </div>
+                )}
+                {value ? (
+                    <>
+                        <img src={value} className="w-full h-full object-cover" alt={label} />
+                        <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-all flex flex-col items-center justify-center">
+                            <span className="material-symbols-outlined text-white text-2xl mb-1">add_photo_alternate</span>
+                            <span className="text-white text-[10px] font-bold tracking-widest">Thay đổi ảnh</span>
+                        </div>
+                    </>
+                ) : (
+                    <div className="size-full flex flex-col items-center justify-center text-slate-300 gap-2">
+                        <span className="material-symbols-outlined text-3xl">add_photo_alternate</span>
+                        <p className="text-xs font-bold tracking-widest text-slate-400">{label}</p>
+                    </div>
+                )}
+            </div>
+            {cropSrc && (
+                <ImageCropper src={cropSrc} onCrop={crop} onCancel={() => setCropSrc(null)} title={`Chỉnh sửa - ${label}`} />
+            )}
+        </>
+    );
+};

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Modal from './Modal';
-import MediaManager from './MediaManager';
+import { FC, useRef } from 'react';
+import { useImageUpload } from './ImageUpload';
+import ImageCropper from './ImageCropper';
 
 interface MultiImageUploadProps {
     images: string[];
@@ -8,19 +8,20 @@ interface MultiImageUploadProps {
     label?: string;
 }
 
-const MultiImageUpload: React.FC<MultiImageUploadProps> = ({
+const MultiImageUpload: FC<MultiImageUploadProps> = ({
     images = [],
     onChange,
     label = 'Thư viện ảnh'
 }) => {
-    const [isMediaModalOpen, setIsMediaModalOpen] = useState(false);
-
     const handleAddImage = (url: string) => {
         if (!images.includes(url)) {
             onChange([...images, url]);
         }
-        setIsMediaModalOpen(false);
     };
+
+    const { inputRef, cropSrc, setCropSrc, uploading, pick, crop } = useImageUpload(handleAddImage);
+
+
 
     const handleRemoveImage = (index: number) => {
         const newImages = [...images];
@@ -46,8 +47,9 @@ const MultiImageUpload: React.FC<MultiImageUploadProps> = ({
                 </label>
                 <button
                     type="button"
-                    onClick={() => setIsMediaModalOpen(true)}
-                    className="flex items-center gap-2 px-4 py-1.5 bg-admin-primary/10 text-admin-primary rounded-xl text-xs font-bold hover:bg-admin-primary hover:text-white transition-all shadow-sm"
+                    onClick={() => inputRef.current?.click()}
+                    disabled={uploading}
+                    className="flex items-center gap-2 px-4 py-1.5 bg-admin-primary/10 text-admin-primary rounded-xl text-xs font-bold hover:bg-admin-primary hover:text-white transition-all shadow-sm disabled:opacity-50"
                 >
                     <span className="material-symbols-outlined text-base">add_photo_alternate</span>
                     Thêm ảnh từ thư viện
@@ -98,20 +100,19 @@ const MultiImageUpload: React.FC<MultiImageUploadProps> = ({
                 {/* Empty State / Add Placeholder */}
                 <button
                     type="button"
-                    onClick={() => setIsMediaModalOpen(true)}
-                    className="aspect-square rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-300 hover:border-admin-primary/40 hover:text-admin-primary hover:bg-admin-primary/5 transition-all group"
+                    onClick={() => inputRef.current?.click()}
+                    disabled={uploading}
+                    className={`aspect-square rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-300 transition-all group ${uploading ? 'opacity-50 pointer-events-none' : 'hover:border-admin-primary/40 hover:text-admin-primary hover:bg-admin-primary/5'}`}
                 >
                     <span className="material-symbols-outlined text-2xl mb-1 group-hover:scale-110 transition-transform">add_circle</span>
                     <span className="text-[10px] font-bold  tracking-widest">Thêm ảnh</span>
                 </button>
             </div>
 
-            <Modal isOpen={isMediaModalOpen} onClose={() => setIsMediaModalOpen(false)}>
-                <MediaManager
-                    onSelect={handleAddImage}
-                    onClose={() => setIsMediaModalOpen(false)}
-                />
-            </Modal>
+            <input ref={inputRef} type="file" accept="image/*" className="hidden" onChange={pick} />
+            {cropSrc && (
+                <ImageCropper src={cropSrc} onCrop={crop} onCancel={() => setCropSrc(null)} title={`Chỉnh sửa - ${label}`} />
+            )}
         </div>
     );
 };

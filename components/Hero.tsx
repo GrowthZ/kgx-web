@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
@@ -41,8 +40,8 @@ const Hero: React.FC = () => {
             ))}
           </ul>
           <div className="flex flex-wrap gap-4 mt-4">
-            <Link to="/dich-vu" className="h-12 px-8 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-base shadow-lg shadow-primary/30 transition-all flex items-center justify-center gap-2">
-              Nhận báo giá
+            <Link to="/lien-he" className="h-12 px-8 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-base shadow-lg shadow-primary/30 transition-all flex items-center justify-center gap-2">
+              Nhận tư vấn
               <span className="material-symbols-outlined text-sm">
                 arrow_forward
               </span>
@@ -97,13 +96,6 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* Floating badge */}
-          {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white flex flex-col items-center text-center animate-[bounce_3s_infinite]">
-            <span className="text-3xl font-black text-primary">10+</span>
-            <span className="text-xs font-bold text-olive  mt-1">
-              Năm kinh nghiệm
-            </span>
-          </div> */}
         </div>
       </div>
     </section>

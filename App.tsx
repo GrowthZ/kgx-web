@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import FloatingCTA from './components/FloatingCTA';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
@@ -189,6 +190,7 @@ const App: FC = () => {
                     <Route path="/lien-he" element={<ContactPage />} />
                   </Routes>
                 </main>
+                <FloatingCTA />
                 <Footer />
               </>
             }

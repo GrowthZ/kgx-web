@@ -7,8 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import toast from 'react-hot-toast';
 import TiptapEditor from '../../src/components/admin/TiptapEditor';
-import ImageCropper from '../../src/components/admin/ImageCropper';
-import { uploadToR2 } from '../../src/lib/r2Service';
+import { ImagePicker } from '../../src/components/admin/ImageUpload';
 
 // Vietnamese-aware slug generator
 const toSlug = (str: string): string => {
@@ -39,9 +38,6 @@ const ArticleForm = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [slugManuallyEdited, setSlugManuallyEdited] = useState(false);
-    const [cropSource, setCropSource] = useState<string | null>(null);
-    const [isUploadingFeatured, setIsUploadingFeatured] = useState(false);
-    const featuredImageInputRef = useRef<HTMLInputElement>(null);
 
     const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
@@ -111,34 +107,6 @@ const ArticleForm = () => {
             toast.error('Lỗi khi lưu bài viết');
         } finally {
             setLoading(false);
-        }
-    };
-
-    const handleFeaturedImagePick = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (!file) return;
-        if (!file.type.startsWith('image/')) {
-            toast.error('Chỉ chấp nhận file hình ảnh');
-            return;
-        }
-        const reader = new FileReader();
-        reader.onload = (ev) => setCropSource(ev.target?.result as string);
-        reader.readAsDataURL(file);
-        // reset so same file can be re-selected
-        e.target.value = '';
-    };
-
-    const handleFeaturedImageCropped = async (blob: Blob) => {
-        try {
-            setIsUploadingFeatured(true);
-            const url = await uploadToR2(blob);
-            setValue('featuredImage', url, { shouldValidate: true });
-            toast.success('Ảnh đại diện đã được tải lên');
-        } catch (err) {
-            toast.error('Lỗi khi upload ảnh đại diện');
-        } finally {
-            setIsUploadingFeatured(false);
-            setCropSource(null);
         }
     };
 
@@ -297,55 +265,17 @@ const ArticleForm = () => {
                                 Ảnh đại diện
                             </h3>
 
-                            {/* Hidden file input */}
-                            <input
-                                ref={featuredImageInputRef}
-                                type="file"
-                                accept="image/*"
-                                className="hidden"
-                                onChange={handleFeaturedImagePick}
+                            <ImagePicker
+                                value={watchFeaturedImage || ''}
+                                onChange={(url) => setValue('featuredImage', url, { shouldValidate: true })}
+                                label="Chọn ảnh đại diện"
+                                aspect="aspect-video"
                             />
-
-                            <div
-                                className={`relative aspect-video rounded-2xl overflow-hidden border-2 border-dashed transition-all group cursor-pointer ${watchFeaturedImage ? 'border-transparent' : 'border-slate-200 hover:border-admin-primary/50'
-                                    } ${isUploadingFeatured ? 'opacity-60 pointer-events-none' : ''}`}
-                                onClick={() => featuredImageInputRef.current?.click()}
-                            >
-                                {isUploadingFeatured && (
-                                    <div className="absolute inset-0 bg-white/70 flex flex-col items-center justify-center z-10">
-                                        <div className="size-8 border-2 border-admin-primary/30 border-t-admin-primary rounded-full animate-spin" />
-                                        <span className="text-xs font-bold text-slate-500 mt-2">Đang tải lên...</span>
-                                    </div>
-                                )}
-                                {watchFeaturedImage ? (
-                                    <>
-                                        <img src={watchFeaturedImage} className="w-full h-full object-cover" alt="Featured" />
-                                        <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-all flex flex-col items-center justify-center backdrop-blur-[2px]">
-                                            <span className="material-symbols-outlined text-white text-2xl mb-1">add_photo_alternate</span>
-                                            <span className="text-white text-[10px] font-bold tracking-widest">Thay đổi ảnh</span>
-                                        </div>
-                                    </>
-                                ) : (
-                                    <div className="size-full flex flex-col items-center justify-center text-slate-300 gap-2">
-                                        <span className="material-symbols-outlined text-3xl">add_photo_alternate</span>
-                                        <p className="text-[10px] font-bold tracking-widest text-slate-400">Chọn ảnh từ máy tính</p>
-                                    </div>
-                                )}
-                            </div>
                             {errors.featuredImage && <p className="text-xs text-rose-500 font-bold text-center mt-2">{errors.featuredImage.message}</p>}
                         </div>
                     </div>
                 </div>
             </form>
-
-            {cropSource && (
-                <ImageCropper
-                    src={cropSource}
-                    onCrop={handleFeaturedImageCropped}
-                    onCancel={() => setCropSource(null)}
-                    title="Chỉnh sửa ảnh trước khi tải lên"
-                />
-            )}
         </AdminLayout>
     );
 };

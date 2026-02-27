@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { servicesService, Service } from '../src/services/servicesService';
 import ImageWithFallback from '../components/ImageWithFallback';
@@ -72,10 +72,10 @@ const ServiceDetailPage: React.FC = () => {
                                     {service.description}
                                 </p>
                                 <div className="flex flex-wrap gap-4 pt-2">
-                                    <button className="h-12 px-8 rounded-lg bg-primary text-white font-bold text-base hover:bg-primary/90 transition-all shadow-soft flex items-center gap-2">
+                                    <Link to="/lien-he" className="h-12 px-8 rounded-lg bg-primary text-white font-bold text-base hover:bg-primary/90 transition-all shadow-soft flex items-center justify-center gap-2">
                                         <span>Tư vấn dịch vụ này</span>
                                         <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                                    </button>
+                                    </Link>
                                     <button className="h-12 px-8 rounded-lg border-2 border-[#eef0ea] text-text-main font-bold text-base hover:border-secondary hover:text-secondary transition-all bg-white">
                                         Gọi 0868 462 462
                                     </button>
@@ -220,67 +220,15 @@ const ServiceDetailPage: React.FC = () => {
 
                 {/* Final CTA / Contact Form */}
                 <section className="w-full py-16 lg:py-24 bg-[#282a22] text-white">
-                    <div className="max-w-[1200px] mx-auto px-4 lg:px-0">
-                        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-                            <div className="flex-1 text-left">
-                                <h2 className="text-3xl font-bold mb-6 tracking-normal">Sẵn sàng kiến tạo <br />không gian xanh của bạn?</h2>
-                                <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                                    Đừng ngần ngại chia sẻ ý tưởng với chúng tôi. Đội ngũ chuyên gia của KGX sẽ lắng nghe và đưa ra giải pháp phù hợp nhất với ngân sách và mong muốn của bạn.
-                                </p>
-                                <div className="space-y-6">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                                            <span className="material-symbols-outlined">call</span>
-                                        </div>
-                                        <div>
-                                            <p className="text-sm text-gray-400">Tư vấn nhanh</p>
-                                            <p className="font-bold text-xl">0868 462 462</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                                            <span className="material-symbols-outlined">mail</span>
-                                        </div>
-                                        <div>
-                                            <p className="text-sm text-gray-400">Gửi yêu cầu qua email</p>
-                                            <p className="font-bold text-lg">tuvan@kgxlandscape.vn</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex-1 bg-white rounded-2xl p-8 text-text-main shadow-2xl">
-                                <h3 className="text-2xl font-bold mb-6 tracking-normal ">Đăng ký nhận tư vấn miễn phí</h3>
-                                <form className="space-y-4">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div className="text-left">
-                                            <label className="block text-sm font-medium mb-1 text-text-main">Họ và tên</label>
-                                            <input className="w-full rounded-md border-gray-300 bg-gray-50 focus:border-primary focus:ring-primary h-12 px-3 text-text-main" placeholder="Nguyễn Văn A" type="text" />
-                                        </div>
-                                        <div className="text-left">
-                                            <label className="block text-sm font-medium mb-1 text-text-main">Số điện thoại</label>
-                                            <input className="w-full rounded-md border-gray-300 bg-gray-50 focus:border-primary focus:ring-primary h-12 px-3 text-text-main" placeholder="09xxxxxxx" type="tel" />
-                                        </div>
-                                    </div>
-                                    <div className="text-left">
-                                        <label className="block text-sm font-medium mb-1 text-text-main">Loại dự án quan tâm</label>
-                                        <select className="w-full rounded-md border-gray-300 bg-gray-50 focus:border-primary focus:ring-primary h-12 px-3 text-text-main">
-                                            <option>{service.title}</option>
-                                            <option>Thi công sân vườn biệt thự</option>
-                                            <option>Thi công hồ cá Koi</option>
-                                            <option>Cảnh quan khu nghỉ dưỡng</option>
-                                            <option>Bảo dưỡng cảnh quan</option>
-                                        </select>
-                                    </div>
-                                    <div className="text-left">
-                                        <label className="block text-sm font-medium mb-1 text-text-main">Lời nhắn</label>
-                                        <textarea className="w-full rounded-md border-gray-300 bg-gray-50 focus:border-primary focus:ring-primary px-3 py-3 h-28 resize-none text-text-main" placeholder="Mô tả sơ bộ về nhu cầu, diện tích..."></textarea>
-                                    </div>
-                                    <button className="w-full bg-primary text-white font-bold h-14 rounded-md hover:bg-primary/90 transition-colors shadow-lg mt-2  tracking-wide" type="button">
-                                        Gửi yêu cầu ngay
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
+                    <div className="max-w-[1200px] mx-auto px-4 lg:px-0 text-center">
+                        <h2 className="text-3xl lg:text-4xl font-bold mb-6 tracking-normal">Sẵn sàng kiến tạo <br />không gian xanh của bạn?</h2>
+                        <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+                            Đừng ngần ngại chia sẻ ý tưởng với chúng tôi. Đội ngũ chuyên gia của KGX sẽ lắng nghe và đưa ra giải pháp thiết kế thi công phù hợp nhất với mong muốn của bạn.
+                        </p>
+                        <Link to="/lien-he" className="inline-flex h-14 px-10 bg-primary hover:bg-primary-dark text-white font-bold text-base rounded-xl transition-all shadow-xl shadow-primary/30 items-center justify-center gap-2 hover:-translate-y-1 transform">
+                            Đăng ký tư vấn miễn phí
+                            <span className="material-symbols-outlined">arrow_forward</span>
+                        </Link>
                     </div>
                 </section>
             </main>

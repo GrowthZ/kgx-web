@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AdminLayout from '../../src/components/admin/AdminLayout';
 import { servicesService, Service } from '../../src/services/servicesService';
@@ -10,6 +10,7 @@ import toast from 'react-hot-toast';
 import MediaManager from '../../src/components/admin/MediaManager';
 import Modal from '../../src/components/admin/Modal';
 import RichTextEditor from '../../src/components/admin/RichTextEditor';
+import { ImagePicker } from '../../src/components/admin/ImageUpload';
 
 const schema = yup.object().shape({
     title: yup.string().required('Tiêu đề dịch vụ là bắt buộc'),
@@ -33,11 +34,10 @@ const schema = yup.object().shape({
     })).optional(),
 });
 
-const ServiceForm: React.FC = () => {
+const ServiceForm: FC = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
-    const [isMediaModalOpen, setIsMediaModalOpen] = useState(false);
 
     const { register, control, handleSubmit, setValue, watch, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
@@ -100,11 +100,6 @@ const ServiceForm: React.FC = () => {
         } finally {
             setLoading(false);
         }
-    };
-
-    const handleMediaSelect = (url: string) => {
-        setValue('image', url);
-        setIsMediaModalOpen(false);
     };
 
     return (
@@ -172,26 +167,17 @@ const ServiceForm: React.FC = () => {
                     <div className="space-y-8">
                         <div className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm space-y-6">
                             <h3 className="text-lg font-bold text-slate-800">Ảnh đại diện dịch vụ</h3>
-                            <div
-                                className="relative aspect-square rounded-3xl overflow-hidden border-2 border-dashed border-slate-200 cursor-pointer"
-                                onClick={() => setIsMediaModalOpen(true)}
-                            >
-                                {watchImage ? (
-                                    <ImageWithFallback src={watchImage} className="w-full h-full object-cover" alt="Preview" />
-                                ) : (
-                                    <div className="size-full flex flex-col items-center justify-center text-slate-300">
-                                        <span className="material-symbols-outlined text-3xl">add_photo_alternate</span>
-                                    </div>
-                                )}
-                            </div>
+                            <ImagePicker
+                                value={watchImage || ''}
+                                onChange={(url) => setValue('image', url, { shouldValidate: true })}
+                                label="Chọn ảnh đại diện"
+                                aspect="aspect-square"
+                            />
+                            {errors.image && <p className="text-xs text-rose-500 font-bold text-center mt-2">{errors.image.message}</p>}
                         </div>
                     </div>
                 </div>
             </form>
-
-            <Modal isOpen={isMediaModalOpen} onClose={() => setIsMediaModalOpen(false)}>
-                <MediaManager onSelect={handleMediaSelect} onClose={() => setIsMediaModalOpen(false)} />
-            </Modal>
         </AdminLayout>
     );
 };
@@ -209,7 +195,6 @@ const SectionItem: React.FC<{
         name: `sections.${index}.items`
     });
 
-    const [isMediaModalOpen, setIsMediaModalOpen] = useState(false);
     const sectionImage = watch(`sections.${index}.image`);
 
     return (
@@ -260,24 +245,12 @@ const SectionItem: React.FC<{
 
                 <div className="space-y-4">
                     <label className="text-[10px] font-bold text-slate-400  tracking-widest leading-normal block">Ảnh minh họa phần</label>
-                    <div
-                        onClick={() => setIsMediaModalOpen(true)}
-                        className="aspect-square bg-white rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer overflow-hidden group/img relative shadow-sm"
-                    >
-                        {sectionImage ? (
-                            <>
-                                <ImageWithFallback src={sectionImage} className="w-full h-full object-cover" alt="Section" />
-                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity text-white">
-                                    <span className="material-symbols-outlined">image_search</span>
-                                </div>
-                            </>
-                        ) : (
-                            <div className="text-slate-300 flex flex-col items-center gap-2">
-                                <span className="material-symbols-outlined text-2xl">add_photo_alternate</span>
-                                <span className="text-[10px] font-bold  tracking-wider">Chọn ảnh</span>
-                            </div>
-                        )}
-                    </div>
+                    <ImagePicker
+                        value={sectionImage || ''}
+                        onChange={(url) => setValue(`sections.${index}.image`, url, { shouldValidate: true })}
+                        label="Chọn ảnh minh họa"
+                        aspect="aspect-square"
+                    />
                 </div>
             </div>
 
@@ -334,15 +307,6 @@ const SectionItem: React.FC<{
                 </div>
             </div>
 
-            <Modal isOpen={isMediaModalOpen} onClose={() => setIsMediaModalOpen(false)}>
-                <MediaManager
-                    onSelect={(url) => {
-                        setValue(`sections.${index}.image`, url);
-                        setIsMediaModalOpen(false);
-                    }}
-                    onClose={() => setIsMediaModalOpen(false)}
-                />
-            </Modal>
         </div>
     );
 };

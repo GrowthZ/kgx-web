@@ -71,13 +71,13 @@ const Header: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-2 xl:gap-3 shrink-0">
-          <button className="hidden xl:flex h-10 px-4 items-center justify-center rounded-xl bg-background-off border border-[#dde8ce] text-olive font-bold text-xs hover:bg-[#eef4e7] transition-colors gap-2 whitespace-nowrap">
+          <a href="tel:0868462462" className="hidden xl:flex h-10 px-4 items-center justify-center rounded-xl bg-background-off border border-[#dde8ce] text-olive font-bold text-xs hover:bg-[#eef4e7] transition-colors gap-2 whitespace-nowrap">
             <span className="material-symbols-outlined text-accent text-sm">call</span>
             <span className="text-accent underline decoration-accent/30 underline-offset-4">0868 462 462</span>
-          </button>
-          <button className="flex h-10 px-4 md:px-6 items-center justify-center rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-xs md:text-sm shadow-md transition-all transform hover:-translate-y-0.5 whitespace-nowrap">
+          </a>
+          <Link to="/lien-he" className="flex h-10 px-4 md:px-6 items-center justify-center rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-xs md:text-sm shadow-md transition-all transform hover:-translate-y-0.5 whitespace-nowrap">
             Nhận tư vấn
-          </button>
+          </Link>
           <button
             className="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl bg-background-off hover:bg-gray-100 ml-1"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

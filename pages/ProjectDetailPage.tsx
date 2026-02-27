@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectsService, Project } from '../src/services/projectsService';
 import ImageWithFallback from '../components/ImageWithFallback';
@@ -73,9 +73,9 @@ const ProjectDetailPage: React.FC = () => {
                                     <span>Xem thư viện ảnh</span>
                                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
                                 </a>
-                                <button className="bg-white border-2 border-[#eef4e7] hover:border-primary text-olive font-bold px-8 py-3.5 rounded-xl transition-all hover:bg-[#fafcf8]">
+                                <Link to="/lien-he" className="bg-white flex items-center justify-center border-2 border-[#eef4e7] hover:border-primary text-olive font-bold px-8 py-3.5 rounded-xl transition-all hover:bg-[#fafcf8]">
                                     Tư vấn ngay
-                                </button>
+                                </Link>
                             </div>
                         </div>
                         {/* Right Image */}
@@ -159,34 +159,17 @@ const ProjectDetailPage: React.FC = () => {
 
                 {/* CTA & Form Section */}
                 <section className="w-full bg-[#f2f7ec] py-16 lg:py-20">
-                    <div className="max-w-[1280px] mx-auto px-5 xl:px-20">
-                        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl flex flex-col lg:flex-row gap-12 lg:gap-20">
-                            <div className="flex-1 flex flex-col justify-center">
-                                <span className="text-primary font-bold tracking-wider text-sm mb-2 ">Liên hệ với chúng tôi</span>
-                                <h2 className="text-2xl lg:text-3xl font-black text-olive mb-6 leading-[1.8]">Nhận tư vấn cho dự án tương tự?</h2>
-                                <p className="text-text-light text-lg mb-8">
-                                    Để lại thông tin, kiến trúc sư của KGX sẽ liên hệ tư vấn giải pháp thiết kế &amp; thi công cảnh quan tối ưu nhất cho ngôi nhà của bạn.
-                                </p>
-                            </div>
-                            <div className="flex-1 max-w-lg">
-                                <form className="flex flex-col gap-5">
-                                    <div>
-                                        <label className="block text-sm font-semibold text-olive mb-2">Họ và tên</label>
-                                        <input className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Nhập họ tên của bạn" type="text" />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-semibold text-olive mb-2">Số điện thoại</label>
-                                        <input className="w-full h-12 px-4 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Nhập số điện thoại" type="tel" />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-semibold text-olive mb-2">Nội dung tư vấn</label>
-                                        <textarea className="w-full h-32 p-4 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Mô tả sơ bộ nhu cầu của bạn..."></textarea>
-                                    </div>
-                                    <button className="mt-2 w-full h-14 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl shadow-lg shadow-primary/25 transition-all flex items-center justify-center gap-2" type="button">
-                                        Gửi yêu cầu tư vấn
-                                    </button>
-                                </form>
-                            </div>
+                    <div className="max-w-[1280px] mx-auto px-5 xl:px-20 text-center">
+                        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl max-w-3xl mx-auto flex flex-col items-center">
+                            <span className="text-primary font-bold tracking-wider text-sm mb-2 ">Liên hệ với chúng tôi</span>
+                            <h2 className="text-2xl lg:text-3xl font-black text-olive mb-6 leading-[1.8]">Nhận tư vấn cho dự án tương tự?</h2>
+                            <p className="text-text-light text-lg mb-8 max-w-xl text-center">
+                                Để lại thông tin, kiến trúc sư của KGX sẽ liên hệ tư vấn giải pháp thiết kế &amp; thi công cảnh quan tối ưu nhất cho ngôi nhà của bạn.
+                            </p>
+                            <Link to="/lien-he" className="h-14 px-10 bg-primary hover:bg-primary-dark text-white font-bold text-base rounded-xl transition-all shadow-xl shadow-primary/30 flex items-center justify-center gap-2 hover:-translate-y-1 transform">
+                                Đăng ký tư vấn ngay
+                                <span className="material-symbols-outlined">arrow_forward</span>
+                            </Link>
                         </div>
                     </div>
                 </section>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState, FC } from 'react';
 import Cropper, { ReactCropperElement } from 'react-cropper';
 import 'cropperjs/dist/cropper.css';
 
@@ -10,7 +10,7 @@ interface ImageCropperProps {
     title?: string;
 }
 
-const ImageCropper: React.FC<ImageCropperProps> = ({
+const ImageCropper: FC<ImageCropperProps> = ({
     src,
     aspectRatio,
     onCrop,
@@ -45,6 +45,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
                         {title}
                     </h3>
                     <button
+                        type="button"
                         onClick={onCancel}
                         className="size-10 flex items-center justify-center rounded-xl hover:bg-slate-50 text-slate-400 transition-colors"
                     >
@@ -76,12 +77,14 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
                     </div>
                     <div className="flex items-center gap-3">
                         <button
+                            type="button"
                             onClick={onCancel}
                             className="px-6 py-2.5 text-slate-600 font-bold text-sm hover:bg-slate-50 rounded-xl transition-all"
                         >
                             Hủy bỏ
                         </button>
                         <button
+                            type="button"
                             onClick={handleCrop}
                             className="px-8 py-2.5 bg-admin-primary text-white font-bold text-sm rounded-xl shadow-lg shadow-admin-primary/20 hover:brightness-110 active:scale-95 transition-all"
                         >
