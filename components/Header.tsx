@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
 import logoKgx from '../src/media/logo-kgx.png';

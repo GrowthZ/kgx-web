@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AdminLayout from '../../src/components/admin/AdminLayout';
 import { articlesService, Article } from '../../src/services/articlesService';
@@ -8,7 +8,20 @@ import * as yup from 'yup';
 import toast from 'react-hot-toast';
 import MediaManager from '../../src/components/admin/MediaManager';
 import Modal from '../../src/components/admin/Modal';
-import RichTextEditor from '../../src/components/admin/RichTextEditor';
+import TiptapEditor from '../../src/components/admin/TiptapEditor';
+
+// Vietnamese-aware slug generator
+const toSlug = (str: string): string => {
+    return str
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd')
+        .replace(/[^a-z0-9\s-]/g, '')
+        .trim()
+        .replace(/[\s]+/g, '-')
+        .replace(/-+/g, '-');
+};
 
 const schema = yup.object().shape({
     title: yup.string().required('Tiêu đề bài viết là bắt buộc'),
@@ -26,6 +39,7 @@ const ArticleForm: React.FC = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [isMediaModalOpen, setIsMediaModalOpen] = useState(false);
+    const [slugManuallyEdited, setSlugManuallyEdited] = useState(false);
 
     const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
@@ -43,12 +57,20 @@ const ArticleForm: React.FC = () => {
 
     const watchFeaturedImage = watch('featuredImage');
     const watchContent = watch('content') || '';
+    const watchTitle = watch('title');
 
     useEffect(() => {
         if (id) {
             fetchArticle();
         }
     }, [id]);
+
+    // Auto-generate slug from title (only on new articles, until user manually edits slug)
+    useEffect(() => {
+        if (!id && !slugManuallyEdited && watchTitle) {
+            setValue('slug', toSlug(watchTitle), { shouldValidate: false });
+        }
+    }, [watchTitle, id, slugManuallyEdited]);
 
     const fetchArticle = async () => {
         try {
@@ -143,12 +165,24 @@ const ArticleForm: React.FC = () => {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Slug (URL)</label>
+                                <div className="flex items-center justify-between ml-1">
+                                    <label className="text-xs font-bold text-slate-400 tracking-widest">Slug (URL)</label>
+                                    {!id && !slugManuallyEdited && (
+                                        <span className="text-[10px] font-bold text-admin-primary/60 flex items-center gap-1">
+                                            <span className="material-symbols-outlined text-xs">auto_awesome</span>
+                                            Tự động theo tiêu đề
+                                        </span>
+                                    )}
+                                </div>
                                 <input
                                     {...register('slug')}
                                     type="text"
                                     placeholder="xu-huong-thiet-ke-2024"
                                     className="w-full px-5 py-3 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium text-slate-600 text-sm"
+                                    onChange={(e) => {
+                                        register('slug').onChange(e);
+                                        setSlugManuallyEdited(true);
+                                    }}
                                 />
                             </div>
 
@@ -166,7 +200,7 @@ const ArticleForm: React.FC = () => {
 
                         {/* Editor Card */}
                         <div className="bg-white rounded-[2rem] p-4 sm:p-8 border border-slate-100 shadow-sm">
-                            <RichTextEditor
+                            <TiptapEditor
                                 label="Nội dung chi tiết"
                                 value={watchContent}
                                 onChange={(val) => setValue('content', val)}
