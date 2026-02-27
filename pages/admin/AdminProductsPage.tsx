@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AdminLayout from '../../src/components/admin/AdminLayout';
 import { productsService, Product } from '../../src/services/productsService';
 import toast from 'react-hot-toast';
 import { TREE_CATEGORIES } from '../../constants';
 
-const AdminProductsPage: React.FC = () => {
+const AdminProductsPage = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -169,7 +169,7 @@ const AdminProductsPage: React.FC = () => {
                                             <td className="px-8 py-5 text-right">
                                                 <div className="flex items-center justify-end gap-2">
                                                     <Link
-                                                        to={`/admin/products/${product.id}`}
+                                                        to={`/admin/products/edit/${product.id}`}
                                                         className="size-10 flex items-center justify-center text-slate-400 hover:text-admin-primary hover:bg-admin-primary/10 rounded-xl transition-all"
                                                         title="Chỉnh sửa"
                                                     >

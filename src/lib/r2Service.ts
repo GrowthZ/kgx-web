@@ -1,4 +1,5 @@
-import { S3Client, PutObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, DeleteObjectCommand, ListObjectsV2Command } from '@aws-sdk/client-s3';
+import type { StorageFile } from './firebaseService';
 
 const R2_ENDPOINT = (import.meta as any).env.VITE_R2_ENDPOINT;
 const R2_ACCESS_KEY_ID = (import.meta as any).env.VITE_R2_ACCESS_KEY_ID;
@@ -104,3 +105,53 @@ export const deleteFromR2 = async (keyOrUrl: string): Promise<void> => {
         throw error;
     }
 };
+
+/**
+ * List all files in the R2 bucket (optionally under a prefix).
+ * Returns StorageFile[] compatible with MediaManager.
+ */
+export const listR2Files = async (prefix?: string): Promise<StorageFile[]> => {
+    try {
+        const command = new ListObjectsV2Command({
+            Bucket: R2_BUCKET,
+            Prefix: prefix || '',
+            MaxKeys: 1000,
+        });
+
+        const response = await s3Client.send(command);
+        const contents = response.Contents || [];
+
+        const extToMime: Record<string, string> = {
+            jpg: 'image/jpeg',
+            jpeg: 'image/jpeg',
+            png: 'image/png',
+            webp: 'image/webp',
+            gif: 'image/gif',
+            svg: 'image/svg+xml',
+            pdf: 'application/pdf',
+        };
+
+        return contents
+            .filter((obj) => obj.Key && !obj.Key.endsWith('/'))
+            .map((obj) => {
+                const key = obj.Key!;
+                const name = key.split('/').pop() || key;
+                const ext = name.split('.').pop()?.toLowerCase() || '';
+                const type = extToMime[ext] || 'application/octet-stream';
+                const url = R2_PUBLIC_URL ? `${R2_PUBLIC_URL}/${key}` : `${R2_ENDPOINT}/${R2_BUCKET}/${key}`;
+
+                return {
+                    name,
+                    url,
+                    path: key,
+                    type,
+                    size: obj.Size || 0,
+                    updatedAt: obj.LastModified?.toISOString() || new Date().toISOString(),
+                } as StorageFile;
+            });
+    } catch (error) {
+        console.error('R2 list error:', error);
+        throw error;
+    }
+};
+

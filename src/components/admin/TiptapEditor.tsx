@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect, FC, ChangeEvent, DragEvent, ClipboardEvent, ReactNode } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import { BubbleMenu } from '@tiptap/react/menus';
 import StarterKit from '@tiptap/starter-kit';
@@ -24,12 +24,12 @@ interface TiptapEditorProps {
     label?: string;
 }
 
-const MenuButton: React.FC<{
+const MenuButton: FC<{
     onClick: () => void;
     isActive?: boolean;
     disabled?: boolean;
     title?: string;
-    children: React.ReactNode;
+    children: ReactNode;
 }> = ({ onClick, isActive, disabled, title, children }) => (
     <button
         type="button"
@@ -47,7 +47,7 @@ const MenuButton: React.FC<{
 
 const Divider = () => <div className="w-px h-5 bg-slate-200 mx-0.5" />;
 
-const TiptapEditor: React.FC<TiptapEditorProps> = ({ value, onChange, label }) => {
+const TiptapEditor: FC<TiptapEditorProps> = ({ value, onChange, label }) => {
     const [isMediaModalOpen, setIsMediaModalOpen] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
     const [linkUrl, setLinkUrl] = useState('');
@@ -129,7 +129,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ value, onChange, label }) =
     }, [editor]);
 
     // File input change handler
-    const handleFileInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleFileInputChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) handleImageUpload(file);
         // Reset input so the same file can be selected again
@@ -145,7 +145,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ value, onChange, label }) =
     }, [editor]);
 
     // Drag & drop images
-    const handleDrop = useCallback((e: React.DragEvent) => {
+    const handleDrop = useCallback((e: DragEvent) => {
         e.preventDefault();
         const files = Array.from(e.dataTransfer.files) as File[];
         const imageFile = files.find((f: File) => f.type.startsWith('image/'));
@@ -153,7 +153,7 @@ const TiptapEditor: React.FC<TiptapEditorProps> = ({ value, onChange, label }) =
     }, [handleImageUpload]);
 
     // Paste images
-    const handlePaste = useCallback((e: React.ClipboardEvent) => {
+    const handlePaste = useCallback((e: ClipboardEvent) => {
         const items = Array.from(e.clipboardData.items) as DataTransferItem[];
         const imageItem = items.find((item: DataTransferItem) => item.type.startsWith('image/'));
         if (imageItem) {

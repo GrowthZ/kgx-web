@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { listStorageFiles, StorageFile, StorageFolder, uploadImage, deleteImage } from '../../lib/firebaseService';
+import { Fragment, useState, useEffect } from 'react';
+import { StorageFile } from '../../lib/firebaseService';
 import toast from 'react-hot-toast';
 import ImageCropper from './ImageCropper';
-import { uploadToR2 } from '../../lib/r2Service';
+import { uploadToR2, listR2Files, deleteFromR2 } from '../../lib/r2Service';
 
 interface MediaManagerProps {
     onSelect?: (url: string) => void;
@@ -17,7 +17,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
 }) => {
     const [path, setPath] = useState('');
     const [files, setFiles] = useState<StorageFile[]>([]);
-    const [folders, setFolders] = useState<StorageFolder[]>([]);
+    const [folders, setFolders] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [selectedFile, setSelectedFile] = useState<StorageFile | null>(null);
     const [isUploading, setIsUploading] = useState(false);
@@ -31,9 +31,10 @@ const MediaManager: React.FC<MediaManagerProps> = ({
     const loadMedia = async () => {
         try {
             setLoading(true);
-            const data = await listStorageFiles(path);
-            setFolders(data.folders);
-            setFiles(data.files);
+            // List all files from R2 (flat list, no subfolder navigation)
+            const allFiles = await listR2Files();
+            setFolders([]);
+            setFiles(allFiles);
         } catch (error) {
             console.error('Error loading media:', error);
             toast.error('Lỗi khi tải thư viện media');
@@ -98,7 +99,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
         if (!window.confirm(`Bạn có chắc muốn xóa file "${file.name}"?`)) return;
 
         try {
-            await deleteImage(file.url);
+            await deleteFromR2(file.url);
             toast.success('Đã xóa file');
             loadMedia();
             if (selectedFile?.path === file.path) setSelectedFile(null);
@@ -166,7 +167,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                         Root
                     </button>
                     {path.split('/').filter(Boolean).map((part, idx, arr) => (
-                        <React.Fragment key={idx}>
+                        <Fragment key={idx}>
                             <span className="text-slate-300 material-symbols-outlined text-sm">chevron_right</span>
                             <button
                                 onClick={() => handleFolderClick(arr.slice(0, idx + 1).join('/'))}
@@ -174,7 +175,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                             >
                                 {part}
                             </button>
-                        </React.Fragment>
+                        </Fragment>
                     ))}
                 </div>
                 {path && (

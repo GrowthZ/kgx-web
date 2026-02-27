@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Header from './components/Header';
@@ -34,8 +34,12 @@ import ProjectForm from './pages/admin/ProjectForm';
 import AdminContactsPage from './pages/admin/AdminContactsPage';
 import AdminServicesPage from './pages/admin/AdminServicesPage';
 import ServiceForm from './pages/admin/ServiceForm';
+import ProductForm from './pages/admin/ProductForm';
+import AdminTeamPage from './pages/admin/AdminTeamPage';
+import AdminSettingsPage from './pages/admin/AdminSettingsPage';
+import AdminSeoPage from './pages/admin/AdminSeoPage';
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <AuthProvider>
       <Toaster position="top-right" />
@@ -57,6 +61,22 @@ const App: React.FC = () => {
             element={
               <ProtectedRoute>
                 <AdminProductsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/products/new"
+            element={
+              <ProtectedRoute>
+                <ProductForm />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/products/edit/:id"
+            element={
+              <ProtectedRoute>
+                <ProductForm />
               </ProtectedRoute>
             }
           />
@@ -132,6 +152,9 @@ const App: React.FC = () => {
               </ProtectedRoute>
             }
           />
+          <Route path="/admin/team" element={<ProtectedRoute><AdminTeamPage /></ProtectedRoute>} />
+          <Route path="/admin/settings" element={<ProtectedRoute><AdminSettingsPage /></ProtectedRoute>} />
+          <Route path="/admin/seo" element={<ProtectedRoute><AdminSeoPage /></ProtectedRoute>} />
 
           {/* Public Routes */}
           <Route
