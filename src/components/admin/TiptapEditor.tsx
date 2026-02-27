@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef, useEffect, FC, ChangeEvent, DragEvent, ClipboardEvent, ReactNode } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
-import { BubbleMenu } from '@tiptap/react/menus';
+import { BubbleMenu } from '@tiptap/extension-bubble-menu';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
 import Link from '@tiptap/extension-link';
