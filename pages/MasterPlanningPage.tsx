@@ -18,7 +18,7 @@ const MasterPlanningPage: React.FC = () => {
                             <div className="flex-1 flex flex-col gap-6 text-left">
                                 <div className="space-y-4">
                                     <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold  tracking-wider rounded-full dark:bg-white/10 dark:text-white">Tổng quan dịch vụ</span>
-                                    <h1 className="text-text-main dark:text-white text-3xl md:text-4xl font-black leading-relaxed md:leading-loose tracking-normal">
+                                    <h1 className="text-text-main dark:text-white text-3xl md:text-4xl font-black tracking-normal">
                                         Vai trò của <br className="hidden md:block" />quy hoạch cảnh quan
                                     </h1>
                                     <p className="text-text-muted dark:text-gray-300 text-base md:text-lg font-normal leading-relaxed max-w-[540px]">
@@ -57,7 +57,7 @@ const MasterPlanningPage: React.FC = () => {
                     <div className="w-full max-w-[1200px] px-5 md:px-10">
                         <div className="flex flex-col gap-12">
                             <div className="flex flex-col gap-3 max-w-[720px]">
-                                <h2 className="text-text-main dark:text-white text-2xl md:text-3xl font-black tracking-normal leading-relaxed md:leading-loose ">
+                                <h2 className="text-text-main dark:text-white text-2xl md:text-3xl font-black tracking-normal ">
                                     Giải pháp KGX triển khai
                                 </h2>
                                 <p className="text-text-muted dark:text-gray-400 text-lg font-normal leading-relaxed">
@@ -75,7 +75,7 @@ const MasterPlanningPage: React.FC = () => {
                                             <span className="material-symbols-outlined text-[32px]">{item.icon}</span>
                                         </div>
                                         <div className="flex flex-col gap-3">
-                                            <h3 className="text-text-main dark:text-white text-xl font-bold leading-relaxed md:leading-loose group-hover:text-primary dark:group-hover:text-white transition-colors">{item.title}</h3>
+                                            <h3 className="text-text-main dark:text-white text-xl font-bold group-hover:text-primary dark:group-hover:text-white transition-colors">{item.title}</h3>
                                             <div className="h-0.5 w-12 bg-accent/30 group-hover:w-full group-hover:bg-accent transition-all duration-500"></div>
                                             <p className="text-text-muted dark:text-gray-300 text-sm leading-relaxed">{item.desc}</p>
                                         </div>
@@ -128,7 +128,7 @@ const MasterPlanningPage: React.FC = () => {
                         <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
                             <div className="flex-1 flex flex-col gap-8 w-full">
                                 <div className="flex flex-col gap-3">
-                                    <h2 className="text-text-main dark:text-white text-2xl md:text-3xl font-black tracking-normal leading-relaxed md:leading-loose ">
+                                    <h2 className="text-text-main dark:text-white text-2xl md:text-3xl font-black tracking-normal ">
                                         Sản phẩm bàn giao
                                     </h2>
                                     <p className="text-text-muted dark:text-gray-400 text-base">Bộ hồ sơ kỹ thuật chi tiết, đảm bảo tính pháp lý và thi công chính xác.</p>
@@ -172,7 +172,7 @@ const MasterPlanningPage: React.FC = () => {
                         <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
                         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-10 md:p-16 gap-8 text-center md:text-left">
                             <div className="max-w-xl">
-                                <h2 className="text-2xl md:text-3xl font-black text-white mb-4 leading-relaxed md:leading-loose">Cần giải pháp quy hoạch xanh cho dự án của bạn?</h2>
+                                <h2 className="text-2xl md:text-3xl font-black text-white mb-4">Cần giải pháp quy hoạch xanh cho dự án của bạn?</h2>
                                 <p className="text-white/80 text-lg">Để lại thông tin để chuyên gia KGX tư vấn giải pháp hiệu quả và bền vững nhất.</p>
                             </div>
                             <div className="shrink-0">

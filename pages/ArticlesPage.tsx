@@ -39,7 +39,7 @@ const ArticlesPage: React.FC = () => {
                 {/* Hero Section */}
                 <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                     <div className="space-y-6">
-                        <h1 className="text-4xl lg:text-5xl font-black text-charcoal dark:text-white leading-relaxed md:leading-loose tracking-normal">
+                        <h1 className="text-4xl lg:text-5xl font-black text-charcoal dark:text-white tracking-normal">
                             Kiến thức &amp; <br /><span className="text-primary">Tin tức cảnh quan</span>
                         </h1>
                         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-xl">
@@ -114,7 +114,7 @@ const ArticlesPage: React.FC = () => {
                                     <Link key={idx} to={`/tin-tuc/${item.slug}`} className="group flex gap-4 items-start bg-white dark:bg-charcoal p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer">
                                         <div className="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style={{ backgroundImage: `url('${item.featuredImage}')` }}></div>
                                         <div>
-                                            <h4 className="font-bold text-sm leading-relaxed md:leading-loose group-hover:text-primary transition-colors mb-2 line-clamp-2 ">{item.title}</h4>
+                                            <h4 className="font-bold text-sm group-hover:text-primary transition-colors mb-2 line-clamp-2 ">{item.title}</h4>
                                             <span className="text-[10px] text-gray-400 font-bold ">{item.category}</span>
                                         </div>
                                     </Link>

@@ -22,7 +22,7 @@ const ArchitectureDesignPage: React.FC = () => {
 
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <span className="text-accent font-black tracking-[0.4em] text-xs  mb-6 block">Premium Design</span>
-                        <h1 className="text-4xl md:text-6xl font-black text-white mb-8 leading-relaxed md:leading-loose  tracking-normal">
+                        <h1 className="text-4xl md:text-6xl font-black text-white mb-8  tracking-normal">
                             Kiến Trúc <br /><span className="text-accent">Xanh Hiện Đại</span>
                         </h1>
                         <p className="text-white/80 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed italic mb-12">
@@ -73,7 +73,7 @@ const ArchitectureDesignPage: React.FC = () => {
                                 </div>
                             </div>
                             <div className="lg:w-1/2 space-y-10">
-                                <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white leading-relaxed md:leading-loose  tracking-normal">Kết nối <br />không gian sống</h2>
+                                <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white  tracking-normal">Kết nối <br />không gian sống</h2>
                                 <p className="text-text-muted dark:text-gray-300 text-xl font-light leading-relaxed">
                                     Chúng tôi không chỉ thiết kế ngôi nhà, chúng tôi kiến tạo phong cách sống. Mỗi đường nét kiến trúc đều được tính toán để mang lại sự thoải mái tối ưu and cảm hứng mỗi ngày.
                                 </p>
@@ -101,7 +101,7 @@ const ArchitectureDesignPage: React.FC = () => {
                 <section className="py-24 bg-primary relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
                     <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-relaxed md:leading-loose  tracking-normal">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10  tracking-normal">
                             Kiến tạo tổ ấm xanh <br className="hidden md:block" /> của riêng bạn
                         </h2>
                         <p className="text-white/80 text-2xl mb-14 max-w-2xl font-light italic">

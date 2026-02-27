@@ -12,7 +12,7 @@ const CraneLogisticsPage: React.FC = () => {
                 {/* Hero Section */}
                 <section className="pt-20 pb-12 px-6 max-w-[1200px] mx-auto text-center">
                     <span className="inline-block py-1.5 px-4 rounded-full bg-accent/10 text-accent text-xs font-black tracking-widest  mb-6 border border-accent/10">Dịch vụ chuyên nghiệp</span>
-                    <h1 className="text-3xl md:text-5xl font-black text-primary dark:text-white leading-relaxed md:leading-loose max-w-4xl mx-auto mb-8  tracking-normal">
+                    <h1 className="text-3xl md:text-5xl font-black text-primary dark:text-white max-w-4xl mx-auto mb-8  tracking-normal">
                         Dịch vụ vận tải & <br /><span className="text-accent">cẩu tự hành</span>
                     </h1>
                     <p className="text-xl text-text-sub dark:text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
@@ -70,7 +70,7 @@ const CraneLogisticsPage: React.FC = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                             <div className="order-2 lg:order-1">
                                 <span className="text-accent font-black tracking-[0.3em] text-xs  mb-4 block">Năng lực thiết bị</span>
-                                <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white mb-8 leading-relaxed md:leading-loose  tracking-normal">
+                                <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white mb-8  tracking-normal">
                                     Hệ thống thiết bị <br />tự hành tiêu chuẩn
                                 </h2>
                                 <p className="text-text-sub dark:text-gray-300 mb-12 text-xl font-light leading-relaxed">
@@ -117,7 +117,7 @@ const CraneLogisticsPage: React.FC = () => {
                 <section className="py-24 bg-primary relative overflow-hidden transition-colors">
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 20px, #ffffff 20px, #ffffff 40px)' }}></div>
                     <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-relaxed md:leading-loose  max-w-4xl tracking-normal">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10  max-w-4xl tracking-normal">
                             Hỗ trợ thi công với <br className="hidden md:block" /> hệ thống xe cẩu chuyên dụng
                         </h2>
                         <p className="text-white/80 text-xl mb-14 max-w-2xl font-light italic leading-relaxed">

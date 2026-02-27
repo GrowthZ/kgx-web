@@ -116,9 +116,9 @@ ${message}
                                         <span className="size-2 rounded-full bg-[#a4d411] animate-pulse"></span>
                                         <span className="text-[#a4d411] text-xs font-bold tracking-wider">Tư vấn miễn phí</span>
                                     </div>
-                                    <h1 className="text-white text-3xl lg:text-4xl font-black leading-relaxed md:leading-loose tracking-normal">
-                                        LIÊN HỆ & NHẬN <br />
-                                        <span className="text-[#a4d411]">TƯ VẤN DỰ ÁN</span>
+                                    <h1 className="text-white text-3xl lg:text-4xl font-black tracking-normal">
+                                        <span className='block pb-3'>LIÊN HỆ & NHẬN</span>
+                                        <span className="mt-1 text-[#a4d411]">TƯ VẤN DỰ ÁN</span>
                                     </h1>
                                     <p className="text-gray-300 text-lg max-w-lg">
                                         Giải pháp cảnh quan toàn diện, thi công chuyên nghiệp và bảo hành dài hạn cho mọi công trình của bạn.

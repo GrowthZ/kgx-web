@@ -38,7 +38,7 @@ const ServicesPage: React.FC = () => {
                                 <span className="size-2 rounded-full bg-[#84da0b] animate-pulse"></span>
                                 <span className="text-xs font-bold text-[#2F3E28] tracking-wider ">Đối tác cảnh quan tin cậy</span>
                             </div>
-                            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-relaxed md:leading-loose text-[#2F3E28] tracking-normal">
+                            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black text-[#2F3E28] tracking-normal">
                                 KGX – Thiết kế & <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#84da0b] to-[#4A5D41]">Thi công Cảnh quan</span> Trọn Gói
                             </h1>

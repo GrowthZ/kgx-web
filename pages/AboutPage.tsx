@@ -21,10 +21,10 @@ const AboutPage: FC = () => {
                             <span className="inline-block py-1 px-4 border border-white/30 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-bold tracking-[0.2em]  mb-8 shadow-sm">
                                 KGX - Không Gian Xanh
                             </span>
-                            <h1 className="text-white text-4xl md:text-5xl lg:text-8xl font-black leading-relaxed md:leading-loose tracking-normal mb-8 drop-shadow-lg">
+                            <h1 className="text-white text-4xl md:text-5xl lg:text-8xl font-black tracking-normal mb-8 drop-shadow-lg">
                                 Tự hào <br /><span className="text-white/90">không gian Việt</span>
                             </h1>
-                            <p className="text-gray-200 text-lg md:text-2xl font-normal max-w-3xl mb-10 leading-relaxed drop-shadow-md">
+                            <p className="text-gray-200 text-lg md:text-2xl font-normal max-w-3xl mb-10 drop-shadow-md">
                                 Thiết kế - Thi công - Tư vấn cảnh quan. <br className="hidden md:block" />Kiến tạo không gian sống hài hòa với khí hậu và văn hóa bản địa.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -49,7 +49,7 @@ const AboutPage: FC = () => {
                                 <span className="w-16 h-[3px] bg-[#E9724C]"></span>
                                 <span className="text-[#546a2f] font-bold  tracking-widest text-sm">Câu chuyện khởi nguồn</span>
                             </div>
-                            <h2 className="text-3xl lg:text-5xl font-black text-[#151711] leading-relaxed md:leading-loose tracking-normal">
+                            <h2 className="text-3xl lg:text-5xl font-black text-[#151711] tracking-normal">
                                 Từ đất công trường <br className="hidden lg:block" />đến nét vẽ kỹ thuật
                             </h2>
                             <div className="space-y-6 text-[#151711]/80 text-lg leading-relaxed font-light">
@@ -132,7 +132,7 @@ const AboutPage: FC = () => {
                 <section className="container py-24">
                     <div className="flex flex-col items-center text-center mb-20">
                         <span className="text-[#546a2f] font-bold  tracking-wider text-sm mb-4 block">Triết lý thiết kế</span>
-                        <h2 className="text-3xl lg:text-5xl font-bold text-[#151711] max-w-4xl leading-relaxed md:leading-loose">
+                        <h2 className="text-3xl lg:text-5xl font-bold text-[#151711] max-w-4xl">
                             Tôn trọng tự nhiên, <br /> từ chối sự sao chép
                         </h2>
                     </div>
@@ -309,7 +309,7 @@ const AboutPage: FC = () => {
                     <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-[#546a2f]/30 to-transparent"></div>
                     <div className="container relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
                         <div className="max-w-2xl">
-                            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-relaxed md:leading-loose">Sẵn sàng kiến tạo <br /><span className="text-[#546a2f]">không gian mơ ước?</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-8">Sẵn sàng kiến tạo <br /><span className="text-[#546a2f]">không gian mơ ước?</span></h2>
                             <p className="text-gray-400 text-xl mb-10 font-light">Hãy để KGX đồng hành cùng bạn tạo nên những mảng xanh giá trị và bền vững.</p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <button className="bg-[#546a2f] hover:bg-[#435525] text-white px-10 py-5 rounded-xl text-lg font-bold transition-all shadow-lg shadow-[#546a2f]/20 text-center">

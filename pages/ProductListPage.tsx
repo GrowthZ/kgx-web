@@ -13,7 +13,7 @@ const ProductListPage: React.FC = () => {
                             <span className="material-symbols-outlined text-[#75c20a] text-sm">verified</span>
                             <span className="text-[#75c20a] text-xs font-bold  tracking-wide">Giải pháp cây xanh chuyên nghiệp</span>
                         </div>
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-relaxed md:leading-loose tracking-normal text-[#161c0d]">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-normal text-[#161c0d]">
                             Sản phẩm &amp; cây xanh <br />
                             <span className="text-[#75c20a]">phục vụ công trình</span>
                         </h1>

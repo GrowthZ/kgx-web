@@ -14,7 +14,7 @@ const LargeTreeInstallationPage: React.FC = () => {
                     <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent opacity-50 pointer-events-none"></div>
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <span className="text-accent font-black tracking-widest text-xs  mb-4 block">Thách thức & Giải pháp</span>
-                        <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-text-main dark:text-white leading-relaxed md:leading-loose mb-8  tracking-normal">
+                        <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-text-main dark:text-white mb-8  tracking-normal">
                             Kỹ thuật thi công <br /><span className="text-primary dark:text-accent">cây công trình</span> đại thụ
                         </h1>
                         <p className="text-text-muted dark:text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light">
@@ -52,7 +52,7 @@ const LargeTreeInstallationPage: React.FC = () => {
                             <div className="lg:w-1/2 flex flex-col gap-10 order-2 lg:order-1">
                                 <div>
                                     <span className="text-primary dark:text-accent font-black tracking-widest text-sm  mb-3 block">Phương pháp KGX</span>
-                                    <h2 className="text-3xl md:text-4xl font-black text-text-main dark:text-white leading-relaxed md:leading-loose mb-8  tracking-normal">
+                                    <h2 className="text-3xl md:text-4xl font-black text-text-main dark:text-white mb-8  tracking-normal">
                                         Giải pháp triển khai <br /> toàn diện
                                     </h2>
                                     <p className="text-text-muted dark:text-gray-300 text-lg leading-relaxed font-light">
@@ -121,7 +121,7 @@ const LargeTreeInstallationPage: React.FC = () => {
                 <section className="bg-primary py-24 relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
                     <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-8 max-w-4xl leading-relaxed md:leading-loose  tracking-normal">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-8 max-w-4xl  tracking-normal">
                             Đảm bảo an toàn and thẩm mỹ cho dự án cây lớn
                         </h2>
                         <p className="text-white/80 text-xl mb-12 max-w-2xl font-light">

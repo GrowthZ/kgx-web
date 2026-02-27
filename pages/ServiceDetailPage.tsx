@@ -76,7 +76,7 @@ const ServiceDetailPage: React.FC = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             {/* Text Content */}
                             <div className="flex flex-col gap-6">
-                                <h1 className="text-3xl lg:text-4xl font-extrabold text-text-main leading-relaxed md:leading-loose tracking-normal ">
+                                <h1 className="text-3xl lg:text-4xl font-extrabold text-text-main tracking-normal ">
                                     {service.title}
                                 </h1>
                                 <p className="text-lg text-text-muted leading-relaxed max-w-lg">
@@ -154,7 +154,7 @@ const ServiceDetailPage: React.FC = () => {
                                         {section.subtitle && (
                                             <p className="text-secondary font-bold text-sm mb-2  tracking-widest">{section.subtitle}</p>
                                         )}
-                                        <h2 className="text-2xl font-bold text-text-main mb-6  tracking-normal leading-relaxed md:leading-loose">
+                                        <h2 className="text-2xl font-bold text-text-main mb-6  tracking-normal">
                                             {section.title}
                                         </h2>
                                         {section.description && (
