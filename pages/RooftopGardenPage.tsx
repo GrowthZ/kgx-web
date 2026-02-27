@@ -17,7 +17,7 @@ const RooftopGardenPage: React.FC = () => {
                             <span className="material-symbols-outlined text-xs">chevron_right</span>
                             <span className="text-primary dark:text-accent">Thiết kế cảnh quan</span>
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-black tracking-normal text-text-main dark:text-white leading-[1.8] ">
+                        <h1 className="text-3xl md:text-5xl font-black tracking-normal text-text-main dark:text-white leading-relaxed md:leading-loose ">
                             Thiết kế <br /><span className="text-primary dark:text-accent">vườn trên mái</span>
                         </h1>
                         <p className="text-xl text-text-muted dark:text-gray-300 max-w-2xl mt-4 leading-relaxed font-light">
@@ -115,7 +115,7 @@ const RooftopGardenPage: React.FC = () => {
                         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
                         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-12 md:p-16 gap-10">
                             <div className="flex flex-col gap-6 max-w-2xl text-center md:text-left">
-                                <h2 className="text-2xl md:text-4xl font-black text-white leading-[1.8] ">
+                                <h2 className="text-2xl md:text-4xl font-black text-white leading-relaxed md:leading-loose ">
                                     Tư vấn thiết kế vườn trên mái phù hợp kết cấu
                                 </h2>
                                 <p className="text-white/80 text-xl leading-relaxed">

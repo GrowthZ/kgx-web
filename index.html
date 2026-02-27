@@ -67,6 +67,52 @@
     };
   </script>
   <style>
+    /* Global typography fix for titles to ensure they are not crowded */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .text-2xl,
+    .text-3xl,
+    .text-4xl,
+    .text-5xl {
+      line-height: 1.4 !important;
+    }
+
+    @media (min-width: 768px) {
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .text-2xl,
+      .text-3xl,
+      .text-4xl,
+      .text-5xl {
+        line-height: 1.5 !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .text-2xl,
+      .text-3xl,
+      .text-4xl,
+      .text-5xl {
+        line-height: 1.6 !important;
+      }
+    }
+
     /* Custom scrollbar for better aesthetics */
     ::-webkit-scrollbar {
       width: 8px;

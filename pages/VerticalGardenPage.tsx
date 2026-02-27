@@ -15,7 +15,7 @@ const VerticalGardenPage: React.FC = () => {
                         <div className="flex flex-col gap-12 lg:gap-16">
                             <div className="max-w-[760px]">
                                 <span className="text-accent text-sm font-bold tracking-wider  mb-3 block">Bối cảnh đô thị</span>
-                                <h1 className="text-[#141613] dark:text-white text-3xl font-black leading-[1.8] tracking-normal md:text-4xl lg:text-5xl ">
+                                <h1 className="text-[#141613] dark:text-white text-3xl font-black leading-relaxed md:leading-loose tracking-normal md:text-4xl lg:text-5xl ">
                                     Khi không gian ngang<br className="hidden md:block" /> <span className="text-primary dark:text-accent">không còn</span>
                                 </h1>
                             </div>
@@ -42,7 +42,7 @@ const VerticalGardenPage: React.FC = () => {
                 <section className="bg-[#f2f2f0] dark:bg-background-dark py-20 px-4 sm:px-6 lg:px-10">
                     <div className="mx-auto max-w-[1200px]">
                         <div className="mb-14 text-center max-w-3xl mx-auto">
-                            <h2 className="text-primary dark:text-white tracking-normal text-2xl font-black leading-[1.8]  mb-4">Vườn thẳng đứng không chỉ là treo cây</h2>
+                            <h2 className="text-primary dark:text-white tracking-normal text-2xl font-black leading-relaxed md:leading-loose  mb-4">Vườn thẳng đứng không chỉ là treo cây</h2>
                             <p className="text-[#707b6b] dark:text-gray-400 text-lg">Đó là sự kết hợp chính xác giữa kỹ thuật xây dựng, công nghệ tưới tiêu and kiến thức thực vật học.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -69,7 +69,7 @@ const VerticalGardenPage: React.FC = () => {
                 {/* Section 3: KGX Solutions */}
                 <section className="bg-background-light dark:bg-[#30352c] py-20 px-4 sm:px-6 lg:px-10">
                     <div className="mx-auto max-w-[1200px]">
-                        <h2 className="text-primary dark:text-white tracking-normal text-2xl font-black leading-[1.8]  mb-10 text-left">Giải pháp từ KGX</h2>
+                        <h2 className="text-primary dark:text-white tracking-normal text-2xl font-black leading-relaxed md:leading-loose  mb-10 text-left">Giải pháp từ KGX</h2>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:h-[500px]">
                             <div className="relative overflow-hidden rounded-2xl group h-[300px] lg:h-full shadow-md">
                                 <img alt="Irrigation integration" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0HkG5bKQCIAJIUmxpaLTCJt2kKEHUMPk2yd3UWORJm4-6ZVSdS2by5VO-6wo3f5xUz9SbP70bfti-IPutrEHIdBJqoRpQ1VXDBP0_fXqkUSByeNej_04cho6e46Rt5GD04PiCP4T-lRgMgeyvCUi2IKo4lVgNMnvTl6mQvYyJIxCoLui_lE2NdFPKCST3DxwzHHI0yJPE8yKfS70JKWBWpq-UeZSbuBl01dRsq-jaczuNJnE4YoU6b0pxB5Yg_Wo2E9n6Am30G1w" />
@@ -105,7 +105,7 @@ const VerticalGardenPage: React.FC = () => {
                 <section className="bg-white dark:bg-background-dark py-20 px-4 sm:px-6 lg:px-10 border-t border-[#edeeec] dark:border-white/5">
                     <div className="mx-auto max-w-[1200px]">
                         <div className="flex justify-between items-end mb-10">
-                            <h2 className="text-primary dark:text-white tracking-normal text-2xl font-black leading-[1.8] ">Ứng dụng phổ biến</h2>
+                            <h2 className="text-primary dark:text-white tracking-normal text-2xl font-black leading-relaxed md:leading-loose ">Ứng dụng phổ biến</h2>
                             <button className="hidden sm:inline-flex items-center text-primary dark:text-accent font-bold hover:underline">
                                 Xem tất cả dự án <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
                             </button>
@@ -133,7 +133,7 @@ const VerticalGardenPage: React.FC = () => {
                 {/* Section 5: Common Mistakes */}
                 <section className="bg-neutral-50 dark:bg-[#30352c] py-20 px-4 sm:px-6 lg:px-10">
                     <div className="mx-auto max-w-[1200px]">
-                        <h2 className="text-[#141613] dark:text-white tracking-normal text-2xl font-black leading-[1.8]  mb-10 text-center">Những sai lầm thường gặp</h2>
+                        <h2 className="text-[#141613] dark:text-white tracking-normal text-2xl font-black leading-relaxed md:leading-loose  mb-10 text-center">Những sai lầm thường gặp</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {[
                                 { icon: 'potted_plant', title: 'Chọn sai cây', desc: 'Sử dụng cây ngoại thất cho nội thất hoặc ngược lại, dẫn đến cây chết hàng loạt sau 2 tuần.' },

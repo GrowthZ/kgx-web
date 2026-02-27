@@ -57,7 +57,7 @@ const ProductListingPage: React.FC = () => {
                                                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                                             </div>
                                             <div className="p-4 flex flex-col gap-2 flex-grow">
-                                                <h3 className="text-[#161712] text-lg font-bold leading-[1.8] group-hover:text-primary transition-colors">
+                                                <h3 className="text-[#161712] text-lg font-bold leading-relaxed md:leading-loose group-hover:text-primary transition-colors">
                                                     {tree.name}
                                                 </h3>
                                                 <p className="text-[#7a8165] text-sm font-normal line-clamp-2">
@@ -103,7 +103,7 @@ const ProductListingPage: React.FC = () => {
                 <section className="w-full bg-[#f2f3f0] py-16 mt-auto border-t border-[#dee0d7]">
                     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
                         <span className="text-accent font-bold tracking-wider text-sm mb-4">Tư vấn chuyên sâu</span>
-                        <h2 className="text-primary text-2xl md:text-3xl font-black leading-[1.8] mb-4">
+                        <h2 className="text-primary text-2xl md:text-3xl font-black leading-relaxed md:leading-loose mb-4">
                             Bạn cần tư vấn chọn cây phù hợp cho công trình?
                         </h2>
                         <p className="text-[#4e5440] text-lg leading-relaxed max-w-2xl mx-auto mb-8">

@@ -13,7 +13,7 @@ const CleanAgriculturePage: React.FC = () => {
                 <section className="w-full pt-20 pb-12 px-6 max-w-[1200px]">
                     <div className="flex flex-col gap-4 text-center md:text-left">
                         <span className="text-primary dark:text-accent font-black text-sm tracking-[0.4em] ">Dịch vụ chuyên sâu</span>
-                        <h1 className="text-3xl md:text-5xl font-black text-[#151712] dark:text-white leading-[1.8]  tracking-normal">
+                        <h1 className="text-3xl md:text-5xl font-black text-[#151712] dark:text-white leading-relaxed md:leading-loose  tracking-normal">
                             Thi công <br className="hidden md:block" /><span className="text-primary dark:text-accent">Nông nghiệp sạch</span>
                         </h1>
                         <p className="text-text-muted dark:text-gray-400 mt-6 max-w-2xl text-xl font-light leading-relaxed italic">
@@ -65,7 +65,7 @@ const CleanAgriculturePage: React.FC = () => {
                             <div className="flex flex-col gap-12 order-2 lg:order-1">
                                 <div className="space-y-6">
                                     <span className="text-accent font-black tracking-[0.3em] text-xs  block">Giải pháp tối ưu</span>
-                                    <h4 className="text-3xl md:text-4xl font-black text-[#151712] dark:text-white  tracking-normal leading-[1.8]">Canh tác <br />& tự động hóa</h4>
+                                    <h4 className="text-3xl md:text-4xl font-black text-[#151712] dark:text-white  tracking-normal leading-relaxed md:leading-loose">Canh tác <br />& tự động hóa</h4>
                                     <p className="text-text-muted dark:text-gray-300 text-xl font-light leading-relaxed">
                                         KGX cung cấp giải pháp trọn gói từ khâu thiết kế đến vận hành, giúp tối ưu năng suất cây trồng trên từng mét vuông đất.
                                     </p>
@@ -109,7 +109,7 @@ const CleanAgriculturePage: React.FC = () => {
                 <section className="w-full py-24 px-6 bg-primary relative overflow-hidden transition-colors">
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 2px, transparent 2px)', backgroundSize: '40px 40px' }}></div>
                     <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center text-center">
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-[1.8]  max-w-4xl tracking-normal">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-relaxed md:leading-loose  max-w-4xl tracking-normal">
                             Cần giải pháp thi công <br className="hidden md:block" /> nông nghiệp sạch chuyên nghiệp?
                         </h2>
                         <p className="text-white/90 text-2xl mb-14 max-w-3xl font-light italic leading-relaxed">

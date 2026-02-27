@@ -14,7 +14,7 @@ const ResortParkDesignPage: React.FC = () => {
                     <div className="mx-auto max-w-[1200px] px-4 md:px-8">
                         <div className="max-w-3xl">
                             <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary dark:bg-white/10 dark:text-white text-xs font-bold  tracking-wider mb-4">Dịch vụ Cảnh Quan</span>
-                            <h2 className="text-3xl md:text-4xl font-black tracking-normal text-[#151612] dark:text-white mb-6 leading-[1.8] ">
+                            <h2 className="text-3xl md:text-4xl font-black tracking-normal text-[#151612] dark:text-white mb-6 leading-relaxed md:leading-loose ">
                                 Thiết kế khu nghỉ dưỡng & <br /><span className="text-primary dark:text-accent">Công viên bền vững</span>
                             </h2>
                             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
@@ -61,7 +61,7 @@ const ResortParkDesignPage: React.FC = () => {
                             <div className="flex flex-col gap-8 order-2 lg:order-1">
                                 <div>
                                     <h3 className="text-sm font-bold text-accent  tracking-widest mb-2">Giá trị cốt lõi</h3>
-                                    <h2 className="text-2xl md:text-3xl font-black text-[#151612] dark:text-white leading-[1.8] mb-6 ">
+                                    <h2 className="text-2xl md:text-3xl font-black text-[#151612] dark:text-white leading-relaxed md:leading-loose mb-6 ">
                                         Nguyên tắc KGX áp dụng
                                     </h2>
                                     <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed">
@@ -107,7 +107,7 @@ const ResortParkDesignPage: React.FC = () => {
                 {/* Section 4: Scope of Work */}
                 <section className="w-full py-16 bg-white dark:bg-background-dark border-t border-primary/10 dark:border-white/10">
                     <div className="mx-auto max-w-[1200px] px-4 md:px-8">
-                        <h2 className="text-2xl font-black text-[#151612] dark:text-white tracking-normal leading-[1.8]  mb-12">Phạm vi thiết kế chi tiết</h2>
+                        <h2 className="text-2xl font-black text-[#151612] dark:text-white tracking-normal leading-relaxed md:leading-loose  mb-12">Phạm vi thiết kế chi tiết</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
                                 { title: 'Hệ thống lối đi', desc: 'Thiết kế cốt nền, vật liệu lát sàn chống trượt and chiếu sáng dẫn hướng.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDj_KzRXEDLN1IwZvAtI5mqmk-wg2zsAHvh7m4hpfkjTPdgXGT26StzqcMfM3ESS-7FuNeBiiK7p1beFHnXLdkrCfKWT7SCT_dpBIbp5uE4KDPuSAiTMPt8vojPQMBpf0sS_6JSnOAiUbrqSs1BqGkafk26fvYhQu0ql-3Nk9ZeP1EQBWVt_mVi4V6NpBSxgYyZkv-nM_RW7SuEuKSScAa6fViUwV3QR-jBr2xq51SAUNPee2n3fHOOC9lxScE9aydKS5YJQxiyh2I' },
@@ -131,7 +131,7 @@ const ResortParkDesignPage: React.FC = () => {
                 {/* CTA Banner */}
                 <section className="w-full py-20 bg-primary relative overflow-hidden">
                     <div className="mx-auto max-w-[1200px] px-4 md:px-8 relative z-10 text-center">
-                        <h2 className="text-2xl md:text-4xl font-black text-white mb-6 leading-[1.8] ">
+                        <h2 className="text-2xl md:text-4xl font-black text-white mb-6 leading-relaxed md:leading-loose ">
                             Bạn cần giải pháp cảnh quan tối ưu <br className="hidden md:block" /> cho khu nghỉ dưỡng?
                         </h2>
                         <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">

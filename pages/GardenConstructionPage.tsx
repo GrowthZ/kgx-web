@@ -31,7 +31,7 @@ const GardenConstructionPage: React.FC = () => {
                         <div className="flex flex-col gap-6 max-w-2xl">
                             <div className="flex flex-col gap-3">
                                 <span className="text-[#84da0b] font-bold tracking-wider  text-sm">Chuyên nghiệp & Tận tâm</span>
-                                <h1 className="text-[#161c0d] text-3xl md:text-4xl lg:text-5xl font-black leading-[1.8] tracking-normal">
+                                <h1 className="text-[#161c0d] text-3xl md:text-4xl lg:text-5xl font-black leading-relaxed md:leading-loose tracking-normal">
                                     Dịch vụ thi công cảnh quan trọn gói
                                 </h1>
                                 <p className="text-gray-600 text-base md:text-lg font-normal leading-relaxed mt-2">
@@ -299,7 +299,7 @@ const GardenConstructionPage: React.FC = () => {
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-lg mb-1">Văn phòng Thái Nguyên</h4>
-                                            <p className="text-gray-400 text-sm">Số 123, Đường Lương Ngọc Quyến, TP. Thái Nguyên, Tỉnh Thái Nguyên</p>
+                                            <p className="text-gray-400 text-sm">Số 123, Đường Lương Ngọc Quyến, 12e khu dân cư số 9, phường Gia Sàng, tỉnh Thái Nguyên , Thái Nguyên, Vietnam</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">

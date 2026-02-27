@@ -23,7 +23,7 @@ const TissueCultureBiotechPage: React.FC = () => {
 
                     <div className="container mx-auto px-6 relative z-10 text-center">
                         <span className="text-accent font-black tracking-[0.6em] text-xs  mb-6 block drop-shadow-lg">Scientific Innovation</span>
-                        <h1 className="text-4xl md:text-6xl font-black text-white mb-8 leading-[1.8]  tracking-normal drop-shadow-2xl">
+                        <h1 className="text-4xl md:text-6xl font-black text-white mb-8 leading-relaxed md:leading-loose  tracking-normal drop-shadow-2xl">
                             Nuôi Cấy Mô <br /><span className="text-accent">Công Nghệ Cao</span>
                         </h1>
                         <p className="text-white/90 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed italic mb-12 drop-shadow-md">
@@ -67,7 +67,7 @@ const TissueCultureBiotechPage: React.FC = () => {
                             <div className="lg:w-1/2 space-y-12 order-2 lg:order-1">
                                 <div>
                                     <span className="text-primary dark:text-accent font-black tracking-widest text-sm  mb-4 block">Our Laboratory</span>
-                                    <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white leading-[1.8]  tracking-normal">Tiêu chuẩn <br />vô trùng tuyệt đối</h2>
+                                    <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white leading-relaxed md:leading-loose  tracking-normal">Tiêu chuẩn <br />vô trùng tuyệt đối</h2>
                                 </div>
                                 <p className="text-text-muted dark:text-gray-300 text-xl font-light leading-relaxed">
                                     Phòng thí nghiệm của KGX được trang bị hệ thống lọc khí HEPA, tủ cấy vi sinh Clean Bench and hệ thống kiểm soát nhiệt độ nghiêm ngặt, đảm bảo môi trường lý tưởng for sự phát triển của mô thực vật.
@@ -108,7 +108,7 @@ const TissueCultureBiotechPage: React.FC = () => {
                 <section className="py-24 bg-primary relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(45deg, #ffffff 1px, transparent 1px), linear-gradient(-45deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
                     <div className="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-[1.8]  tracking-normal">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-relaxed md:leading-loose  tracking-normal">
                             Đột phá nông nghiệp <br className="hidden md:block" /> từ tế bào
                         </h2>
                         <p className="text-white/80 text-2xl mb-14 max-w-3xl font-light italic">

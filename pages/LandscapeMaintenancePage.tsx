@@ -17,7 +17,7 @@ const LandscapeMaintenancePage: React.FC = () => {
                                 <span className="h-px w-8 bg-accent"></span>
                                 <span>Dịch vụ chuyên nghiệp</span>
                             </div>
-                            <h1 className="text-3xl md:text-5xl font-black text-primary dark:text-white tracking-normal leading-[1.8] ">
+                            <h1 className="text-3xl md:text-5xl font-black text-primary dark:text-white tracking-normal leading-relaxed md:leading-loose ">
                                 Chăm sóc & <br className="hidden md:block" />Bảo dưỡng Cảnh quan
                             </h1>
                             <p className="mt-4 max-w-2xl text-xl text-text-muted dark:text-gray-300 leading-relaxed font-light">
@@ -65,7 +65,7 @@ const LandscapeMaintenancePage: React.FC = () => {
                             <div className="flex flex-col gap-10 order-2 lg:order-1">
                                 <div>
                                     <span className="text-accent dark:text-accent font-black tracking-widest text-sm  mb-4 block">Giải pháp toàn diện</span>
-                                    <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white mb-6  leading-[1.8]">Dịch vụ KGX <br />cung cấp</h2>
+                                    <h2 className="text-3xl md:text-4xl font-black text-primary dark:text-white mb-6  leading-relaxed md:leading-loose">Dịch vụ KGX <br />cung cấp</h2>
                                     <p className="text-text-muted dark:text-gray-300 text-lg leading-relaxed">
                                         Chúng tôi mang đến quy trình chăm sóc khép kín, đảm bảo cây xanh luôn phát triển khỏe mạnh and duy trì thẩm mỹ như thiết kế ban đầu.
                                     </p>
@@ -149,7 +149,7 @@ const LandscapeMaintenancePage: React.FC = () => {
                     </div>
                     <div className="mx-auto max-w-[1200px] px-6 relative z-10 text-center flex flex-col items-center">
                         <span className="px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-[10px] font-black  tracking-[0.4em] mb-8">KGX Vietnam</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-[1.8]  max-w-4xl tracking-normal">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-relaxed md:leading-loose  max-w-4xl tracking-normal">
                             Duy trì mảng xanh <br className="hidden md:block" /> luôn bền đẹp cùng KGX
                         </h2>
                         <p className="text-white/80 max-w-2xl mb-12 text-xl leading-relaxed font-light">

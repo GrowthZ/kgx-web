@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
                 <span className="material-symbols-outlined text-primary mt-0.5">
                   location_on
                 </span>
-                <span>TP. Thái Nguyên, Tỉnh Thái Nguyên</span>
+                <span>12e khu dân cư số 9, phường Gia Sàng, tỉnh Thái Nguyên , Thái Nguyên, Vietnam</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary">

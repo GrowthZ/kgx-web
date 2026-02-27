@@ -61,7 +61,7 @@ const ProjectDetailPage: React.FC = () => {
                                 <span className="text-olive font-semibold">{project.title}</span>
                             </div>
                             <div className="space-y-4">
-                                <h1 className="text-3xl lg:text-4xl font-black text-olive leading-[1.8] tracking-normal ">
+                                <h1 className="text-3xl lg:text-4xl font-black text-olive leading-relaxed md:leading-loose tracking-normal ">
                                     {project.title}
                                 </h1>
                                 <p className="text-lg lg:text-xl text-text-light font-normal max-w-[500px]">
@@ -162,7 +162,7 @@ const ProjectDetailPage: React.FC = () => {
                     <div className="max-w-[1280px] mx-auto px-5 xl:px-20 text-center">
                         <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl max-w-3xl mx-auto flex flex-col items-center">
                             <span className="text-primary font-bold tracking-wider text-sm mb-2 ">Liên hệ với chúng tôi</span>
-                            <h2 className="text-2xl lg:text-3xl font-black text-olive mb-6 leading-[1.8]">Nhận tư vấn cho dự án tương tự?</h2>
+                            <h2 className="text-2xl lg:text-3xl font-black text-olive mb-6 leading-relaxed md:leading-loose">Nhận tư vấn cho dự án tương tự?</h2>
                             <p className="text-text-light text-lg mb-8 max-w-xl text-center">
                                 Để lại thông tin, kiến trúc sư của KGX sẽ liên hệ tư vấn giải pháp thiết kế &amp; thi công cảnh quan tối ưu nhất cho ngôi nhà của bạn.
                             </p>

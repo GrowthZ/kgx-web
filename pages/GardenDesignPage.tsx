@@ -35,7 +35,7 @@ const GardenDesignPage: React.FC = () => {
                                     <span className="size-2 rounded-full bg-[#f97316]"></span>
                                     Chuyên nghiệp & Tận tâm
                                 </div>
-                                <h1 className="text-3xl font-black leading-[1.8] tracking-normal text-[#3a4d2e] sm:text-4xl lg:text-5xl">
+                                <h1 className="text-3xl font-black leading-relaxed md:leading-loose tracking-normal text-[#3a4d2e] sm:text-4xl lg:text-5xl">
                                     Dịch vụ thiết kế <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#84da0b] to-green-600">cảnh quan xanh</span>
                                 </h1>
@@ -343,7 +343,7 @@ const GardenDesignPage: React.FC = () => {
                                                 </div>
                                                 <div>
                                                     <p className="font-bold">Trụ sở chính</p>
-                                                    <p className="text-sm text-gray-300 leading-relaxed mt-1">Số 123, Đường Hoàng Văn Thụ, TP. Thái Nguyên, Tỉnh Thái Nguyên</p>
+                                                    <p className="text-sm text-gray-300 leading-relaxed mt-1">Số 123, Đường Hoàng Văn Thụ, 12e khu dân cư số 9, phường Gia Sàng, tỉnh Thái Nguyên , Thái Nguyên, Vietnam</p>
                                                 </div>
                                             </div>
                                             <div className="flex items-start gap-4">

@@ -14,7 +14,7 @@ const GreenConsultingPage: React.FC = () => {
                     <div className="mx-auto max-w-[1200px]">
                         <div className="mb-16 text-center max-w-3xl mx-auto">
                             <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent text-xs font-black tracking-widest mb-6 border border-primary/10 dark:border-accent/10">VẤN ĐỀ THƯỜNG GẶP</span>
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#161811] dark:text-white leading-[1.8]  tracking-normal">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#161811] dark:text-white leading-relaxed md:leading-loose  tracking-normal">
                                 KHI BẠN CHƯA CÓ <br className="hidden sm:block" /> PHƯƠNG ÁN RÕ RÀNG
                             </h1>
                             <p className="mt-6 text-text-muted dark:text-gray-400 text-lg md:text-xl font-light leading-relaxed">Chúng tôi thấu hiểu những băn khoăn của bạn khi bắt đầu kiến tạo không gian xanh cho ngôi nhà của mình.</p>
@@ -41,7 +41,7 @@ const GreenConsultingPage: React.FC = () => {
                                         <div className="size-16 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center mb-4 transition-transform group-hover:rotate-12">
                                             <span className="material-symbols-outlined text-white text-2xl">{card.icon}</span>
                                         </div>
-                                        <h3 className="text-2xl font-black text-white leading-[1.8]  tracking-normal">{card.title}</h3>
+                                        <h3 className="text-2xl font-black text-white leading-relaxed md:leading-loose  tracking-normal">{card.title}</h3>
                                         <p className="text-gray-300 font-medium leading-relaxed italic">
                                             "{card.desc}"
                                         </p>
@@ -61,7 +61,7 @@ const GreenConsultingPage: React.FC = () => {
                         <div className="grid lg:grid-cols-2 gap-20 items-center">
                             <div className="flex flex-col gap-10 order-2 lg:order-1">
                                 <div>
-                                    <h2 className="text-3xl sm:text-4xl font-black text-[#161811] dark:text-white mb-8  leading-[1.8] tracking-normal">
+                                    <h2 className="text-3xl sm:text-4xl font-black text-[#161811] dark:text-white mb-8  leading-relaxed md:leading-loose tracking-normal">
                                         Cách KGX tư vấn <br /><span className="text-primary dark:text-accent">giải pháp cho bạn</span>
                                     </h2>
                                     <p className="text-text-muted dark:text-gray-400 mb-10 text-xl font-light leading-relaxed">
@@ -111,7 +111,7 @@ const GreenConsultingPage: React.FC = () => {
                 <section className="relative py-24 px-6 lg:px-8 bg-primary overflow-hidden transition-colors">
                     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
                     <div className="relative mx-auto max-w-[1000px] text-center flex flex-col items-center">
-                        <h2 className="text-3xl sm:text-5xl font-black text-white mb-10 leading-[1.8]  tracking-normal">
+                        <h2 className="text-3xl sm:text-5xl font-black text-white mb-10 leading-relaxed md:leading-loose  tracking-normal">
                             Hãy để KGX giúp bạn tìm ra <br /><span className="text-accent underline decoration-white/20 underline-offset-8">giải pháp xanh</span>
                         </h2>
                         <p className="text-white/90 text-2xl mb-14 max-w-3xl font-light italic leading-relaxed">

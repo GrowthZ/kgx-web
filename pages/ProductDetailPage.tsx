@@ -68,7 +68,7 @@ const ProductDetailPage: React.FC = () => {
                         {/* Text Content */}
                         <div className="flex flex-col gap-6 order-2 lg:order-1 px-4 lg:pl-10">
                             <div className="flex flex-col gap-3">
-                                <h1 className="text-[#151b0e] text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.8] tracking-normal ">
+                                <h1 className="text-[#151b0e] text-3xl sm:text-4xl lg:text-5xl font-black leading-relaxed md:leading-loose tracking-normal ">
                                     {tree.name.includes(' ') ? (
                                         <>
                                             {tree.name.substring(0, tree.name.lastIndexOf(' '))}
@@ -77,7 +77,7 @@ const ProductDetailPage: React.FC = () => {
                                         </>
                                     ) : tree.name}
                                 </h1>
-                                <h2 className="text-text-muted text-lg font-medium leading-[1.8] max-w-xl">
+                                <h2 className="text-text-muted text-lg font-medium leading-relaxed md:leading-loose max-w-xl">
                                     {tree.description}
                                 </h2>
                             </div>

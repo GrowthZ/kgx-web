@@ -43,7 +43,7 @@ const ProjectsPage: React.FC = () => {
                                 <span className="material-symbols-outlined text-[18px] text-primary">verified</span>
                                 <span className="text-xs font-bold text-primary  tracking-wide">Đối tác cảnh quan tin cậy</span>
                             </div>
-                            <h1 className="text-3xl font-black leading-[1.8] tracking-normal text-text-main sm:text-4xl lg:text-5xl">
+                            <h1 className="text-3xl font-black leading-relaxed md:leading-loose tracking-normal text-text-main sm:text-4xl lg:text-5xl">
                                 Dự án cảnh quan <br /> <span className="text-primary">KGX - Không Gian Xanh</span>
                             </h1>
                             <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
@@ -162,7 +162,7 @@ const ProjectsPage: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="flex flex-1 flex-col p-6 lg:p-8">
-                                        <h3 className="mb-4 text-xl font-bold leading-[1.8] text-olive group-hover:text-primary transition-colors line-clamp-2 ">{project.title}</h3>
+                                        <h3 className="mb-4 text-xl font-bold leading-relaxed md:leading-loose text-olive group-hover:text-primary transition-colors line-clamp-2 ">{project.title}</h3>
                                         <div className="mb-6 flex flex-col gap-3 border-t border-olive/5 pt-5 text-sm">
                                             <div className="flex items-center gap-3 text-olive-light font-medium">
                                                 <span className="material-symbols-outlined text-[20px] text-primary">location_on</span>
@@ -286,7 +286,7 @@ const ProjectsPage: React.FC = () => {
                             </div>
                         </div>
                         <div className="order-1 lg:order-2">
-                            <h2 className="mb-6 text-2xl font-black text-text-main leading-[1.8]">Tại sao chọn <br /> <span className="text-primary">KGX - Không Gian Xanh?</span></h2>
+                            <h2 className="mb-6 text-2xl font-black text-text-main leading-relaxed md:leading-loose">Tại sao chọn <br /> <span className="text-primary">KGX - Không Gian Xanh?</span></h2>
                             <div className="relative h-[400px] w-full overflow-hidden rounded-2xl shadow-xl">
                                 <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6yc2h3MFUC7-L-tnVawdoWOrF2DGOUC_LhbUA8kWakPAgKMfHUpxAgFmzDiIa6R_y8CvBYjOHNjVaMbfNATb8cNFGzKCF_AjODH8Jq-R0osOHp0fudCSmGPyT2elC6JYw8sKjeKu5sJgSFtSjjaqQyTwGFvObuD5WRFy-fTrA3CvswV9SB88YQHCQvz_h1452NZ8oyiJwml6ze2I_Yi3xMoxNsaBFoGuqWEtQ4byfixjrDmNFCZuD2GlfLnj2tfBVjqZBrIUaVa4')" }}></div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -353,7 +353,7 @@ const ProjectsPage: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Trụ sở chính</p>
-                                        <p className="text-base font-bold text-text-main">Số xx, Đường ABC, TP. Thái Nguyên, Tỉnh Thái Nguyên</p>
+                                        <p className="text-base font-bold text-text-main">Số xx, Đường ABC, 12e khu dân cư số 9, phường Gia Sàng, tỉnh Thái Nguyên , Thái Nguyên, Vietnam</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">

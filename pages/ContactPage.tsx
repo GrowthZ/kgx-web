@@ -116,7 +116,7 @@ ${message}
                                         <span className="size-2 rounded-full bg-[#a4d411] animate-pulse"></span>
                                         <span className="text-[#a4d411] text-xs font-bold tracking-wider">Tư vấn miễn phí</span>
                                     </div>
-                                    <h1 className="text-white text-3xl lg:text-4xl font-black leading-[1.8] tracking-normal">
+                                    <h1 className="text-white text-3xl lg:text-4xl font-black leading-relaxed md:leading-loose tracking-normal">
                                         LIÊN HỆ & NHẬN <br />
                                         <span className="text-[#a4d411]">TƯ VẤN DỰ ÁN</span>
                                     </h1>
