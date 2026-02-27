@@ -23,6 +23,7 @@ export interface Project {
     scale?: string;
     completionTime?: string;
     content?: string;
+    status?: string;
 }
 
 class ProjectsService extends FirebaseService<Project> {

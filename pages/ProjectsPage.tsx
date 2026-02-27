@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { projectsService, Project } from '../src/services/projectsService';
 import ImageWithFallback from '../components/ImageWithFallback';
