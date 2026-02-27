@@ -155,7 +155,7 @@ const ProjectsPage: React.FC = () => {
                     ) : (
                         <div className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
                             {filteredProjects.map((project, idx) => (
-                                <div key={idx} className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#eef4e7]">
+                                <Link key={idx} to={`/du-an/${project.slug}`} className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#eef4e7] cursor-pointer">
                                     <div className="relative aspect-[16/10] w-full overflow-hidden">
                                         <ImageWithFallback isBackground className="h-full w-full transition-transform duration-700 group-hover:scale-110" src={project.image} />
                                         <div className="absolute top-4 right-4 rounded-full bg-primary px-3 py-1 text-[10px] font-black  tracking-wider text-white shadow-lg backdrop-blur-md">
@@ -176,11 +176,11 @@ const ProjectsPage: React.FC = () => {
                                                 </div>
                                             )}
                                         </div>
-                                        <Link to={`/du-an/${project.slug}`} className="mt-auto flex w-full items-center justify-center rounded-xl bg-background-off py-4 text-sm font-bold text-olive hover:bg-primary hover:text-white hover:shadow-lg transition-all">
+                                        <span className="mt-auto flex w-full items-center justify-center rounded-xl bg-background-off py-4 text-sm font-bold text-olive group-hover:bg-primary group-hover:text-white group-hover:shadow-lg transition-all">
                                             Xem chi tiết dự án
-                                        </Link>
+                                        </span>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     )}
@@ -363,7 +363,7 @@ const ProjectsPage: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Email</p>
-                                        <p className="text-base font-bold text-text-main">contact@kgxlandscape.vn</p>
+                                        <p className="text-base font-bold text-text-main">contact@kgxvn.vn</p>
                                     </div>
                                 </div>
                             </div>

@@ -361,7 +361,7 @@ const GardenDesignPage: React.FC = () => {
                                                 </div>
                                                 <div>
                                                     <p className="font-bold">Email</p>
-                                                    <p className="text-sm text-gray-300 mt-1">info@kgxlandscape.vn</p>
+                                                    <p className="text-sm text-gray-300 mt-1">info@kgxvn.vn</p>
                                                 </div>
                                             </div>
                                         </div>

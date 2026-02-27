@@ -303,7 +303,7 @@ const ProductListPage: React.FC = () => {
                                                 </div>
                                                 <div>
                                                     <p className="font-bold text-[#161c0d]">Email</p>
-                                                    <p className="text-sm text-gray-600">tuvan@kgxlandscape.vn</p>
+                                                    <p className="text-sm text-gray-600">tuvan@kgxvn.vn</p>
                                                 </div>
                                             </div>
                                         </div>

@@ -56,7 +56,7 @@ const ArticleDetailPage = () => {
         let url = window.location.href;
         // FB Sharer không thể cào dữ liệu từ localhost. Nếu đang ở môi trường dev, tạm dùng domain thật để test.
         if (url.includes('localhost') || url.includes('127.0.0.1')) {
-            url = url.replace(/https?:\/\/(localhost|127\.0\.0\.1):\d+/, 'https://kgxlandscape.vn');
+            url = url.replace(/https?:\/\/(localhost|127\.0\.0\.1):\d+/, 'https://kgxvn.vn');
         }
         window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=600,height=400');
     };
