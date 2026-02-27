@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { servicesService, Service } from '../src/services/servicesService';
+import { SERVICES_DATA } from '../services';
 import ImageWithFallback from '../components/ImageWithFallback';
 
 const ServiceDetailPage: React.FC = () => {
@@ -18,11 +19,21 @@ const ServiceDetailPage: React.FC = () => {
         try {
             setLoading(true);
             const data = await servicesService.getServiceBySlug(slug!);
-            setService(data);
+
             if (data) {
+                // Fallback to local SERVICES_DATA if image is missing from DB
+                const localData = SERVICES_DATA[slug!];
+                if (!data.image && localData?.hero?.image) {
+                    data.image = localData.hero.image;
+                }
+                if ((!data.images || data.images.length === 0) && localData?.hero?.image) {
+                    data.images = [localData.hero.image];
+                }
+
                 window.scrollTo(0, 0);
                 document.title = `${data.title} - KGX - Không Gian Xanh`;
             }
+            setService(data);
         } catch (error) {
             console.error('Error fetching service:', error);
         } finally {

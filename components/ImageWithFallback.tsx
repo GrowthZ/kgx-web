@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logoKgx from '../src/media/logo-kgx.png';
 
 interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     fallbackSrc?: string;
@@ -10,7 +11,7 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
     src,
     alt,
     className,
-    fallbackSrc = 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=2070&auto=format&fit=crop', // Generic high-quality landscape
+    fallbackSrc = logoKgx,
     isBackground = false,
     children,
     ...props

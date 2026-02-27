@@ -128,6 +128,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                     <div className="flex bg-slate-50 p-1 rounded-xl">
                         {(['all', 'images', 'others'] as const).map((tab) => (
                             <button
+                                type="button"
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${activeTab === tab
@@ -148,6 +149,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                     </label>
                     {onClose && (
                         <button
+                            type="button"
                             onClick={onClose}
                             className="size-10 flex items-center justify-center rounded-xl hover:bg-slate-50 text-slate-400 transition-colors"
                         >
@@ -161,6 +163,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
             <div className="px-8 py-3 bg-slate-50/50 border-b border-slate-100 flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-1">
                     <button
+                        type="button"
                         onClick={() => setPath('')}
                         className={`text-xs font-bold px-2 py-1 rounded-md hover:bg-slate-100 ${path === '' ? 'text-admin-primary' : 'text-slate-500'}`}
                     >
@@ -170,6 +173,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                         <Fragment key={idx}>
                             <span className="text-slate-300 material-symbols-outlined text-sm">chevron_right</span>
                             <button
+                                type="button"
                                 onClick={() => handleFolderClick(arr.slice(0, idx + 1).join('/'))}
                                 className={`text-xs font-bold px-2 py-1 rounded-md hover:bg-slate-100 whitespace-nowrap ${idx === arr.length - 1 ? 'text-admin-primary' : 'text-slate-500'}`}
                             >
@@ -179,7 +183,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                     ))}
                 </div>
                 {path && (
-                    <button onClick={handleBack} className="text-xs font-bold text-slate-400 hover:text-admin-primary flex items-center gap-1">
+                    <button type="button" onClick={handleBack} className="text-xs font-bold text-slate-400 hover:text-admin-primary flex items-center gap-1">
                         <span className="material-symbols-outlined text-sm">arrow_back</span>
                         Quay lại
                     </button>
@@ -204,6 +208,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                             {/* Folders */}
                             {folders.map(folder => (
                                 <button
+                                    type="button"
                                     key={folder.path}
                                     onClick={() => handleFolderClick(folder.path)}
                                     className="flex flex-col items-center group gap-2"
@@ -290,6 +295,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                         <div className="mt-10 pt-6 border-t border-slate-100 flex flex-col gap-3">
                             {allowSelection && (
                                 <button
+                                    type="button"
                                     onClick={() => onSelect?.(selectedFile.url)}
                                     className="w-full py-2.5 bg-admin-primary text-white rounded-xl text-sm font-bold shadow-lg shadow-admin-primary/20 hover:brightness-110 transition-all"
                                 >
@@ -297,6 +303,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
                                 </button>
                             )}
                             <button
+                                type="button"
                                 onClick={() => handleDelete(selectedFile)}
                                 className="w-full py-2.5 border border-rose-100 text-rose-600 hover:bg-rose-50 rounded-xl text-sm font-bold mb-2 transition-all"
                             >
@@ -311,6 +318,7 @@ const MediaManager: React.FC<MediaManagerProps> = ({
             {selectedFile && allowSelection && (
                 <div className="lg:hidden p-4 border-t border-slate-100 bg-white">
                     <button
+                        type="button"
                         onClick={() => onSelect?.(selectedFile.url)}
                         className="w-full py-3 bg-admin-primary text-white rounded-xl text-sm font-bold"
                     >

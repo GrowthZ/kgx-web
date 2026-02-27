@@ -35,7 +35,7 @@ const ROLES = [
 const getRoleBadge = (role: string) => ROLES.find(r => r.value === role) || ROLES[2];
 
 // ─── Empty Form State ─────────────────────────────────────────────────────────
-const EMPTY_FORM = { displayName: '', email: '', role: 'editor' as const, password: '' };
+const EMPTY_FORM = { displayName: '', email: '', role: 'editor' as 'admin' | 'editor' | 'viewer', password: '' };
 
 // ─── Component ────────────────────────────────────────────────────────────────
 const AdminTeamPage = () => {

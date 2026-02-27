@@ -373,7 +373,7 @@ const TiptapEditor: FC<TiptapEditorProps> = ({ value, onChange, label }) => {
 
                 {/* Bubble Menu */}
                 {editor && (
-                    <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
+                    <BubbleMenu editor={editor}>
                         <div className="flex items-center gap-0.5 bg-slate-900 rounded-xl px-2 py-1 shadow-xl">
                             <button type="button" onClick={() => editor.chain().focus().toggleBold().run()} className={`size-7 flex items-center justify-center rounded-lg text-xs ${editor.isActive('bold') ? 'bg-white/20 text-white' : 'text-slate-300 hover:text-white'}`}>
                                 <span className="material-symbols-outlined text-sm">format_bold</span>
