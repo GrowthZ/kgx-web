@@ -33,7 +33,7 @@ const ContactPage: React.FC = () => {
         hotline: '0868 462 462',
         email: 'khonggianxanhthainguyen@gmail.com',
         zalo: 'https://zalo.me/0868462462',
-        googleMapsEmbed: ''
+        googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1855.15686453779!2d105.84880824999999!3d21.57367365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313526c8efb99d9d%3A0x77b2f58c01bd6c83!2zS2h1IGTDom4gY8awIHPhu5EgOSwgR2lhIFPDoG5nLCBUcC4gVGjDoWkgTmd1ecOqbiwgVGjDoWkgTmd1ecOqbiwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1772230310507!5m2!1svi!2s'
     });
 
     useEffect(() => {
@@ -360,20 +360,29 @@ ${message}
                         </div>
                     )}
 
-                    {/* Map Overlay Card (Only show if no map is provided, or as a small subtle overlay) */}
-                    {!settings.googleMapsEmbed && (
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm px-4">
-                            <div className="bg-white p-6 rounded-2xl shadow-2xl text-center transform transition-transform hover:scale-105 duration-300">
-                                <div className="size-16 bg-[#a4d411]/20 rounded-full flex items-center justify-center mx-auto mb-4 text-[#a4d411]">
-                                    <span className="material-symbols-outlined text-2xl">map</span>
+                    {/* Map Overlay Card */}
+                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full max-w-sm px-4">
+                        <div className="bg-white p-6 rounded-2xl shadow-2xl flex items-center justify-between gap-4 transition-all duration-300 hover:shadow-primary/20 border border-gray-100">
+                            <div className="flex items-center gap-4">
+                                <div className="size-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                                    <span className="material-symbols-outlined text-xl">map</span>
                                 </div>
-                                <h3 className="text-xl font-bold text-[#1d2210] mb-2">Phục vụ toàn quốc</h3>
-                                <p className="text-gray-500 text-sm mb-4">
-                                    Sẵn sàng thực hiện các dự án quy mô lớn trên khắp 63 tỉnh thành.
-                                </p>
+                                <div>
+                                    <h3 className="text-sm font-bold text-[#1d2210]">KGX Thái Nguyên</h3>
+                                    <p className="text-gray-500 text-[10px]">KDC số 9, Phan Đình Phùng, TP Thái Nguyên</p>
+                                </div>
                             </div>
+                            <a
+                                href="https://maps.app.goo.gl/nvmBoPmyaHzFWFwn7"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-6 h-10 bg-primary hover:bg-primary/90 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-2 transition-all"
+                            >
+                                <span>Chỉ đường</span>
+                                <span className="material-symbols-outlined text-sm">directions</span>
+                            </a>
                         </div>
-                    )}
+                    </div>
                 </section>
 
                 {/* FAQ Section */}

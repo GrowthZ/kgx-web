@@ -5,6 +5,8 @@ import { projectsService, Project } from '../src/services/projectsService';
 import { contactService } from '../src/services/contactService';
 import ImageWithFallback from '../components/ImageWithFallback';
 import toast from 'react-hot-toast';
+import urbanPark from '../src/media/urban-park.png';
+import corporateLandscape from '../src/media/corporate-landscape.png';
 
 const ProjectsPage: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -128,13 +130,15 @@ ${message}
                         <div className="relative h-[400px] lg:h-[500px] w-full">
                             <ImageWithFallback
                                 isBackground
+                                showLightbox
                                 className="absolute top-0 right-0 h-[85%] w-[65%] overflow-hidden rounded-2xl shadow-xl transition-transform duration-700 hover:scale-105"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2FEwQp7nnRxt5LTXtc2pgk2DFSlyVa2IAEzFD8jLjGg75pXxNSAy9U-2RyM85QljBmarxtLi7vtfxwfGrNuykgh-o9p3ZH3YJx6MPFdEmr0QeI8WXUUG2q3LK7tUE2Yi6_LuyweaOmwtzGcFuy2G5y1pAPT_IHCpd8xDYHVf-GuMHtRbLh7-ut_-nbrek9Z9rMMn3w_o4DDInAKDFouUGlG73Sv-GWdksb-Vj3txsiITkCMhH3RfZIAjFBlG_oJ4Grd91yTaVWmw"
                             />
                             <ImageWithFallback
                                 isBackground
+                                showLightbox
                                 className="absolute bottom-0 left-0 h-[55%] w-[55%] overflow-hidden rounded-2xl shadow-xl ring-8 ring-[#fafcf8] transition-transform duration-700 hover:scale-105"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVTPJeTWNLA2YpFecX7MkdZjbhVxEzEE3nXRdZvclW44X3OuqWbPB-XLMdUOaFD6BYrl4w93P5gAMgXBLOiGzlwYnSSlm-aWkw60mZCgVF0GFQst2gmrBN6rlwCPmySOjYfV3I6H7RUBwTIE8gxcxQaWAwmk8ottEaZDunRXqWJH5vtqqizn7eWQn9YdBvoe8j8EGoY6YWl4N7l_awlna0tSYTdOrZLWHE7yz-XIWMZGaiZ2aTREwchy3WJNYxbCRaz-vZRmMtBoc')"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVTPJeTWNLA2YpFecX7MkdZjbhVxEzEE3nXRdZvclW44X3OuqWbPB-XLMdUOaFD6BYrl4w93P5gAMgXBLOiGzlwYnSSlm-aWkw60mZCgVF0GFQst2gmrBN6rlwCPmySOjYfV3I6H7RUBwTIE8gxcxQaWAwmk8ottEaZDunRXqWJH5vtqqizn7eWQn9YdBvoe8j8EGoY6YWl4N7l_awlna0tSYTdOrZLWHE7yz-XIWMZGaiZ2aTREwchy3WJNYxbCRaz-vZRmMtBoc"
                             />
                         </div>
                     </div>
@@ -155,7 +159,14 @@ ${message}
                         </div>
                         <h3 className="text-lg font-bold text-text-main mb-2">Biệt thự sân vườn</h3>
                         <p className="text-sm text-gray-500 mb-4 flex-grow">Thiết kế &amp; thi công trọn gói sân vườn, tiểu cảnh, hồ cá Koi cho biệt thự.</p>
-                        <div className="h-32 w-full rounded-lg bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXRZX_sWS_jKLNE5UpJQorhVUG7Q79eLY1eer1Iut00jMF9sfOZdQQ7c-HBi6mT67rcJo7yX0x_To3-6HhxWgMtdYHXi6RnlZriQ-4DN8qzJDqeYvH2p4Ux67UBniFNwnG7NriadW2THQ2gzAB29VwuUeIzmJUpx519JvwOQTBogB8o7Nb2Z9icmB0P5iOqQ980aq7Sh9ITwzlbYAQnQuZ9LdFJbjWGVB71_qbRXhCGL53DRMLyenVa6ZYBibWT8RZg5yIh5R3MtQ')" }}></div>
+                        <div className="h-32 w-full rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                            <ImageWithFallback
+                                showLightbox
+                                alt="Biệt thự sân vườn"
+                                className="h-full w-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXRZX_sWS_jKLNE5UpJQorhVUG7Q79eLY1eer1Iut00jMF9sfOZdQQ7c-HBi6mT67rcJo7yX0x_To3-6HhxWgMtdYHXi6RnlZriQ-4DN8qzJDqeYvH2p4Ux67UBniFNwnG7NriadW2THQ2gzAB29VwuUeIzmJUpx519JvwOQTBogB8o7Nb2Z9icmB0P5iOqQ980aq7Sh9ITwzlbYAQnQuZ9LdFJbjWGVB71_qbRXhCGL53DRMLyenVa6ZYBibWT8RZg5yIh5R3MtQ"
+                            />
+                        </div>
                     </div>
                     <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer" onClick={() => setActiveCategory('Resort')}>
                         <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -163,7 +174,14 @@ ${message}
                         </div>
                         <h3 className="text-lg font-bold text-text-main mb-2">Resort nghỉ dưỡng</h3>
                         <p className="text-sm text-gray-500 mb-4 flex-grow">Giải pháp cảnh quan nghỉ dưỡng đẳng cấp, hài hòa với thiên nhiên bản địa.</p>
-                        <div className="h-32 w-full rounded-lg bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0QDbGwyTNe3iuqa0xNDT2uee8XnFLKn0XYFGQ3zcB5Cwn5NrwZJBr3iaWQqbiyoeInPbvO3FKnNOj_IF_lvLi5S_2Lbd8pPYG_nePhVmx1I-8Sv0J7Q-9klSkWDdb_3QPQkFP_WagtYg3GP7dZcmnmk2bUslTE7x2xgSDDG_I9NmHWv75843q-_ZDVdjDXx0xWQMtBNQpf2XuIxrf5y_MHdVwfffN0QoIYynyQpN-GuEkrFU4reaJaRzidacNckpuppfDkW9T7r8')" }}></div>
+                        <div className="h-32 w-full rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                            <ImageWithFallback
+                                showLightbox
+                                alt="Resort nghỉ dưỡng"
+                                className="h-full w-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0QDbGwyTNe3iuqa0xNDT2uee8XnFLKn0XYFGQ3zcB5Cwn5NrwZJBr3iaWQqbiyoeInPbvO3FKnNOj_IF_lvLi5S_2Lbd8pPYG_nePhVmx1I-8Sv0J7Q-9klSkWDdb_3QPQkFP_WagtYg3GP7dZcmnmk2bUslTE7x2xgSDDG_I9NmHWv75843q-_ZDVdjDXx0xWQMtBNQpf2XuIxrf5y_MHdVwfffN0QoIYynyQpN-GuEkrFU4reaJaRzidacNckpuppfDkW9T7r8"
+                            />
+                        </div>
                     </div>
                     <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer" onClick={() => setActiveCategory('Khu đô thị')}>
                         <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -171,7 +189,14 @@ ${message}
                         </div>
                         <h3 className="text-lg font-bold text-text-main mb-2">Khu đô thị / Công viên</h3>
                         <p className="text-sm text-gray-500 mb-4 flex-grow">Quy hoạch và thi công cảnh quan đô thị, công viên công cộng quy mô lớn.</p>
-                        <div className="h-32 w-full rounded-lg bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9ADblp2ejVNwc-KbgzyMWRpw4XayB_t0LfNcC-LSIopPSP4PCn67qgBimnvV37sYhArMKUz098vF8QEnWxTXxJfDbT0Kdpb8ZWFyqg8vg2iK4lLmFV9a87evk8gtKx2XiWi4o0VRLCENWsMIbriUTey70VWrb00vwM6c9tUsLKOnruxJVXcK_BnfjV_f3ib-jlJy0t0A651qctEzZ458HsPlVw6WLTLUm3D92EjyCmM')" }}></div>
+                        <div className="h-32 w-full rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                            <ImageWithFallback
+                                showLightbox
+                                alt="Khu đô thị / Công viên"
+                                className="h-full w-full object-cover"
+                                src={urbanPark}
+                            />
+                        </div>
                     </div>
                     <div className="group flex flex-col rounded-xl border border-[#eef4e7] bg-[#fafcf8] p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer" onClick={() => setActiveCategory('Doanh nghiệp')}>
                         <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -179,7 +204,14 @@ ${message}
                         </div>
                         <h3 className="text-lg font-bold text-text-main mb-2">Cảnh quan doanh nghiệp</h3>
                         <p className="text-sm text-gray-500 mb-4 flex-grow">Tạo dựng không gian xanh cho nhà máy, khu công nghiệp và văn phòng.</p>
-                        <div className="h-32 w-full rounded-lg bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAK72wuHVKc5tsBTz5oDr6oIthe8gQrLMxuZWiYdyhZyaCY-p-i0F4mKA-QG7mtMcLv4QIywCIrZpcsGpGYBATWSXbyUsIlVH0oa542qf-HMK75FGNH1GA8Bfzr_ZI-98wY6cP-WezOyAvSegatrMnaEfXvW5Fr_d3yKzohUJ-an2eKCBDpTsNpsMs-00KGltDV0P472Xr4xJXgGeTW-2xwiOaNdlNVo-jKVu6lFuoGyHJAhn3BY2oMk2WDHnCx7Y_rquPuQJ5cbzc')" }}></div>
+                        <div className="h-32 w-full rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                            <ImageWithFallback
+                                showLightbox
+                                alt="Cảnh quan doanh nghiệp"
+                                className="h-full w-full object-cover"
+                                src={corporateLandscape}
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
