@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectsService, Project } from '../src/services/projectsService';
 import ImageWithFallback from '../components/ImageWithFallback';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const ProjectDetailPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
     const [project, setProject] = useState<Project | null>(null);
     const [loading, setLoading] = useState(true);
+    const [lightboxIndex, setLightboxIndex] = useState(-1);
 
     useEffect(() => {
         if (slug) {
@@ -44,6 +47,8 @@ const ProjectDetailPage: React.FC = () => {
         );
     }
 
+    const allImages = [project.image, ...(project.images || [])].filter(Boolean);
+
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-200">
             <main className="w-full flex flex-col items-center">
@@ -80,7 +85,7 @@ const ProjectDetailPage: React.FC = () => {
                         </div>
                         {/* Right Image */}
                         <div className="relative order-1 lg:order-2">
-                            <div className="aspect-[4/3] lg:aspect-square w-full rounded-2xl overflow-hidden shadow-2xl">
+                            <div className="aspect-[4/3] lg:aspect-square w-full rounded-2xl overflow-hidden shadow-2xl cursor-pointer" onClick={() => setLightboxIndex(0)}>
                                 <ImageWithFallback isBackground className="w-full h-full transition-transform duration-700 hover:scale-105" src={project.image} alt={project.title} />
                             </div>
                         </div>
@@ -150,7 +155,7 @@ const ProjectDetailPage: React.FC = () => {
                     <h2 className="text-olive text-2xl font-bold border-b border-[#eef4e7] pb-4">Hình ảnh dự án</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                         {project.images && project.images.map((img, idx) => (
-                            <div key={idx} className="rounded-xl overflow-hidden shadow-sm aspect-[4/3] group relative">
+                            <div key={idx} onClick={() => setLightboxIndex(idx + 1)} className="rounded-xl overflow-hidden shadow-sm aspect-[4/3] group relative cursor-pointer">
                                 <ImageWithFallback src={img} className="size-full object-cover transition-transform duration-700 group-hover:scale-105" alt={`${project.title} - ${idx + 1}`} />
                             </div>
                         ))}
@@ -173,6 +178,13 @@ const ProjectDetailPage: React.FC = () => {
                         </div>
                     </div>
                 </section>
+
+                <Lightbox
+                    index={lightboxIndex}
+                    open={lightboxIndex >= 0}
+                    close={() => setLightboxIndex(-1)}
+                    slides={allImages.map((img) => ({ src: img }))}
+                />
             </main>
         </div>
     );

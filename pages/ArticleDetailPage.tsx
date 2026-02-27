@@ -52,6 +52,15 @@ const ArticleDetailPage = () => {
         }
     };
 
+    const handleShareFacebook = () => {
+        let url = window.location.href;
+        // FB Sharer không thể cào dữ liệu từ localhost. Nếu đang ở môi trường dev, tạm dùng domain thật để test.
+        if (url.includes('localhost') || url.includes('127.0.0.1')) {
+            url = url.replace(/https?:\/\/(localhost|127\.0\.0\.1):\d+/, 'https://kgxlandscape.vn');
+        }
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=600,height=400');
+    };
+
     if (loading) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-background-light">
@@ -87,18 +96,30 @@ const ArticleDetailPage = () => {
                     {article.title}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-8">
-                    <span className="flex h-8 items-center rounded-full bg-primary/10 px-3 text-primary text-xs font-semibold">
-                        {article.category}
-                    </span>
-                    <span className="flex h-8 items-center rounded-full bg-gray-100 px-3 text-gray-600 text-xs font-medium gap-1.5">
-                        <span className="material-symbols-outlined text-sm">calendar_today</span>
-                        {formatDate(article.createdAt)}
-                    </span>
-                    <span className="flex h-8 items-center rounded-full bg-gray-100 px-3 text-gray-600 text-xs font-medium gap-1.5">
-                        <span className="material-symbols-outlined text-sm">person</span>
-                        {article.author || 'KGX'}
-                    </span>
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+                    <div className="flex flex-wrap items-center gap-2 md:gap-3">
+                        <span className="flex h-8 items-center rounded-full bg-primary/10 px-3 text-primary text-xs font-semibold">
+                            {article.category}
+                        </span>
+                        <span className="flex h-8 items-center rounded-full bg-gray-100 px-3 text-gray-600 text-xs font-medium gap-1.5">
+                            <span className="material-symbols-outlined text-sm">calendar_today</span>
+                            {formatDate(article.createdAt)}
+                        </span>
+                        <span className="flex h-8 items-center rounded-full bg-gray-100 px-3 text-gray-600 text-xs font-medium gap-1.5">
+                            <span className="material-symbols-outlined text-sm">person</span>
+                            {article.author || 'KGX'}
+                        </span>
+                    </div>
+
+                    <button
+                        onClick={handleShareFacebook}
+                        className="flex h-8 items-center rounded-full bg-[#1877F2] hover:bg-[#1864D9] transition-colors px-3.5 text-white text-xs font-medium gap-1.5 shadow-sm"
+                    >
+                        <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                        Chia sẻ
+                    </button>
                 </div>
 
                 <p className="text-base md:text-lg text-gray-600 border-l-4 border-primary pl-4 md:pl-6 py-2 italic mb-8">
@@ -123,6 +144,19 @@ const ArticleDetailPage = () => {
                         prose-table:text-sm"
                     dangerouslySetInnerHTML={{ __html: article.content }}
                 />
+
+                <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p className="font-bold text-gray-900">Bài viết hữu ích? Hãy chia sẻ cho mọi người!</p>
+                    <button
+                        onClick={handleShareFacebook}
+                        className="flex h-10 items-center justify-center rounded-lg bg-[#1877F2] hover:bg-[#1864D9] transition-colors px-6 text-white text-sm font-bold gap-2 shadow-md w-full sm:w-auto"
+                    >
+                        <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                        Chia sẻ lên Facebook
+                    </button>
+                </div>
             </main>
 
             {/* Related Articles */}
