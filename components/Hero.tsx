@@ -1,6 +1,8 @@
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import ImageWithFallback from './ImageWithFallback';
 
-const Hero: React.FC = () => {
+const Hero: FC = () => {
   return (
     <section className="relative bg-background-off py-16 lg:py-24 overflow-hidden">
       {/* Background decorative elements */}
@@ -59,19 +61,21 @@ const Hero: React.FC = () => {
               <div
                 className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl"
               >
-                <img
+                <ImageWithFallback
                   alt="Landscape garden design"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtruZZe5E9qOuY8VA_OD3MbkaBpl07HN7HB6plccajlO82GeIYXvPJVo-j58NB9AlCGqj1g6d6Ag0sMb4AZtKkxgu1QOM927eLGGkx-dCbEiEn3VQ8XQBdGeLWJXkCz4JTdmFg-nhXb64JRMjjQWE5K_CoQcAp18x5SE-gY7t4IgLuUCw4ETu-8V2JzhCqzsa1n-8U4Nyyg5wnsOhGXughX1UQIgnkw_ueIqTcKmEEwOfRcGBzvM2KkreNcAyZJN65xRVTkUih-8c"
+                  showLightbox
                 />
               </div>
               <div
                 className="aspect-square rounded-2xl overflow-hidden shadow-xl"
               >
-                <img
+                <ImageWithFallback
                   alt="Detail landscape element"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9LLNw_gJiFTvsKNAdy4PrNKQPKYV2QWB87gw5smyDJW7Ole_QbgHWkvM8c1KGEjBEnc8IJykQ_NBnJctyGI7ezWocQRVjbnzPcu2N4kmDpYxciIndkJYzBVDy3KSWdRq064mlxUXnfM0PWRvg7Yq6bhQDb5XnDhnb-um1GNIuBHirb_wtNfM61LdFTLPQS70d2qdhtpItBVv8V2HSPPMT2n1fv3t12QoAyuhiViYr0g89CvSeULmuwfQMrr7MApZo0HtgxYBYxSw"
+                  showLightbox
                 />
               </div>
             </div>
@@ -79,19 +83,21 @@ const Hero: React.FC = () => {
               <div
                 className="aspect-square rounded-2xl overflow-hidden shadow-xl"
               >
-                <img
+                <ImageWithFallback
                   alt="Pool landscape"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBucw8W_ydtZfvKMOV89FfmqBQhdW31vnp6VglFKr_zT1u-p4GdpeoU1Ef-HLUIrduoYMTqFzKJG5uAQFp1APpMj52HXKG3znaYKsTteayk6t_UbR8xSZLSbVcwVYe2jnwqf1HE_QpfP9OEQLAltuplODBc-j06jwzI54UAPitArCoEv4DhJGVuh0DYxn8_534lHzc_OMk0epekjL1OHvnYBx3IuxLqzPolrU_ehKOusQBsj2KQaEFf00TqX_paU7zvAkAHX85VOpg"
+                  showLightbox
                 />
               </div>
               <div
                 className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl"
               >
-                <img
+                <ImageWithFallback
                   alt="Construction process"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYHqKnLB5ak_oy9mpLdwMqg2VmnbCcqO4PkRW9UsfQfeWC0vvqOXqhXqUN0EOQWILLFmm0IVgY8LWFl9Q3uJnzSbDtlIslN7gQKm6uRplTkEoB4POXDL_O6NxctV0C1WEzCz5MNN8bZP_PCE5GUtWrHcYTmbAO5vXJC3dr0WlPeH-kLDXjJFG0BbqSk4hvYiLhQ9dbScxPoW6TDgInDC8doJwBr2t3zTyIQ_v84ai0LGOeuT2DJxnFLzz-9GSPOkOHs9EsW_yLQps"
+                  showLightbox
                 />
               </div>
             </div>

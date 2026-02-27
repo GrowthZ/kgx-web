@@ -344,12 +344,18 @@ ${message}
                         <div className="order-1 lg:order-2">
                             <h2 className="mb-6 text-2xl font-black text-text-main leading-relaxed md:leading-loose">Tại sao chọn <br /> <span className="text-primary">KGX - Không Gian Xanh?</span></h2>
                             <div className="relative h-[400px] w-full overflow-hidden rounded-2xl shadow-xl">
-                                <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6yc2h3MFUC7-L-tnVawdoWOrF2DGOUC_LhbUA8kWakPAgKMfHUpxAgFmzDiIa6R_y8CvBYjOHNjVaMbfNATb8cNFGzKCF_AjODH8Jq-R0osOHp0fudCSmGPyT2elC6JYw8sKjeKu5sJgSFtSjjaqQyTwGFvObuD5WRFy-fTrA3CvswV9SB88YQHCQvz_h1452NZ8oyiJwml6ze2I_Yi3xMoxNsaBFoGuqWEtQ4byfixjrDmNFCZuD2GlfLnj2tfBVjqZBrIUaVa4')" }}></div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 text-white">
-                                    <p className="font-bold text-lg">Dự án biệt thự Green Star</p>
-                                    <p className="text-sm opacity-90">Hoàn thiện 2023</p>
-                                </div>
+                                <ImageWithFallback
+                                    isBackground
+                                    showLightbox
+                                    className="h-full w-full"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6yc2h3MFUC7-L-tnVawdoWOrF2DGOUC_LhbUA8kWakPAgKMfHUpxAgFmzDiIa6R_y8CvBYjOHNjVaMbfNATb8cNFGzKCF_AjODH8Jq-R0osOHp0fudCSmGPyT2elC6JYw8sKjeKu5sJgSFtSjjaqQyTwGFvObuD5WRFy-fTrA3CvswV9SB88YQHCQvz_h1452NZ8oyiJwml6ze2I_Yi3xMoxNsaBFoGuqWEtQ4byfixjrDmNFCZuD2GlfLnj2tfBVjqZBrIUaVa4"
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+                                    <div className="absolute bottom-6 left-6 text-white pointer-events-none">
+                                        <p className="font-bold text-lg">Dự án biệt thự Green Star</p>
+                                        <p className="text-sm opacity-90">Hoàn thiện 2023</p>
+                                    </div>
+                                </ImageWithFallback>
                             </div>
                         </div>
                     </div>

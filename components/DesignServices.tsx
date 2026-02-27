@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { Link } from 'react-router-dom';
 import { servicesService, Service } from '../src/services/servicesService';
+import ImageWithFallback from './ImageWithFallback';
 
-const DesignServices: React.FC = () => {
+const DesignServices: FC = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -72,22 +73,25 @@ const DesignServices: React.FC = () => {
           {/* Right: Site Plan Image */}
           <div className="lg:col-span-5 relative h-full min-h-[400px]">
             <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl group">
-              <img
+              <ImageWithFallback
+                isBackground
+                showLightbox
                 alt="Landscape architectural site plan blueprint"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMEVL2EEZQdx-krYSKADnIc7Va6RTZBx4LW5bdNwxooMY5cDjNl3fnkVowUc20t1UNfpdady6Y6TJvYw8LGTiqa9w_YyVF2_tOqqFsXnLiFXCK8X46MsSv4uDsDo405zlWziTqpfFDZsPRGH_gHYypcnYx87j7B2yyqsdj1xmmI2ViXRRnv19lSBmjOIxjie-GI10mCuXQTQLeMxyKa9zRuGiKNxjLaVU5iDMbe5nJCigLu_zf00G2KTeEMly5LZzi9FWlck8y0gU"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-olive/80 to-transparent flex items-end p-8">
-                <div className="text-white">
-                  <p className="text-sm font-medium  opacity-80 mb-1">
-                    Dự án tiêu biểu
-                  </p>
-                  <h3 className="text-2xl font-bold ">Khu đô thị Eco Green</h3>
-                  <p className="text-sm opacity-90 mt-2">
-                    Quy hoạch 2023 - Diện tích 5ha
-                  </p>
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-olive/80 to-transparent flex items-end p-8 pointer-events-none">
+                  <div className="text-white">
+                    <p className="text-sm font-medium  opacity-80 mb-1">
+                      Dự án tiêu biểu
+                    </p>
+                    <h3 className="text-2xl font-bold ">Khu đô thị Eco Green</h3>
+                    <p className="text-sm opacity-90 mt-2">
+                      Quy hoạch 2023 - Diện tích 5ha
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </ImageWithFallback>
             </div>
           </div>
         </div>

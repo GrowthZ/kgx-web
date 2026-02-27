@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { articlesService, Article } from '../src/services/articlesService';
+import ImageWithFallback from '../components/ImageWithFallback';
 
 /**
  * Safely format a date value from Firestore.
@@ -127,7 +128,7 @@ const ArticleDetailPage = () => {
                 </p>
 
                 <div className="aspect-[16/9] w-full bg-gray-200 rounded-xl overflow-hidden mb-10 shadow-md">
-                    <img alt={article.title} className="w-full h-full object-cover" src={article.featuredImage} />
+                    <ImageWithFallback alt={article.title} className="w-full h-full object-cover" src={article.featuredImage} showLightbox />
                 </div>
             </header>
 

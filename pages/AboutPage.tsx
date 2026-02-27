@@ -1,19 +1,22 @@
-import React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import ImageWithFallback from '../components/ImageWithFallback';
 
-const AboutPage: React.FC = () => {
+const AboutPage: FC = () => {
     return (
         <div className="bg-[#f3f3f2] text-[#151711] font-sans antialiased overflow-x-hidden selection:bg-[#546a2f]/20 selection:text-[#546a2f]">
             <main>
                 {/* Signature Hero Section */}
                 <section className="container py-6 md:py-8">
                     <div className="relative w-full min-h-[640px] flex items-center justify-center rounded-2xl overflow-hidden group shadow-2xl shadow-[#546a2f]/10">
-                        <div
-                            className="absolute inset-0 bg-cover bg-center transition-transform duration-[2s] group-hover:scale-105"
-                            style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDz6wpyBrBtODxk3GDYOp8v06VkClAox7Hz3sdFzyeCSk5o45mPBrNyyqAHXkvedMrv7RtyhjGJ1I-AFxOkO0N_Bs4xtrbXMAVZmUhXovnrM_TWwYMMIOpqXrtcBdxUazjlDzMlcKnS55FdocSXdsZGFm8VETAED3iJGr2KvVyeiXf4FX5pXW3iE0NU94KuOuDLVd5yBrqbgC6xdDscnWDFjBOSRkMKYKdt_xsGqIbz_2gZwoDLHNWNuQgawmULTvOLr58VdqYn5uc')" }}
+                        <ImageWithFallback
+                            isBackground
+                            showLightbox
+                            className="absolute inset-0 transition-transform duration-[2s] group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz6wpyBrBtODxk3GDYOp8v06VkClAox7Hz3sdFzyeCSk5o45mPBrNyyqAHXkvedMrv7RtyhjGJ1I-AFxOkO0N_Bs4xtrbXMAVZmUhXovnrM_TWwYMMIOpqXrtcBdxUazjlDzMlcKnS55FdocSXdsZGFm8VETAED3iJGr2KvVyeiXf4FX5pXW3iE0NU94KuOuDLVd5yBrqbgC6xdDscnWDFjBOSRkMKYKdt_xsGqIbz_2gZwoDLHNWNuQgawmULTvOLr58VdqYn5uc"
                         >
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 pointer-events-none"></div>
+                        </ImageWithFallback>
                         <div className="relative z-10 flex flex-col items-center justify-center text-center p-6 max-w-4xl">
                             <span className="inline-block py-1 px-4 border border-white/30 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-bold tracking-[0.2em]  mb-8 shadow-sm">
                                 KGX - Không Gian Xanh
@@ -68,18 +71,18 @@ const AboutPage: React.FC = () => {
                         <div className="relative grid grid-cols-2 gap-4 lg:gap-6">
                             <div className="space-y-4 lg:space-y-6 pt-12 lg:pt-16">
                                 <div className="rounded-2xl overflow-hidden h-64 bg-gray-200 shadow-xl">
-                                    <img alt="Hand drawn landscape sketch" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfnDRi0HB_sZgtasDk4Ken7CZguEH3rdyeX0EKof1CRbnQCKUFpG1RvR4eVYHa9g2s7aGRZm1VW7rfmiuPQflSu1Vsa4KtU6SI2-ktXEFWrWHuMoBJKZYyzzL-yi-h3ED2ZXN0gF_sgn3Qq7yWSdbAtR4IElessulr1MAwxbsR5tjRJLjjo0zAP8r0VoihLruDI0Eo9SvGu1oPvV90xz5TEA6BmWTBqG05umi4HFn72PZDzu5HxrssrucFhSyNAwsVJbOYqYuJYI8" />
+                                    <ImageWithFallback showLightbox alt="Hand drawn landscape sketch" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfnDRi0HB_sZgtasDk4Ken7CZguEH3rdyeX0EKof1CRbnQCKUFpG1RvR4eVYHa9g2s7aGRZm1VW7rfmiuPQflSu1Vsa4KtU6SI2-ktXEFWrWHuMoBJKZYyzzL-yi-h3ED2ZXN0gF_sgn3Qq7yWSdbAtR4IElessulr1MAwxbsR5tjRJLjjo0zAP8r0VoihLruDI0Eo9SvGu1oPvV90xz5TEA6BmWTBqG05umi4HFn72PZDzu5HxrssrucFhSyNAwsVJbOYqYuJYI8" />
                                 </div>
                                 <div className="rounded-2xl overflow-hidden h-48 bg-gray-200 shadow-xl">
-                                    <img alt="Worker hands planting in soil" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNqQhUKmgLseE23XdFxi-OXlVKIklARijjox3ytzhNLqHVWuxTstqtv77uDYA0UnyYIheGVS2nPcJcedJqnt8qncoDZiytnPErg5ZJWpbwdursRcJah51pdzgj8ropb52H8dn7SyIf7SsRnHDWCytviZBIbxz3yYFjDQK9ecMq5yslpqqExZX13-xXmaaX-m3xYVX7ilw3UrN38pGDBnatWYzZ9zL6QTRB8eJTFHVsQ60_ISkqoONJ2pFXE6gpJC6xgJ47gKCzRhQ" />
+                                    <ImageWithFallback showLightbox alt="Worker hands planting in soil" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNqQhUKmgLseE23XdFxi-OXlVKIklARijjox3ytzhNLqHVWuxTstqtv77uDYA0UnyYIheGVS2nPcJcedJqnt8qncoDZiytnPErg5ZJWpbwdursRcJah51pdzgj8ropb52H8dn7SyIf7SsRnHDWCytviZBIbxz3yYFjDQK9ecMq5yslpqqExZX13-xXmaaX-m3xYVX7ilw3UrN38pGDBnatWYzZ9zL6QTRB8eJTFHVsQ60_ISkqoONJ2pFXE6gpJC6xgJ47gKCzRhQ" />
                                 </div>
                             </div>
                             <div className="space-y-4 lg:space-y-6">
                                 <div className="rounded-2xl overflow-hidden h-48 bg-gray-200 shadow-xl">
-                                    <img alt="Surveying a green field" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ-R0eGrO21V5TbWzWp4fi7zXot7ied0RRKvmxgdMLFcwNgWlMWzbrsVXM8-T_SRFk05yb7-PpqDQcv3fCc0pszU_MlCc4INEr-TZKEz7t5HARHSHOiaSHFTSBamSEFCrCMrR1TVVJCFVIEw1Icpmx_kVGh52jD-qWWnA5kl4dDqOOwxA28TC_h4UWInkg2NRmulBF6mqS9762PYtQ_OOnl8f8bAyeyhmeZTdgCLvPiKZHM4mFE2dbC8o5UwklOyuukrB45lgf7hY" />
+                                    <ImageWithFallback showLightbox alt="Surveying a green field" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ-R0eGrO21V5TbWzWp4fi7zXot7ied0RRKvmxgdMLFcwNgWlMWzbrsVXM8-T_SRFk05yb7-PpqDQcv3fCc0pszU_MlCc4INEr-TZKEz7t5HARHSHOiaSHFTSBamSEFCrCMrR1TVVJCFVIEw1Icpmx_kVGh52jD-qWWnA5kl4dDqOOwxA28TC_h4UWInkg2NRmulBF6mqS9762PYtQ_OOnl8f8bAyeyhmeZTdgCLvPiKZHM4mFE2dbC8o5UwklOyuukrB45lgf7hY" />
                                 </div>
                                 <div className="rounded-2xl overflow-hidden h-64 bg-gray-200 shadow-xl">
-                                    <img alt="Garden construction site with stones" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ibwdixdV3gplYeBSdnKaYvBV-k5Bbt4VYOnmxcAfOwMF3jptqrlSUlNSzv3jbFEeHIx8yHQUM9G3r9LnF8wYYtdq4roWDTr6gZOeo5jlXkPAyoUxVz4yXg0UGn-laoQZL_QOApE8uMbAZB0H9vlybewihPyFYaS7Wsw79llvtoJa-D-GkZ1ci0E1aVxoj-B7elcc991N1OJMBQPRg3vGRPCv2qEis_9JMOdc3Bosj3LO1_Qn5iM52B--B_wUB8ZVOIPe0u1pDnI" />
+                                    <ImageWithFallback showLightbox alt="Garden construction site with stones" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ibwdixdV3gplYeBSdnKaYvBV-k5Bbt4VYOnmxcAfOwMF3jptqrlSUlNSzv3jbFEeHIx8yHQUM9G3r9LnF8wYYtdq4roWDTr6gZOeo5jlXkPAyoUxVz4yXg0UGn-laoQZL_QOApE8uMbAZB0H9vlybewihPyFYaS7Wsw79llvtoJa-D-GkZ1ci0E1aVxoj-B7elcc991N1OJMBQPRg3vGRPCv2qEis_9JMOdc3Bosj3LO1_Qn5iM52B--B_wUB8ZVOIPe0u1pDnI" />
                                 </div>
                             </div>
                             {/* Decorative element */}
@@ -93,8 +96,8 @@ const AboutPage: React.FC = () => {
                     <div className="container">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 bg-[#F8F9FA] rounded-[2rem] overflow-hidden shadow-sm border border-gray-100">
                             <div className="lg:col-span-7 relative min-h-[500px]">
-                                <img alt="Team discussion on site" className="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACpVDv_Xsu8-Ov-yQ81Db9dtcwQN1ozDe4nk6xC4-hXJ49Io_qdJUrIAJGMc-GFrw8tHyqPX61PzH6X5cKmAoClAxxui4hQVSV4L7f1QLUiqzjDtE7UmJBEoaYPhNGncww2JWIIjtDTqU77PxfTfDfQe-h_9yK-cH0UIU3sbBAyIeUowzn_td8OCPkhkpvs2DtWeqsjV4duRJ63div6PS4kZYBoQBUEN9mh5BGxlyHp-OkML1X2ExblCFXROom3DHE3_xxAVZKjJs" />
-                                <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent lg:hidden"></div>
+                                <ImageWithFallback showLightbox alt="Team discussion on site" className="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACpVDv_Xsu8-Ov-yQ81Db9dtcwQN1ozDe4nk6xC4-hXJ49Io_qdJUrIAJGMc-GFrw8tHyqPX61PzH6X5cKmAoClAxxui4hQVSV4L7f1QLUiqzjDtE7UmJBEoaYPhNGncww2JWIIjtDTqU77PxfTfDfQe-h_9yK-cH0UIU3sbBAyIeUowzn_td8OCPkhkpvs2DtWeqsjV4duRJ63div6PS4kZYBoQBUEN9mh5BGxlyHp-OkML1X2ExblCFXROom3DHE3_xxAVZKjJs" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent lg:hidden pointer-events-none"></div>
                             </div>
                             <div className="lg:col-span-5 p-8 lg:p-16 flex flex-col justify-center bg-white lg:bg-transparent">
                                 <span className="text-[#E9724C] font-bold  tracking-wider text-xs mb-4">Đội ngũ chuyên gia</span>
@@ -215,8 +218,8 @@ const AboutPage: React.FC = () => {
                             ].map((item, index) => (
                                 <div key={index} className="flex flex-col items-center text-center lg:items-start lg:text-left group cursor-default">
                                     <div className="w-24 h-24 rounded-full border-[6px] border-[#f3f3f2] bg-gray-100 mb-6 relative overflow-hidden shadow-lg group-hover:scale-110 transition-transform">
-                                        <img alt={item.title} className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" src={item.img} />
-                                        <div className="absolute inset-0 bg-[#546a2f]/30 flex items-center justify-center font-black text-white text-2xl group-hover:bg-[#546a2f]/10 transition-all">{item.step}</div>
+                                        <ImageWithFallback showLightbox alt={item.title} className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" src={item.img} />
+                                        <div className="absolute inset-0 bg-[#546a2f]/30 flex items-center justify-center font-black text-white text-2xl group-hover:bg-[#546a2f]/10 transition-all pointer-events-none">{item.step}</div>
                                     </div>
                                     <h4 className="text-lg font-bold text-[#151711] mb-2">{item.title}</h4>
                                     <p className="text-sm text-gray-500">{item.desc}</p>
@@ -255,14 +258,14 @@ const AboutPage: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
                         <div className="grid grid-cols-2 gap-4 h-[560px]">
                             <div className="bg-gray-200 rounded-2xl overflow-hidden col-span-2 row-span-2 relative group">
-                                <img alt="Koi pond" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWK9XERlcrEtNPxzh6Vy57gCpQlCRQy5suYP-KZCFtsNlIRDjEECwKZ295gR24MAFvpTcrMi7jrNz09gFPxfkuY7nMgdP48-gLvY3I9M2LVJgR9qlac8Gmoa8ZfX0zMe7S-sQbtrTN254PbnKUOY9EcKy_UlFlEZ0o5xOXGst4Y1-MHKRKZsawA1RtXzZSCCQ0eQJm8OGkbIwXWySzrNfJT08xt33HEvbw6MfUUL0IQxwaCd0u2VTHqZQ_sQT1GOearciNj1pF-s0" />
-                                <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg text-white text-xs font-bold  tracking-wide">Dự án biệt thự Ecopark</div>
+                                <ImageWithFallback showLightbox alt="Koi pond" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWK9XERlcrEtNPxzh6Vy57gCpQlCRQy5suYP-KZCFtsNlIRDjEECwKZ295gR24MAFvpTcrMi7jrNz09gFPxfkuY7nMgdP48-gLvY3I9M2LVJgR9qlac8Gmoa8ZfX0zMe7S-sQbtrTN254PbnKUOY9EcKy_UlFlEZ0o5xOXGst4Y1-MHKRKZsawA1RtXzZSCCQ0eQJm8OGkbIwXWySzrNfJT08xt33HEvbw6MfUUL0IQxwaCd0u2VTHqZQ_sQT1GOearciNj1pF-s0" />
+                                <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg text-white text-xs font-bold  tracking-wide pointer-events-none">Dự án biệt thự Ecopark</div>
                             </div>
                             <div className="bg-gray-200 rounded-2xl overflow-hidden relative group">
-                                <img alt="Vertical garden" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnWw69ZvJAv2Hf9zpcEy3ygjCDt0BOOo9o5-3RA2JwTJ2D28lF7bxrCMPHLABpej0f5DZ3SiC59C_4BPZBBcB08feLP05LOjRVuFgd5G7ir8ljojW4lX8DenTxYFQ2SnnWCLpgQkKKYuP_vdirqv-rF2f70OOz4pgjwIdXH7IGTJ0R-haO__y8n0RdIDCfAwVV_KEAkZLjwJQxfAfFIbbu3YppdQcC3Pe5LlERAVutubC1YM_y6fvhpQeM7KD1fOyJunlLL16O1FY" />
+                                <ImageWithFallback showLightbox alt="Vertical garden" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnWw69ZvJAv2Hf9zpcEy3ygjCDt0BOOo9o5-3RA2JwTJ2D28lF7bxrCMPHLABpej0f5DZ3SiC59C_4BPZBBcB08feLP05LOjRVuFgd5G7ir8ljojW4lX8DenTxYFQ2SnnWCLpgQkKKYuP_vdirqv-rF2f70OOz4pgjwIdXH7IGTJ0R-haO__y8n0RdIDCfAwVV_KEAkZLjwJQxfAfFIbbu3YppdQcC3Pe5LlERAVutubC1YM_y6fvhpQeM7KD1fOyJunlLL16O1FY" />
                             </div>
                             <div className="bg-gray-200 rounded-2xl overflow-hidden relative group">
-                                <img alt="Patio stone work" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJWzALJwUBrhit8G-yXh3yKCufKjhK18PUuewql3LeL1lkR8De3JB9zX72cMcWYDNRO8aQjm3Z0PIZddQDk2aGWNsoH0Dwt9ucEtN3JIQY2eVBjOEgF53WKkki2V6Bx6IWTdmcVV8BHPfFpyLX3hcEMWvDuNovt30_5suZEVclRBm9eNALZGuyNh_upq5-z26a9TSITERrcd7Nvv68fiCNZKdomuoarbk9Z5MtBTP0v_X4GTfB_bLVnywWJk7M0km3Xtjet2_4g8k" />
+                                <ImageWithFallback showLightbox alt="Patio stone work" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJWzALJwUBrhit8G-yXh3yKCufKjhK18PUuewql3LeL1lkR8De3JB9zX72cMcWYDNRO8aQjm3Z0PIZddQDk2aGWNsoH0Dwt9ucEtN3JIQY2eVBjOEgF53WKkki2V6Bx6IWTdmcVV8BHPfFpyLX3hcEMWvDuNovt30_5suZEVclRBm9eNALZGuyNh_upq5-z26a9TSITERrcd7Nvv68fiCNZKdomuoarbk9Z5MtBTP0v_X4GTfB_bLVnywWJk7M0km3Xtjet2_4g8k" />
                             </div>
                         </div>
                         <div className="flex flex-col gap-10">

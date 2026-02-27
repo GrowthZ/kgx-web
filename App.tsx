@@ -25,6 +25,7 @@ import ProductListingPage from './pages/ProductListingPage';
 
 // Admin imports
 import { AuthProvider, ProtectedRoute } from './src/contexts/AuthContext';
+import { LightboxProvider } from './src/contexts/LightboxContext';
 import AdminLoginPage from './pages/admin/AdminLoginPage';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 import AdminProductsPage from './pages/admin/AdminProductsPage';
@@ -43,160 +44,162 @@ import AdminSeoPage from './pages/admin/AdminSeoPage';
 const App: FC = () => {
   return (
     <AuthProvider>
-      <Toaster position="top-right" />
-      <div className="min-h-screen flex flex-col">
-        <ScrollToTop />
-        <Routes>
-          {/* Admin Routes */}
-          <Route path="/admin/login" element={<AdminLoginPage />} />
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <AdminDashboardPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/products"
-            element={
-              <ProtectedRoute>
-                <AdminProductsPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/products/new"
-            element={
-              <ProtectedRoute>
-                <ProductForm />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/products/edit/:id"
-            element={
-              <ProtectedRoute>
-                <ProductForm />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/projects"
-            element={
-              <ProtectedRoute>
-                <AdminProjectsPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/projects/new"
-            element={
-              <ProtectedRoute>
-                <ProjectForm />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/projects/edit/:id"
-            element={
-              <ProtectedRoute>
-                <ProjectForm />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/articles"
-            element={
-              <ProtectedRoute>
-                <AdminArticlesPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/articles/new"
-            element={
-              <ProtectedRoute>
-                <ArticleForm />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/articles/edit/:id"
-            element={
-              <ProtectedRoute>
-                <ArticleForm />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/contacts"
-            element={
-              <ProtectedRoute>
-                <AdminContactsPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/services"
-            element={
-              <ProtectedRoute>
-                <AdminServicesPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/services/edit/:id"
-            element={
-              <ProtectedRoute>
-                <ServiceForm />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="/admin/team" element={<ProtectedRoute><AdminTeamPage /></ProtectedRoute>} />
-          <Route path="/admin/settings" element={<ProtectedRoute><AdminSettingsPage /></ProtectedRoute>} />
-          <Route path="/admin/seo" element={<ProtectedRoute><AdminSeoPage /></ProtectedRoute>} />
+      <LightboxProvider>
+        <Toaster position="top-right" />
+        <div className="min-h-screen flex flex-col">
+          <ScrollToTop />
+          <Routes>
+            {/* Admin Routes */}
+            <Route path="/admin/login" element={<AdminLoginPage />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminDashboardPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/products"
+              element={
+                <ProtectedRoute>
+                  <AdminProductsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/products/new"
+              element={
+                <ProtectedRoute>
+                  <ProductForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/products/edit/:id"
+              element={
+                <ProtectedRoute>
+                  <ProductForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/projects"
+              element={
+                <ProtectedRoute>
+                  <AdminProjectsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/projects/new"
+              element={
+                <ProtectedRoute>
+                  <ProjectForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/projects/edit/:id"
+              element={
+                <ProtectedRoute>
+                  <ProjectForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/articles"
+              element={
+                <ProtectedRoute>
+                  <AdminArticlesPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/articles/new"
+              element={
+                <ProtectedRoute>
+                  <ArticleForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/articles/edit/:id"
+              element={
+                <ProtectedRoute>
+                  <ArticleForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/contacts"
+              element={
+                <ProtectedRoute>
+                  <AdminContactsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/services"
+              element={
+                <ProtectedRoute>
+                  <AdminServicesPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/services/edit/:id"
+              element={
+                <ProtectedRoute>
+                  <ServiceForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/admin/team" element={<ProtectedRoute><AdminTeamPage /></ProtectedRoute>} />
+            <Route path="/admin/settings" element={<ProtectedRoute><AdminSettingsPage /></ProtectedRoute>} />
+            <Route path="/admin/seo" element={<ProtectedRoute><AdminSeoPage /></ProtectedRoute>} />
 
-          {/* Public Routes */}
-          <Route
-            path="*"
-            element={
-              <>
-                <Header />
-                <main className="flex-grow">
-                  <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/gioi-thieu" element={<AboutPage />} />
+            {/* Public Routes */}
+            <Route
+              path="*"
+              element={
+                <>
+                  <Header />
+                  <main className="flex-grow">
+                    <Routes>
+                      <Route path="/" element={<HomePage />} />
+                      <Route path="/gioi-thieu" element={<AboutPage />} />
 
-                    <Route path="/dich-vu" element={<ServicesPage />} />
+                      <Route path="/dich-vu" element={<ServicesPage />} />
 
-                    {/* Individual Service Pages handled by dynamic route */}
-                    <Route path="/dich-vu/:category/:slug" element={<ServiceDetailPage />} />
-                    <Route path="/dich-vu/thiet-ke" element={<GardenDesignPage />} />
-                    <Route path="/dich-vu/thi-cong" element={<GardenConstructionPage />} />
+                      {/* Individual Service Pages handled by dynamic route */}
+                      <Route path="/dich-vu/:category/:slug" element={<ServiceDetailPage />} />
+                      <Route path="/dich-vu/thiet-ke" element={<GardenDesignPage />} />
+                      <Route path="/dich-vu/thi-cong" element={<GardenConstructionPage />} />
 
-                    <Route path="/san-pham" element={<ProductListPage />} />
-                    <Route path="/san-pham/tat-ca" element={<ProductListingPage />} />
-                    <Route path="/san-pham/nhom/:categorySlug" element={<TreeCategoryPage />} />
-                    <Route path="/san-pham/:slug" element={<ProductDetailPage />} />
-                    <Route path="/catalog" element={<CatalogPage />} />
+                      <Route path="/san-pham" element={<ProductListPage />} />
+                      <Route path="/san-pham/tat-ca" element={<ProductListingPage />} />
+                      <Route path="/san-pham/nhom/:categorySlug" element={<TreeCategoryPage />} />
+                      <Route path="/san-pham/:slug" element={<ProductDetailPage />} />
+                      <Route path="/catalog" element={<CatalogPage />} />
 
-                    <Route path="/du-an" element={<ProjectsPage />} />
-                    <Route path="/du-an/:slug" element={<ProjectDetailPage />} />
+                      <Route path="/du-an" element={<ProjectsPage />} />
+                      <Route path="/du-an/:slug" element={<ProjectDetailPage />} />
 
-                    <Route path="/tin-tuc" element={<ArticlesPage />} />
-                    <Route path="/tin-tuc/:slug" element={<ArticleDetailPage />} />
+                      <Route path="/tin-tuc" element={<ArticlesPage />} />
+                      <Route path="/tin-tuc/:slug" element={<ArticleDetailPage />} />
 
-                    <Route path="/lien-he" element={<ContactPage />} />
-                  </Routes>
-                </main>
-                <FloatingCTA />
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
-      </div>
+                      <Route path="/lien-he" element={<ContactPage />} />
+                    </Routes>
+                  </main>
+                  <FloatingCTA />
+                  <Footer />
+                </>
+              }
+            />
+          </Routes>
+        </div>
+      </LightboxProvider>
     </AuthProvider>
   );
 };
