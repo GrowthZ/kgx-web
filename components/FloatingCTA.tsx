@@ -6,19 +6,21 @@ const FloatingCTA: FC = () => {
     return (
         <>
             {/* Left Side: Phone Call Pulse */}
-            <a
-                href="tel:0868462462"
-                className="fixed bottom-6 left-6 z-50 flex items-center justify-center size-14 bg-rose-500 text-white rounded-full shadow-lg shadow-rose-500/30 hover:bg-rose-600 transition-colors group"
-                aria-label="Gọi hotline"
-            >
-                {/* Pulse Ripples */}
-                <span className="absolute inset-0 rounded-full bg-rose-500 opacity-75 animate-ping" style={{ animationDuration: '2s' }}></span>
-                <span className="absolute inset-[-8px] rounded-full border-2 border-rose-500 opacity-30 animate-pulse" style={{ animationDuration: '2.5s' }}></span>
+            <div className="fixed bottom-6 left-6 z-50 flex items-center group">
+                <a
+                    href="tel:0868462462"
+                    className="relative flex items-center justify-center w-14 h-14 bg-rose-500 text-white rounded-full shadow-lg shadow-rose-500/30 hover:bg-rose-600 transition-colors shrink-0 aspect-square"
+                    aria-label="Gọi hotline"
+                >
+                    {/* Pulse Ripples */}
+                    <span className="absolute inset-0 rounded-full bg-rose-500 opacity-75 animate-ping" style={{ animationDuration: '2s' }}></span>
+                    <span className="absolute inset-[-8px] rounded-full border-2 border-rose-500 opacity-30 animate-pulse" style={{ animationDuration: '2.5s' }}></span>
 
-                {/* Main Icon */}
-                <div className="relative z-10 flex items-center justify-center p-3.5 bg-rose-500 rounded-full group-hover:bg-rose-600 transition-colors">
-                    <span className="material-symbols-outlined text-3xl animate-[wiggle_1s_ease-in-out_infinite]">call</span>
-                </div>
+                    {/* Main Icon */}
+                    <div className="relative z-10 flex items-center justify-center w-14 h-14 bg-rose-500 rounded-full group-hover:bg-rose-600 transition-colors shrink-0">
+                        <span className="material-symbols-outlined text-3xl animate-[wiggle_1s_ease-in-out_infinite]">call</span>
+                    </div>
+                </a>
 
                 {/* Tooltip */}
                 <div className="absolute left-full ml-4 whitespace-nowrap bg-white text-slate-700 px-4 py-2 rounded-xl text-sm font-bold shadow-xl border border-slate-100 opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0 pointer-events-none">
@@ -26,7 +28,7 @@ const FloatingCTA: FC = () => {
                     {/* Tooltip Arrow */}
                     <div className="absolute top-1/2 -left-1.5 w-3 h-3 bg-white border-l border-b border-slate-100 transform -translate-y-1/2 rotate-45"></div>
                 </div>
-            </a>
+            </div>
 
             {/* Right Side: Social Icons Container */}
             <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">

@@ -1,11 +1,17 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
 import logoKgx from '../src/media/logo-kgx.png';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const location = useLocation();
+
+  const isActive = (href: string) => {
+    if (href === '/') return location.pathname === '/';
+    return location.pathname.startsWith(href);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-[#eef4e7] shadow-sm">
@@ -29,7 +35,7 @@ const Header: React.FC = () => {
                 </a>
               ) : (
                 <Link
-                  className="text-olive font-medium hover:text-primary transition-colors text-xs xl:text-sm uppercase tracking-wide flex items-center gap-1 whitespace-nowrap"
+                  className={`font-medium hover:text-primary transition-colors text-xs xl:text-sm uppercase tracking-wide flex items-center gap-1 whitespace-nowrap ${isActive(link.href) ? 'text-primary' : 'text-olive'}`}
                   to={link.href}
                 >
                   {link.label}

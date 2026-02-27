@@ -86,7 +86,7 @@ const ProjectsPage: React.FC = () => {
             </section>
 
             {/* Filters Section */}
-            <section className="container px-4 mx-auto py-8 border-y border-gray-100 bg-white sticky top-20 z-30">
+            <section className="container px-4 mx-auto py-8 border-y border-gray-100 bg-white">
                 <div className="mb-10 text-center">
                     <h2 className="text-2xl font-black text-text-main mb-3">Lĩnh vực hoạt động</h2>
                     <p className="text-gray-500 max-w-2xl mx-auto">Các loại hình dự án tiêu biểu mà KGX tập trung phát triển với chất lượng cao nhất.</p>
