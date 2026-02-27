@@ -2,12 +2,23 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { projectsService, Project } from '../src/services/projectsService';
+import { contactService } from '../src/services/contactService';
 import ImageWithFallback from '../components/ImageWithFallback';
+import toast from 'react-hot-toast';
 
 const ProjectsPage: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState('Tất cả');
+
+    // Form State
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [projectType, setProjectType] = useState('Loại hình dự án');
+    const [scale, setScale] = useState('');
+    const [location, setLocation] = useState('');
+    const [message, setMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         fetchProjects();
@@ -31,6 +42,50 @@ const ProjectsPage: React.FC = () => {
         if (activeCategory === 'Tất cả') return true;
         return project.category === activeCategory || project.filterCategory === activeCategory;
     });
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (!name.trim() || !phone.trim()) {
+            toast.error('Vui lòng điền Họ tên và Số điện thoại!');
+            return;
+        }
+
+        setIsSubmitting(true);
+        try {
+            const finalMessage = `
+**Loại công trình:** ${projectType}
+**Quy mô:** ${scale || 'Không xác định'}
+**Địa điểm:** ${location || 'Không xác định'}
+**Nhu cầu chi tiết:**
+${message}
+            `.trim();
+
+            await contactService.submitContactForm({
+                name: name.trim(),
+                phone: phone.trim(),
+                email: '', // Not in this form
+                message: finalMessage,
+                subject: `[Web] Yêu cầu tư vấn (Từ trang Dự án) - ${projectType}`
+            });
+
+            toast.success('Gửi yêu cầu thành công, chúng tôi sẽ liên hệ lại sớm nhất!');
+
+            // Reset form
+            setName('');
+            setPhone('');
+            setProjectType('Loại hình dự án');
+            setScale('');
+            setLocation('');
+            setMessage('');
+
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            toast.error('Có lỗi xảy ra, vui lòng thử lại sau!');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <div className="bg-background-light text-text-main antialiased selection:bg-primary/30">
@@ -309,24 +364,25 @@ const ProjectsPage: React.FC = () => {
                         <div className="rounded-2xl bg-[#fafcf8] p-6 lg:p-10 border border-[#eef4e7]">
                             <h2 className="mb-2 text-2xl font-black text-text-main">Đăng ký tư vấn miễn phí</h2>
                             <p className="mb-8 text-gray-500 text-sm">Để lại thông tin, chuyên gia của chúng tôi sẽ liên hệ lại trong vòng 24h.</p>
-                            <form className="space-y-4">
+                            <form onSubmit={handleSubmit} className="space-y-4">
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                    <input className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Họ và tên" type="text" />
-                                    <input className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Số điện thoại" type="text" />
+                                    <input value={name} onChange={e => setName(e.target.value)} className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary border" placeholder="Họ và tên" type="text" required />
+                                    <input value={phone} onChange={e => setPhone(e.target.value)} className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary border" placeholder="Số điện thoại" type="tel" required />
                                 </div>
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                    <select className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm text-gray-500 outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+                                    <select value={projectType} onChange={e => setProjectType(e.target.value)} className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm text-gray-500 outline-none focus:border-primary focus:ring-1 focus:ring-primary border">
                                         <option>Loại hình dự án</option>
-                                        <option>Biệt thự sân vườn</option>
-                                        <option>Resort / Khách sạn</option>
-                                        <option>Khu đô thị</option>
+                                        <option value="Biệt thự sân vườn">Biệt thự sân vườn</option>
+                                        <option value="Resort / Khách sạn">Resort / Khách sạn</option>
+                                        <option value="Khu đô thị">Khu đô thị</option>
+                                        <option value="Khác">Khác</option>
                                     </select>
-                                    <input className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Quy mô (m2)" type="text" />
+                                    <input value={scale} onChange={e => setScale(e.target.value)} className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary border" placeholder="Quy mô (m2)" type="text" />
                                 </div>
-                                <input className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Địa điểm dự án (Tỉnh/Thành phố)" type="text" />
-                                <textarea className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Nhu cầu chi tiết / Lời nhắn..." rows={4}></textarea>
-                                <button className="w-full rounded-lg bg-primary py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/30 hover:bg-[#66aa08] transition-all" type="button">
-                                    Gửi yêu cầu
+                                <input value={location} onChange={e => setLocation(e.target.value)} className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary border" placeholder="Địa điểm dự án (Tỉnh/Thành phố)" type="text" />
+                                <textarea value={message} onChange={e => setMessage(e.target.value)} className="w-full rounded-lg border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary border" placeholder="Nhu cầu chi tiết / Lời nhắn..." rows={4}></textarea>
+                                <button disabled={isSubmitting} className="w-full rounded-lg bg-primary py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-primary/30 hover:bg-[#66aa08] transition-all disabled:opacity-50" type="submit">
+                                    {isSubmitting ? 'Đang gửi...' : 'Gửi yêu cầu'}
                                 </button>
                             </form>
                         </div>
@@ -345,7 +401,7 @@ const ProjectsPage: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Hotline tư vấn 24/7</p>
-                                        <p className="text-xl font-bold text-text-main">09xx.xxx.xxx</p>
+                                        <p className="text-xl font-bold text-text-main">0868 462 462</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -354,7 +410,7 @@ const ProjectsPage: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Trụ sở chính</p>
-                                        <p className="text-base font-bold text-text-main">Số xx, Đường ABC, 12e khu dân cư số 9, phường Gia Sàng, tỉnh Thái Nguyên , Thái Nguyên, Vietnam</p>
+                                        <p className="text-base font-bold text-text-main">12e khu dân cư số 9, phường Gia Sàng, tỉnh Thái Nguyên , Thái Nguyên, Vietnam</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -363,7 +419,7 @@ const ProjectsPage: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Email</p>
-                                        <p className="text-base font-bold text-text-main">contact@kgxvn.vn</p>
+                                        <p className="text-base font-bold text-text-main">khonggianxanhthainguyen@gmail.com</p>
                                     </div>
                                 </div>
                             </div>

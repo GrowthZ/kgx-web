@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import { useState, FC, ReactNode, Fragment } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import toast from 'react-hot-toast';
 
 interface AdminLayoutProps {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
-const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
+const AdminLayout: FC<AdminLayoutProps> = ({ children }) => {
     const { user, logout } = useAuth();
     const location = useLocation();
 
@@ -60,7 +60,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                     {/* Navigation */}
                     <nav className="flex flex-col gap-1 grow">
                         {menuItems.map((item, index) => (
-                            <React.Fragment key={item.path}>
+                            <Fragment key={item.path}>
                                 {index === 5 && <div className="my-4 border-t border-slate-100"></div>}
                                 <Link
                                     to={item.path}
@@ -74,7 +74,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                                         {item.label}
                                     </span>
                                 </Link>
-                            </React.Fragment>
+                            </Fragment>
                         ))}
                     </nav>
 
@@ -102,6 +102,11 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                     </div>
 
                     <div className="flex items-center gap-6">
+                        <Link to="/" target="_blank" className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-full transition-colors">
+                            <span className="material-symbols-outlined text-[14px]">public</span>
+                            <span className="text-[11px] font-bold">Xem Website</span>
+                        </Link>
+
                         <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-full">
                             <span className="size-2 rounded-full bg-emerald-500"></span>
                             <span className="text-[11px] font-bold text-slate-600">Máy chủ trực tuyến</span>
