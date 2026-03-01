@@ -32,9 +32,9 @@ const AboutPage: FC = () => {
                                     Khám phá dự án
                                     <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
                                 </Link>
-                                <button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-10 py-4 rounded-xl text-base font-bold transition-all flex items-center justify-center gap-2">
+                                <a href="/HSNL_KGX.pdf" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-10 py-4 rounded-xl text-base font-bold transition-all flex items-center justify-center gap-2">
                                     Xem hồ sơ năng lực
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -177,10 +177,10 @@ const AboutPage: FC = () => {
                                 <h2 className="text-3xl md:text-4xl font-bold mb-3">Lĩnh vực hoạt động</h2>
                                 <p className="text-white/60 font-medium text-xl">Giải pháp toàn diện cho không gian xanh</p>
                             </div>
-                            <button className="border border-white/30 hover:bg-white hover:text-[#546a2f] px-8 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-2">
+                            <a href="/HSNL_KGX.pdf" target="_blank" rel="noopener noreferrer" className="border border-white/30 hover:bg-white hover:text-[#546a2f] px-8 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-2">
                                 Xem hồ sơ năng lực
                                 <span className="material-symbols-outlined text-sm">arrow_outward</span>
-                            </button>
+                            </a>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                             {[
@@ -312,9 +312,9 @@ const AboutPage: FC = () => {
                             <h2 className="text-3xl md:text-5xl font-bold mb-8">Sẵn sàng kiến tạo <br /><span className="text-[#546a2f]">không gian mơ ước?</span></h2>
                             <p className="text-gray-400 text-xl mb-10 font-light">Hãy để KGX đồng hành cùng bạn tạo nên những mảng xanh giá trị và bền vững.</p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <button className="bg-[#546a2f] hover:bg-[#435525] text-white px-10 py-5 rounded-xl text-lg font-bold transition-all shadow-lg shadow-[#546a2f]/20 text-center">
+                                <Link to="/lien-he" className="bg-[#546a2f] hover:bg-[#435525] text-white px-10 py-5 rounded-xl text-lg font-bold transition-all shadow-lg shadow-[#546a2f]/20 text-center">
                                     Nhận tư vấn miễn phí
-                                </button>
+                                </Link>
                                 <button className="bg-transparent border border-white/20 hover:bg-white/10 text-white px-10 py-5 rounded-xl text-lg font-bold transition-all text-center flex items-center justify-center gap-2">
                                     <span className="material-symbols-outlined">call</span>
                                     Liên hệ 0868 462 462

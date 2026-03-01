@@ -449,9 +449,9 @@ ${message}
                             <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="w-full sm:w-auto px-8 h-14 bg-[#a4d411] hover:bg-[#8cb60e] text-[#1d2210] font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(164,212,17,0.3)] hover:shadow-[0_0_30px_rgba(164,212,17,0.5)]">
                                 Đăng ký tư vấn ngay
                             </button>
-                            <Link to="/du-an" className="w-full sm:w-auto px-8 h-14 bg-transparent border-2 border-white/20 hover:border-white text-white font-bold rounded-xl transition-all hover:bg-white/5 flex items-center justify-center">
+                            <a href="/HSNL_KGX.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 h-14 bg-transparent border-2 border-white/20 hover:border-white text-white font-bold rounded-xl transition-all hover:bg-white/5 flex items-center justify-center">
                                 Xem hồ sơ năng lực
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </section>
