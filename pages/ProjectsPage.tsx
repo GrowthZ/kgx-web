@@ -108,12 +108,12 @@ ${message}
                                 Chúng tôi mang đến giải pháp thiết kế và thi công cảnh quan thực tế, kiến tạo không gian xanh đẳng cấp cho Biệt thự, Resort và Khu đô thị sinh thái. Nâng tầm giá trị sống bền vững.
                             </p>
                             <div className="flex flex-wrap gap-4 pt-2">
-                                <button className="flex h-12 items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-white shadow-lg shadow-primary/25 hover:bg-[#66aa08] transition-all">
+                                <a href="/HSNL_KGX.pdf" target="_blank" rel="noopener noreferrer" className="flex h-12 items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-white shadow-lg shadow-primary/25 hover:bg-[#66aa08] transition-all">
                                     Xem hồ sơ năng lực
-                                </button>
-                                <button className="flex h-12 items-center justify-center rounded-xl border-2 border-[#eef4e7] bg-transparent px-8 text-base font-bold text-text-main hover:bg-[#fafcf8] hover:border-primary/50 transition-all">
+                                </a>
+                                <Link to="/lien-he" className="flex h-12 items-center justify-center rounded-xl border-2 border-[#eef4e7] bg-transparent px-8 text-base font-bold text-text-main hover:bg-[#fafcf8] hover:border-primary/50 transition-all">
                                     Liên hệ ngay
-                                </button>
+                                </Link>
                             </div>
                             <div className="flex items-center gap-6 pt-4 text-sm font-medium text-gray-500">
                                 <div className="flex items-center gap-2">

@@ -21,12 +21,13 @@ const ProductListPage: React.FC = () => {
                             Chúng tôi không chỉ bán cây, chúng tôi cung cấp giải pháp cảnh quan bền vững dựa trên khí hậu, thổ nhưỡng và ngân sách của dự án.
                         </p>
                         <div className="flex flex-wrap gap-4 mt-2">
-                            <button className="h-12 px-8 rounded-xl bg-[#75c20a] text-white text-base font-bold shadow-xl shadow-[#75c20a]/20 hover:bg-[#5da300] transition-all transform hover:-translate-y-0.5">
+                            <button onClick={() => document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' })} className="h-12 px-8 rounded-xl bg-[#75c20a] text-white text-base font-bold shadow-xl shadow-[#75c20a]/20 hover:bg-[#5da300] transition-all transform hover:-translate-y-0.5">
                                 Tư vấn chọn cây
                             </button>
-                            <button className="h-12 px-8 rounded-xl border-2 border-[#eef4e7] bg-transparent text-[#161c0d] text-base font-bold hover:bg-[#eef4e7] transition-colors">
+                            <a href="tel:0868462462" className="h-12 px-8 rounded-xl border-2 border-[#eef4e7] bg-transparent text-[#161c0d] text-base font-bold hover:bg-[#eef4e7] transition-colors flex items-center gap-2">
+                                <span className="material-symbols-outlined text-sm">call</span>
                                 Gọi 0868 462 462
-                            </button>
+                            </a>
                         </div>
                         <div className="flex items-center gap-4 mt-6 text-sm text-gray-500">
                             <div className="flex -space-x-2">
@@ -211,7 +212,7 @@ const ProductListPage: React.FC = () => {
             </section>
 
             {/* Consultation Form Section */}
-            <section className="py-16 bg-white border-t border-[#eef4e7]">
+            <section id="consultation-form" className="py-16 bg-white border-t border-[#eef4e7]">
                 <div className="max-w-[1440px] mx-auto px-4 md:px-10">
                     <div className="bg-[#eef4e7]/30 rounded-3xl p-6 md:p-12 overflow-hidden relative border border-[#eef4e7]/50">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-[#75c20a]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -285,7 +286,7 @@ const ProductListPage: React.FC = () => {
                                                 </div>
                                                 <div>
                                                     <p className="font-bold text-[#161c0d]">Trụ sở chính</p>
-                                                    <p className="text-sm text-gray-600">Số 123, Đường Lương Ngọc Quyến, TP. Thái Nguyên</p>
+                                                    <p className="text-sm text-gray-600">12e khu dân cư số 9, phường Gia Sàng, TP. Thái Nguyên</p>
                                                 </div>
                                             </div>
                                             <div className="flex items-start gap-3">
@@ -303,16 +304,25 @@ const ProductListPage: React.FC = () => {
                                                 </div>
                                                 <div>
                                                     <p className="font-bold text-[#161c0d]">Email</p>
-                                                    <p className="text-sm text-gray-600">tuvan@kgxvn.vn</p>
+                                                    <p className="text-sm text-gray-600">khonggianxanhthainguyen@gmail.com</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="w-full h-48 bg-gray-100 rounded-xl overflow-hidden relative">
-                                        <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-Ik2OhR_Z1ngqrZz7dTbqjCRUwISIx93ePP0jc8NUX3y8yROf62M6_lTqs1m2FKNjeU51bz3n-vMN0l89EUh0IGmgef375nuvCJYaEELoDa1FfTgDUa4JdcZ48bLmE0J4ua81fVMRABTC34sCouwOCz-Fn2U_V3Q4UrIcQ5o_cpe-JvpUVECOcn8EUmU9BuorCywUETjgpex-_A8RSiOplb-Wo3IGJWu1nM5ULBU4Q5WRwGUURCT-QsruWFDJx9knL7ZVEB1J6lY')" }}></div>
-                                        <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-                                            <button className="bg-white px-4 py-2 rounded-lg text-xs font-bold shadow-md hover:bg-gray-50 text-[#161c0d]">Xem bản đồ</button>
-                                        </div>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1855.15686453779!2d105.84880824999999!3d21.57367365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313526c8efb99d9d%3A0x77b2f58c01bd6c83!2zS2h1IGTDom4gY8awIHPhu5EgOSwgR2lhIFPDoG5nLCBUcC4gVGjDoWkgTmd1ecOqbiwgVGjDoWkgTmd1ecOqbiwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1772230310507!5m2!1svi!2s"
+                                            width="100%"
+                                            height="100%"
+                                            style={{ border: 0 }}
+                                            allowFullScreen
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                            className="filter grayscale hover:grayscale-0 transition-all duration-500"
+                                        ></iframe>
+                                        <a href="https://maps.app.goo.gl/nvmBoPmyaHzFWFwn7" target="_blank" rel="noopener noreferrer" className="absolute bottom-2 right-2 bg-white px-4 py-2 rounded-lg text-xs font-bold shadow-md hover:bg-gray-50 text-[#161c0d]">
+                                            Xem bản đồ
+                                        </a>
                                     </div>
                                 </div>
                             </div>

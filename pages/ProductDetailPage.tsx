@@ -25,6 +25,14 @@ const ProductDetailPage: React.FC = () => {
         }
     };
 
+    const handleShareFacebook = () => {
+        let url = window.location.href;
+        if (url.includes('localhost') || url.includes('127.0.0.1')) {
+            url = url.replace(/https?:\/\/(localhost|127\.0\.0\.1):\d+/, 'https://kgxvn.vn');
+        }
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=600,height=400');
+    };
+
     if (loading) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-background-light">
@@ -85,9 +93,10 @@ const ProductDetailPage: React.FC = () => {
                                 <button className="flex h-12 px-6 bg-primary hover:bg-primary-dark text-white text-base font-bold rounded-xl items-center justify-center transition-colors shadow-lg shadow-primary/20">
                                     Tư vấn sử dụng cây này
                                 </button>
-                                <button className="flex h-12 px-6 bg-[#eef3e8] hover:bg-[#dfe8d4] text-[#151b0e] text-base font-bold rounded-xl items-center justify-center transition-colors">
+                                <a href="tel:0868462462" className="flex h-12 px-6 bg-[#eef3e8] hover:bg-[#dfe8d4] text-[#151b0e] text-base font-bold rounded-xl items-center justify-center transition-colors gap-2">
+                                    <span className="material-symbols-outlined text-sm">call</span>
                                     Gọi 0868 462 462
-                                </button>
+                                </a>
                             </div>
                             <div className="flex items-center gap-4 mt-4 text-sm text-text-muted">
                                 <div className="flex -space-x-2">
@@ -296,6 +305,22 @@ const ProductDetailPage: React.FC = () => {
                         </div>
                     </section>
                 )}
+
+                {/* Facebook Share */}
+                <section className="w-full max-w-[1200px] px-4 py-10 border-t border-[#eef3e8]">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <p className="font-bold text-[#151b0e]">Thấy hữu ích? Hãy chia sẻ loài cây này cho mọi người!</p>
+                        <button
+                            onClick={handleShareFacebook}
+                            className="flex h-10 items-center justify-center rounded-lg bg-[#1877F2] hover:bg-[#1864D9] transition-colors px-6 text-white text-sm font-bold gap-2 shadow-md w-full sm:w-auto"
+                        >
+                            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                            Chia sẻ lên Facebook
+                        </button>
+                    </div>
+                </section>
             </main>
         </div>
     );
