@@ -16,6 +16,71 @@ const s3Client = new S3Client({
     },
 });
 
+const IMAGE_MAX_DIMENSION = 2560;
+const IMAGE_QUALITY = 0.82;
+
+const shouldOptimizeImage = (file: File | Blob): boolean => {
+    if (!file.type?.startsWith('image/')) {
+        return false;
+    }
+
+    if (file.type === 'image/svg+xml' || file.type === 'image/gif') {
+        return false;
+    }
+
+    return typeof window !== 'undefined' && typeof document !== 'undefined';
+};
+
+const optimizeImageForUpload = async (file: File | Blob): Promise<File | Blob> => {
+    if (!shouldOptimizeImage(file)) {
+        return file;
+    }
+
+    const objectUrl = URL.createObjectURL(file);
+
+    try {
+        const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = () => reject(new Error('Unable to load image for optimization'));
+            img.src = objectUrl;
+        });
+
+        const scale = Math.min(1, IMAGE_MAX_DIMENSION / Math.max(image.width, image.height));
+        const targetWidth = Math.max(1, Math.round(image.width * scale));
+        const targetHeight = Math.max(1, Math.round(image.height * scale));
+
+        const canvas = document.createElement('canvas');
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
+
+        const context = canvas.getContext('2d');
+        if (!context) {
+            return file;
+        }
+
+        context.drawImage(image, 0, 0, targetWidth, targetHeight);
+
+        const optimizedBlob = await new Promise<Blob | null>((resolve) => {
+            canvas.toBlob((blob) => resolve(blob), 'image/webp', IMAGE_QUALITY);
+        });
+
+        if (!optimizedBlob) {
+            return file;
+        }
+
+        const wasResized = targetWidth !== image.width || targetHeight !== image.height;
+        const hasMeaningfulSizeReduction = optimizedBlob.size < file.size * 0.97;
+
+        return wasResized || hasMeaningfulSizeReduction ? optimizedBlob : file;
+    } catch (error) {
+        console.warn('Image optimization failed, fallback to original file:', error);
+        return file;
+    } finally {
+        URL.revokeObjectURL(objectUrl);
+    }
+};
+
 /**
  * Generate a unique file key for R2 storage.
  * Format: uploads/YYYY/MM/timestamp-random.ext
@@ -51,15 +116,16 @@ const generateKey = (file: File | Blob): string => {
  */
 export const uploadToR2 = async (file: File | Blob): Promise<string> => {
     try {
-        const key = generateKey(file);
-        const arrayBuffer = await file.arrayBuffer();
+        const processedFile = await optimizeImageForUpload(file);
+        const key = generateKey(processedFile);
+        const arrayBuffer = await processedFile.arrayBuffer();
         const uint8Array = new Uint8Array(arrayBuffer);
 
         const command = new PutObjectCommand({
             Bucket: R2_BUCKET,
             Key: key,
             Body: uint8Array,
-            ContentType: file.type || 'application/octet-stream',
+            ContentType: processedFile.type || 'application/octet-stream',
         });
 
         await s3Client.send(command);
