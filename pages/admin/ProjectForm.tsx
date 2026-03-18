@@ -30,7 +30,7 @@ const ProjectForm: FC = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
 
-    const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm({
+    const { register, handleSubmit, setValue, watch, formState: { errors, isValid } } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
             title: '',
@@ -89,24 +89,49 @@ const ProjectForm: FC = () => {
 
             if (id) {
                 await projectsService.update(id, data);
-                toast.success('Cập nhật dự án thành công');
+                toast.success('✅ Cập nhật dự án thành công!');
             } else {
                 await projectsService.create(data);
-                toast.success('Tạo dự án mới thành công');
+                toast.success('✅ Tạo dự án mới thành công!');
             }
             navigate('/admin/projects');
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error saving project:', error);
-            toast.error('Lỗi khi lưu dự án');
+            const action = id ? 'cập nhật' : 'tạo';
+            const detail = error?.message ? `\n${error.message}` : '';
+            toast.error(`❌ Không thể ${action} dự án.${detail}`, {
+                duration: 5000,
+                style: { maxWidth: '420px' },
+            });
         } finally {
             setLoading(false);
         }
     };
 
+    const onValidationError = (formErrors: any) => {
+        const fieldLabels: Record<string, string> = {
+            title: 'Tên dự án',
+            slug: 'Slug (URL)',
+            category: 'Danh mục',
+            location: 'Địa điểm',
+            client: 'Khách hàng',
+            year: 'Năm thực hiện',
+            area: 'Diện tích / Quy mô',
+            image: 'Ảnh đại diện',
+        };
+        const missingFields = Object.keys(formErrors)
+            .map((k) => fieldLabels[k] || k)
+            .join(', ');
+        toast.error(`⚠️ Vui lòng điền đầy đủ: ${missingFields}`, {
+            duration: 5000,
+            style: { maxWidth: '420px' },
+        });
+    };
+
 
     return (
         <AdminLayout>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 animate-fadeIn pb-20">
+            <form onSubmit={handleSubmit(onSubmit, onValidationError)} className="space-y-8 animate-fadeIn pb-20">
                 {/* Fixed Action Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sticky top-0 z-20 bg-admin-bg/80 backdrop-blur-md py-4 border-b border-slate-100">
                     <div>
