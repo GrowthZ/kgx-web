@@ -9,13 +9,19 @@ const R2_PUBLIC_URL = (import.meta as any).env.VITE_R2_PUBLIC_URL as string;
 
 // aws4fetch is a browser-compatible AWS Signature V4 client.
 // It does NOT use a credential resolution chain, so it works in Vite/browser environments.
-const getAwsClient = () =>
-    new AwsClient({
+const getAwsClient = () => {
+    if (!R2_ACCESS_KEY_ID || !R2_SECRET_ACCESS_KEY) {
+        throw new Error(
+            'R2 credentials are not configured. Please set VITE_R2_ACCESS_KEY_ID and VITE_R2_SECRET_ACCESS_KEY environment variables in your Vercel project settings.'
+        );
+    }
+    return new AwsClient({
         accessKeyId: R2_ACCESS_KEY_ID,
         secretAccessKey: R2_SECRET_ACCESS_KEY,
         service: 's3',
         region: 'auto',
     });
+};
 
 const IMAGE_MAX_DIMENSION = 2560;
 const IMAGE_QUALITY = 0.82;
