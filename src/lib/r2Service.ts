@@ -1,20 +1,21 @@
-import { S3Client, PutObjectCommand, DeleteObjectCommand, ListObjectsV2Command } from '@aws-sdk/client-s3';
+import { AwsClient } from 'aws4fetch';
 import type { StorageFile } from './firebaseService';
 
-const R2_ENDPOINT = (import.meta as any).env.VITE_R2_ENDPOINT;
-const R2_ACCESS_KEY_ID = (import.meta as any).env.VITE_R2_ACCESS_KEY_ID;
-const R2_SECRET_ACCESS_KEY = (import.meta as any).env.VITE_R2_SECRET_ACCESS_KEY;
-const R2_BUCKET = (import.meta as any).env.VITE_R2_BUCKET || 'kgx';
-const R2_PUBLIC_URL = (import.meta as any).env.VITE_R2_PUBLIC_URL;
+const R2_ENDPOINT = (import.meta as any).env.VITE_R2_ENDPOINT as string;
+const R2_ACCESS_KEY_ID = (import.meta as any).env.VITE_R2_ACCESS_KEY_ID as string;
+const R2_SECRET_ACCESS_KEY = (import.meta as any).env.VITE_R2_SECRET_ACCESS_KEY as string;
+const R2_BUCKET = ((import.meta as any).env.VITE_R2_BUCKET || 'kgx') as string;
+const R2_PUBLIC_URL = (import.meta as any).env.VITE_R2_PUBLIC_URL as string;
 
-const s3Client = new S3Client({
-    region: 'auto',
-    endpoint: R2_ENDPOINT,
-    credentials: {
+// aws4fetch is a browser-compatible AWS Signature V4 client.
+// It does NOT use a credential resolution chain, so it works in Vite/browser environments.
+const getAwsClient = () =>
+    new AwsClient({
         accessKeyId: R2_ACCESS_KEY_ID,
         secretAccessKey: R2_SECRET_ACCESS_KEY,
-    },
-});
+        service: 's3',
+        region: 'auto',
+    });
 
 const IMAGE_MAX_DIMENSION = 2560;
 const IMAGE_QUALITY = 0.82;
@@ -111,7 +112,7 @@ const generateKey = (file: File | Blob): string => {
 };
 
 /**
- * Upload a file to Cloudflare R2.
+ * Upload a file to Cloudflare R2 using aws4fetch (browser-compatible).
  * Returns the public URL of the uploaded file.
  */
 export const uploadToR2 = async (file: File | Blob): Promise<string> => {
@@ -119,24 +120,31 @@ export const uploadToR2 = async (file: File | Blob): Promise<string> => {
         const processedFile = await optimizeImageForUpload(file);
         const key = generateKey(processedFile);
         const arrayBuffer = await processedFile.arrayBuffer();
-        const uint8Array = new Uint8Array(arrayBuffer);
+        const contentType = processedFile.type || 'application/octet-stream';
 
-        const command = new PutObjectCommand({
-            Bucket: R2_BUCKET,
-            Key: key,
-            Body: uint8Array,
-            ContentType: processedFile.type || 'application/octet-stream',
+        // Build the R2 object URL: endpoint/bucket/key
+        const uploadUrl = `${R2_ENDPOINT}/${R2_BUCKET}/${key}`;
+
+        const client = getAwsClient();
+        const response = await client.fetch(uploadUrl, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': contentType,
+            },
+            body: arrayBuffer,
         });
 
-        await s3Client.send(command);
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`R2 upload failed: ${response.status} ${response.statusText} – ${text}`);
+        }
 
-        // Construct public URL
+        // Return public URL
         if (R2_PUBLIC_URL) {
             return `${R2_PUBLIC_URL}/${key}`;
         }
 
-        // Fallback: use endpoint URL (requires public access enabled)
-        return `${R2_ENDPOINT}/${R2_BUCKET}/${key}`;
+        return uploadUrl;
     } catch (error) {
         console.error('R2 upload error:', error);
         throw error;
@@ -160,12 +168,14 @@ export const deleteFromR2 = async (keyOrUrl: string): Promise<void> => {
             }
         }
 
-        const command = new DeleteObjectCommand({
-            Bucket: R2_BUCKET,
-            Key: key,
-        });
+        const deleteUrl = `${R2_ENDPOINT}/${R2_BUCKET}/${key}`;
+        const client = getAwsClient();
+        const response = await client.fetch(deleteUrl, { method: 'DELETE' });
 
-        await s3Client.send(command);
+        if (!response.ok && response.status !== 204) {
+            const text = await response.text();
+            throw new Error(`R2 delete failed: ${response.status} ${response.statusText} – ${text}`);
+        }
     } catch (error) {
         console.error('R2 delete error:', error);
         throw error;
@@ -178,14 +188,24 @@ export const deleteFromR2 = async (keyOrUrl: string): Promise<void> => {
  */
 export const listR2Files = async (prefix?: string): Promise<StorageFile[]> => {
     try {
-        const command = new ListObjectsV2Command({
-            Bucket: R2_BUCKET,
-            Prefix: prefix || '',
-            MaxKeys: 1000,
-        });
+        const params = new URLSearchParams({ 'list-type': '2', 'max-keys': '1000' });
+        if (prefix) params.set('prefix', prefix);
 
-        const response = await s3Client.send(command);
-        const contents = response.Contents || [];
+        const listUrl = `${R2_ENDPOINT}/${R2_BUCKET}?${params.toString()}`;
+        const client = getAwsClient();
+        const response = await client.fetch(listUrl, { method: 'GET' });
+
+        if (!response.ok) {
+            const text = await response.text();
+            throw new Error(`R2 list failed: ${response.status} ${response.statusText} – ${text}`);
+        }
+
+        const text = await response.text();
+
+        // Parse XML response
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, 'application/xml');
+        const contents = Array.from(xml.getElementsByTagName('Contents'));
 
         const extToMime: Record<string, string> = {
             jpg: 'image/jpeg',
@@ -198,26 +218,32 @@ export const listR2Files = async (prefix?: string): Promise<StorageFile[]> => {
         };
 
         return contents
-            .filter((obj) => obj.Key && !obj.Key.endsWith('/'))
-            .map((obj) => {
-                const key = obj.Key!;
+            .map((el) => {
+                const key = el.getElementsByTagName('Key')[0]?.textContent || '';
+                const size = parseInt(el.getElementsByTagName('Size')[0]?.textContent || '0', 10);
+                const lastModified = el.getElementsByTagName('LastModified')[0]?.textContent || '';
+
+                if (!key || key.endsWith('/')) return null;
+
                 const name = key.split('/').pop() || key;
                 const ext = name.split('.').pop()?.toLowerCase() || '';
                 const type = extToMime[ext] || 'application/octet-stream';
-                const url = R2_PUBLIC_URL ? `${R2_PUBLIC_URL}/${key}` : `${R2_ENDPOINT}/${R2_BUCKET}/${key}`;
+                const url = R2_PUBLIC_URL
+                    ? `${R2_PUBLIC_URL}/${key}`
+                    : `${R2_ENDPOINT}/${R2_BUCKET}/${key}`;
 
                 return {
                     name,
                     url,
                     path: key,
                     type,
-                    size: obj.Size || 0,
-                    updatedAt: obj.LastModified?.toISOString() || new Date().toISOString(),
+                    size,
+                    updatedAt: lastModified || new Date().toISOString(),
                 } as StorageFile;
-            });
+            })
+            .filter((item): item is StorageFile => item !== null);
     } catch (error) {
         console.error('R2 list error:', error);
         throw error;
     }
 };
-
