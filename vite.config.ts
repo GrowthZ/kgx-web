@@ -13,8 +13,6 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-      // draft-js uses 'global' which doesn't exist in browsers
-      global: 'globalThis',
     },
     resolve: {
       alias: {
@@ -25,10 +23,6 @@ export default defineConfig(({ mode }) => {
       include: [
         '@floating-ui/dom',
         '@tiptap/react > @tiptap/extension-bubble-menu',
-        'draft-js',
-        'react-draft-wysiwyg',
-        'draftjs-to-html',
-        'html-to-draftjs',
       ],
     },
   };

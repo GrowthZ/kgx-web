@@ -1,4 +1,4 @@
-import { useState, useEffect, FC, lazy, Suspense } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AdminLayout from '../../src/components/admin/AdminLayout';
 import { projectsService, Project } from '../../src/services/projectsService';
@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import toast from 'react-hot-toast';
 import MultiImageUpload from '../../src/components/admin/MultiImageUpload';
-const DraftEditor = lazy(() => import('../../src/components/admin/DraftEditor'));
+import TiptapEditor from '../../src/components/admin/TiptapEditor';
 import { ImagePicker } from '../../src/components/admin/ImageUpload';
 
 const schema = yup.object().shape({
@@ -251,18 +251,11 @@ const ProjectForm: FC = () => {
 
                         {/* Description Editor */}
                         <div className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm">
-                            <Suspense fallback={
-                                <div className="flex items-center gap-3 py-10 justify-center text-slate-400">
-                                    <div className="size-5 border-2 border-slate-200 border-t-admin-primary rounded-full animate-spin" />
-                                    <span className="text-sm font-medium">Đang tải editor...</span>
-                                </div>
-                            }>
-                                <DraftEditor
-                                    label="Mô tả dự án"
-                                    value={watchDescription}
-                                    onChange={(val) => setValue('description', val)}
-                                />
-                            </Suspense>
+                            <TiptapEditor
+                                label="Mô tả dự án"
+                                value={watchDescription}
+                                onChange={(val) => setValue('description', val)}
+                            />
                         </div>
 
                         {/* Gallery Section */}
