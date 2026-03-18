@@ -77,6 +77,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({
                     editor={ClassicEditor}
                     data={value}
                     config={{
+                        licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE4MDU0MTQzOTksImp0aSI6ImJjYzI1NjAzLTZhZWUtNDljZC04MjQ3LWE3Yjg3NzdjNWRmNCIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJyZW1vdmVGZWF0dXJlcyI6WyJQQiIsIlJGIiwiU0NIIiwiVENQIiwiVEwiLCJUQ1IiLCJJUiIsIlNVQSIsIkI2NEEiLCJMUCIsIkhFIiwiUkVEIiwiUEZPIiwiV0MiLCJGQVIiLCJCS00iLCJGUEgiLCJNUkUiXSwidmMiOiJiZDYwNTQ2NCJ9.fZCYf7BTZg3ssr3etY6q3U06XyKeSjqZPCt8179PshCr5EW-LXLhgX4alMxHB_Bw-3DxsPvroaC4-tga3uujYQ',
                         toolbar: {
                             items: [
                                 'undo', 'redo', '|',
