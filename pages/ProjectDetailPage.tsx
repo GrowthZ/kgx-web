@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectsService, Project } from '../src/services/projectsService';
 import ImageWithFallback from '../components/ImageWithFallback';
@@ -77,9 +77,10 @@ const ProjectDetailPage: React.FC = () => {
                                 <h1 className="text-3xl lg:text-4xl font-black text-olive leading-relaxed md:leading-loose tracking-normal ">
                                     {project.title}
                                 </h1>
-                                <p className="text-lg lg:text-xl text-text-light font-normal max-w-[500px]">
-                                    {project.description}
-                                </p>
+                                <div
+                                    className="text-lg lg:text-xl text-text-light font-normal max-w-[500px] prose prose-slate"
+                                    dangerouslySetInnerHTML={{ __html: project.description || '' }}
+                                />
                             </div>
                             <div className="flex flex-wrap gap-4 mt-2">
                                 <a href="#images" className="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-xl shadow-primary/30 flex items-center gap-2">
@@ -101,52 +102,57 @@ const ProjectDetailPage: React.FC = () => {
                 </section>
 
                 {/* Project Facts */}
-                <section className="w-full bg-[#f2f7ec] py-12 border-y border-[#eef4e7]">
-                    <div className="max-w-[1280px] mx-auto px-5 xl:px-20">
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
-                            <div className="flex flex-col gap-3 group">
-                                <div className="size-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-[#eef4e7]">
-                                    <span className="material-symbols-outlined">location_on</span>
-                                </div>
+                <section className="w-full bg-[#f2f7ec] border-y border-[#deecd0]">
+                    <div className="max-w-[1280px] mx-auto px-5 xl:px-20 py-8 space-y-0">
+                        {/* Row 1: Khách hàng + Địa điểm */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x-2 divide-[#deecd0] border-b-2 border-[#deecd0]">
+                            <div className="flex items-center gap-4 py-5 sm:pr-8">
+                                <span className="inline-flex items-center justify-center size-9 rounded-full bg-white border border-[#deecd0] text-primary shrink-0">
+                                    <span className="material-symbols-outlined text-[18px]">person</span>
+                                </span>
                                 <div>
-                                    <p className="text-text-light text-sm font-medium mb-1">Địa điểm</p>
-                                    <p className="text-olive text-lg font-bold leading-normal">{project.location}</p>
+                                    <p className="text-text-light text-[10px] font-bold uppercase tracking-[0.12em] mb-0.5">Khách hàng</p>
+                                    <p className="text-olive font-bold leading-snug">{project.client || '—'}</p>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-3 group">
-                                <div className="size-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-[#eef4e7]">
-                                    <span className="material-symbols-outlined">home_work</span>
-                                </div>
+                            <div className="flex items-center gap-4 py-5 sm:pl-8">
+                                <span className="inline-flex items-center justify-center size-9 rounded-full bg-white border border-[#deecd0] text-primary shrink-0">
+                                    <span className="material-symbols-outlined text-[18px]">location_on</span>
+                                </span>
                                 <div>
-                                    <p className="text-text-light text-sm font-medium mb-1">Loại hình</p>
-                                    <p className="text-olive text-lg font-bold leading-normal ">{project.category}</p>
+                                    <p className="text-text-light text-[10px] font-bold uppercase tracking-[0.12em] mb-0.5">Địa điểm</p>
+                                    <p className="text-olive font-bold leading-snug">{project.location || '—'}</p>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-3 group">
-                                <div className="size-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-[#eef4e7]">
-                                    <span className="material-symbols-outlined">yard</span>
-                                </div>
+                        </div>
+
+                        {/* Row 2: Hạng mục + Quy mô + Thời gian */}
+                        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x-2 divide-[#deecd0]">
+                            <div className="flex items-center gap-4 py-5 sm:pr-8">
+                                <span className="inline-flex items-center justify-center size-9 rounded-full bg-white border border-[#deecd0] text-primary shrink-0">
+                                    <span className="material-symbols-outlined text-[18px]">yard</span>
+                                </span>
                                 <div>
-                                    <p className="text-text-light text-sm font-medium mb-1">Hạng mục</p>
-                                    <p className="text-olive text-lg font-bold leading-normal">{project.type || 'Sân vườn & Hồ Koi'}</p>
+                                    <p className="text-text-light text-[10px] font-bold uppercase tracking-[0.12em] mb-0.5">Hạng mục</p>
+                                    <p className="text-olive font-bold leading-snug">{project.displayCategory || project.category || '—'}</p>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-3 group">
-                                <div className="size-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-[#eef4e7]">
-                                    <span className="material-symbols-outlined">square_foot</span>
-                                </div>
+                            <div className="flex items-center gap-4 py-5 sm:px-8">
+                                <span className="inline-flex items-center justify-center size-9 rounded-full bg-white border border-[#deecd0] text-primary shrink-0">
+                                    <span className="material-symbols-outlined text-[18px]">square_foot</span>
+                                </span>
                                 <div>
-                                    <p className="text-text-light text-sm font-medium mb-1">Quy mô</p>
-                                    <p className="text-olive text-lg font-bold leading-normal">{project.scale || 'Updating'}</p>
+                                    <p className="text-text-light text-[10px] font-bold uppercase tracking-[0.12em] mb-0.5">Quy mô</p>
+                                    <p className="text-olive font-bold leading-snug">{project.area || project.scale || '—'}</p>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-3 group">
-                                <div className="size-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-[#eef4e7]">
-                                    <span className="material-symbols-outlined">schedule</span>
-                                </div>
+                            <div className="flex items-center gap-4 py-5 sm:pl-8">
+                                <span className="inline-flex items-center justify-center size-9 rounded-full bg-white border border-[#deecd0] text-primary shrink-0">
+                                    <span className="material-symbols-outlined text-[18px]">schedule</span>
+                                </span>
                                 <div>
-                                    <p className="text-text-light text-sm font-medium mb-1">Thời gian</p>
-                                    <p className="text-olive text-lg font-bold leading-normal">{project.completionTime || 'Updating'}</p>
+                                    <p className="text-text-light text-[10px] font-bold uppercase tracking-[0.12em] mb-0.5">Thời gian</p>
+                                    <p className="text-olive font-bold leading-snug">{project.year || project.completionTime || '—'}</p>
                                 </div>
                             </div>
                         </div>
@@ -157,6 +163,32 @@ const ProjectDetailPage: React.FC = () => {
                 <section className="w-full max-w-[800px] mx-auto px-5 py-16 prose prose-slate max-w-none">
                     <div dangerouslySetInnerHTML={{ __html: project.content }} />
                 </section>
+
+                {/* YouTube Embed */}
+                {project.youtubeUrl && (
+                    <section className="w-full max-w-[1280px] mx-auto px-5 xl:px-20 py-12 space-y-6">
+                        <h2 className="text-olive text-2xl font-bold border-b border-[#eef4e7] pb-4 flex items-center gap-3">
+                            <span className="inline-flex items-center justify-center size-10 rounded-full bg-red-100 text-red-600">
+                                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" /></svg>
+                            </span>
+                            Video dự án
+                        </h2>
+                        <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl bg-black">
+                            <iframe
+                                src={(() => {
+                                    const url = project.youtubeUrl!;
+                                    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+                                    const videoId = match ? match[1] : '';
+                                    return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : url;
+                                })()}
+                                className="absolute inset-0 w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                title={`Video: ${project.title}`}
+                            />
+                        </div>
+                    </section>
+                )}
 
                 {/* Gallery */}
                 <section id="images" className="w-full max-w-[1280px] mx-auto px-5 xl:px-20 py-16 lg:py-24 space-y-8">

@@ -24,6 +24,7 @@ export interface Project {
     completionTime?: string;
     content?: string;
     status?: string;
+    youtubeUrl?: string;
 }
 
 class ProjectsService extends FirebaseService<Project> {

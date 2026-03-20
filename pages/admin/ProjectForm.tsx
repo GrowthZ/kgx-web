@@ -23,6 +23,7 @@ const schema = yup.object().shape({
     images: yup.array().of(yup.string()).optional(),
     filterCategory: yup.string().optional(),
     displayCategory: yup.string().optional(),
+    youtubeUrl: yup.string().optional(),
 });
 
 const ProjectForm: FC = () => {
@@ -45,6 +46,7 @@ const ProjectForm: FC = () => {
             images: [],
             filterCategory: 'thiet-ke',
             displayCategory: 'Thiết kế',
+            youtubeUrl: '',
         }
     });
 
@@ -318,6 +320,20 @@ const ProjectForm: FC = () => {
                                         <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-admin-primary"></div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div className="space-y-2 pt-2">
+                                <label className="text-xs font-bold text-slate-400 tracking-widest ml-1 flex items-center gap-2">
+                                    <svg className="w-4 h-4 fill-red-500" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" /></svg>
+                                    Link Video YouTube
+                                </label>
+                                <input
+                                    {...register('youtubeUrl')}
+                                    type="text"
+                                    placeholder="https://www.youtube.com/watch?v=..."
+                                    className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium text-sm"
+                                />
+                                <p className="text-[10px] text-slate-400 ml-1">Dán link YouTube để nhúng video vào trang dự án</p>
                             </div>
                         </div>
                     </div>
