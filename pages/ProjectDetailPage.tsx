@@ -160,7 +160,7 @@ const ProjectDetailPage: React.FC = () => {
                 </section>
 
                 {/* Content Section */}
-                <section className="w-full max-w-[800px] mx-auto px-5 py-16 prose prose-slate max-w-none">
+                <section className="w-full max-w-[800px] mx-auto px-5 prose prose-slate max-w-none">
                     <div dangerouslySetInnerHTML={{ __html: project.content }} />
                 </section>
 
