@@ -164,31 +164,46 @@ const ProjectDetailPage: React.FC = () => {
                     <div dangerouslySetInnerHTML={{ __html: project.content }} />
                 </section>
 
-                {/* YouTube Embed */}
-                {project.youtubeUrl && (
-                    <section className="w-full max-w-[1280px] mx-auto px-5 xl:px-20 py-12 space-y-6">
-                        <h2 className="text-olive text-2xl font-bold border-b border-[#eef4e7] pb-4 flex items-center gap-3">
-                            <span className="inline-flex items-center justify-center size-10 rounded-full bg-red-100 text-red-600">
-                                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" /></svg>
-                            </span>
-                            Video dự án
-                        </h2>
-                        <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl bg-black">
-                            <iframe
-                                src={(() => {
-                                    const url = project.youtubeUrl!;
-                                    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
-                                    const videoId = match ? match[1] : '';
-                                    return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : url;
-                                })()}
-                                className="absolute inset-0 w-full h-full"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                title={`Video: ${project.title}`}
-                            />
-                        </div>
-                    </section>
-                )}
+                {/* Video Embed: YouTube or Facebook */}
+                {project.youtubeUrl && (() => {
+                    const url = project.youtubeUrl!;
+                    const isFacebook = /facebook\.com|fb\.watch/.test(url);
+                    const isYoutube = /youtu\.be|youtube\.com/.test(url);
+
+                    let embedSrc = url;
+                    if (isYoutube) {
+                        const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([-\w]{11})/);
+                        const videoId = match ? match[1] : '';
+                        embedSrc = videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : url;
+                    } else if (isFacebook) {
+                        embedSrc = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&mute=0`;
+                    }
+
+                    return (
+                        <section className="w-full max-w-[1280px] mx-auto px-5 xl:px-20 py-12 space-y-6">
+                            <h2 className="text-olive text-2xl font-bold border-b border-[#eef4e7] pb-4 flex items-center gap-3">
+                                <span className={`inline-flex items-center justify-center size-10 rounded-full ${isFacebook ? 'bg-blue-100 text-[#1877F2]' : 'bg-red-100 text-red-600'}`}>
+                                    {isFacebook ? (
+                                        <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+                                    ) : (
+                                        <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" /></svg>
+                                    )}
+                                </span>
+                                Video dự án
+                            </h2>
+                            <div className={`relative w-full rounded-2xl overflow-hidden shadow-xl bg-black ${isFacebook ? 'aspect-[9/16] max-w-sm mx-auto' : 'aspect-video'}`}>
+                                <iframe
+                                    src={embedSrc}
+                                    className="absolute inset-0 w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    scrolling="no"
+                                    title={`Video: ${project.title}`}
+                                />
+                            </div>
+                        </section>
+                    );
+                })()}
 
                 {/* Gallery */}
                 <section id="images" className="w-full max-w-[1280px] mx-auto px-5 xl:px-20 py-16 lg:py-24 space-y-8">

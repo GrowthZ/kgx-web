@@ -2,6 +2,7 @@ import { useState, useEffect, FC } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AdminLayout from '../../src/components/admin/AdminLayout';
 import { projectsService, Project } from '../../src/services/projectsService';
+import { generateSlug } from '../../src/lib/firebaseService';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -53,6 +54,14 @@ const ProjectForm: FC = () => {
     const watchImage = watch('image');
     const watchImages = watch('images') || [];
     const watchDescription = watch('description') || '';
+    const watchTitle = watch('title');
+
+    // Auto-generate slug from title
+    useEffect(() => {
+        if (!id && watchTitle) {
+            setValue('slug', generateSlug(watchTitle), { shouldValidate: true });
+        }
+    }, [watchTitle, id, setValue]);
 
     useEffect(() => {
         if (id) {
@@ -325,15 +334,15 @@ const ProjectForm: FC = () => {
                             <div className="space-y-2 pt-2">
                                 <label className="text-xs font-bold text-slate-400 tracking-widest ml-1 flex items-center gap-2">
                                     <svg className="w-4 h-4 fill-red-500" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" /></svg>
-                                    Link Video YouTube
+                                    Link Video (YouTube / Facebook Reel)
                                 </label>
                                 <input
                                     {...register('youtubeUrl')}
                                     type="text"
-                                    placeholder="https://www.youtube.com/watch?v=..."
+                                    placeholder="YouTube: https://youtu.be/... hoặc Facebook: https://www.facebook.com/reel/..."
                                     className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium text-sm"
                                 />
-                                <p className="text-[10px] text-slate-400 ml-1">Dán link YouTube để nhúng video vào trang dự án</p>
+                                <p className="text-[10px] text-slate-400 ml-1">Hỗ trợ YouTube, YouTube Shorts và Facebook Reel / Video</p>
                             </div>
                         </div>
                     </div>
