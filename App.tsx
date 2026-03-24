@@ -22,6 +22,7 @@ import CatalogPage from './pages/CatalogPage';
 import GardenConstructionPage from './pages/GardenConstructionPage';
 import GardenDesignPage from './pages/GardenDesignPage';
 import ProductListingPage from './pages/ProductListingPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 // Admin imports
 import { AuthProvider, ProtectedRoute } from './src/contexts/AuthContext';
@@ -190,6 +191,9 @@ const App: FC = () => {
                       <Route path="/tin-tuc/:slug" element={<ArticleDetailPage />} />
 
                       <Route path="/lien-he" element={<ContactPage />} />
+
+                      {/* Bắt tất cả URL không tồn tại, trả về trang 404 */}
+                      <Route path="*" element={<NotFoundPage />} />
                     </Routes>
                   </main>
                   <FloatingCTA />

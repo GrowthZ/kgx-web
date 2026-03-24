@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node generate-sitemap.js && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "aws4fetch": "^1.0.20",
     "ckeditor5": "^47.4.0",
     "cropperjs": "^1.6.2",
+    "dotenv": "^16.6.1",
     "firebase": "^12.8.0",
     "react": "^19.2.3",
     "react-cropper": "^2.3.3",

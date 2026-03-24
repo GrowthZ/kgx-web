@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*?*query=
+Disallow: /*?*sort=
+
+Sitemap: https://kgxvn.vn/sitemap.xml

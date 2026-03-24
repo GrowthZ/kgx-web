@@ -1,8 +1,76 @@
 {
+    "version": 2,
     "rewrites": [
+        {
+            "source": "/(.*\\.php.*)",
+            "destination": "/410-gone"
+        },
+        {
+            "source": "/(.*casino.*)",
+            "destination": "/410-gone"
+        },
+        {
+            "source": "/(.*viagra.*)",
+            "destination": "/410-gone"
+        },
+        {
+            "source": "/(.*porn.*)",
+            "destination": "/410-gone"
+        },
+        {
+            "source": "/(.*cialis.*)",
+            "destination": "/410-gone"
+        },
+        {
+            "source": "/(.*wp-login.*|.*wp-admin.*)",
+            "destination": "/410-gone"
+        },
         {
             "source": "/(.*)",
             "destination": "/index.html"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/410-gone",
+            "status": 410,
+            "headers": {
+                "X-Robots-Tag": "noindex, noarchive",
+                "Content-Type": "text/html"
+            },
+            "dest": "/index.html"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "Strict-Transport-Security",
+                    "value": "max-age=31536000; includeSubDomains"
+                }
+            ]
+        },
+        {
+            "source": "/admin/(.*)",
+            "headers": [
+                {
+                    "key": "X-Robots-Tag",
+                    "value": "noindex, nofollow"
+                }
+            ]
         }
     ]
 }
