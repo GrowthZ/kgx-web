@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import SEO from '../src/components/SEO';
 
 const CleanAgriculturePage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Thi công Nông nghiệp sạch - KGX - Không Gian Xanh";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-[#151712] dark:text-white antialiased min-h-screen flex flex-col transition-colors duration-300">
+            <SEO title="Thi công Nông nghiệp sạch - KGX - Không Gian Xanh" />
             <main className="flex-grow w-full flex flex-col items-center">
                 {/* Intro Header */}
                 <section className="w-full pt-20 pb-12 px-6 max-w-[1200px]">

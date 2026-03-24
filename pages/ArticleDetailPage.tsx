@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { articlesService, Article } from '../src/services/articlesService';
 import ImageWithFallback from '../components/ImageWithFallback';
+import SEO from '../src/components/SEO';
 
 /**
  * Safely format a date value from Firestore.
@@ -82,6 +83,12 @@ const ArticleDetailPage = () => {
 
     return (
         <div className="bg-background-light text-[#151b0e] font-display min-h-screen pb-20">
+            <SEO
+                title={article.title}
+                description={article.excerpt || article.content.replace(/<[^>]+>/g, '').substring(0, 155)}
+                image={article.featuredImage}
+                type="article"
+            />
             {/* Hero Section */}
             <header className="max-w-[860px] mx-auto pt-8 md:pt-12 px-4 md:px-6">
                 {/* Breadcrumbs */}

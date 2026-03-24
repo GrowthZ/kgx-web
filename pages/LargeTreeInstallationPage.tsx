@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import SEO from '../src/components/SEO';
 
 const LargeTreeInstallationPage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Thi công Cây Công Trình Kích Thước Lớn - KGX - Không Gian Xanh";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-white dark:bg-background-dark text-[#151711] dark:text-gray-100 flex flex-col min-h-screen font-display antialiased selection:bg-primary/20 transition-colors duration-300">
+            <SEO title="Thi công Cây Công Trình Kích Thước Lớn - KGX - Không Gian Xanh" />
             <main className="flex-grow">
                 {/* Section 1: Challenges (Intro) */}
                 <section className="py-20 bg-stone-50 dark:bg-[#30352c] border-b border-[#eef0ea] dark:border-white/5 relative overflow-hidden">

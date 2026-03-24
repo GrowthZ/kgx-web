@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import SEO from '../src/components/SEO';
 
 const ArchitectureDesignPage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Thiết kế Kiến trúc Xanh - KGX - Không Gian Xanh";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white flex flex-col min-h-screen font-display antialiased transition-colors duration-300">
+            <SEO title="Thiết kế Kiến trúc Xanh - KGX - Không Gian Xanh" />
             <main className="flex-grow">
                 {/* Section 1: Hero */}
                 <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">

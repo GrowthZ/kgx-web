@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectsService, Project } from '../src/services/projectsService';
 import ImageWithFallback from '../components/ImageWithFallback';
+import SEO from '../src/components/SEO';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
@@ -57,8 +58,18 @@ const ProjectDetailPage: React.FC = () => {
 
     const allImages = [project.image, ...(project.images || [])].filter(Boolean);
 
+    // Prepare text for SEO - strip HTML tags from description if needed, and truncate
+    const plainDescription = project.description ? project.description.replace(/<[^>]+>/g, '').substring(0, 155) + '...' : "";
+    const seoDesc = project.seoDescription || plainDescription;
+
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-200">
+            <SEO
+                title={project.title}
+                description={seoDesc}
+                image={project.image}
+                type="article"
+            />
             <main className="w-full flex flex-col items-center">
                 {/* Hero Section */}
                 <section className="w-full max-w-[1280px] px-5 xl:px-20 py-10 lg:py-16">

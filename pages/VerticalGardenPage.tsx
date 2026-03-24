@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import SEO from '../src/components/SEO';
 
 const VerticalGardenPage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Thiết kế Vườn thẳng đứng - KGX - Không Gian Xanh";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-[#141613] dark:text-gray-100 antialiased selection:bg-primary/20">
+            <SEO title="Thiết kế Vườn thẳng đứng - KGX - Không Gian Xanh" />
             <main className="w-full overflow-x-hidden">
                 {/* Section 1: Context (Intro) */}
                 <section className="bg-background-light dark:bg-[#30352c] py-20 lg:py-28 px-4 sm:px-6 lg:px-10">

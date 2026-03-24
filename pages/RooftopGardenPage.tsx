@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import SEO from '../src/components/SEO';
 
 const RooftopGardenPage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Thiết kế vườn trên mái - KGX - Không Gian Xanh";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased">
+            <SEO title="Thiết kế vườn trên mái - KGX - Không Gian Xanh" />
             <main className="flex flex-col items-center">
                 {/* Hero Section */}
                 <section className="w-full max-w-[1200px] px-4 md:px-8 pt-16 pb-12">

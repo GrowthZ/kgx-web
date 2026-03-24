@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { projectsService, Project } from '../src/services/projectsService';
 import { contactService } from '../src/services/contactService';
 import ImageWithFallback from '../components/ImageWithFallback';
+import SEO from '../src/components/SEO';
 import toast from 'react-hot-toast';
 import urbanPark from '../src/media/urban-park.png';
 import corporateLandscape from '../src/media/corporate-landscape.png';
@@ -91,6 +92,11 @@ ${message}
 
     return (
         <div className="bg-background-light text-text-main antialiased selection:bg-primary/30">
+            <SEO
+                title="Dự án Cảnh Quan | KGX - Không Gian Xanh"
+                description="Tổng hợp các dự án cảnh quan, sân vườn, hồ cá Koi và quy hoạch tiêu biểu do KGX thực hiện."
+                url="https://kgxvn.vn/du-an"
+            />
             {/* Hero Section */}
             <section className="relative w-full overflow-hidden py-12 lg:py-20">
                 <div className="container px-4 mx-auto">

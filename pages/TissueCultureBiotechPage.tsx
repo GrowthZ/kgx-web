@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import SEO from '../src/components/SEO';
 
 const TissueCultureBiotechPage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Nuôi cấy mô Công nghệ cao - KGX Biotech";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white flex flex-col min-h-screen font-display antialiased transition-colors duration-300">
+            <SEO title="Nuôi cấy mô Công nghệ cao - KGX Biotech" />
             <main className="flex-grow">
                 {/* Section 1: Hero */}
                 <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">

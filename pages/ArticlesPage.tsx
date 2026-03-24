@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { articlesService, Article } from '../src/services/articlesService';
+import SEO from '../src/components/SEO';
 
 const ArticlesPage: React.FC = () => {
     const [articles, setArticles] = useState<Article[]>([]);
@@ -35,6 +36,11 @@ const ArticlesPage: React.FC = () => {
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-charcoal dark:text-gray-100 font-display transition-colors duration-300">
+            <SEO
+                title="Tin tức & Kiến thức | KGX - Không Gian Xanh"
+                description="Cập nhật tin tức, kiến thức chuyên ngành về cảnh quan, kiến trúc sân vườn và các giải pháp không gian xanh từ chuyên gia KGX."
+                url="https://kgxvn.vn/tin-tuc"
+            />
             <main className="max-w-[1200px] mx-auto px-4 py-8">
                 {/* Hero Section */}
                 <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">

@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../src/components/SEO';
 
 const MasterPlanningPage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Thiết kế quy hoạch cảnh quan - KGX";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased">
+            <SEO title="Thiết kế quy hoạch cảnh quan - KGX" />
             <main className="flex flex-col items-center">
                 {/* Section 1: Strategic Role (Hero) */}
                 <section className="w-full flex justify-center py-16 md:py-24 bg-background-light dark:bg-[#30352c]">

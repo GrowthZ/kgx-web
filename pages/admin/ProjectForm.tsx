@@ -25,6 +25,7 @@ const schema = yup.object().shape({
     filterCategory: yup.string().optional(),
     displayCategory: yup.string().optional(),
     youtubeUrl: yup.string().optional(),
+    seoDescription: yup.string().max(160, 'Mô tả SEO không nên vượt quá 160 ký tự').optional(),
 });
 
 const ProjectForm: FC = () => {
@@ -48,6 +49,7 @@ const ProjectForm: FC = () => {
             filterCategory: 'thiet-ke',
             displayCategory: 'Thiết kế',
             youtubeUrl: '',
+            seoDescription: '',
         }
     });
 
@@ -343,6 +345,26 @@ const ProjectForm: FC = () => {
                                     className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium text-sm"
                                 />
                                 <p className="text-[10px] text-slate-400 ml-1">Hỗ trợ YouTube, YouTube Shorts và Facebook Reel / Video</p>
+                            </div>
+
+                            <div className="space-y-2 pt-2 border-t border-slate-100">
+                                <label className="text-xs font-bold text-slate-400 tracking-widest ml-1 flex items-center justify-between">
+                                    <div className="flex items-center gap-2">
+                                        <svg className="w-4 h-4 text-admin-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                        Mô tả SEO (Meta Description)
+                                    </div>
+                                    <span className={`text-[10px] ${(watch('seoDescription')?.length || 0) > 160 ? 'text-rose-500' : 'text-slate-400'}`}>
+                                        {watch('seoDescription')?.length || 0}/160
+                                    </span>
+                                </label>
+                                <textarea
+                                    {...register('seoDescription')}
+                                    rows={3}
+                                    placeholder="Đoạn văn ngắn (tối đa 160 ký tự) xuất hiện trên kết quả tìm kiếm Google..."
+                                    className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium text-sm resize-none"
+                                />
+                                {errors.seoDescription && <p className="text-xs text-rose-500 font-bold ml-1">{errors.seoDescription.message}</p>}
+                                <p className="text-[10px] text-slate-400 ml-1">Nếu bỏ trống, Google có thể tự lấy nội dung bài viết. Cẩn thận không viết quá dài.</p>
                             </div>
                         </div>
                     </div>

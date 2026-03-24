@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import SEO from '../src/components/SEO';
 
 const ResortParkDesignPage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Thiết kế Resort & Công viên - KGX - Không Gian Xanh";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-[#151612] dark:text-gray-100 antialiased transition-colors duration-300">
+            <SEO title="Thiết kế Resort & Công viên - KGX - Không Gian Xanh" />
             <main className="flex flex-col items-center">
                 {/* Section 1: Hero Intro */}
                 <section className="w-full pt-16 pb-12 bg-white dark:bg-[#30352c]">

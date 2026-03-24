@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import SEO from '../src/components/SEO';
 
 const CraneLogisticsPage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Vận tải & Cẩu tự hành - KGX - Không Gian Xanh";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white flex flex-col min-h-screen font-display antialiased transition-colors duration-300">
+            <SEO title="Vận tải & Cẩu tự hành - KGX - Không Gian Xanh" />
             <main className="flex-grow">
                 {/* Hero Section */}
                 <section className="pt-20 pb-12 px-6 max-w-[1200px] mx-auto text-center">

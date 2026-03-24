@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
+import SEO from '../src/components/SEO';
 
 const LandscapeMaintenancePage: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Dịch vụ Bảo dưỡng Cảnh quan - KGX - Không Gian Xanh";
-    }, []);
+        window.scrollTo(0, 0);}, []);
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 antialiased selection:bg-primary/20">
+            <SEO title="Dịch vụ Bảo dưỡng Cảnh quan - KGX - Không Gian Xanh" />
             <main className="w-full flex flex-col">
                 {/* Page Hero */}
                 <div className="w-full bg-background-light dark:bg-[#30352c] pt-16 pb-12 transition-colors">

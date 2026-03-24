@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../src/components/SEO';
 import Hero from '../components/Hero';
 import TrustBar from '../components/TrustBar';
 import DesignServices from '../components/DesignServices';
@@ -11,6 +12,7 @@ import Contact from '../components/Contact';
 const HomePage: React.FC = () => {
     return (
         <>
+            <SEO title="KGX - Không Gian Xanh" />
             <Hero />
             <TrustBar />
             <DesignServices />

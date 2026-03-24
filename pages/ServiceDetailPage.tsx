@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { servicesService, Service } from '../src/services/servicesService';
 import { SERVICES_DATA } from '../services';
 import ImageWithFallback from '../components/ImageWithFallback';
+import SEO from '../src/components/SEO';
 
 const ServiceDetailPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -31,7 +32,6 @@ const ServiceDetailPage: React.FC = () => {
                 }
 
                 window.scrollTo(0, 0);
-                document.title = `${data.title} - KGX - Không Gian Xanh`;
             }
             setService(data);
         } catch (error) {
@@ -61,6 +61,11 @@ const ServiceDetailPage: React.FC = () => {
 
     return (
         <div className="bg-background-light dark:bg-background-dark text-text-main flex flex-col min-h-screen">
+            <SEO
+                title={`${service.title} | KGX - Không Gian Xanh`}
+                description={service.description || "Khám phá dịch vụ thiết kế thi công chuyên nghiệp của KGX."}
+                image={service.image}
+            />
             <main className="flex-grow">
                 {/* Hero Section */}
                 <section className="w-full py-12 lg:py-16">
