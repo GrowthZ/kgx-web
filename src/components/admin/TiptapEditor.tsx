@@ -432,7 +432,7 @@ const TiptapEditor: FC<TiptapEditorProps> = ({ value, onChange, label }) => {
                     min-height: 400px;
                     padding: 1.5rem 2rem;
                     font-family: 'Inter', sans-serif;
-                    font-size: 15px;
+                    font-size: clamp(14px, 1.8vw, 17px);
                     line-height: 1.8;
                     color: #1e293b;
                     outline: none;
@@ -453,12 +453,12 @@ const TiptapEditor: FC<TiptapEditorProps> = ({ value, onChange, label }) => {
                     font-style: italic;
                 }
                 /* Headings */
-                .tiptap-editor-content .tiptap h1 { font-size: 1.8em; font-weight: 800; margin: 1.2em 0 0.6em; color: #0f172a; }
-                .tiptap-editor-content .tiptap h2 { font-size: 1.5em; font-weight: 700; margin: 1em 0 0.5em; color: #1e293b; }
-                .tiptap-editor-content .tiptap h3 { font-size: 1.25em; font-weight: 700; margin: 0.8em 0 0.4em; color: #334155; }
-                .tiptap-editor-content .tiptap h4 { font-size: 1.1em; font-weight: 600; margin: 0.6em 0 0.3em; color: #475569; }
+                .tiptap-editor-content .tiptap h1 { font-size: clamp(1.65rem, 3.6vw, 2.15rem); font-weight: 800; line-height: 1.25; margin: 1.2em 0 0.6em; color: #0f172a; }
+                .tiptap-editor-content .tiptap h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 700; line-height: 1.3; margin: 1em 0 0.5em; color: #1e293b; }
+                .tiptap-editor-content .tiptap h3 { font-size: clamp(1.2rem, 2.4vw, 1.45rem); font-weight: 700; line-height: 1.35; margin: 0.8em 0 0.4em; color: #334155; }
+                .tiptap-editor-content .tiptap h4 { font-size: clamp(1.05rem, 2vw, 1.2rem); font-weight: 600; line-height: 1.4; margin: 0.6em 0 0.3em; color: #475569; }
                 /* Paragraph */
-                .tiptap-editor-content .tiptap p { margin: 0.6em 0; }
+                .tiptap-editor-content .tiptap p { white-space: pre-wrap; margin: 0.6em 0; }
                 /* Links */
                 .tiptap-editor-content .tiptap a,
                 .tiptap-editor-content .tiptap .tiptap-link {
@@ -478,7 +478,12 @@ const TiptapEditor: FC<TiptapEditorProps> = ({ value, onChange, label }) => {
                 /* Lists */
                 .tiptap-editor-content .tiptap ul { list-style: disc; padding-left: 1.5em; margin: 0.5em 0; }
                 .tiptap-editor-content .tiptap ol { list-style: decimal; padding-left: 1.5em; margin: 0.5em 0; }
-                .tiptap-editor-content .tiptap li { margin: 0.25em 0; }
+                .tiptap-editor-content .tiptap li { white-space: pre-wrap; margin: 0.25em 0; }
+                .tiptap-editor-content .tiptap br {
+                    display: block;
+                    content: "";
+                    margin-top: 0.2em;
+                }
                 /* Code */
                 .tiptap-editor-content .tiptap code {
                     background: #f1f5f9;
@@ -509,10 +514,11 @@ const TiptapEditor: FC<TiptapEditorProps> = ({ value, onChange, label }) => {
                 /* Images */
                 .tiptap-editor-content .tiptap img,
                 .tiptap-editor-content .tiptap .tiptap-image {
+                    display: block;
                     max-width: 100%;
                     height: auto;
                     border-radius: 0.75rem;
-                    margin: 1em 0;
+                    margin: 1.25em auto;
                     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
                 }
                 .tiptap-editor-content .tiptap img.ProseMirror-selectednode {

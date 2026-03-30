@@ -142,14 +142,7 @@ const ArticleDetailPage = () => {
             {/* Article Content — full width, no sidebar */}
             <main className="max-w-[860px] mx-auto px-4 md:px-6 mb-20">
                 <div
-                    className="prose prose-lg max-w-none text-base md:text-lg text-gray-700 leading-relaxed
-                        prose-headings:font-bold prose-headings:text-gray-900
-                        prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg
-                        prose-img:rounded-xl prose-img:shadow-md prose-img:w-full
-                        prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-                        prose-blockquote:border-primary prose-blockquote:not-italic prose-blockquote:bg-gray-50 prose-blockquote:rounded-r-xl prose-blockquote:py-1
-                        prose-pre:rounded-xl prose-pre:text-sm
-                        prose-table:text-sm"
+                    className="tiptap-content"
                     dangerouslySetInnerHTML={{ __html: article.content }}
                 />
 
