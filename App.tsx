@@ -32,6 +32,7 @@ import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 import AdminProductsPage from './pages/admin/AdminProductsPage';
 import AdminArticlesPage from './pages/admin/AdminArticlesPage';
 import ArticleForm from './pages/admin/ArticleForm';
+import ArticlePreviewPage from './pages/admin/ArticlePreviewPage';
 import AdminProjectsPage from './pages/admin/AdminProjectsPage';
 import ProjectForm from './pages/admin/ProjectForm';
 import AdminContactsPage from './pages/admin/AdminContactsPage';
@@ -129,6 +130,14 @@ const App: FC = () => {
               element={
                 <ProtectedRoute>
                   <ArticleForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/articles/preview"
+              element={
+                <ProtectedRoute>
+                  <ArticlePreviewPage />
                 </ProtectedRoute>
               }
             />

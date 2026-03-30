@@ -1,13 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import AdminLayout from '../../src/components/admin/AdminLayout';
-import { articlesService, Article } from '../../src/services/articlesService';
+import { articlesService } from '../../src/services/articlesService';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import toast from 'react-hot-toast';
 import TiptapEditor from '../../src/components/admin/TiptapEditor';
 import { ImagePicker } from '../../src/components/admin/ImageUpload';
+import Modal from '../../src/components/admin/Modal';
+import ArticlePreviewRenderer, { ArticlePreviewDraft } from '../../src/components/admin/ArticlePreviewRenderer';
 
 // Vietnamese-aware slug generator
 const toSlug = (str: string): string => {
@@ -21,6 +23,8 @@ const toSlug = (str: string): string => {
         .replace(/[\s]+/g, '-')
         .replace(/-+/g, '-');
 };
+
+const PREVIEW_STORAGE_PREFIX = 'article-preview:';
 
 const schema = yup.object().shape({
     title: yup.string().required('Tiêu đề bài viết là bắt buộc'),
@@ -38,6 +42,8 @@ const ArticleForm = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [slugManuallyEdited, setSlugManuallyEdited] = useState(false);
+    const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+    const [previewDraftId] = useState(() => (id ? `article-preview-edit-${id}` : `article-preview-new-${Date.now()}`));
 
     const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
@@ -56,7 +62,78 @@ const ArticleForm = () => {
     const watchFeaturedImage = watch('featuredImage');
     const watchContent = watch('content') || '';
     const watchTitle = watch('title');
+    const watchExcerpt = watch('excerpt');
+    const watchCategory = watch('category');
+    const watchAuthor = watch('author');
+    const watchSlug = watch('slug');
     const watchPublished = watch('published');
+
+    const previewDate = new Date().toLocaleDateString('vi-VN', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+
+    const previewDraft: ArticlePreviewDraft = {
+        title: watchTitle || '',
+        slug: watchSlug || '',
+        excerpt: watchExcerpt || '',
+        content: watchContent || '',
+        featuredImage: watchFeaturedImage || '',
+        category: watchCategory || 'Tin tức',
+        author: watchAuthor || 'Admin',
+        published: !!watchPublished,
+        previewDate,
+    };
+
+    const cleanupPreviewCache = (keepKey?: string) => {
+        try {
+            Object.keys(localStorage).forEach((key) => {
+                if (key.startsWith(PREVIEW_STORAGE_PREFIX) && key !== keepKey) {
+                    localStorage.removeItem(key);
+                }
+            });
+        } catch (error) {
+            console.error('Cleanup preview cache error:', error);
+        }
+    };
+
+    const persistPreviewDraft = (clearOldCache = false) => {
+        const storageKey = `${PREVIEW_STORAGE_PREFIX}${previewDraftId}`;
+        if (clearOldCache) {
+            cleanupPreviewCache(storageKey);
+        }
+        localStorage.setItem(storageKey, JSON.stringify(previewDraft));
+    };
+
+    useEffect(() => {
+        persistPreviewDraft();
+    }, [
+        previewDraftId,
+        watchTitle,
+        watchSlug,
+        watchExcerpt,
+        watchContent,
+        watchFeaturedImage,
+        watchCategory,
+        watchAuthor,
+        watchPublished
+    ]);
+
+    const openPreviewInNewTab = () => {
+        try {
+            persistPreviewDraft(true);
+            window.open(`/admin/articles/preview?draft=${encodeURIComponent(previewDraftId)}`, '_blank', 'noopener,noreferrer');
+        } catch (error) {
+            console.error('Preview open error:', error);
+            toast.error('Không thể mở tab xem trước');
+        }
+    };
+
+    const openPreviewModal = () => {
+        persistPreviewDraft(true);
+        setIsPreviewOpen(true);
+    };
 
     useEffect(() => {
         if (id) {
@@ -101,6 +178,7 @@ const ArticleForm = () => {
                 await articlesService.createArticle(data);
                 toast.success('Tạo bài viết mới thành công');
             }
+            localStorage.removeItem(`${PREVIEW_STORAGE_PREFIX}${previewDraftId}`);
             navigate('/admin/articles');
         } catch (error) {
             console.error('Error saving article:', error);
@@ -124,6 +202,14 @@ const ArticleForm = () => {
                         </p>
                     </div>
                     <div className="flex items-center gap-3">
+                        <button
+                            type="button"
+                            onClick={openPreviewModal}
+                            className="px-6 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold text-sm hover:bg-slate-50 transition-all flex items-center gap-2"
+                        >
+                            <span className="material-symbols-outlined text-lg">preview</span>
+                            Xem trước
+                        </button>
                         <button
                             type="button"
                             onClick={() => navigate('/admin/articles')}
@@ -276,6 +362,38 @@ const ArticleForm = () => {
                     </div>
                 </div>
             </form>
+
+            <Modal isOpen={isPreviewOpen} onClose={() => setIsPreviewOpen(false)} maxWidth="max-w-5xl">
+                <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-white shrink-0">
+                    <div>
+                        <h3 className="text-lg font-bold text-slate-800">Xem trước bài viết</h3>
+                        <p className="text-xs font-bold text-slate-400 tracking-widest mt-1">
+                            Mô phỏng giao diện hiển thị ngoài website
+                        </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <button
+                            type="button"
+                            onClick={openPreviewInNewTab}
+                            className="h-10 px-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-sm font-bold flex items-center gap-2 transition-all"
+                        >
+                            <span className="material-symbols-outlined text-base">open_in_new</span>
+                            Mở tab mới
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => setIsPreviewOpen(false)}
+                            className="size-10 rounded-xl hover:bg-slate-50 text-slate-400 flex items-center justify-center"
+                        >
+                            <span className="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div className="overflow-y-auto bg-background-light">
+                    <ArticlePreviewRenderer draft={previewDraft} compact />
+                </div>
+            </Modal>
         </AdminLayout>
     );
 };
