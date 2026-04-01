@@ -153,9 +153,6 @@ const ServiceDetailPage: React.FC = () => {
                             <div className="max-w-[1200px] mx-auto px-4 lg:px-0">
                                 <div className={`flex flex-col lg:flex-row gap-16 items-center ${!isEven ? 'lg:flex-row-reverse' : ''}`}>
                                     <div className="flex-1">
-                                        <div className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-bold mb-4  tracking-wider">
-                                            {section.title}
-                                        </div>
                                         {section.subtitle && (
                                             <p className="text-secondary font-bold text-sm mb-2  tracking-widest">{section.subtitle}</p>
                                         )}
