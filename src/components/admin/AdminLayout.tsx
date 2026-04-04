@@ -25,6 +25,7 @@ const AdminLayout: FC<AdminLayoutProps> = ({ children }) => {
         { icon: 'inbox', label: 'Tư vấn', path: '/admin/contacts' },
         { icon: 'inventory_2', label: 'Sản phẩm', path: '/admin/products' },
         { icon: 'apartment', label: 'Dự án', path: '/admin/projects' },
+        { icon: 'category', label: 'Loại dự án', path: '/admin/project-types' },
         { icon: 'description', label: 'Bài viết Content', path: '/admin/articles' },
         { icon: 'design_services', label: 'Dịch vụ', path: '/admin/services' },
         { icon: 'monitoring', label: 'Hiệu suất SEO', path: '/admin/seo' },

@@ -120,6 +120,7 @@ const AdminProjectsPage: React.FC = () => {
                                     <tr className="border-b border-slate-50">
                                         <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Dự án</th>
                                         <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Phân loại</th>
+                                        <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest whitespace-nowrap">Loại dự án</th>
                                         <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest">Địa điểm / Năm</th>
                                         <th className="px-8 py-5 text-[10px] font-black text-slate-400  tracking-widest text-right">Thao tác</th>
                                     </tr>
@@ -148,6 +149,11 @@ const AdminProjectsPage: React.FC = () => {
                                                             'bg-admin-primary/10 text-admin-primary'
                                                     }`}>
                                                     {project.displayCategory || project.category}
+                                                </span>
+                                            </td>
+                                            <td className="px-8 py-5 whitespace-nowrap">
+                                                <span className="px-3 py-1 rounded-full text-[10px] font-black tracking-widest bg-slate-100 text-slate-600">
+                                                    {!project.filterCategory || ['thiet-ke', 'thi-cong', 'canh-quan', 'Tất cả'].includes(project.filterCategory) ? '-' : project.filterCategory}
                                                 </span>
                                             </td>
                                             <td className="px-8 py-5">

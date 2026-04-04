@@ -26,12 +26,17 @@ const schema = yup.object().shape({
     displayCategory: yup.string().optional(),
     youtubeUrl: yup.string().optional(),
     seoDescription: yup.string().max(160, 'Mô tả SEO không nên vượt quá 160 ký tự').optional(),
+    hashtags: yup.array().of(yup.string()).optional(),
 });
+
+import { projectTypesService, ProjectType } from '../../src/services/projectTypesService';
 
 const ProjectForm: FC = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
+    const [projectTypes, setProjectTypes] = useState<ProjectType[]>([]);
+    const [hashtagInput, setHashtagInput] = useState('');
 
     const { register, handleSubmit, setValue, watch, formState: { errors, isValid } } = useForm({
         resolver: yupResolver(schema),
@@ -50,6 +55,7 @@ const ProjectForm: FC = () => {
             displayCategory: 'Thiết kế',
             youtubeUrl: '',
             seoDescription: '',
+            hashtags: [],
         }
     });
 
@@ -57,6 +63,35 @@ const ProjectForm: FC = () => {
     const watchImages = watch('images') || [];
     const watchDescription = watch('description') || '';
     const watchTitle = watch('title');
+    const watchHashtags = watch('hashtags') || [];
+
+    useEffect(() => {
+        fetchProjectTypes();
+    }, []);
+
+    const fetchProjectTypes = async () => {
+        try {
+            const types = await projectTypesService.getAllProjectTypes();
+            setProjectTypes(types);
+        } catch (error) {
+            console.error('Error fetching project types:', error);
+        }
+    };
+
+    const handleAddHashtag = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' || e.key === ',') {
+            e.preventDefault();
+            const val = hashtagInput.trim().replace(/^#/, '');
+            if (val && !watchHashtags.includes(val)) {
+                setValue('hashtags', [...watchHashtags, val], { shouldValidate: true });
+            }
+            setHashtagInput('');
+        }
+    };
+
+    const removeHashtag = (tagToRemove: string) => {
+        setValue('hashtags', watchHashtags.filter(t => t !== tagToRemove), { shouldValidate: true });
+    };
 
     // Auto-generate slug from title
     useEffect(() => {
@@ -210,14 +245,15 @@ const ProjectForm: FC = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Danh mục</label>
+                                    <label className="text-xs font-bold text-slate-400  tracking-widest ml-1">Loại dự án (Hiển thị tab)</label>
                                     <select
-                                        {...register('category')}
+                                        {...register('filterCategory')}
                                         className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium"
                                     >
-                                        <option value="thiet-ke">Thiết kế</option>
-                                        <option value="thi-cong">Thi công</option>
-                                        <option value="canh-quan">Cảnh quan</option>
+                                        <option value="Tất cả">Chọn một loại dự án</option>
+                                        {projectTypes.map(type => (
+                                            <option key={type.id} value={type.name}>{type.name}</option>
+                                        ))}
                                     </select>
                                 </div>
                                 <div className="space-y-2">
@@ -259,6 +295,28 @@ const ProjectForm: FC = () => {
                                         className="w-full px-5 py-3.5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-admin-primary/20 font-medium"
                                     />
                                 </div>
+                            </div>
+                            
+                            {/* Hashtags */}
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold text-slate-400 tracking-widest ml-1">Hashtags</label>
+                                <div className="p-2 bg-slate-50 rounded-2xl border-none focus-within:ring-2 focus-within:ring-admin-primary/20 flex flex-wrap gap-2 items-center">
+                                    {watchHashtags.map((tag, idx) => (
+                                        <span key={idx} className="bg-white border border-slate-200 text-slate-600 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
+                                            #{tag}
+                                            <button type="button" onClick={() => removeHashtag(tag)} className="text-slate-400 hover:text-rose-500 material-symbols-outlined text-[14px]">close</button>
+                                        </span>
+                                    ))}
+                                    <input
+                                        type="text"
+                                        value={hashtagInput}
+                                        onChange={(e) => setHashtagInput(e.target.value)}
+                                        onKeyDown={handleAddHashtag}
+                                        placeholder={watchHashtags.length === 0 ? "Thêm hashtag (Nhấn Enter hoặc phẩy để thêm)..." : ""}
+                                        className="flex-1 min-w-[200px] px-3 py-2 bg-transparent outline-none text-sm font-medium"
+                                    />
+                                </div>
+                                <p className="text-[10px] text-slate-400 ml-1">Dùng Enter hoặc dấu phẩy (,) để phân cách các hashtag</p>
                             </div>
                         </div>
 

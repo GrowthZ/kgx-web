@@ -88,6 +88,18 @@ const ProjectDetailPage: React.FC = () => {
                                 <h1 className="text-3xl lg:text-4xl font-black text-olive leading-relaxed md:leading-loose tracking-normal ">
                                     {project.title}
                                 </h1>
+                                <div className="flex flex-wrap gap-2 pt-1 pb-2 items-center">
+                                    {project.filterCategory && (
+                                        <span className="bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-md border border-slate-200">
+                                            {project.filterCategory}
+                                        </span>
+                                    )}
+                                    {project.hashtags && project.hashtags.map((tag, idx) => (
+                                        <span key={idx} className="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-md">
+                                            #{tag}
+                                        </span>
+                                    ))}
+                                </div>
                                 <div
                                     className="text-lg lg:text-xl text-text-light font-normal max-w-[500px] prose prose-slate"
                                     dangerouslySetInnerHTML={{ __html: project.description || '' }}

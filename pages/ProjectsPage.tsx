@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { projectsService, Project } from '../src/services/projectsService';
+import { projectTypesService, ProjectType } from '../src/services/projectTypesService';
 import { contactService } from '../src/services/contactService';
 import ImageWithFallback from '../components/ImageWithFallback';
 import SEO from '../src/components/SEO';
@@ -11,6 +12,7 @@ import corporateLandscape from '../src/media/corporate-landscape.png';
 
 const ProjectsPage: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
+    const [projectTypes, setProjectTypes] = useState<ProjectType[]>([]);
     const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState('Tất cả');
 
@@ -25,7 +27,17 @@ const ProjectsPage: React.FC = () => {
 
     useEffect(() => {
         fetchProjects();
+        fetchCategories();
     }, []);
+
+    const fetchCategories = async () => {
+        try {
+            const types = await projectTypesService.getAllProjectTypes();
+            setProjectTypes(types);
+        } catch (error) {
+            console.error('Error fetching categories:', error);
+        }
+    };
 
     const fetchProjects = async () => {
         try {
@@ -39,7 +51,7 @@ const ProjectsPage: React.FC = () => {
         }
     };
 
-    const categories = ['Tất cả', 'Biệt thự', 'Resort', 'Khu đô thị', 'Doanh nghiệp'];
+    const categories = ['Tất cả', ...projectTypes.map((t) => t.name)];
 
     const filteredProjects = projects.filter(project => {
         if (activeCategory === 'Tất cả') return true;
@@ -251,12 +263,19 @@ ${message}
                                 <Link key={idx} to={`/du-an/${project.slug}`} className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#eef4e7] cursor-pointer">
                                     <div className="relative aspect-[16/10] w-full overflow-hidden">
                                         <ImageWithFallback isBackground className="h-full w-full transition-transform duration-700 group-hover:scale-110" src={project.image} />
-                                        <div className="absolute top-4 right-4 rounded-full bg-primary px-3 py-1 text-[10px] font-black  tracking-wider text-white shadow-lg backdrop-blur-md">
-                                            {project.status || 'Đã hoàn thiện'}
-                                        </div>
                                     </div>
                                     <div className="flex flex-1 flex-col p-6 lg:p-8">
                                         <h3 className="mb-4 text-xl font-bold text-olive group-hover:text-primary transition-colors line-clamp-2 ">{project.title}</h3>
+                                        {project.hashtags && project.hashtags.length > 0 && (
+                                            <div className="mb-4 flex flex-wrap gap-2">
+                                                {project.hashtags.slice(0, 3).map((tag, i) => (
+                                                    <span key={i} className="text-[10px] font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-md">#{tag}</span>
+                                                ))}
+                                                {project.hashtags.length > 3 && (
+                                                    <span className="text-[10px] font-bold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">+{project.hashtags.length - 3}</span>
+                                                )}
+                                            </div>
+                                        )}
                                         <div className="mb-6 flex flex-col gap-3 border-t border-olive/5 pt-5 text-sm">
                                             <div className="flex items-center gap-3 text-olive-light font-medium">
                                                 <span className="material-symbols-outlined text-[20px] text-primary">location_on</span>

@@ -34,6 +34,7 @@ import AdminArticlesPage from './pages/admin/AdminArticlesPage';
 import ArticleForm from './pages/admin/ArticleForm';
 import ArticlePreviewPage from './pages/admin/ArticlePreviewPage';
 import AdminProjectsPage from './pages/admin/AdminProjectsPage';
+import AdminProjectTypesPage from './pages/admin/AdminProjectTypesPage';
 import ProjectForm from './pages/admin/ProjectForm';
 import AdminContactsPage from './pages/admin/AdminContactsPage';
 import AdminServicesPage from './pages/admin/AdminServicesPage';
@@ -106,6 +107,14 @@ const App: FC = () => {
               element={
                 <ProtectedRoute>
                   <ProjectForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/project-types"
+              element={
+                <ProtectedRoute>
+                  <AdminProjectTypesPage />
                 </ProtectedRoute>
               }
             />
